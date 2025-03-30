@@ -20,7 +20,7 @@
             이메일: <a href="mailto:rlaalsdn456456@naver.com">rlaalsdn456456@naver.com</a>
         </span>
     </div>
-    <img class="profile-pic" src="https://media.licdn.com/dms/image/v2/D5603AQG41SBJaeGLFg/profile-displayphoto-shrink_200_200/B56ZNnWbN9GcAY-/0/1732605752545?e=1738195200&v=beta&t=Qd7Vby-9hPMdwgXPC1Va5_A5BmMiWpNRfbz-1a-1WGA" alt="Profile Picture">
+    <img class="profile-pic" src="https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/369795572_6472128609507995_717712294481335310_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=S5RaB5UUMX8Q7kNvgHdWvhy&_nc_oc=AdlR5mRDiQPKzqPvADrRKmasNcR0gGfdZMMrtwKTSlTiz3OqSXlR-LqugEXD1P1keFQ&_nc_zt=23&_nc_ht=scontent-ssn1-1.xx&_nc_gid=lm06-iVqlEtuFdG05q8mJA&oh=00_AYG8zgBXgYTLzss_2ExJ_TnPhova78rU2f3B6O_hxuRCqg&oe=67EEE94C" alt="Profile Picture">
 </header>
 
 <div class="summary-container">
@@ -61,8 +61,10 @@
             <div class="project">
                 <img src="./icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
                 <h3>[인턴] 통합 EC구축(롯데온), 롯데백화점 프리미엄 사이트 개발 참여</h3>
-                <p>롯데백화점 프리미엄 사이트의 베스트 페이지와 햄버거 화면 개발.</p>
-                <p>서버 API와 웹퍼블리셔의 HTML을 조합하여 Freemarker 기반으로 화면 구성.</p>
+                <p>롯데백화점 프리미엄 사이트의 베스트 페이지와 햄버거 화면 개발</p>
+                <p>서버 API와 웹퍼블리셔의 HTML을 조합하여 Freemarker 기반으로 화면 구성</p>
+                <p>A-Z 브랜드 명을 나열하며, 알파벳 전환 시점(예: A에서 B로 넘어갈 때) B의 시작 인덱스를 표시하는 기능 구현. Freemarker에서 Map 구조 사용 시 메모리 부족 이슈 발생</p>
+                <p>문제 해결을 위해 메모리에 직전 알파벳의 첫 글자만 저장하고, for 루프 내에서 신규 알파벳 등장 시 인덱스를 표시하는 방식으로 최적화. 메모리 부하 감소 및 기능 성공적 구현</p>
             </div>
             <div class="project">
                 <img src="./icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
@@ -80,24 +82,20 @@
             <div class="project">
                 <img src="./icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
                 <h3>기획/운영팀 전용 데이터 적재 프로그램 개발</h3>
-                <p>13만 개의 엑셀을 DB에 LOAD DATA로 적재하는 python 코드 개발</p>
-                <p>OS 차이로 인해 parallels와 pyinstaller를 통해 .exe로 전달</p>
+                <p>네이버 쇼핑파트너센터(셀러 어드민)에서 전체 데이터를 수집하기 위해 Python과 BeautifulSoup을 활용해 약 13만 개의 엑셀 파일을 순차적으로 다운로드하는 코드 개발</p>
+                <p>다운로드한 엑셀 파일을 DB에 <code>LOAD DATA</code> 명령어로 일괄 적재하는 파이프라인 구현. 대량 데이터 처리로 인한 속도 저하와 메모리 문제를 해결하기 위해 파일 단위로 순차 처리 방식 채택</p>
+                <p>운영팀이 직접 실행할 수 있도록 OS 차이(Windows 환경)를 고려해 Parallels로 테스트 후, PyInstaller를 사용해 실행 파일(.exe)로 변환하여 배포. 비개발자도 쉽게 사용할 수 있는 환경 제공</p>
             </div>
             <div class="project">
                 <img src="./icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
                 <h3>DB 모니터링 기능 구축</h3>
-                <p>DB 상태값을를 Slack 알람으로 알려주는 배치 프로그램 개발.</p>
+                <p>DB 상태값을를 Slack 알람으로 알려주는 bash 프로그램 개발.</p>
                 <p>Performance_schema와 Information_schema를 주기적으로 확인하며 통해 DB 데드락 감시.</p>
+                <p>해당 잡은 cron을 통해 1분마다 확인하도록 설계하였으며 tmux를 통해 백그라운드화</p>
             </div>
             <div class="project">
                 <img src="./icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
-                <h3>Jira, IntelliJ, Gitlab, Slack, Jenkins 개발 과정 간편화</h3>
-                <p>기존 수작업 중심 개발 프로세스를 자동화하여 개발 간소화.</p>
-                <p>브랜치와 Jira 티켓 연동, Jenkins를 통한 자동 빌드 및 배포 관리.</p>
-            </div>
-            <div class="project">
-                <img src="./icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
-                <h3>PCS 백오피스 어드민 React로 변경</h3>
+                <h3>PCS 도메인, 백오피스 어드민 React로 변경</h3>
                 <p>기존 axboot.js로 구성된 백오피스 프론트엔드를 React로 리뉴얼.</p>
                 <p>Apache httpd 루트에 Nginx 추가를 통한 로드밸런싱 작업도 진행</p>
                 <p>컴포넌트를 최소 단위로 분리하여 재사용성을 극대화하여 추후 작업들의 기간 평균 2주 단축.</p>
@@ -112,15 +110,18 @@
             <div class="project">
                 <img src="./icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
                 <h3>젠킨스를 통한 테스트 실행 및 Job Orchestration</h3>
-                <p>빌드 - 테스트 - 배포 - 실행 - 로그확인 - 서버 간 선행후행 관리까지 젠킨스에서 통합 관리하는 시스템</p>
-                <p>해당 성과를 기록한 글이 사내 기술블로그에 실 대표로 첫글로 선정, 2022.06에 는 전체 3인 발표 인원이 되어 발표: <a href="https://medium.com/lotteon-tech-blog/d-142cbbd5010" target="_blank">블로그 게시글</a></p>
+                <p>빌드, 테스트, 배포, 실행, 로그 확인, 서버 간 선행/후행 관계까지 Jenkins에서 통합 관리하는 시스템 구축. Spring Batch 기반 대용량 데이터 처리 작업을 서버 접속 없이 자동화</p>
+                <p>기존에는 개발자가 서버에 접속해 수동으로 Batch 코드를 실행하고 로그를 확인해야 했던 비효율적인 프로세스를 개선. Jenkins Pipeline을 활용해 CI/CD 통합 및 Job 간 의존성 관리 구현</p>
+                <p>특히, 다중 Job 실행 시 순서 보장과 실패 시 재실행 로직 추가가 어려웠던 점을 해결하기 위해 Parameterized Trigger와 Groovy 스크립트를 사용해 동적 조정 가능하도록 설계</p>
+                <p>성과는 사내 기술블로그 첫 글로 선정되어 기록, 2022년 6월 3인 발표자로 참여해 공유: <a href="https://medium.com/lotteon-tech-blog/d-142cbbd5010" target="_blank">블로그 게시글</a></p>
             </div>
             <div class="project">
                 <img src="./icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
                 <h3>전체 판매 상품데이터 동기화 작업 Batch 대신 Stream으로 전환</h3>
-                <p>400G 가량의 데이터를 mysqldump로 초기 적재 후 변경 분에 대해 Kafka 컨슈밍 앱 개발 </p>
-                <p>할인 반영한 상품 가능 개수를 5천만개에서 전체 2억 8천만개로 증대 및 가격 데이터 실시간화</p>
-                <p>poison pill을 처리하는 로직, DB의 row lock을 방지하기 위한 트랜잭션 로직 등을 추가하여 고도화</p>
+                <p>다이나믹 프라이싱을 위한 상품 가격 정보 DB 동기화 프로세스 개선. 기존에는 DB 복제 후 Batch로 데이터를 읽어들이는 방식으로, 400GB 규모 데이터를 처리</p>
+                <p>문제점: Batch가 처음 Truncate 후 가격 정보를 다시 채우는 방식이라 동기화 중 다이나믹 프라이싱 잡 실행 시 데이터 공백으로 오류 발생. 이를 해결하기 위해 Truncate 대신 임시 테이블에 데이터를 쌓은 후 <code>RENAME</code>으로 테이블을 바꿔치기하는 전략 도입</p>
+                <p>추가 이슈: 상품 수 증가로 동기화 잡 시간이 길어지며 잡 간 겹침 발생. 최종적으로 <code>mysqldump</code>로 초기 적재 후, Kafka 컨슈밍 앱을 개발해 변동분만 실시간 반영하도록 전환</p>
+                <p>성과: 할인 반영 상품 수를 5천만 개에서 2억 8천만 개로 확대, 가격 데이터 실시간화 달성. <code>Poison Pill</code> 처리 로직과 Row Lock 방지 트랜잭션 설계로 안정성 강화</p>
             </div>
             <div class="project">
                 <img src="./icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
@@ -133,7 +134,7 @@
                 <img src="./icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
                 <h3>개발/비개발 팁 공유 및 사내 위키페이지를 통한 꿀팁 전파</h3>
                 <p>'꿀팁 모음.zip'를 통해 개발/비개발 비즈니스에 활용 가능한 꿀팁 월 1회 이상 작성.</p>
-                <p>글 좋아요 수로 평균 10개 달성. ex) Microsoft Teams 움직이는 커스텀 이모지 만들기, Datagrip을 통해 동료에게 DB접속 일괄 전달하는 방법, FinalCutPro로  </p>
+                <p>글 좋아요 수로 평균 10개 달성. ex) Microsoft Teams 움직이는 커스텀 이모지 만들기, Datagrip을 통해 동료에게 DB접속 일괄 전달하는 방법, FinalCutPro로 영상 편집하는 방법 기초, 신세계 그룹사 복지 꿀팁 </p>
             </div>
         </div>
     </div>
@@ -189,9 +190,11 @@
             <div class="project">
                 <img src="./icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
                 <h3>ESM 문의하기 페이지 개편</h3>
-                <p>2008년에 만들어진 CS처리용 긴급메시지 및 문의하기 페이지를 리뉴얼.</p>
-                <p>멀티답변 기능 추가로 인해 답변율이 유의미하게 5% 이상 상승</p>
-                <p>처리 방식을 개선하여 조회 속도를 최대 1분에서 0.3초로 단축(약 200배 개선) <a href="https://www.youtube.com/watch?v=wMN2Niz0gp8" target="_blank">성능 비교 동영상</a></p>
+                <p>2008년에 만들어진 CS 처리용 긴급 메시지 및 문의하기 페이지를 리뉴얼</p>
+                <p>멀티답변 기능 추가로 답변율 5% 이상 유의미하게 상승. 프론트엔드에서 메시지 전송 방식을 개선하고, 브라우저 캐시 스토리지를 활용한 임시 저장 로직 도입으로 사용자 경험 및 데이터 안정성 향상</p>
+                <p>처리 방식 개선으로 조회 속도를 최대 1분에서 0.3초로 단축(약 200배 성능 개선). 기존 이중 FOR LOOP과 다중 SP 호출 대신 <code>OPENJSON</code>으로 여러 셀러 정보를 단일 테이블로 묶어 JOIN 처리, 쿼리 성능 최적화 <a href="https://www.youtube.com/watch?v=wMN2Niz0gp8" target="_blank">성능 비교 동영상</a></p>
+                <p>백엔드에서 GROUP BY 대신 <code>ISNULL(SUM(CASE WHEN ...))</code> 방식으로 쿼리 최적화하여 속도 증대. 예: 배송, 반품, 취소 등 유형별 집계 쿼리 개선</p>
+                <p>테스트 효율성을 위해 <code>.http</code> 파일 기반 통합 테스트 도입, 개발 및 유지보수 생산성 향상</p>
             </div>
             <div class="project">
                 <img src="./icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
@@ -202,16 +205,31 @@
             <div class="project">
                 <img src="./icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
                 <h3>SSG.com 판매자 연동 및 고객문의 연동</h3>
-                <p>SSG.com과 G마켓 간의 판매자, 고객문의 API 대규모 동기화 환경 구축.</p>
-                <p>프로젝트 팀원 2명이 퇴사하여 단독으로 프로젝트를 이어받았음에도, 모든 일정을 준수하며 성공적으로 완료하고 3개월 간 장애 3회 이하 유지.</p>
+                <p>SSG.com과 G마켓 간 판매자 및 고객 문의 데이터를 대규모 동기화하는 환경 구축. 셀러 등급, 유형, 상태 변경에 따라 상품 연동 여부를 관리하는 복잡한 로직 구현</p>
+                <p>문제점: 셀러 상태(등급/유형/상태)가 여러 도메인에서 변경되며 동기화 감지가 어려움. 이를 해결하기 위해 MsSQL Trigger를 도입</p>
+                <p>셀러의 동의 여부 혹은 상태 변동 시 Batch(1일 1회)로 SSG에 판매자 상태 연동 및 Item 팀에 상품 전체 연동 여부를 전달</p>
+                <p>프로젝트 팀원 2명 퇴사로 단독 수행, 모든 일정 준수 및 3개월간 장애 3회 이하 유지.</p>
             </div>
             <div class="project">
                 <img src="./icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                <h3>PricingTF - 타사 상품 매칭 및 가격 분석하는 시스템 구축</h3>
+                <h3>PricingTF - 타사 상품 매칭 및 가격 분석 시스템 구축</h3>
                 <p>외부 경쟁사 대비 가격경쟁력을 갖추기 위한 데이터 플로우 초기 기획 및 외주 선정에 참여</p>
-                <p>외주 매칭 업체에게 상품을 수동 매칭을 하기 위한 매칭툴 .Net과 Vue를 통해 어드민 개발</p>
+                <p>기존 수동 매칭 방식(작업자 간 수동 분배 후 상품번호로 검색 및 경쟁사 상품 일일이 매칭)을 개선하기 위해 새로운 UX 제안 및 개발. 제안한 방식은 시스템이 상품번호를 자동 선택하고 타사 경쟁사 상품을 매칭하도록 설계, 매칭 작업 속도를 3배 향상</p>
+                <p>구체적으로 MongoDB에 datetime 컬럼을 추가하여 5분 경과 후 읽기 가능하도록 설정하고, findAndModify를 활용해 읽는 순간 락을 걸어 중복 작업 방지. 외주 매칭 업체를 위한 매칭툴은 .NET과 Vue로 어드민 개발</p>
             </div>
-
+            <div class="project">
+                <img src="./icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                <h3>전사 사내 학습 세션(SLS) 발표</h3>
+                <p>임직원이 Speaker로 참여하는 Staff Learning Session(SLS)에서, '누구나 돈 한 푼 안 들이고 AI의 도움으로 업무를 대신할 프로그램 개발하기' 주제로 발표.</p>
+                <p>저가 세션을 기획 및 진행하며, AI 무료 활용법, 서버 없이 프로그램 실행 방법, 무료 코드 에디터 사용법을 소개하고, 실습으로 Grok을 활용해 쿠팡 검색 페이지 상품 리스트를 엑셀로 취합하는 Chrome Extension 개발을 시연. 참석자 100명 가량 중부터 긍정적인 피드백을 받아 사내 기술 공유에 기여.</p>
+            </div>
+            <div class="project">
+                <img src="./icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                <h3>타사 검색 페이지 상품 리스트 매핑 파이프라인 구축</h3>
+                <p>AI 팀과 협업하여 Databricks를 활용한 상품 데이터 처리 파이프라인 개발. 우리 상품 데이터를 기반으로 AI 팀에서 키워드를 추출한 후, Spark를 통해 explode로 중복 제거된 TSV 리스트 생성</p>
+                <p>외주 업체에 데이터를 전달하고, 외주 업체가 검색 페이지에서 하루 동안 수집한 상품 리스트를 반환하면, AI 팀이 이를 우리 상품명과 매칭. 최종 결과를 MongoDB에 적재하는 프로세스 구현</p>
+                <p>파일 전달 간 외주 업체와의 보안 강화를 위해 유효기간이 포함된 JWT 인증 도입.</p>
+            </div>
         </div>
     </div>
 </div>
