@@ -22,6 +22,31 @@ body {
     flex-direction: column;
 }
 
+.language-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.language-tab {
+    padding: 8px 16px;
+    border: none;
+    background-color: #34495e;
+    color: #ecf0f1;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.language-tab.active {
+    background-color: #3498db;
+}
+
+.language-tab:hover {
+    background-color: #3e5c76;
+}
+
 .name {
     font-size: 48px;
     margin-bottom: 10px;
@@ -36,6 +61,14 @@ body {
     border-radius: 70%;
 }
 
+/* 콘텐츠 전환 */
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
+}
 .summary-container {
     max-width: 700px;
     margin: 20px auto;
@@ -185,3 +218,4 @@ a:hover {
     height: 60px;
     object-fit: contain;
 }
+
