@@ -1,302 +1,410 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minwoo Kim - Resume</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
+
 <body>
-<header class="main-header">
-    <div class="profile-info">
-        <div class="language-tabs">
-            <a href="../kr/index.html" class="language-tab kr-tab">한국어</a>
-            <a href="../en/index.html" class="language-tab en-tab">English</a>
+    <header class="main-header">
+        <div class="profile-info">
+            <div class="language-tabs">
+                <a href="../kr/index.html" class="language-tab kr-tab">한국어</a>
+                <a href="../en/index.html" class="language-tab en-tab">English</a>
+            </div>
+            <strong class="name">Minwoo Kim</strong>
+            <span class="contact">
+                Phone: <a href="tel:+821076463634">+8210-7646-3634</a>
+            </span>
+            <span class="contact">
+                Email: <a href="mailto:rlaalsdn456456@naver.com">rlaalsdn456456@naver.com</a>
+            </span>
         </div>
-        <strong class="name">Minwoo Kim</strong>
-        <span class="contact">
-            Phone: <a href="tel:+821076463634">+8210-7646-3634</a>
-        </span>
-        <span class="contact">
-            Email: <a href="mailto:rlaalsdn456456@naver.com">rlaalsdn456456@naver.com</a>
-        </span>
-    </div>
-    <img class="profile-pic" src="../img/pic.jpeg" alt="Profile Picture">
-</header>
-<script>
-    // 현재 페이지에 따라 탭 활성화
-    const path = window.location.pathname;
-    const krTab = document.querySelector('.language-tab.kr-tab');
-    const enTab = document.querySelector('.language-tab.en-tab');
+        <img class="profile-pic" src="../img/pic.jpeg" alt="Profile Picture">
+    </header>
+    <script>
+        // 현재 페이지에 따라 탭 활성화
+        const path = window.location.pathname;
+        const krTab = document.querySelector('.language-tab.kr-tab');
+        const enTab = document.querySelector('.language-tab.en-tab');
 
-    if (path.includes('/kr/')) {
-        krTab.classList.add('active');
-    } else if (path.includes('/en/')) {
-        enTab.classList.add('active');
-    }
-</script>
-
-<div class="summary-container">
-    <ul class="summary-list">
-        <li>Kyunggi High School (2009.03 ~ 2012.02)</li>
-        <li>Sungkyunkwan University (2014.03 ~ 2020.02)</li>
-        <br/>
-        <li>WeDataLab Mobile Team Intern (2019.06 ~ 2019.08)</li>
-        <li>Lotte e-Commerce Search Development Team Intern (2020.01 ~ 2020.02)</li>
-        <br/>
-        <li>Lotte e-Commerce Search Development Team (2020.08 ~ 2021.03)</li>
-        <li>Lotte e-Commerce Data Platform Development Team (2021.03 ~ 2022.11)</li>
-        <li>Gmarket Seller & SD Engineering Team (2022.11 ~ 2024.10)</li>
-        <li>Gmarket Pricing Tech Engineering Team (2024.10 ~ Current)</li>
-    </ul>
-</div>
-
-<div class="timeline-container">
-    <!-- 2019 -->
-    <div class="year-section">
-        <div class="year">2019</div>
-        <div class="projects">
-            <div class="project">
-                <img src="../icon/WeDataLab.png" alt="WeDataLab Icon" class="project-icon">
-                <h3>[Intern] Development of a Simple Webview App Using React Native</h3>
-                <p>Developed a simple app using Webview to enable an existing website to run on mobile.</p>
-                <p>Added functions for cookie and session management and configured the navigator.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 2020 -->
-    <div class="year-section">
-        <div class="year">2020</div>
-        <div class="projects">
-            <div class="project">
-                <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
-                <h3>[Intern] Participated in Integrated EC Development (now so-called Lotte ON) and Lotte Department Store's Premium Site Development</h3>
-                <p>Developed the 'Best' catalog page and a hamburger menu for the Lotte Department Store Premium site.</p>
-                <p>Configured screens using Freemarker by combining server APIs with HTML from web publishers.</p>
-                <p>Implemented a function to list A-Z brand names and display the starting index of a new alphabet (e.g., B when transitioning from Azure to Barbie). However, encountered memory shortage issues when using Map structures in Freemarker.</p>
-                <p>Optimized by storing only the first letter of the previous alphabet in memory and marking the index when a new alphabet appeared in a for loop, reducing memory load and successfully implementing the feature.</p>
-            </div>
-            <div class="project">
-                <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
-                <h3>Admin Page Development for Client's Search Backlogs</h3>
-                <p>Developed a back-office system to simply retrieve client search term backlog data stored in AuroraDB.</p>
-                <p>Built using Spring Web and basic HTML, CSS, and JS.</p>
-            </div>
-        </div>
-    </div>
-    <div class="year-section">
-        <div class="year">2021</div>
-        <div class="projects">
-            <div class="project">
-                <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
-                <h3>Development of a automated program for transferring price data</h3>
-                <p>Developed code to sequentially download approximately 130,000 Excel files using Python and BeautifulSoup to collect all data from another site's seller admin.</p>
-                <p>Implemented a pipeline that loads the downloaded Excel files into the DB in bulk using the <code>LOAD DATA</code> command. To solve speed degradation and memory problems due to large data processing, adopted a sequential processing method by file unit.</p>
-                <p>Tested with Parallels considering OS differences (Windows environment) so that the operation team can execute it directly, and then converted it into an executable file (.exe) using PyInstaller for distribution. Provided an environment that is easy for non-developers to use.</p>
-            </div>
-            <div class="project">
-                <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
-                <h3>Building DB monitoring function</h3>
-                <p>Developed a bash program that notifies the DB status value with Slack alarm.</p>
-                <p>Monitors DB deadlocks by periodically checking Performance_schema and Information_schema.</p>
-                <p>Designed to be checked every minute through cron, and backgrounded through tmux.</p>
-            </div>
-            <div class="project">
-                <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
-                <h3>Changed PCS domain's back office admin to use React</h3>
-                <p>Renewed the back office frontend composed of existing axboot.js to React.</p>
-                <p>Performed load balancing work by adding Nginx to the Apache httpd root.</p>
-                <p>Maximized reusability by separating components into minimum units, shortening the average period of subsequent tasks by 2 weeks.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="year-section">
-        <div class="year">2022</div>
-        <div class="projects">
-            <div class="project">
-                <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
-                <h3>Test execution and Job Orchestration through Jenkins</h3>
-                <p>Built a system that integrates and manages build, test, deployment, execution, log check, and server pre/post relationships in Jenkins. Automated large-capacity data processing tasks based on Spring Batch without server access.</p>
-                <p>Improved the inefficient process where developers had to manually run Batch code and check logs by accessing the server. Implemented CI/CD integration and job dependency management using Jenkins Pipeline.</p>
-                <p>Designed to be dynamically adjustable using Parameterized Trigger and Groovy script to solve the difficulty of adding order guarantee and retry logic when running multiple jobs.</p>
-                <p>The achievement was selected as the first article on the company's technical blog and recorded, and shared by participating as a three-person presenter in June 2022: <a href="https://medium.com/lotteon-tech-blog/d-142cbbd5010" target="_blank">Blog Post</a></p>
-            </div>
-            <div class="project">
-                <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
-                <h3>Transition from Batch to Stream for product price data's synchronization</h3>
-                <p>Improved the product price information DB synchronization process for dynamic pricing. The previous method was to read data with batch after DB replication, processing 400GB of data.</p>
-                <p>Problem: Since the Batch method first truncates and then refills the price information, an error occurs due to data blank when another dynamic pricing job is executed during synchronization. To solve this problem, a strategy was introduced to stack data in a temporary table instead of Truncate and then replace the table with <code>RENAME</code>.</p>
-                <p>Additional issue: As the number of products increased, the synchronization job time itself became longer and the jobs overlapped. Finally, after initial loading with <code>mysqldump</code>, a Kafka consuming app was developed to reflect only the changes in real time.</p>
-                <p>Achievement: Expanded the number of discounted products from 50 million to 280 million, and achieved real-time price data. Enhanced stability by designing <code>Poison Pill</code> processing logic and Row Lock prevention transactions.</p>
-            </div>
-            <div class="project">
-                <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
-                <h3>Renewal of main Batch of product price change system</h3>
-                <p>Optimized the price change processing speed by applying Kafka-based parallel processing and Producer-Consumer pattern.</p>
-                <p>Shortened the process time from 1.5 hours to 10-20 minutes using branch processing and parallel processing through Enum and Maps.</p>
-                <p>Achieved the number one lowest price share in Naver (as of December 2021) by catching up with the competitor's lowest price share speed. Implemented a response tailored to the company's strategy by adjusting the discount ratio to solve the problem of simple sales growth and net profit reduction.</p>
-            </div>
-            <div class="project">
-                <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                <h3>Sharing development/non-development tips and spreading tips through the company wiki page</h3>
-                <p>Wrote useful tips that can be used for development/non-development business through 'Cool Tips Collection.zip' more than once a month.</p>
-                <p>Achieved an average of 10 likes for posts. ex) Creating moving custom emoticons for Microsoft Teams, how to collectively transfer DB access to colleagues through Datagrip, basics on how to edit videos with FinalCutPro, Shinsegae Group company welfare tips</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="year-section">
-        <div class="year">2023</div>
-        <div class="projects">
-            <div class="project">
-                <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                <h3>[Hackathon] Interest-based recommendation system through pre-query search bar</h3>
-                <p>Participated as a one-person team. Planned, presented, and developed all.</p>
-                <p>Although it did not make the final rankings, it was selected as a patent review candidate. <a href="https://minwoo19930301.github.io/hackaton2023/" target="_blank">Demo prototype site</a></p>
-            </div>
-            <div class="project">
-                <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                <h3>Build a real-time inflow count aggregation process for each seller's statistics</h3>
-                <p>Introduced Spring Batch and Spring Kafka Consumer repository for the first time in our team.</p>
-                <p>Optimized data processing speed by first filtering by extracting host and path as substrings without parsing JSON string data containing indiscriminate requests from the entire company.</p>
-                <p>As a second step, an idea to quickly select only meaningful product page data using Regex and MutableMap, reducing processing time by more than 20%.</p>
-                <p>Introduced Kibana Dashboard and alerts through Microsoft Teams/Slack webhook within the team to monitor errors in this process.</p>
-            </div>
-            <div class="project">
-                <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                <h3>Activities as chief editor of the Gmarket Tech Blog</h3>
-                <p>Introduced Git-based PR workflow to simplify the contribution process and improve spelling and correction work efficiency.</p>
-                <p>Increased the number of visits from an average of 10 units per day to more than 500 by providing external site RSS and renewing the UI. Achieved a total of 450,000 visits.</p>
-                <p>Improved user experience by resolving CORS conflict issues, managing spam comments, and removing secret post options.</p>
-                <p><strong>List of blog posts directly contributed:</strong></p>
-                <ul>
-                    <li><a href="https://dev.gmarket.com/90" target="_blank">Jetbrains Cool Tips - Handy Hotkeys with Life Hacking Settings</a></li>
-                    <li><a href="https://dev.gmarket.com/95" target="_blank">Developer's DIY: Creating your own mobile invitation with Github Pages</a></li>
-                    <li><a href="https://dev.gmarket.com/101" target="_blank">Backend developer's difficult React calendar component making POV (feat. Props Drilling)</a></li>
-                    <li><a href="https://dev.gmarket.com/109" target="_blank">Improving query speed (reorganization of ESM 'Inquiry' function)</a></li>
-                    <li><a href="https://dev.gmarket.com/118" target="_blank">Gather new news faster and automatically with RSS</a></li>
-                </ul>
-            </div>
-            <div class="project">
-                <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                <h3>Frontend development of ESM(seller admin) statistics pages</h3>
-                <p>Frontend page development using React and Next.js.</p>
-                <p>Developed base code and prototype code for the first time in the team (3 out of 8 ESM reorganization statistics completed).</p>
-                <p>Developed chart and calendar UI components that are more advanced than other domains.</p>
-                <p>Introduced SSR method through layout, automated and standardized commit msg through husky and githook.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="year-section">
-        <div class="year">2024</div>
-        <div class="projects">
-            <div class="project">
-                <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                <h3>Reorganization of ESM inquiry page</h3>
-                <p>Renewed the emergency message and inquiry page for CS processing created in 2008.</p>
-                <p>Significantly increased the response rate by more than 5% by adding a multi-response function. Improved user experience and data stability by improving the message transmission method in the front end and introducing a temporary storage logic using browser cache storage.</p>
-                <p>Reduced the query speed from up to 1 minute to 0.3 seconds (approximately 200x performance improvement) by improving the processing method. Optimized query performance by processing multiple seller information into a single table with <code>OPENJSON</code> instead of the existing double FOR LOOP and multiple SP calls. <a href="https://www.youtube.com/watch?v=wMN2Niz0gp8" target="_blank">Performance comparison video</a></p>
-                <p>Increased speed by optimizing queries using <code>ISNULL(SUM(CASE WHEN ...))</code> method instead of GROUP BY in the backend. Example: Improved aggregation queries by type such as delivery, return, and cancellation.</p>
-                <p>Introduced integration testing based on <code>.http</code> files for test efficiency, improving development and maintenance productivity.</p>
-            </div>
-            <div class="project">
-                <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                <h3>Databricks migration of product page real-time inflow count aggregation process</h3>
-                <p>Changed the workflow to read and aggregate Databrick data loaded as a model for the company's requests.</p>
-                <p>Able to stop 12 Kafka consumer apps, Elasticsearch (TPS 77, 12GB), and 4 Spring Batch apps, reducing annual job costs to approximately 300,000 won.</p>
-            </div>
-            <div class="project">
-                <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                <h3>SSG.com seller linkage and customer inquiry linkage</h3>
-                <p>Built an environment for large-scale synchronization of seller and customer inquiry data between SSG.com and Gmarket. Implemented complex logic to manage product linkage depending on seller grade, type, and status changes.</p>
-                <p>Problem: Seller status (grade/type/status) changes in multiple domains, making synchronization detection difficult. To solve this problem, MsSQL Trigger was introduced.</p>
-                <p>When a seller consents or status changes, seller status linkage to SSG and product linkage status to the Item team are delivered in Batch (once a day).</p>
-                <p>Performed independently although resignation of 2 project team members, accomplished the due development date and maintained 3 or fewer failures for 3 months.</p>
-            </div>
-            <div class="project">
-                <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                <h3>Building PricingTF - third-party product matching and price analysis system</h3>
-                <p>Participated in initial planning and outsourcing selection of data flow to gain price competitiveness against external competitors.</p>
-                <p>Proposed and developed a new UX to improve the existing manual matching method (manual distribution between workers, then searching by product number and matching competitor products one by one). The proposed method is designed to have the system automatically select the product number and match competitor products from other companies, improving matching work speed by 3x.</p>
-                <p>Specifically, to prevent duplicate work by locking the moment of reading using findAndModify after setting it to be readable after 5 minutes by adding a datetime column to MongoDB. Admin development for outsourcing matching companies with .NET and Vue.</p>
-            </div>
-            <div class="project">
-                <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                <h3>Company-wide in-house learning session (SLS) presentation</h3>
-                <p>Presented at the Staff Learning Session (SLS), where employees participate as speakers, on the topic of 'Developing a program that anyone can use to replace work with the help of AI without spending a penny'.</p>
-                <p>Planned and conducted a low-cost session, introduced free AI utilization methods, methods to run programs without a server, and how to use free code editors. Received positive feedback from about 100 attendees, contributing to in-house technology sharing.</p>
-            </div>
-            <div class="project">
-                <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                <h3>Build a mapping pipeline for third-party search page product lists</h3>
-                <p>Developed a product data processing pipeline using Databricks in collaboration with the AI team. After the AI team extracts keywords based on our product data, a TSV list with duplicates removed by explode is generated through Spark.</p>
-                <p>Data is delivered to an outsourcing company, and when the outsourcing company returns a list of products collected from the search page for a day, the AI team matches it with our product name. Implemented a process to load the final result into MongoDB.</p>
-                <p>Introduced JWT authentication with an expiration date to strengthen security with outsourcing companies when transferring files.</p>
-            </div>
-            <div class="project">
-                <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                <h3>Chrome Extension Development for Outsourcing Partner's Automated Collection</h3>
-                <p>Developed a Chrome Extension app that automates the cumbersome process for our outsourcing partner's tasks, which involved visiting multiple sites one by one to check and compare product information.</p>
-                <p>With this extension, outsourcing personnel can easily analyze specific competitor product pages and efficiently collect necessary information (URL, price, category, etc.) for their matching and reporting tasks.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="tech-icons-container">
-    <div class="tech-icons" id="techIcons">
-        <img src="../icon/java.svg" alt="Java">
-        <img src="../icon/javascript.png" alt="JavaScript">
-        <img src="../icon/python.svg" alt="Python">
-        <img src="../icon/react.svg" alt="React">
-        <img src="../icon/mongodb.svg" alt="MongoDB">
-        <img src="../icon/aws.svg" alt="AWS">
-        <img src="../icon/nodejs.svg" alt="Node.js">
-        <img src="../icon/databricks.png" alt="Databricks">
-        <img src="../icon/vue.png" alt="Vue.js">
-        <img src="../icon/dotnet.svg" alt=".NET">
-        <img src="../icon/spring.svg" alt="Spring">
-        <img src="../icon/linux.png" alt="Linux">
-        <img src="../icon/mssql.png" alt="MSSQL">
-        <img src="../icon/kotlin.png" alt="Kotlin">
-    </div>
-</div>
-
-<script>
-    const techIcons = document.querySelector('#techIcons');
-    const clonedIcons = techIcons.cloneNode(true);
-    techIcons.appendChild(clonedIcons);
-
-    let scrollPosition = 0;
-
-    function scrollIcons() {
-        scrollPosition -= 1;
-        techIcons.style.transform = `translateX(${scrollPosition}px)`;
-
-        if (Math.abs(scrollPosition) >= techIcons.scrollWidth / 2) {
-            scrollPosition = 0;
+        if (path.includes('/kr/')) {
+            krTab.classList.add('active');
+        } else if (path.includes('/en/')) {
+            enTab.classList.add('active');
         }
-        requestAnimationFrame(scrollIcons);
-    }
-    scrollIcons();
-</script>
+    </script>
+
+    <div class="summary-container">
+        <ul class="summary-list">
+            <li class="edu">Kyunggi High School (2009.03 ~ 2012.02)</li>
+            <li class="edu">Sungkyunkwan University (2014.03 ~ 2020.02)</li>
+            <br />
+            <li class="wedata">WeDataLab Mobile Team Intern (2019.06 ~ 2019.08)</li>
+            <li class="lotte">Lotte e-Commerce Search Development Team Intern (2020.01 ~ 2020.02)</li>
+            <br />
+            <li class="lotte">Lotte e-Commerce Search Development Team (2020.08 ~ 2021.03)</li>
+            <li class="lotte">Lotte e-Commerce Data Platform Development Team (2021.03 ~ 2022.11)</li>
+            <li class="gmarket">Gmarket Seller & SD Engineering Team (2022.11 ~ 2024.10)</li>
+            <li class="gmarket">Gmarket Pricing Tech Engineering Team (2024.10 ~ 2025.11)</li>
+            <li class="gmarket">Gmarket MarTech Engineering (2025.11 ~ Current)</li>
+        </ul>
+    </div>
+
+    <div class="timeline-container">
+        <!-- 2019 -->
+        <div class="year-section">
+            <div class="year">2019</div>
+            <div class="projects">
+                <div class="project">
+                    <img src="../icon/WeDataLab.png" alt="WeDataLab Icon" class="project-icon">
+                    <h3>[Intern] Development of a Simple Webview App Using React Native</h3>
+                    <p>Developed a simple app using Webview to enable an existing website to run on mobile.</p>
+                    <p>Added functions for cookie and session management and configured the navigator.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2020 -->
+        <div class="year-section">
+            <div class="year">2020</div>
+            <div class="projects">
+                <div class="project">
+                    <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
+                    <h3>[Intern] Participated in Integrated EC Development (now so-called Lotte ON) and Lotte Department
+                        Store's Premium Site Development</h3>
+                    <p>Developed the 'Best' catalog page and a hamburger menu for the Lotte Department Store Premium
+                        site.</p>
+                    <p>Configured screens using Freemarker by combining server APIs with HTML from web publishers.</p>
+                    <p>Implemented a function to list A-Z brand names and display the starting index of a new alphabet
+                        (e.g., B when transitioning from Azure to Barbie). However, encountered memory shortage issues
+                        when using Map structures in Freemarker.</p>
+                    <p>Optimized by storing only the first letter of the previous alphabet in memory and marking the
+                        index when a new alphabet appeared in a for loop, reducing memory load and successfully
+                        implementing the feature.</p>
+                </div>
+                <div class="project">
+                    <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
+                    <h3>Admin Page Development for Client's Search Backlogs</h3>
+                    <p>Developed a back-office system to simply retrieve client search term backlog data stored in
+                        AuroraDB.</p>
+                    <p>Built using Spring Web and basic HTML, CSS, and JS.</p>
+                </div>
+            </div>
+        </div>
+        <div class="year-section">
+            <div class="year">2021</div>
+            <div class="projects">
+                <div class="project">
+                    <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
+                    <h3>Development of a automated program for transferring price data</h3>
+                    <p>Developed code to sequentially download approximately 130,000 Excel files using Python and
+                        BeautifulSoup to collect all data from another site's seller admin.</p>
+                    <p>Implemented a pipeline that loads the downloaded Excel files into the DB in bulk using the
+                        <code>LOAD DATA</code> command. To solve speed degradation and memory problems due to large data
+                        processing, adopted a sequential processing method by file unit.
+                    </p>
+                    <p>Tested with Parallels considering OS differences (Windows environment) so that the operation team
+                        can execute it directly, and then converted it into an executable file (.exe) using PyInstaller
+                        for distribution. Provided an environment that is easy for non-developers to use.</p>
+                </div>
+                <div class="project">
+                    <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
+                    <h3>Building DB monitoring function</h3>
+                    <p>Developed a bash program that notifies the DB status value with Slack alarm.</p>
+                    <p>Monitors DB deadlocks by periodically checking Performance_schema and Information_schema.</p>
+                    <p>Designed to be checked every minute through cron, and backgrounded through tmux.</p>
+                </div>
+                <div class="project">
+                    <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
+                    <h3>Changed PCS domain's back office admin to use React</h3>
+                    <p>Renewed the back office frontend composed of existing axboot.js to React.</p>
+                    <p>Performed load balancing work by adding Nginx to the Apache httpd root.</p>
+                    <p>Maximized reusability by separating components into minimum units, shortening the average period
+                        of subsequent tasks by 2 weeks.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="year-section">
+            <div class="year">2022</div>
+            <div class="projects">
+                <div class="project">
+                    <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
+                    <h3>Test execution and Job Orchestration through Jenkins</h3>
+                    <p>Built a system that integrates and manages build, test, deployment, execution, log check, and
+                        server pre/post relationships in Jenkins. Automated large-capacity data processing tasks based
+                        on Spring Batch without server access.</p>
+                    <p>Improved the inefficient process where developers had to manually run Batch code and check logs
+                        by accessing the server. Implemented CI/CD integration and job dependency management using
+                        Jenkins Pipeline.</p>
+                    <p>Designed to be dynamically adjustable using Parameterized Trigger and Groovy script to solve the
+                        difficulty of adding order guarantee and retry logic when running multiple jobs.</p>
+                    <p>The achievement was selected as the first article on the company's technical blog and recorded,
+                        and shared by participating as a three-person presenter in June 2022: <a
+                            href="https://medium.com/lotteon-tech-blog/d-142cbbd5010" target="_blank">Blog Post</a></p>
+                </div>
+                <div class="project">
+                    <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
+                    <h3>Transition from Batch to Stream for product price data's synchronization</h3>
+                    <p>Improved the product price information DB synchronization process for dynamic pricing. The
+                        previous method was to read data with batch after DB replication, processing 400GB of data.</p>
+                    <p>Problem: Since the Batch method first truncates and then refills the price information, an error
+                        occurs due to data blank when another dynamic pricing job is executed during synchronization. To
+                        solve this problem, a strategy was introduced to stack data in a temporary table instead of
+                        Truncate and then replace the table with <code>RENAME</code>.</p>
+                    <p>Additional issue: As the number of products increased, the synchronization job time itself became
+                        longer and the jobs overlapped. Finally, after initial loading with <code>mysqldump</code>, a
+                        Kafka consuming app was developed to reflect only the changes in real time.</p>
+                    <p>Achievement: Expanded the number of discounted products from 50 million to 280 million, and
+                        achieved real-time price data. Enhanced stability by designing <code>Poison Pill</code>
+                        processing logic and Row Lock prevention transactions.</p>
+                </div>
+                <div class="project">
+                    <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
+                    <h3>Renewal of main Batch of product price change system</h3>
+                    <p>Optimized the price change processing speed by applying Kafka-based parallel processing and
+                        Producer-Consumer pattern.</p>
+                    <p>Shortened the process time from 1.5 hours to 10-20 minutes using branch processing and parallel
+                        processing through Enum and Maps.</p>
+                    <p>Achieved the number one lowest price share in Naver (as of December 2021) by catching up with the
+                        competitor's lowest price share speed. Implemented a response tailored to the company's strategy
+                        by adjusting the discount ratio to solve the problem of simple sales growth and net profit
+                        reduction.</p>
+                </div>
+                <div class="project">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>Sharing development/non-development tips and spreading tips through the company wiki page</h3>
+                    <p>Wrote useful tips that can be used for development/non-development business through 'Cool Tips
+                        Collection.zip' more than once a month.</p>
+                    <p>Achieved an average of 10 likes for posts. ex) Creating moving custom emoticons for Microsoft
+                        Teams, how to collectively transfer DB access to colleagues through Datagrip, basics on how to
+                        edit videos with FinalCutPro, Shinsegae Group company welfare tips</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="year-section">
+            <div class="year">2023</div>
+            <div class="projects">
+                <div class="project">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>[Hackathon] Interest-based recommendation system through pre-query search bar</h3>
+                    <p>Participated as a one-person team. Planned, presented, and developed all.</p>
+                    <p>Although it did not make the final rankings, it was selected as a patent review candidate. <a
+                            href="https://minwoo19930301.github.io/hackaton2023/" target="_blank">Demo prototype
+                            site</a></p>
+                </div>
+                <div class="project">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>Build a real-time inflow count aggregation process for each seller's statistics</h3>
+                    <p>Introduced Spring Batch and Spring Kafka Consumer repository for the first time in our team.</p>
+                    <p>Optimized data processing speed by first filtering by extracting host and path as substrings
+                        without parsing JSON string data containing indiscriminate requests from the entire company.</p>
+                    <p>As a second step, an idea to quickly select only meaningful product page data using Regex and
+                        MutableMap, reducing processing time by more than 20%.</p>
+                    <p>Introduced Kibana Dashboard and alerts through Microsoft Teams/Slack webhook within the team to
+                        monitor errors in this process.</p>
+                </div>
+                <div class="project">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>Activities as chief editor of the Gmarket Tech Blog</h3>
+                    <p>Introduced Git-based PR workflow to simplify the contribution process and improve spelling and
+                        correction work efficiency.</p>
+                    <p>Increased the number of visits from an average of 10 units per day to more than 500 by providing
+                        external site RSS and renewing the UI. Achieved a total of 450,000 visits.</p>
+                    <p>Improved user experience by resolving CORS conflict issues, managing spam comments, and removing
+                        secret post options.</p>
+                    <p><strong>List of blog posts directly contributed:</strong></p>
+                    <ul>
+                        <li><a href="https://dev.gmarket.com/90" target="_blank">Jetbrains Cool Tips - Handy Hotkeys
+                                with Life Hacking Settings</a></li>
+                        <li><a href="https://dev.gmarket.com/95" target="_blank">Developer's DIY: Creating your own
+                                mobile invitation with Github Pages</a></li>
+                        <li><a href="https://dev.gmarket.com/101" target="_blank">Backend developer's difficult React
+                                calendar component making POV (feat. Props Drilling)</a></li>
+                        <li><a href="https://dev.gmarket.com/109" target="_blank">Improving query speed (reorganization
+                                of ESM 'Inquiry' function)</a></li>
+                        <li><a href="https://dev.gmarket.com/118" target="_blank">Gather new news faster and
+                                automatically with RSS</a></li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>Frontend development of ESM(seller admin) statistics pages</h3>
+                    <p>Frontend page development using React and Next.js.</p>
+                    <p>Developed base code and prototype code for the first time in the team (3 out of 8 ESM
+                        reorganization statistics completed).</p>
+                    <p>Developed chart and calendar UI components that are more advanced than other domains.</p>
+                    <p>Introduced SSR method through layout, automated and standardized commit msg through husky and
+                        githook.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="year-section">
+            <div class="year">2024</div>
+            <div class="projects">
+                <div class="project">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>Reorganization of ESM inquiry page</h3>
+                    <p>Renewed the emergency message and inquiry page for CS processing created in 2008.</p>
+                    <p>Significantly increased the response rate by more than 5% by adding a multi-response function.
+                        Improved user experience and data stability by improving the message transmission method in the
+                        front end and introducing a temporary storage logic using browser cache storage.</p>
+                    <p>Reduced the query speed from up to 1 minute to 0.3 seconds (approximately 200x performance
+                        improvement) by improving the processing method. Optimized query performance by processing
+                        multiple seller information into a single table with <code>OPENJSON</code> instead of the
+                        existing double FOR LOOP and multiple SP calls. <a
+                            href="https://www.youtube.com/watch?v=wMN2Niz0gp8" target="_blank">Performance comparison
+                            video</a></p>
+                    <p>Increased speed by optimizing queries using <code>ISNULL(SUM(CASE WHEN ...))</code> method
+                        instead of GROUP BY in the backend. Example: Improved aggregation queries by type such as
+                        delivery, return, and cancellation.</p>
+                    <p>Introduced integration testing based on <code>.http</code> files for test efficiency, improving
+                        development and maintenance productivity.</p>
+                </div>
+                <div class="project">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>Databricks migration of product page real-time inflow count aggregation process</h3>
+                    <p>Changed the workflow to read and aggregate Databrick data loaded as a model for the company's
+                        requests.</p>
+                    <p>Able to stop 12 Kafka consumer apps, Elasticsearch (TPS 77, 12GB), and 4 Spring Batch apps,
+                        reducing annual job costs to approximately 300,000 won.</p>
+                </div>
+                <div class="project">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>SSG.com seller linkage and customer inquiry linkage</h3>
+                    <p>Built an environment for large-scale synchronization of seller and customer inquiry data between
+                        SSG.com and Gmarket. Implemented complex logic to manage product linkage depending on seller
+                        grade, type, and status changes.</p>
+                    <p>Problem: Seller status (grade/type/status) changes in multiple domains, making synchronization
+                        detection difficult. To solve this problem, MsSQL Trigger was introduced.</p>
+                    <p>When a seller consents or status changes, seller status linkage to SSG and product linkage status
+                        to the Item team are delivered in Batch (once a day).</p>
+                    <p>Performed independently although resignation of 2 project team members, accomplished the due
+                        development date and maintained 3 or fewer failures for 3 months.</p>
+                </div>
+                <div class="project">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>Building PricingTF - third-party product matching and price analysis system</h3>
+                    <p>Participated in initial planning and outsourcing selection of data flow to gain price
+                        competitiveness against external competitors.</p>
+                    <p>Proposed and developed a new UX to improve the existing manual matching method (manual
+                        distribution between workers, then searching by product number and matching competitor products
+                        one by one). The proposed method is designed to have the system automatically select the product
+                        number and match competitor products from other companies, improving matching work speed by 3x.
+                    </p>
+                    <p>Specifically, to prevent duplicate work by locking the moment of reading using findAndModify
+                        after setting it to be readable after 5 minutes by adding a datetime column to MongoDB. Admin
+                        development for outsourcing matching companies with .NET and Vue.</p>
+                </div>
+                <div class="project">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>Company-wide in-house learning session (SLS) presentation</h3>
+                    <p>Presented at the Staff Learning Session (SLS), where employees participate as speakers, on the
+                        topic of 'Developing a program that anyone can use to replace work with the help of AI without
+                        spending a penny'.</p>
+                    <p>Planned and conducted a low-cost session, introduced free AI utilization methods, methods to run
+                        programs without a server, and how to use free code editors. Received positive feedback from
+                        about 100 attendees, contributing to in-house technology sharing.</p>
+                </div>
+                <div class="project">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>Build a mapping pipeline for third-party search page product lists</h3>
+                    <p>Developed a product data processing pipeline using Databricks in collaboration with the AI team.
+                        After the AI team extracts keywords based on our product data, a TSV list with duplicates
+                        removed by explode is generated through Spark.</p>
+                    <p>Data is delivered to an outsourcing company, and when the outsourcing company returns a list of
+                        products collected from the search page for a day, the AI team matches it with our product name.
+                        Implemented a process to load the final result into MongoDB.</p>
+                    <p>Introduced JWT authentication with an expiration date to strengthen security with outsourcing
+                        companies when transferring files.</p>
+                </div>
+                <div class="project">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>Chrome Extension Development for Outsourcing Partner's Automated Collection</h3>
+                    <p>Developed a Chrome Extension app that automates the cumbersome process for our outsourcing
+                        partner's tasks, which involved visiting multiple sites one by one to check and compare product
+                        information.</p>
+                    <p>With this extension, outsourcing personnel can easily analyze specific competitor product pages
+                        and efficiently collect necessary information (URL, price, category, etc.) for their matching
+                        and reporting tasks.</p>
+                </div>
+                <div class="project">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>2nd Company-wide Staff Learning Session (SLS) Presentation - AI Agents & Crawling</h3>
+                    <p>Presented on static/dynamic crawling technologies and the 6 stages of AI evolution (Cognitive,
+                        Generative, RAG, MCP, Agent, Physical).</p>
+                    <p>Demonstrated a live <strong>AI Browser Agent</strong> incorporating the latest <strong>MCP (Model
+                            Context Protocol)</strong> technology, proposing next-generation web automation and workflow
+                        efficiency strategies.</p>
+                </div>
+                <div class="project">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>Established Java Extension for Shared .NET Admin System (Pricing Management Admin)</h3>
+                    <p>Designed and implemented a subdomain-based hybrid architecture enabling Java (Spring Boot)
+                        development within an existing admin environment primarily operated on .NET.</p>
+                    <p>Built a standardized <code>Spring Boot + Thymeleaf</code> admin template that shares backend
+                        resources and UI/UX with the legacy .NET admin, resolving technology dependency issues by
+                        enabling seamless Java-based feature expansion within the existing .NET ecosystem.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="tech-icons-container">
+        <div class="tech-icons" id="techIcons">
+            <img src="../icon/java.svg" alt="Java">
+            <img src="../icon/javascript.png" alt="JavaScript">
+            <img src="../icon/python.svg" alt="Python">
+            <img src="../icon/react.svg" alt="React">
+            <img src="../icon/mongodb.svg" alt="MongoDB">
+            <img src="../icon/aws.svg" alt="AWS">
+            <img src="../icon/nodejs.svg" alt="Node.js">
+            <img src="../icon/databricks.png" alt="Databricks">
+            <img src="../icon/vue.png" alt="Vue.js">
+            <img src="../icon/dotnet.svg" alt=".NET">
+            <img src="../icon/spring.svg" alt="Spring">
+            <img src="../icon/linux.png" alt="Linux">
+            <img src="../icon/mssql.png" alt="MSSQL">
+            <img src="../icon/kotlin.png" alt="Kotlin">
+        </div>
+    </div>
+
+    <script>
+        // Seamless Infinite Scroll Setup
+        const techIcons = document.querySelector('#techIcons');
+        const originalIcons = Array.from(techIcons.children);
+
+        // Clone all icons and append them to create a seamless loop
+        originalIcons.forEach(icon => {
+            const clone = icon.cloneNode(true);
+            techIcons.appendChild(clone);
+        });
+    </script>
 
 </body>
 <footer class="main-footer">
     <div class="social-links">
         <a href="https://blog.naver.com/rlaalsdn456456" target="_blank">
-            <img src="https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2020%2F04%2F5e8fd82761663.png&w=96&h=96&q=100" alt="Blog Icon">
+            <img src="https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2020%2F04%2F5e8fd82761663.png&w=96&h=96&q=100"
+                alt="Blog Icon">
             Blog
         </a>
-        <a href="https://www.facebook.com/people/%EA%B9%80%EB%AF%BC%EC%9A%B0/pfbid0D1txo4RpxXeX2oRCAaqQuY4iZ1CTQfogBgHyorQ2mFyw9dr8iYSqLTgvKijpGqaMl/" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook Icon">
+        <a href="https://www.facebook.com/people/%EA%B9%80%EB%AF%BC%EC%9A%B0/pfbid0D1txo4RpxXeX2oRCAaqQuY4iZ1CTQfogBgHyorQ2mFyw9dr8iYSqLTgvKijpGqaMl/"
+            target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
+                alt="Facebook Icon">
             Facebook
         </a>
         <a href="https://www.linkedin.com/in/%EB%AF%BC%EC%9A%B0-%EA%B9%80-307124246/" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn Icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                alt="LinkedIn Icon">
             LinkedIn
         </a>
         <a href="https://github.com/minwoo19930301" target="_blank">
@@ -305,4 +413,5 @@
         </a>
     </div>
 </footer>
+
 </html>
