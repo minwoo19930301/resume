@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김민우 - 교육 경력</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Video Container for Responsive Aspect Ratio */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* 16:9 Aspect Ratio */
+            height: 0;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Hide YouTube logo (bottom-right) */
+        .video-container::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 120px;
+            height: 50px;
+            background: #000;
+            pointer-events: auto;
+            z-index: 10;
+            border-radius: 0 0 8px 0;
+        }
+
+
+
+        /* Block click on title (top-left) */
+        .video-blocker {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80%;
+            height: 60px;
+            background: transparent;
+            pointer-events: auto;
+            z-index: 10;
+        }
+
+        .video-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        /* Preview overlay */
+        .preview-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 20;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .preview-overlay.active {
+            display: flex;
+        }
+
+        .preview-overlay h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .preview-overlay p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Custom start overlay to hide YouTube preview */
+        .video-start-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 15;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .video-start-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 0, 0, 0.9);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            background: rgba(255, 0, 0, 1);
+        }
+
+        .play-button::after {
+            content: '';
+            border-style: solid;
+            border-width: 15px 0 15px 25px;
+            border-color: transparent transparent transparent white;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="profile-info">
+            <div class="language-tabs">
+                <a href="../kr/index.html" class="language-tab kr-tab">한국어</a>
+                <a href="../en/index.html" class="language-tab en-tab">English</a>
+                <a href="#" class="language-tab active"
+                    style="background-color: white; color: var(--text-primary);">교육</a>
+            </div>
+            <strong class="name">김 민 우</strong>
+            <span class="contact">
+                Phone: <a href="tel:+821076463634">+8210-7646-3634</a>
+            </span>
+            <span class="contact">
+                Email: <a href="mailto:rlaalsdn456456@naver.com">rlaalsdn456456@naver.com</a>
+            </span>
+        </div>
+        <img class="profile-pic" src="../img/pic.jpeg" alt="Profile Picture">
+    </header>
+
+    <div class="summary-container">
+        <ul class="summary-list">
+            <li class="edu">서울 S중학교 교생</li>
+            <li class="edu">G마켓, 롯데e커머스 사내 강의 진행 (강의 영상 2)</li>
+            <li class="edu">M사 교육회사 프로젝트 심사위원</li>
+            <li class="edu">M사 교육회사 취준생 특강 강사</li>
+            <li class="edu">E사 프로젝트 심사위원</li>
+            <li class="edu">E사 멘토링 멘토</li>
+            <li class="edu">서울 S 중학교 특강 강사</li>
+            <li class="edu">서울 J 초등학교 특강 강사</li>
+            <li class="edu">M 방송국 아카데미 특강 강사</li>
+            <li class="edu">반포잠원 교육지원센터 특강 강사</li>
+            <li class="edu">과외형 스터디 12회 진행</li>
+        </ul>
+    </div>
+
+    <div class="timeline-container">
+        <div class="year-section">
+            <div class="year">Videos</div>
+            <div class="projects">
+                <!-- In-house Lectures -->
+                <div class="project">
+                    <!-- Icon placeholder or reuse generic -->
+                    <div
+                        style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
+                        강의</div>
+                    <h3>전직원 대상 사내 강의</h3>
+                    <p>G마켓, 롯데e커머스 전 임직원 대상 기술 세미나 및 업무 효율화 강의</p>
+                    <div class="video-group">
+                        <div class="video-container">
+                            <div id="player1"></div>
+                            <div class="video-blocker"></div>
+                            <div class="video-start-overlay" id="start1" onclick="startVideo(1)">
+                                <div class="play-button"></div>
+                            </div>
+                            <div class="preview-overlay" id="overlay1">
+                                <h4>미리보기 종료</h4>
+                                <p>10분 미리보기가 끝났습니다</p>
+                            </div>
+                        </div>
+                        <div class="video-container">
+                            <div id="player2"></div>
+                            <div class="video-blocker"></div>
+                            <div class="video-start-overlay" id="start2" onclick="startVideo(2)">
+                                <div class="play-button"></div>
+                            </div>
+                            <div class="preview-overlay" id="overlay2">
+                                <h4>미리보기 종료</h4>
+                                <p>10분 미리보기가 끝났습니다</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Seeker Special -->
+                <div class="project">
+                    <div
+                        style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
+                        특강</div>
+                    <h3>M사 교육회사 - 취준생 대상 특강</h3>
+                    <div class="video-container">
+                        <div id="player3"></div>
+                        <div class="video-blocker"></div>
+                        <div class="video-start-overlay" id="start3" onclick="startVideo(3)">
+                            <div class="play-button"></div>
+                        </div>
+                        <div class="preview-overlay" id="overlay3">
+                            <h4>미리보기 종료</h4>
+                            <p>10분 미리보기가 끝났습니다</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Elementary/Middle School Special -->
+                <div class="project">
+                    <div
+                        style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
+                        특강</div>
+                    <h3>초/중학생 대상 특강</h3>
+                    <p><a href="https://padlet.com/minwookim920/padlet-j7t1rvqzmqcbeezr" target="_blank">강의 자료
+                            (Padlet)</a></p>
+                    <div class="video-container">
+                        <div id="player4"></div>
+                        <div class="video-blocker"></div>
+                        <div class="video-start-overlay" id="start4" onclick="startVideo(4)">
+                            <div class="play-button"></div>
+                        </div>
+                        <div class="preview-overlay" id="overlay4">
+                            <h4>미리보기 종료</h4>
+                            <p>10분 미리보기가 끝났습니다</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banpo/Jamwon Special -->
+                <div class="project">
+                    <div
+                        style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
+                        특강</div>
+                    <h3>반포잠원 교육지원센터 특강</h3>
+                    <div class="video-container">
+                        <div id="player5"></div>
+                        <div class="video-blocker"></div>
+                        <div class="video-start-overlay" id="start5" onclick="startVideo(5)">
+                            <div class="play-button"></div>
+                        </div>
+                        <div class="preview-overlay" id="overlay5">
+                            <h4>미리보기 종료</h4>
+                            <p>10분 미리보기가 끝났습니다</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Collapsible Sections -->
+    <div style="max-width: 800px; margin: 40px auto; padding: 0 20px;">
+
+        <!-- Tutoring Section -->
+        <details class="project" style="margin-bottom: 24px; cursor: pointer;">
+            <summary style="font-size: 18px; font-weight: 700; padding: 10px 0; list-style: none;">
+                📚 무료 시범과외 + 무제한 무료 Q&A 진행
+                <span style="float: right; font-size: 14px; color: #666;">▼ 펼치기</span>
+            </summary>
+            <div style="padding: 20px 0; color: var(--text-secondary); font-size: 15px; line-height: 1.8;">
+                <p><strong>대상:</strong> 비전공자 및 개발 입문자</p>
+                <p><strong>방식:</strong> Google Meets 온라인 진행 (대면 협의 가능)</p>
+                <p><strong>성과:</strong> 총 12명 지도, 2명 IT 업계 취업 성공, 1명 컴퓨터 과목 연속 만점</p>
+                <p style="margin-top: 15px;"><strong>백엔드 커리큘럼:</strong></p>
+                <ul style="margin: 10px 0; padding-left: 20px;">
+                    <li>개발 테크트리 소개 및 기술 스택 개요</li>
+                    <li>변수와 상수 - 메모리 관점에서 차이점</li>
+                    <li>조건문과 반복문 - 프로그램 흐름 제어</li>
+                    <li>함수 - 정의, 호출, 재사용성</li>
+                    <li>객체지향 프로그래밍 - 클래스와 객체</li>
+                    <li>인터페이스와 상속 - 코드 재사용과 확장성</li>
+                    <li>이후 학생 수준에 맞춰 맞춤형 진행</li>
+                </ul>
+                <p style="margin-top: 15px; color: #666; font-size: 14px;">
+                    * 문과 출신 개발자로서 비전공자의 어려움을 이해하며, 쉬운 설명에 강점
+                </p>
+            </div>
+        </details>
+
+        <!-- Mentoring Section -->
+        <details class="project" style="margin-bottom: 24px; cursor: pointer;">
+            <summary style="font-size: 18px; font-weight: 700; padding: 10px 0; list-style: none;">
+                🏆 E사 프로젝트 멘토링 (최종 1등)
+                <span style="float: right; font-size: 14px; color: #666;">▼ 펼치기</span>
+            </summary>
+            <div style="padding: 20px 0; color: var(--text-secondary); font-size: 15px; line-height: 1.8;">
+                <p><strong>프로젝트:</strong> MSA를 활용한 배달 중계 플랫폼</p>
+                <p><strong>기간:</strong> 7회차 멘토링 (총 21시간)</p>
+                <p><strong>멘티:</strong> 풀스택 백엔드 개발자 양성과정 8기 5명</p>
+                <p><strong>결과:</strong> <span style="color: #22c55e; font-weight: bold;">🥇 최종 발표 1등</span></p>
+
+                <p style="margin-top: 15px;"><strong>멘토링 주요 내용:</strong></p>
+                <ul style="margin: 10px 0; padding-left: 20px;">
+                    <li>MSA 아키텍처 설계 및 서비스 분리 전략</li>
+                    <li>N+1 문제 해결을 위한 벌크(Bulk) 조회 최적화</li>
+                    <li>분산 락 적용 및 부하 테스트 가이드</li>
+                    <li>발표 스크립트 코칭 및 기술 용어 정확성 검토</li>
+                    <li>UI/UX 피드백 및 불필요한 DB 호출 최적화</li>
+                    <li>트랜잭션 관리 및 롤백/보상 트랜잭션 설계</li>
+                </ul>
+                <p style="margin-top: 15px; color: #666; font-size: 14px;">
+                    * 발표 리허설부터 코드리뷰, 아키텍처 설계까지 전 과정 멘토링
+                </p>
+            </div>
+        </details>
+    </div>
+
+    <div class="tech-icons-container">
+        <div class="tech-icons" id="techIcons">
+            <img src="../icon/java.svg" alt="Java">
+            <img src="../icon/javascript.png" alt="JavaScript">
+            <img src="../icon/python.svg" alt="Python">
+            <img src="../icon/react.svg" alt="React">
+            <img src="../icon/mongodb.svg" alt="MongoDB">
+            <img src="../icon/aws.svg" alt="AWS">
+            <img src="../icon/nodejs.svg" alt="Node.js">
+            <img src="../icon/databricks.png" alt="Databricks">
+            <img src="../icon/vue.png" alt="Vue.js">
+            <img src="../icon/dotnet.svg" alt=".NET">
+            <img src="../icon/spring.svg" alt="Spring">
+            <img src="../icon/linux.png" alt="Linux">
+            <img src="../icon/mssql.png" alt="MSSQL">
+            <img src="../icon/kotlin.png" alt="Kotlin">
+        </div>
+    </div>
+
+    <!-- YouTube IFrame API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        // Video configurations: id, videoId, overlayId
+        const videoConfigs = [
+            { playerId: 'player1', videoId: 'FxWNbtI7ZUo', overlayId: 'overlay1' },
+            { playerId: 'player2', videoId: 'Vjb-if9VExQ', overlayId: 'overlay2' },
+            { playerId: 'player3', videoId: '9Z50ZpOrFbk', overlayId: 'overlay3' },
+            { playerId: 'player4', videoId: 'e4z_Evproq4', overlayId: 'overlay4' },
+            { playerId: 'player5', videoId: 'eww3FXMflp4', overlayId: 'overlay5' }
+        ];
+
+        const players = {};
+        const MAX_TIME = 600; // 10 minutes in seconds
+
+        function onYouTubeIframeAPIReady() {
+            videoConfigs.forEach(config => {
+                players[config.playerId] = new YT.Player(config.playerId, {
+                    height: '100%',
+                    width: '100%',
+                    videoId: config.videoId,
+                    playerVars: {
+                        'modestbranding': 1,
+                        'rel': 0,
+                        'showinfo': 0,
+                        'fs': 0,  // Disable fullscreen
+                        'disablekb': 1  // Disable keyboard
+                    },
+                    events: {
+                        'onStateChange': (event) => onPlayerStateChange(event, config)
+                    }
+                });
+            });
+        }
+
+        function onPlayerStateChange(event, config) {
+            if (event.data === YT.PlayerState.PLAYING) {
+                // Start checking time
+                const checkInterval = setInterval(() => {
+                    const player = players[config.playerId];
+                    if (player && player.getCurrentTime) {
+                        const currentTime = player.getCurrentTime();
+                        if (currentTime >= MAX_TIME) {
+                            player.pauseVideo();
+                            document.getElementById(config.overlayId).classList.add('active');
+                            clearInterval(checkInterval);
+                        }
+                    }
+                }, 1000);
+            }
+        }
+
+        // Function to start video when custom play button is clicked
+        function startVideo(playerNum) {
+            const startOverlay = document.getElementById('start' + playerNum);
+            const player = players['player' + playerNum];
+
+            // Hide the start overlay
+            startOverlay.classList.add('hidden');
+
+            // Play the video
+            if (player && player.playVideo) {
+                player.playVideo();
+            }
+        }
+
+        // Seamless Infinite Scroll Setup
+        const techIcons = document.querySelector('#techIcons');
+        const originalIcons = Array.from(techIcons.children);
+
+        // Clone all icons and append them to create a seamless loop
+        originalIcons.forEach(icon => {
+            const clone = icon.cloneNode(true);
+            techIcons.appendChild(clone);
+        });
+    </script>
+
+</body>
+<footer class="main-footer">
+    <div class="social-links">
+        <a href="https://blog.naver.com/rlaalsdn456456" target="_blank">
+            <img src="https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2020%2F04%2F5e8fd82761663.png&w=96&h=96&q=100"
+                alt="Blog Icon">
+            블로그
+        </a>
+        <a href="https://www.facebook.com/people/%EA%B9%80%EB%AF%BC%EC%9A%B0/pfbid0D1txo4RpxXeX2oRCAaqQuY4iZ1CTQfogBgHyorQ2mFyw9dr8iYSqLTgvKijpGqaMl/"
+            target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
+                alt="Facebook Icon">
+            페이스북
+        </a>
+        <a href="https://www.linkedin.com/in/%EB%AF%BC%EC%9A%B0-%EA%B9%80-307124246/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                alt="LinkedIn Icon">
+            링크드인
+        </a>
+        <a href="https://github.com/minwoo19930301" target="_blank">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Icon">
+            깃허브
+        </a>
+    </div>
+</footer>
+
+</html>
