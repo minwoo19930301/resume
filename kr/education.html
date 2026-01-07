@@ -43,7 +43,21 @@
             border-radius: 0 0 8px 0;
         }
 
-
+        /* Hide share/watch later buttons (top-right) */
+        .video-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 180px;
+            height: 70px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            pointer-events: auto;
+            z-index: 10;
+            border-radius: 0 8px 0 0;
+        }
 
         /* Block click on title (top-left) */
         .video-blocker {
@@ -168,7 +182,7 @@
     <div class="summary-container">
         <ul class="summary-list">
             <li class="edu">서울 S중학교 교생</li>
-            <li class="edu">G마켓, 롯데e커머스 사내 강의 진행 (강의 영상 2)</li>
+            <li class="edu">G마켓, 롯데e커머스 사내 강의 진행 </li>
             <li class="edu">M사 교육회사 프로젝트 심사위원</li>
             <li class="edu">M사 교육회사 취준생 특강 강사</li>
             <li class="edu">E사 프로젝트 심사위원</li>
@@ -176,166 +190,201 @@
             <li class="edu">서울 S 중학교 특강 강사</li>
             <li class="edu">서울 J 초등학교 특강 강사</li>
             <li class="edu">M 방송국 아카데미 특강 강사</li>
-            <li class="edu">반포잠원 교육지원센터 특강 강사</li>
-            <li class="edu">과외형 스터디 12회 진행</li>
+            <li class="edu">과외형 스터디 진행</li>
         </ul>
     </div>
 
     <div class="timeline-container">
         <div class="year-section">
-            <div class="year">Videos</div>
+            <div class="year">특강</div>
             <div class="projects">
-                <!-- In-house Lectures -->
-                <div class="project">
-                    <!-- Icon placeholder or reuse generic -->
-                    <div
-                        style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
-                        강의</div>
-                    <h3>전직원 대상 사내 강의</h3>
-                    <p>G마켓, 롯데e커머스 전 임직원 대상 기술 세미나 및 업무 효율화 강의</p>
-                    <div class="video-group">
-                        <div class="video-container">
-                            <div id="player1"></div>
-                            <div class="video-blocker"></div>
-                            <div class="video-start-overlay" id="start1" onclick="startVideo(1)">
-                                <div class="play-button"></div>
+                <!-- In-house Lectures Group -->
+                <details open style="margin-bottom: 30px;">
+                    <summary
+                        style="cursor: pointer; font-size: 20px; font-weight: bold; padding: 10px 0; outline: none;">
+                        🏛️ 사내 기술 강의 시연
+                        <span style="float: right; font-size: 14px; color: #666;">▼ 펼치기</span>
+                    </summary>
+                    <div class="project" style="margin-top: 20px;">
+                        <div
+                            style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
+                            강의</div>
+                        <h3>전직원 대상 사내 강의</h3>
+                        <p>G마켓, 롯데e커머스 전 임직원 대상 기술 세미나 및 업무 효율화 강의</p>
+                        <div class="video-group">
+                            <div class="video-container">
+                                <div id="player1"></div>
+                                <div class="video-blocker"></div>
+                                <div class="video-start-overlay" id="start1" onclick="startVideo(1)">
+                                    <div class="play-button"></div>
+                                </div>
+                                <div class="preview-overlay" id="overlay1">
+                                    <h4>미리보기 종료</h4>
+                                    <p>10분 미리보기가 끝났습니다</p>
+                                </div>
                             </div>
-                            <div class="preview-overlay" id="overlay1">
-                                <h4>미리보기 종료</h4>
-                                <p>10분 미리보기가 끝났습니다</p>
-                            </div>
-                        </div>
-                        <div class="video-container">
-                            <div id="player2"></div>
-                            <div class="video-blocker"></div>
-                            <div class="video-start-overlay" id="start2" onclick="startVideo(2)">
-                                <div class="play-button"></div>
-                            </div>
-                            <div class="preview-overlay" id="overlay2">
-                                <h4>미리보기 종료</h4>
-                                <p>10분 미리보기가 끝났습니다</p>
+                            <div class="video-container">
+                                <div id="player2"></div>
+                                <div class="video-blocker"></div>
+                                <div class="video-start-overlay" id="start2" onclick="startVideo(2)">
+                                    <div class="play-button"></div>
+                                </div>
+                                <div class="preview-overlay" id="overlay2">
+                                    <h4>미리보기 종료</h4>
+                                    <p>10분 미리보기가 끝났습니다</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </details>
 
-                <!-- Job Seeker Special -->
-                <div class="project">
-                    <div
-                        style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
-                        특강</div>
-                    <h3>M사 교육회사 - 취준생 대상 특강</h3>
-                    <div class="video-container">
-                        <div id="player3"></div>
-                        <div class="video-blocker"></div>
-                        <div class="video-start-overlay" id="start3" onclick="startVideo(3)">
-                            <div class="play-button"></div>
+                <!-- Educational Specials Group -->
+                <details style="margin-bottom: 30px;">
+                    <summary
+                        style="cursor: pointer; font-size: 20px; font-weight: bold; padding: 10px 0; outline: none;">
+                        🏫 외부 교육 기관 특강 시연
+                        <span style="float: right; font-size: 14px; color: #666;">▼ 펼치기</span>
+                    </summary>
+                    <div style="margin-top: 20px;">
+                        <!-- Special -->
+                        <div class="project">
+                            <div
+                                style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
+                                특강</div>
+                            <h3>취준생 대상 특강</h3>
+                            <div class="video-container">
+                                <div id="player5"></div>
+                                <div class="video-blocker"></div>
+                                <div class="video-start-overlay" id="start5" onclick="startVideo(5)">
+                                    <div class="play-button"></div>
+                                </div>
+                                <div class="preview-overlay" id="overlay5">
+                                    <h4>미리보기 종료</h4>
+                                    <p>10분 미리보기가 끝났습니다</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="preview-overlay" id="overlay3">
-                            <h4>미리보기 종료</h4>
-                            <p>10분 미리보기가 끝났습니다</p>
+                        <!-- Elementary/Middle School Special -->
+                        <div class="project">
+                            <div
+                                style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
+                                특강</div>
+                            <h3>초/중학생 대상 특강</h3>
+                            <p><a href="https://padlet.com/minwookim920/padlet-j7t1rvqzmqcbeezr" target="_blank">강의 자료
+                                    (Padlet)</a></p>
+                            <div class="video-container">
+                                <div id="player4"></div>
+                                <div class="video-blocker"></div>
+                                <div class="video-start-overlay" id="start4" onclick="startVideo(4)">
+                                    <div class="play-button"></div>
+                                </div>
+                                <div class="preview-overlay" id="overlay4">
+                                    <h4>미리보기 종료</h4>
+                                    <p>10분 미리보기가 끝났습니다</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Elementary/Middle School Special -->
-                <div class="project">
-                    <div
-                        style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
-                        특강</div>
-                    <h3>초/중학생 대상 특강</h3>
-                    <p><a href="https://padlet.com/minwookim920/padlet-j7t1rvqzmqcbeezr" target="_blank">강의 자료
-                            (Padlet)</a></p>
-                    <div class="video-container">
-                        <div id="player4"></div>
-                        <div class="video-blocker"></div>
-                        <div class="video-start-overlay" id="start4" onclick="startVideo(4)">
-                            <div class="play-button"></div>
-                        </div>
-                        <div class="preview-overlay" id="overlay4">
-                            <h4>미리보기 종료</h4>
-                            <p>10분 미리보기가 끝났습니다</p>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Banpo/Jamwon Special -->
-                <div class="project">
-                    <div
-                        style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
-                        특강</div>
-                    <h3>반포잠원 교육지원센터 특강</h3>
-                    <div class="video-container">
-                        <div id="player5"></div>
-                        <div class="video-blocker"></div>
-                        <div class="video-start-overlay" id="start5" onclick="startVideo(5)">
-                            <div class="play-button"></div>
-                        </div>
-                        <div class="preview-overlay" id="overlay5">
-                            <h4>미리보기 종료</h4>
-                            <p>10분 미리보기가 끝났습니다</p>
-                        </div>
                     </div>
+                </details>
+
+
+            </div>
+
+            <!-- Regular Education/Mentoring Group -->
+            <div class="year-section" style="margin-top: 50px;">
+                <div class="year">정기 지도</div>
+                <div class="projects">
+
+                    <!-- Tutoring Section -->
+                    <details style="margin-bottom: 30px;">
+                        <summary
+                            style="cursor: pointer; font-size: 20px; font-weight: bold; padding: 10px 0; outline: none;">
+                            📚 과외형 스터디
+                            <span style="float: right; font-size: 14px; color: #666; font-weight: normal;">▼ 펼치기</span>
+                        </summary>
+                        <div style="margin-top: 20px;">
+                            <div class="project">
+                                <div
+                                    style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
+                                    과외</div>
+                                <h3>비전공자/입문자 맞춤형 과외</h3>
+                                <div
+                                    style="color: var(--text-secondary); font-size: 15px; line-height: 1.8; margin-top: 10px;">
+                                    <p><strong>대상:</strong> 비전공자 및 개발 입문자</p>
+                                    <p><strong>방식:</strong> Google Meets 온라인 진행 (대면 협의 가능)</p>
+                                    <p><strong>성과:</strong> 총 12명 지도, 2명 IT 업계 취업 성공, 1명 컴퓨터 과목 연속 만점</p>
+                                    <p style="margin-top: 15px;"><strong>백엔드 커리큘럼:</strong></p>
+                                    <ul style="margin: 10px 0; padding-left: 20px;">
+                                        <li>개발 테크트리 소개 및 기술 스택 개요</li>
+                                        <li>변수와 상수 - 메모리 관점에서 차이점</li>
+                                        <li>조건문과 반복문 - 프로그램 흐름 제어</li>
+                                        <li>함수 - 정의, 호출, 재사용성</li>
+                                        <li>객체지향 프로그래밍 - 클래스와 객체</li>
+                                        <li>인터페이스와 상속 - 코드 재사용과 확장성</li>
+                                        <li>이후 학생 수준에 맞춰 맞춤형 진행</li>
+                                    </ul>
+                                    <p style="margin-top: 20px;"><strong>🖥️ 무료 시연 수업:</strong></p>
+                                    <div class="video-container" style="margin-top: 10px;">
+                                        <div id="player3"></div>
+                                        <div class="video-blocker"></div>
+                                        <div class="video-start-overlay" id="start3" onclick="startVideo(3)">
+                                            <div class="play-button"></div>
+                                        </div>
+                                        <div class="preview-overlay" id="overlay3">
+                                            <h4>미리보기 종료</h4>
+                                            <p>10분 미리보기가 끝났습니다</p>
+                                        </div>
+                                    </div>
+                                    <p style="margin-top: 15px; color: #666; font-size: 14px;">
+                                        * 문과 출신 개발자로서 비전공자의 어려움을 이해하며, 쉬운 설명에 강점
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- Mentoring Section -->
+                    <details style="margin-bottom: 30px;">
+                        <summary
+                            style="cursor: pointer; font-size: 20px; font-weight: bold; padding: 10px 0; outline: none;">
+                            🏆 E사 프로젝트 멘토링
+                            <span style="float: right; font-size: 14px; color: #666; font-weight: normal;">▼ 펼치기</span>
+                        </summary>
+                        <div style="margin-top: 20px;">
+                            <div class="project">
+                                <div
+                                    style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
+                                    멘토</div>
+                                <h3>배달 중계 플랫폼 프로젝트 지도</h3>
+                                <div
+                                    style="color: var(--text-secondary); font-size: 15px; line-height: 1.8; margin-top: 10px;">
+                                    <p><strong>프로젝트:</strong> MSA를 활용한 배달 중계 플랫폼</p>
+                                    <p><strong>기간:</strong> 7회차 멘토링 (총 21시간)</p>
+                                    <p><strong>멘티:</strong> 풀스택 백엔드 개발자 양성과정 8기 5명</p>
+                                    <p><strong>결과:</strong> <span style="color: #22c55e; font-weight: bold;">🥇 최종 발표
+                                            1등</span>
+                                    </p>
+                                    <p style="margin-top: 15px;"><strong>멘토링 주요 내용:</strong></p>
+                                    <ul style="margin: 10px 0; padding-left: 20px;">
+                                        <li>MSA 아키텍처 설계 및 서비스 분리 전략</li>
+                                        <li>N+1 문제 해결을 위한 벌크(Bulk) 조회 최적화</li>
+                                        <li>분산 락 적용 및 부하 테스트 가이드</li>
+                                        <li>발표 스크립트 코칭 및 기술 용어 정확성 검토</li>
+                                        <li>UI/UX 피드백 및 불필요한 DB 호출 최적화</li>
+                                        <li>트랜잭션 관리 및 롤백/보상 트랜잭션 설계</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Collapsible Sections -->
-    <div style="max-width: 800px; margin: 40px auto; padding: 0 20px;">
-
-        <!-- Tutoring Section -->
-        <details class="project" style="margin-bottom: 24px; cursor: pointer;">
-            <summary style="font-size: 18px; font-weight: 700; padding: 10px 0; list-style: none;">
-                📚 무료 시범과외 + 무제한 무료 Q&A 진행
-                <span style="float: right; font-size: 14px; color: #666;">▼ 펼치기</span>
-            </summary>
-            <div style="padding: 20px 0; color: var(--text-secondary); font-size: 15px; line-height: 1.8;">
-                <p><strong>대상:</strong> 비전공자 및 개발 입문자</p>
-                <p><strong>방식:</strong> Google Meets 온라인 진행 (대면 협의 가능)</p>
-                <p><strong>성과:</strong> 총 12명 지도, 2명 IT 업계 취업 성공, 1명 컴퓨터 과목 연속 만점</p>
-                <p style="margin-top: 15px;"><strong>백엔드 커리큘럼:</strong></p>
-                <ul style="margin: 10px 0; padding-left: 20px;">
-                    <li>개발 테크트리 소개 및 기술 스택 개요</li>
-                    <li>변수와 상수 - 메모리 관점에서 차이점</li>
-                    <li>조건문과 반복문 - 프로그램 흐름 제어</li>
-                    <li>함수 - 정의, 호출, 재사용성</li>
-                    <li>객체지향 프로그래밍 - 클래스와 객체</li>
-                    <li>인터페이스와 상속 - 코드 재사용과 확장성</li>
-                    <li>이후 학생 수준에 맞춰 맞춤형 진행</li>
-                </ul>
-                <p style="margin-top: 15px; color: #666; font-size: 14px;">
-                    * 문과 출신 개발자로서 비전공자의 어려움을 이해하며, 쉬운 설명에 강점
-                </p>
-            </div>
-        </details>
-
-        <!-- Mentoring Section -->
-        <details class="project" style="margin-bottom: 24px; cursor: pointer;">
-            <summary style="font-size: 18px; font-weight: 700; padding: 10px 0; list-style: none;">
-                🏆 E사 프로젝트 멘토링 (최종 1등)
-                <span style="float: right; font-size: 14px; color: #666;">▼ 펼치기</span>
-            </summary>
-            <div style="padding: 20px 0; color: var(--text-secondary); font-size: 15px; line-height: 1.8;">
-                <p><strong>프로젝트:</strong> MSA를 활용한 배달 중계 플랫폼</p>
-                <p><strong>기간:</strong> 7회차 멘토링 (총 21시간)</p>
-                <p><strong>멘티:</strong> 풀스택 백엔드 개발자 양성과정 8기 5명</p>
-                <p><strong>결과:</strong> <span style="color: #22c55e; font-weight: bold;">🥇 최종 발표 1등</span></p>
-
-                <p style="margin-top: 15px;"><strong>멘토링 주요 내용:</strong></p>
-                <ul style="margin: 10px 0; padding-left: 20px;">
-                    <li>MSA 아키텍처 설계 및 서비스 분리 전략</li>
-                    <li>N+1 문제 해결을 위한 벌크(Bulk) 조회 최적화</li>
-                    <li>분산 락 적용 및 부하 테스트 가이드</li>
-                    <li>발표 스크립트 코칭 및 기술 용어 정확성 검토</li>
-                    <li>UI/UX 피드백 및 불필요한 DB 호출 최적화</li>
-                    <li>트랜잭션 관리 및 롤백/보상 트랜잭션 설계</li>
-                </ul>
-                <p style="margin-top: 15px; color: #666; font-size: 14px;">
-                    * 발표 리허설부터 코드리뷰, 아키텍처 설계까지 전 과정 멘토링
-                </p>
-            </div>
-        </details>
+    </div>
+    </div>
     </div>
 
     <div class="tech-icons-container">
@@ -364,9 +413,9 @@
         const videoConfigs = [
             { playerId: 'player1', videoId: 'FxWNbtI7ZUo', overlayId: 'overlay1' },
             { playerId: 'player2', videoId: 'Vjb-if9VExQ', overlayId: 'overlay2' },
-            { playerId: 'player3', videoId: '9Z50ZpOrFbk', overlayId: 'overlay3' },
+            { playerId: 'player3', videoId: 'eww3FXMflp4', overlayId: 'overlay3' },
             { playerId: 'player4', videoId: 'e4z_Evproq4', overlayId: 'overlay4' },
-            { playerId: 'player5', videoId: 'eww3FXMflp4', overlayId: 'overlay5' }
+            { playerId: 'player5', videoId: '9Z50ZpOrFbk', overlayId: 'overlay5' }
         ];
 
         const players = {};
@@ -422,6 +471,13 @@
                 player.playVideo();
             }
         }
+
+        // Prevent right-click on video containers
+        document.addEventListener('contextmenu', function (e) {
+            if (e.target.closest('.video-container')) {
+                e.preventDefault();
+            }
+        }, false);
 
         // Seamless Infinite Scroll Setup
         const techIcons = document.querySelector('#techIcons');
