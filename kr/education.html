@@ -156,45 +156,120 @@
             border-color: transparent transparent transparent white;
             margin-left: 5px;
         }
+
+        .education-chronology {
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+        }
+
+        @media (max-width: 920px) {
+            .education-chronology {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
-<body>
-    <header class="main-header">
-        <div class="profile-info">
-            <div class="language-tabs">
-                <a href="../kr/index.html" class="language-tab kr-tab">한국어</a>
-                <a href="../en/index.html" class="language-tab en-tab">English</a>
-                <a href="#" class="language-tab active"
-                    style="background-color: white; color: var(--text-primary);">교육</a>
+<body class="resume-page education-page">
+    <header class="page-hero">
+        <div class="hero-shell">
+            <div class="hero-copy">
+                <div class="language-tabs">
+                    <a href="../kr/index.html" class="language-tab kr-tab">한국어</a>
+                    <a href="../en/index.html" class="language-tab en-tab">English</a>
+                    <a href="#" class="language-tab active">교육</a>
+                </div>
+                <strong class="name">김민우</strong>
+                <div class="hero-contact-list">
+                    <span class="contact">
+                        Phone: <a href="tel:+821076463634">+82 10-7646-3634</a>
+                    </span>
+                    <span class="contact">
+                        Email: <a href="mailto:rlaalsdn456456@naver.com">rlaalsdn456456@naver.com</a>
+                    </span>
+                </div>
             </div>
-            <strong class="name">김 민 우</strong>
-            <span class="contact">
-                Phone: <a href="tel:+821076463634">+8210-7646-3634</a>
-            </span>
-            <span class="contact">
-                Email: <a href="mailto:rlaalsdn456456@naver.com">rlaalsdn456456@naver.com</a>
-            </span>
+            <div class="hero-side">
+                <div class="portrait-card">
+                    <img class="profile-pic" src="../img/pic.jpeg" alt="Profile Picture">
+                </div>
+            </div>
         </div>
-        <img class="profile-pic" src="../img/pic.jpeg" alt="Profile Picture">
     </header>
+    <main class="page-shell">
+        <section class="content-section summary-section">
+            <div class="section-intro">
+                <p class="section-kicker">Overview</p>
+                <h2 class="section-title">연혁</h2>
+            </div>
+            <div class="chronology-list education-chronology">
+                <article class="chronology-item edu">
+                    <div class="chronology-card">
+                        <span class="chronology-period">2021 - 현재</span>
+                        <strong class="chronology-title">비전공자·입문자 과외형 스터디</strong>
+                    </div>
+                </article>
+                <article class="chronology-item gmarket">
+                    <div class="chronology-card">
+                        <span class="chronology-period">2022.06 / 2024</span>
+                        <strong class="chronology-title">L사·G사 사내 기술 발표</strong>
+                    </div>
+                </article>
+                <article class="chronology-item edu">
+                    <div class="chronology-card">
+                        <span class="chronology-period">2025.05 - 현재</span>
+                        <strong class="chronology-title">현직자 대상 백엔드 특강 및 심사</strong>
+                    </div>
+                </article>
+                <article class="chronology-item edu">
+                    <div class="chronology-card">
+                        <span class="chronology-period">2025.06 - 2025.08</span>
+                        <strong class="chronology-title">E사 교육 과정 프로젝트 멘토링</strong>
+                    </div>
+                </article>
+                <article class="chronology-item edu">
+                    <div class="chronology-card">
+                        <span class="chronology-period">2025.08 - 현재</span>
+                        <strong class="chronology-title">초·중학생 대상 디지털 교육</strong>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-    <div class="summary-container">
-        <ul class="summary-list">
-            <li class="edu">서울 S중학교 교생</li>
-            <li class="edu">G마켓, 롯데e커머스 사내 강의 진행 </li>
-            <li class="edu">M사 교육회사 프로젝트 심사위원</li>
-            <li class="edu">M사 교육회사 취준생 특강 강사</li>
-            <li class="edu">E사 프로젝트 심사위원</li>
-            <li class="edu">E사 멘토링 멘토</li>
-            <li class="edu">서울 S 중학교 특강 강사</li>
-            <li class="edu">서울 J 초등학교 특강 강사</li>
-            <li class="edu">M 방송국 아카데미 특강 강사</li>
-            <li class="edu">과외형 스터디 진행</li>
-        </ul>
-    </div>
+        <section class="content-section">
+            <div class="section-intro">
+                <p class="section-kicker">Selected Work</p>
+                <h2 class="section-title">대표 활동</h2>
+            </div>
+            <div class="projects">
+                <div class="project">
+                    <h3>현직자 대상 백엔드 특강 및 심사 / 민간 교육 연계 과정 / 2025.05 ~ 현재</h3>
+                    <p>현직자 및 취업 준비생 대상 특강과 심사를 7회 진행했습니다. 결과 나열보다 문제 정의, 선택 근거, 운영 기준을 설명하는 방식에 초점을 맞춰 코칭했습니다.</p>
+                    <p>발표 자료 구성과 Q&amp;A 대응까지 함께 다루며, 기술 선택을 말로 설명할 수 있는 수준까지 정리하도록 돕는 방향으로 진행했습니다.</p>
+                </div>
+                <div class="project">
+                    <h3>백엔드 교육 과정 프로젝트 멘토링 / E사 / 2025.06 ~ 2025.08</h3>
+                    <p>5명의 멘티와 배달 중계 플랫폼을 설계·구현했습니다. 서비스 분리, 벌크 조회를 통한 N+1 해결, 분산 락·트랜잭션 설계를 리뷰했고, 프론트에서는 상태 구조 정리와 캐싱을 통한 불필요한 API 호출 제거를 지도했습니다.</p>
+                    <p>주문 알림을 스트리밍이 아닌 스케줄링된 폴링으로 구현한 선택에 대해서도 현재 트래픽과 인프라 비용을 고려한 판단으로 설명하도록 코칭했고, 동시 접속자 1만 명 이상 혹은 실시간성이 핵심이 되는 시점에는 스트리밍으로 전환한다는 기준까지 정리하게 했습니다. 해당 팀은 최종 발표 1등을 수상했습니다.</p>
+                </div>
+                <div class="project">
+                    <h3>기술 블로그 기고 기반 사내 기술 발표 / L사, G사 / 2022, 2024</h3>
+                    <p>L사에서는 2022년에, G사에서는 2024년에 기술 블로그 기고 내용을 바탕으로 전 임직원 대상 발표를 진행했습니다. 문서로 정리한 내용을 발표로 다시 풀어내는 방식으로 기술 전파를 이어갔습니다.</p>
+                    <p>G사에서는 기술 블로그 운영 흐름 자체도 함께 정리해 <code>.md</code>, GitHub PR, API 기반 기고 프로세스로 재구성했고, 유입 키워드 배치를 통해 누적 방문 약 45만 회 규모의 기술 브랜딩 채널로 성장시켰습니다.</p>
+                </div>
+                <div class="project">
+                    <h3>초·중학생 대상 디지털 교육 / 지역 교육지원센터 / 2025.08 ~ 현재</h3>
+                    <p>엔트리·Python·Java를 활용해 문법 설명에 그치지 않고 캐릭터를 움직이거나 그림을 그리고 악보를 만들어보는 실습 중심 수업을 기획·운영했습니다.</p>
+                    <p>HTML·CSS·JS 구조를 이해한 뒤 AI를 활용해 자신만의 웹페이지를 제작하도록 지도했고, 완성한 사이트는 패들릿에 공유해 서로 피드백을 주고받게 했습니다.</p>
+                </div>
+            </div>
+        </section>
 
-    <div class="timeline-container">
+        <section class="content-section timeline-section">
+            <div class="section-intro">
+                <p class="section-kicker">Teaching Cases</p>
+                <h2 class="section-title">주요 활동</h2>
+            </div>
+            <div class="timeline-container">
         <div class="year-section">
             <div class="year">특강</div>
             <div class="projects">
@@ -205,34 +280,43 @@
                         🏛️ 사내 기술 강의 시연
                         <span style="float: right; font-size: 14px; color: #666;">▼ 펼치기</span>
                     </summary>
-                    <div class="project" style="margin-top: 20px;">
+                        <div class="project" style="margin-top: 20px;">
                         <div
                             style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
                             강의</div>
-                        <h3>전직원 대상 사내 강의</h3>
-                        <p>G마켓, 롯데e커머스 전 임직원 대상 기술 세미나 및 업무 효율화 강의</p>
+                        <h3>전직원 대상 사내 강의 / L사(2022), G사(2024)</h3>
+                        <p>기술 블로그 기고 내용을 바탕으로 전 임직원 대상 기술 세미나와 업무 효율화 강의를 진행했습니다.</p>
+                        <p>L사는 2022년 블로그 기고 기반 발표, G사는 2024년 블로그 글 기고 기반 발표로 진행했습니다.</p>
                         <div class="video-group">
-                            <div class="video-container">
-                                <div id="player1"></div>
-                                <div class="video-blocker"></div>
-                                <div class="video-start-overlay" id="start1" onclick="startVideo(1)">
-                                    <div class="play-button"></div>
+                            <div class="video-item">
+                                <div class="video-container">
+                                    <div id="player1"></div>
+                                    <div class="video-blocker"></div>
+                                    <div class="video-start-overlay" id="start1" onclick="startVideo(1)">
+                                        <div class="play-button"></div>
+                                    </div>
+                                    <div class="preview-overlay" id="overlay1">
+                                        <h4>미리보기 종료</h4>
+                                        <p>10분 미리보기가 끝났습니다</p>
+                                    </div>
                                 </div>
-                                <div class="preview-overlay" id="overlay1">
-                                    <h4>미리보기 종료</h4>
-                                    <p>10분 미리보기가 끝났습니다</p>
-                                </div>
+                                <p class="video-caption">AI 자동화 실전 시연</p>
+                                <p class="video-summary">무료 AI 도구와 간단한 스크립트만으로 반복 업무를 줄이는 방법을 설명합니다. 사내 프로모션 알림 예시를 통해 실무형 자동화 아이디어를 시연합니다.</p>
                             </div>
-                            <div class="video-container">
-                                <div id="player2"></div>
-                                <div class="video-blocker"></div>
-                                <div class="video-start-overlay" id="start2" onclick="startVideo(2)">
-                                    <div class="play-button"></div>
+                            <div class="video-item">
+                                <div class="video-container">
+                                    <div id="player2"></div>
+                                    <div class="video-blocker"></div>
+                                    <div class="video-start-overlay" id="start2" onclick="startVideo(2)">
+                                        <div class="play-button"></div>
+                                    </div>
+                                    <div class="preview-overlay" id="overlay2">
+                                        <h4>미리보기 종료</h4>
+                                        <p>10분 미리보기가 끝났습니다</p>
+                                    </div>
                                 </div>
-                                <div class="preview-overlay" id="overlay2">
-                                    <h4>미리보기 종료</h4>
-                                    <p>10분 미리보기가 끝났습니다</p>
-                                </div>
+                                <p class="video-caption">AI 브라우저 응용</p>
+                                <p class="video-summary">크롬 익스텐션 자동화에서 한 단계 나아가, AI 브라우저가 웹 탐색과 반복 작업을 어떻게 대신할 수 있는지 보여줍니다. 최신 AI 도구 흐름과 실제 업무 적용 가능성을 함께 다룹니다.</p>
                             </div>
                         </div>
                     </div>
@@ -245,7 +329,7 @@
                         🏫 외부 교육 기관 특강 시연
                         <span style="float: right; font-size: 14px; color: #666;">▼ 펼치기</span>
                     </summary>
-                    <div style="margin-top: 20px;">
+                    <div class="video-group video-project-grid" style="margin-top: 20px;">
                         <!-- Special -->
                         <div class="project">
                             <div
@@ -263,6 +347,8 @@
                                     <p>10분 미리보기가 끝났습니다</p>
                                 </div>
                             </div>
+                            <p class="video-caption">개발자 취업 전략</p>
+                            <p class="video-summary">개발자에게 필요한 기본 역량과 취업 준비 전략을 중심으로 진행한 특강입니다. GitHub, 프로젝트, 블로그 같은 결과물을 어떻게 포트폴리오와 면접 이야기로 연결할지 설명합니다.</p>
                         </div>
                         <!-- Elementary/Middle School Special -->
                         <div class="project">
@@ -283,9 +369,9 @@
                                     <p>10분 미리보기가 끝났습니다</p>
                                 </div>
                             </div>
+                            <p class="video-caption">웹 제작과 AI 활용</p>
+                            <p class="video-summary">개발자가 하는 일부터 HTML, CSS, JavaScript의 역할까지 학생 눈높이로 설명합니다. 엔트리·스크래치와 AI 활용 예시를 통해 직접 웹페이지와 간단한 상호작용을 만드는 흐름을 보여줍니다.</p>
                         </div>
-
-
                     </div>
                 </details>
 
@@ -338,6 +424,8 @@
                                         <p>10분 미리보기가 끝났습니다</p>
                                     </div>
                                 </div>
+                                <p class="video-caption">Git / GitHub 기초 시연</p>
+                                <p class="video-summary">Git과 GitHub를 처음 접하는 입문자를 위해, 로컬 저장만으로는 부족한 이유와 클라우드 백업의 필요성을 설명합니다. 코드 저장, 공유, 버전 관리의 기본 흐름을 짧게 시연합니다.</p>
                                 <p style="margin-top: 15px; color: #666; font-size: 14px;">
                                     * 문과 출신 개발자로서 비전공자의 어려움을 이해하며, 쉬운 설명에 강점
                                 </p>
@@ -362,19 +450,18 @@
                             <div
                                 style="color: var(--text-secondary); font-size: 15px; line-height: 1.8; margin-top: 10px;">
                                 <p><strong>프로젝트:</strong> MSA를 활용한 배달 중계 플랫폼</p>
-                                <p><strong>기간:</strong> 7회차 멘토링 (총 21시간)</p>
-                                <p><strong>멘티:</strong> 풀스택 백엔드 개발자 양성과정 8기 5명</p>
+                                <p><strong>기간:</strong> 2025.06.24 - 2025.08.12 / 7회차 멘토링 (총 21시간)</p>
+                                <p><strong>멘티:</strong> 백엔드 교육 과정 수강생 5명</p>
                                 <p><strong>결과:</strong> <span style="color: #22c55e; font-weight: bold;">🥇 최종 발표
                                         1등</span>
                                 </p>
                                 <p style="margin-top: 15px;"><strong>멘토링 주요 내용:</strong></p>
                                 <ul style="margin: 10px 0; padding-left: 20px;">
-                                    <li>MSA 아키텍처 설계 및 서비스 분리 전략</li>
-                                    <li>N+1 문제 해결을 위한 벌크(Bulk) 조회 최적화</li>
-                                    <li>분산 락 적용 및 부하 테스트 가이드</li>
-                                    <li>발표 스크립트 코칭 및 기술 용어 정확성 검토</li>
-                                    <li>UI/UX 피드백 및 불필요한 DB 호출 최적화</li>
-                                    <li>트랜잭션 관리 및 롤백/보상 트랜잭션 설계</li>
+                                    <li>MSA 서비스 책임 분리, API Gateway 경유 원칙, Auth/User 경계 재정립</li>
+                                    <li>N+1 문제, 벌크 조회, 페이징, 복합 인덱스, 대용량 테스트 데이터 관점의 성능 리뷰</li>
+                                    <li>분산 락, 트랜잭션, 롤백/보상 트랜잭션, S3 업로드 보안, XSS 대응 등 실무형 백엔드 피드백</li>
+                                    <li>React 컴포넌트 재사용, Props Drilling, useEffect 렌더링 디버깅, Mock API 활용 등 프론트엔드 구조 코칭</li>
+                                    <li>발표 스크립트, 기술 용어 정확성, 핵심 문제 해결 서사, Q&amp;A 대응 방식까지 포함한 발표 코칭</li>
                                 </ul>
                             </div>
                         </div>
@@ -382,26 +469,34 @@
                 </details>
             </div>
         </div>
-    </div>
+            </div>
+        </section>
 
-    <div class="tech-icons-container">
-        <div class="tech-icons" id="techIcons">
-            <img src="../icon/java.svg" alt="Java">
-            <img src="../icon/javascript.png" alt="JavaScript">
-            <img src="../icon/python.svg" alt="Python">
-            <img src="../icon/react.svg" alt="React">
-            <img src="../icon/mongodb.svg" alt="MongoDB">
-            <img src="../icon/aws.svg" alt="AWS">
-            <img src="../icon/nodejs.svg" alt="Node.js">
-            <img src="../icon/databricks.png" alt="Databricks">
-            <img src="../icon/vue.png" alt="Vue.js">
-            <img src="../icon/dotnet.svg" alt=".NET">
-            <img src="../icon/spring.svg" alt="Spring">
-            <img src="../icon/linux.png" alt="Linux">
-            <img src="../icon/mssql.png" alt="MSSQL">
-            <img src="../icon/kotlin.png" alt="Kotlin">
-        </div>
-    </div>
+        <section class="content-section tech-section">
+            <div class="section-intro">
+                <p class="section-kicker">Core Stack</p>
+                <h2 class="section-title">강의에 활용한 기술</h2>
+            </div>
+            <div class="tech-icons-container">
+                <div class="tech-icons" id="techIcons">
+                    <img src="../icon/java.svg" alt="Java">
+                    <img src="../icon/javascript.png" alt="JavaScript">
+                    <img src="../icon/python.svg" alt="Python">
+                    <img src="../icon/react.svg" alt="React">
+                    <img src="../icon/mongodb.svg" alt="MongoDB">
+                    <img src="../icon/aws.svg" alt="AWS">
+                    <img src="../icon/nodejs.svg" alt="Node.js">
+                    <img src="../icon/databricks.png" alt="Databricks">
+                    <img src="../icon/vue.png" alt="Vue.js">
+                    <img src="../icon/dotnet.svg" alt=".NET">
+                    <img src="../icon/spring.svg" alt="Spring">
+                    <img src="../icon/linux.png" alt="Linux">
+                    <img src="../icon/mssql.png" alt="MSSQL">
+                    <img src="../icon/kotlin.png" alt="Kotlin">
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- YouTube IFrame API -->
     <script src="https://www.youtube.com/iframe_api"></script>
@@ -471,39 +566,77 @@
 
         // Seamless Infinite Scroll Setup
         const techIcons = document.querySelector('#techIcons');
-        const originalIcons = Array.from(techIcons.children);
+        const originalIcons = Array.from(techIcons.children).map(icon => icon.cloneNode(true));
 
-        // Clone all icons and append them to create a seamless loop
-        originalIcons.forEach(icon => {
-            const clone = icon.cloneNode(true);
-            techIcons.appendChild(clone);
+        const createIconGroup = () => {
+            const group = document.createElement('div');
+            group.className = 'tech-icons-group';
+            originalIcons.forEach(icon => {
+                group.appendChild(icon.cloneNode(true));
+            });
+            return group;
+        };
+
+        techIcons.replaceChildren(createIconGroup(), createIconGroup());
+
+        const updateTechIconsDistance = () => {
+            const firstGroup = techIcons.querySelector('.tech-icons-group');
+            if (!firstGroup) {
+                return;
+            }
+
+            techIcons.style.setProperty('--marquee-distance', `${firstGroup.getBoundingClientRect().width}px`);
+        };
+
+        const techImages = techIcons.querySelectorAll('img');
+        let pendingImages = 0;
+
+        techImages.forEach(image => {
+            if (image.complete) {
+                return;
+            }
+
+            pendingImages += 1;
+            const onImageReady = () => {
+                pendingImages -= 1;
+                if (pendingImages === 0) {
+                    updateTechIconsDistance();
+                }
+            };
+
+            image.addEventListener('load', onImageReady, { once: true });
+            image.addEventListener('error', onImageReady, { once: true });
         });
+
+        if (pendingImages === 0) {
+            updateTechIconsDistance();
+        }
+
+        window.addEventListener('resize', updateTechIconsDistance);
     </script>
-
+    <footer class="main-footer">
+        <div class="social-links">
+            <a href="https://blog.naver.com/rlaalsdn456456" target="_blank">
+                <img src="https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2020%2F04%2F5e8fd82761663.png&w=96&h=96&q=100"
+                    alt="Blog Icon">
+                블로그
+            </a>
+            <a href="https://www.facebook.com/people/%EA%B9%80%EB%AF%BC%EC%9A%B0/pfbid0D1txo4RpxXeX2oRCAaqQuY4iZ1CTQfogBgHyorQ2mFyw9dr8iYSqLTgvKijpGqaMl/"
+                target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
+                    alt="Facebook Icon">
+                페이스북
+            </a>
+            <a href="https://www.linkedin.com/in/%EB%AF%BC%EC%9A%B0-%EA%B9%80-307124246/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                    alt="LinkedIn Icon">
+                링크드인
+            </a>
+            <a href="https://github.com/minwoo19930301" target="_blank">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Icon">
+                깃허브
+            </a>
+        </div>
+    </footer>
 </body>
-<footer class="main-footer">
-    <div class="social-links">
-        <a href="https://blog.naver.com/rlaalsdn456456" target="_blank">
-            <img src="https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2020%2F04%2F5e8fd82761663.png&w=96&h=96&q=100"
-                alt="Blog Icon">
-            블로그
-        </a>
-        <a href="https://www.facebook.com/people/%EA%B9%80%EB%AF%BC%EC%9A%B0/pfbid0D1txo4RpxXeX2oRCAaqQuY4iZ1CTQfogBgHyorQ2mFyw9dr8iYSqLTgvKijpGqaMl/"
-            target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
-                alt="Facebook Icon">
-            페이스북
-        </a>
-        <a href="https://www.linkedin.com/in/%EB%AF%BC%EC%9A%B0-%EA%B9%80-307124246/" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-                alt="LinkedIn Icon">
-            링크드인
-        </a>
-        <a href="https://github.com/minwoo19930301" target="_blank">
-            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Icon">
-            깃허브
-        </a>
-    </div>
-</footer>
-
 </html>
