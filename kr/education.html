@@ -78,6 +78,10 @@
             margin-top: 10px;
         }
 
+        .video-item {
+            min-width: 0;
+        }
+
         /* Preview overlay */
         .preview-overlay {
             position: absolute;
@@ -161,9 +165,18 @@
             grid-template-columns: repeat(5, minmax(0, 1fr));
         }
 
-        @media (max-width: 920px) {
-            .education-chronology {
+        @media (max-width: 768px) {
+            .video-group {
+                width: 100%;
                 grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .video-item,
+            .video-group .video-container {
+                width: 100%;
+                max-width: 100%;
+                min-width: 0;
             }
         }
     </style>
@@ -201,37 +214,39 @@
                 <p class="section-kicker">Overview</p>
                 <h2 class="section-title">연혁</h2>
             </div>
-            <div class="chronology-list education-chronology">
-                <article class="chronology-item edu">
-                    <div class="chronology-card">
-                        <span class="chronology-period">2021 - 현재</span>
-                        <strong class="chronology-title">비전공자·입문자 과외형 스터디</strong>
-                    </div>
-                </article>
-                <article class="chronology-item gmarket">
-                    <div class="chronology-card">
-                        <span class="chronology-period">2022.06 / 2024</span>
-                        <strong class="chronology-title">L사·G사 사내 기술 발표</strong>
-                    </div>
-                </article>
-                <article class="chronology-item edu">
-                    <div class="chronology-card">
-                        <span class="chronology-period">2025.05 - 현재</span>
-                        <strong class="chronology-title">현직자 대상 백엔드 특강 및 심사</strong>
-                    </div>
-                </article>
-                <article class="chronology-item edu">
-                    <div class="chronology-card">
-                        <span class="chronology-period">2025.06 - 2025.08</span>
-                        <strong class="chronology-title">E사 교육 과정 프로젝트 멘토링</strong>
-                    </div>
-                </article>
-                <article class="chronology-item edu">
-                    <div class="chronology-card">
-                        <span class="chronology-period">2025.08 - 현재</span>
-                        <strong class="chronology-title">초·중학생 대상 디지털 교육</strong>
-                    </div>
-                </article>
+            <div class="chronology-scroll">
+                <div class="chronology-list education-chronology">
+                    <article class="chronology-item edu">
+                        <div class="chronology-card">
+                            <span class="chronology-period">2021 - 현재</span>
+                            <strong class="chronology-title">비전공자·입문자 과외형 스터디</strong>
+                        </div>
+                    </article>
+                    <article class="chronology-item gmarket">
+                        <div class="chronology-card">
+                            <span class="chronology-period">2022.06 / 2024</span>
+                            <strong class="chronology-title">L사·G사 사내 기술 발표</strong>
+                        </div>
+                    </article>
+                    <article class="chronology-item edu">
+                        <div class="chronology-card">
+                            <span class="chronology-period">2025.05 - 현재</span>
+                            <strong class="chronology-title">현직자 대상 백엔드 특강 및 심사</strong>
+                        </div>
+                    </article>
+                    <article class="chronology-item edu">
+                        <div class="chronology-card">
+                            <span class="chronology-period">2025.06 - 2025.08</span>
+                            <strong class="chronology-title">E사 교육 과정 프로젝트 멘토링</strong>
+                        </div>
+                    </article>
+                    <article class="chronology-item edu">
+                        <div class="chronology-card">
+                            <span class="chronology-period">2025.08 - 현재</span>
+                            <strong class="chronology-title">초·중학생 대상 디지털 교육</strong>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 

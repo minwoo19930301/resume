@@ -188,12 +188,15 @@ a:hover {
 }
 
 .hero-side {
+    display: flex;
+    justify-content: flex-end;
     justify-self: end;
-    align-content: start;
+    width: 100%;
 }
 
 .portrait-card {
-    max-width: 136px;
+    width: 136px;
+    max-width: 100%;
     padding: 0;
     border-radius: 14px;
     background: transparent;
@@ -257,6 +260,13 @@ a:hover {
 .timeline-container,
 .tech-icons-container {
     min-width: 0;
+}
+
+.chronology-scroll {
+    display: block;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
 }
 
 .chronology-list,
@@ -821,11 +831,64 @@ details summary span {
 
 @media (max-width: 980px) {
     .hero-shell {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr) 148px;
+        gap: 16px;
+        padding: 16px 18px;
+    }
+
+    .hero-copy {
+        min-width: 0;
+    }
+
+    .hero-contact-list {
+        gap: 6px 12px;
     }
 
     .hero-side {
-        justify-self: start;
+        justify-self: end;
+    }
+
+    .portrait-card {
+        width: 128px;
+    }
+
+    .chronology-scroll {
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+
+    .chronology-list {
+        --chronology-line-top: 108px;
+        --chronology-gap: 14px;
+        width: max(100%, 980px);
+        gap: 10px;
+        padding-right: 6px;
+    }
+
+    .chronology-list.education-chronology {
+        width: max(100%, 620px);
+    }
+
+    .chronology-item {
+        min-height: 222px;
+    }
+
+    .chronology-card {
+        left: 4px;
+        right: 4px;
+        min-height: 82px;
+        padding: 10px 10px 9px;
+    }
+
+    .chronology-period {
+        font-size: 10px;
+    }
+
+    .chronology-title {
+        font-size: 12px;
     }
 
     .hero-facts {
@@ -839,90 +902,119 @@ details summary span {
 
 @media (max-width: 768px) {
     .page-hero {
-        padding: 16px 14px 0;
+        padding: 12px 12px 0;
     }
 
     .hero-shell {
-        justify-items: center;
-        padding: 22px;
-        border-radius: 30px;
-        gap: 20px;
-        text-align: center;
+        grid-template-columns: minmax(0, 1fr) 92px;
+        align-items: start;
+        justify-items: stretch;
+        padding: 14px;
+        border-radius: 18px;
+        gap: 12px;
+        text-align: left;
     }
 
     .hero-copy {
-        align-items: center;
+        align-items: flex-start;
         padding-right: 0;
+        gap: 10px;
     }
 
     .language-tabs,
     .hero-contact-list {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
-    .hero-contact-list,
-    .hero-facts {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
+    .language-tabs {
+        gap: 6px;
     }
 
-    .portrait-card {
-        max-width: 110px;
-    }
-
-    .hero-side {
-        justify-self: center;
-    }
-
-    .page-shell {
-        margin-top: 22px;
-        padding: 0 14px;
-    }
-
-    .chronology-list {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        padding: 0;
-    }
-
-    .chronology-list::before {
-        display: none;
-    }
-
-    .chronology-item {
-        min-height: 0;
-    }
-
-    .chronology-item::before,
-    .chronology-item::after {
-        display: none;
-    }
-
-    .chronology-item {
-        min-width: 0;
-    }
-
-    .chronology-card {
-        position: relative;
-        left: auto;
-        right: auto;
-        top: auto !important;
-        min-height: 0;
-        padding: 10px 12px 9px;
-    }
-
-    .chronology-period {
-        font-size: 10px;
-    }
-
-    .chronology-title {
+    .language-tab {
+        min-height: 32px;
+        padding: 7px 11px;
         font-size: 12px;
     }
 
+    .name {
+        font-size: clamp(1.8rem, 8vw, 2.35rem);
+    }
+
+    .hero-contact-list {
+        gap: 4px 10px;
+        max-width: none;
+    }
+
+    .contact {
+        gap: 6px;
+        font-size: 12px;
+    }
+
+    .contact a {
+        overflow-wrap: anywhere;
+    }
+
+    .portrait-card {
+        width: 92px;
+    }
+
+    .hero-side {
+        justify-self: end;
+    }
+
+    .page-shell {
+        margin-top: 18px;
+        padding: 0 12px;
+    }
+
+    .chronology-list {
+        --chronology-line-top: 92px;
+        --chronology-gap: 12px;
+        --chronology-dot-size: 10px;
+        width: max(100%, 860px);
+        gap: 8px;
+        padding-top: 6px;
+        padding-right: 4px;
+    }
+
+    .chronology-list.education-chronology {
+        width: max(100%, 560px);
+    }
+
+    .chronology-item {
+        min-height: 190px;
+    }
+
+    .chronology-item:nth-child(odd)::after {
+        top: calc(var(--chronology-line-top) - 24px);
+        height: 24px;
+    }
+
+    .chronology-item:nth-child(even)::after {
+        top: var(--chronology-line-top);
+        height: 24px;
+    }
+
+    .chronology-card {
+        left: 3px;
+        right: 3px;
+        min-height: 72px;
+        padding: 9px 9px 8px;
+        border-radius: 12px;
+    }
+
+    .chronology-period {
+        margin-bottom: 4px;
+        font-size: 9px;
+    }
+
+    .chronology-title {
+        font-size: 11px;
+        line-height: 1.35;
+    }
+
     .section-title {
-        font-size: 1.75rem;
+        font-size: 1.55rem;
     }
 
     .summary-list {
@@ -934,7 +1026,19 @@ details summary span {
         gap: 14px;
     }
 
+    .timeline-container {
+        gap: 16px;
+        padding-left: 0;
+    }
+
+    .timeline-container::before,
+    .year::before {
+        display: none;
+    }
+
     .year {
+        gap: 6px;
+        margin-bottom: 10px;
         font-size: 1.7rem;
     }
 
@@ -943,15 +1047,42 @@ details summary span {
     }
 
     .project {
-        padding: 20px;
-        border-radius: 22px;
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .project-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+        padding: 6px;
+        border-radius: 14px;
+    }
+
+    .project-icon.gmarket {
+        width: 44px;
+        height: 44px;
+    }
+
+    .project h3 {
+        margin-bottom: 8px;
+        font-size: 0.98rem;
+    }
+
+    .project p,
+    .project li {
+        margin-bottom: 6px;
+        font-size: 13px;
     }
 
     .project > div[style*="position: absolute"] {
         position: static !important;
         display: inline-flex !important;
         margin-bottom: 12px;
+        min-width: 48px;
         height: 32px !important;
+        padding: 0 10px;
+        font-size: 11px;
     }
 
     details .project h3 {
@@ -959,8 +1090,20 @@ details summary span {
     }
 
     details {
-        padding: 0 16px 6px;
-        border-radius: 22px;
+        padding: 0 14px 6px;
+        border-radius: 18px;
+    }
+
+    details summary {
+        align-items: flex-start;
+    }
+
+    details summary span {
+        float: none !important;
+        flex-shrink: 0;
+        margin-left: 8px;
+        font-size: 11px;
+        white-space: nowrap;
     }
 
     .video-group {
@@ -1001,6 +1144,28 @@ details summary span {
 
     .social-links a {
         width: 100%;
+    }
+}
+
+@media (max-width: 560px) {
+    .hero-shell {
+        grid-template-columns: minmax(0, 1fr) 76px;
+    }
+
+    .portrait-card {
+        width: 76px;
+    }
+
+    .contact {
+        font-size: 11px;
+    }
+
+    .chronology-list {
+        width: max(100%, 820px);
+    }
+
+    .chronology-list.education-chronology {
+        width: max(100%, 520px);
     }
 }
 
