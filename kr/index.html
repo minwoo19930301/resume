@@ -652,6 +652,8 @@
             if (chartWrap) {
                 chartWrap.style.height = '260px';
             }
+            chartCanvas.style.minWidth = `${Math.max(980, items.length * 112)}px`;
+            chartCanvas.style.width = `${Math.max(980, items.length * 112)}px`;
 
             Chart.register(mainChronologyLabelPlugin);
             document.body.classList.add('has-chronology-chart');

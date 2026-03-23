@@ -52,6 +52,9 @@
                 <p class="section-kicker">Overview</p>
                 <h2 class="section-title">Chronology</h2>
             </div>
+            <div class="chronology-chart" id="mainChronologyChartWrap">
+                <canvas id="mainChronologyChart" aria-label="Main chronology chart" role="img"></canvas>
+            </div>
             <div class="chronology-scroll">
                 <div class="chronology-list">
                     <article class="chronology-item edu">
@@ -540,7 +543,176 @@
         </section>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <script>
+        const wrapMainChronologyLabel = (text, maxLength = 18) => {
+            if (!text) return [''];
+            if (text.length <= maxLength) return [text];
+            const words = text.split(' ');
+            if (words.length === 1) {
+                return text.match(new RegExp(`.{1,${maxLength}}`, 'g')) || [text];
+            }
+            const lines = [];
+            let line = '';
+            words.forEach(word => {
+                const next = line ? `${line} ${word}` : word;
+                if (next.length > maxLength) {
+                    if (line) lines.push(line);
+                    line = word;
+                } else {
+                    line = next;
+                }
+            });
+            if (line) lines.push(line);
+            return lines;
+        };
+
+        const wrapMainPeriodLabel = (period) => {
+            if (!period) return [''];
+            if (period.includes('/')) return period.split('/').map(part => part.trim());
+            if (period.includes('-')) return period.split('-').map(part => part.trim());
+            return [period];
+        };
+
+        const parseMainPeriodStart = (period) => {
+            if (!period) return 0;
+            const firstToken = period.split('/')[0].split('-')[0].trim();
+            const match = firstToken.match(/(\d{4})(?:\.(\d{2}))?/);
+            if (!match) return 0;
+            const year = Number(match[1]);
+            const month = match[2] ? Number(match[2]) : 1;
+            return (year * 100) + month;
+        };
+
+        const mainChronologyLabelPlugin = {
+            id: 'mainChronologyLabelPlugin',
+            afterDatasetsDraw(chart) {
+                const { ctx, scales } = chart;
+                const meta = chart.getDatasetMeta(0);
+                const data = chart.data.datasets[0].data;
+                const axisY = scales.y.getPixelForValue(0);
+
+                ctx.save();
+                meta.data.forEach((point, index) => {
+                    const item = data[index];
+                    const x = point.x;
+                    const titleLines = wrapMainChronologyLabel(item.title, 18);
+                    const periodLines = wrapMainPeriodLabel(item.period);
+
+                    ctx.save();
+                    ctx.translate(x - 8, axisY - 18);
+                    ctx.rotate(-Math.PI / 4);
+                    ctx.fillStyle = '#0f172a';
+                    ctx.font = '600 11px Pretendard, Apple SD Gothic Neo, sans-serif';
+                    ctx.textAlign = 'left';
+                    ctx.textBaseline = 'bottom';
+                    titleLines.forEach((line, lineIndex) => {
+                        ctx.fillText(line, 0, lineIndex * 13);
+                    });
+                    ctx.restore();
+
+                    ctx.save();
+                    ctx.fillStyle = '#475569';
+                    ctx.font = '600 10px Pretendard, Apple SD Gothic Neo, sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'top';
+                    periodLines.forEach((line, lineIndex) => {
+                        ctx.fillText(line, x, axisY + 18 + (lineIndex * 12));
+                    });
+                    ctx.restore();
+                });
+                ctx.restore();
+            }
+        };
+
+        const buildMainChronologyChart = () => {
+            const chartCanvas = document.getElementById('mainChronologyChart');
+            if (!chartCanvas || !window.Chart) return;
+
+            const items = Array.from(document.querySelectorAll('.summary-section .chronology-list .chronology-item'))
+                .map(item => {
+                    const period = item.querySelector('.chronology-period')?.textContent.trim();
+                    const title = item.querySelector('.chronology-title')?.textContent.trim();
+                    const classList = item.classList;
+                    const accent = classList.contains('lotte')
+                        ? '#2563eb'
+                        : classList.contains('gmarket')
+                            ? '#0f766e'
+                            : classList.contains('wedata')
+                                ? '#0891b2'
+                                : '#64748b';
+                    return { period, title, accent, sortKey: parseMainPeriodStart(period) };
+                })
+                .filter(item => item.period && item.title)
+                .sort((a, b) => a.sortKey - b.sortKey);
+
+            if (items.length === 0) return;
+
+            const data = items.map((item, index) => ({
+                x: index,
+                y: 0,
+                period: item.period,
+                title: item.title,
+                accent: item.accent
+            }));
+
+            const chartWrap = document.getElementById('mainChronologyChartWrap');
+            if (chartWrap) {
+                chartWrap.style.height = '260px';
+            }
+            chartCanvas.style.minWidth = `${Math.max(980, items.length * 112)}px`;
+            chartCanvas.style.width = `${Math.max(980, items.length * 112)}px`;
+
+            Chart.register(mainChronologyLabelPlugin);
+            document.body.classList.add('has-chronology-chart');
+
+            new Chart(chartCanvas, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        data,
+                        pointRadius: 4,
+                        pointHoverRadius: 4,
+                        pointBackgroundColor: data.map(point => point.accent),
+                        pointBorderColor: '#0f172a',
+                        pointBorderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: {
+                        padding: { left: 16, right: 72, top: 92, bottom: 48 }
+                    },
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            min: -0.5,
+                            max: items.length - 0.1,
+                            position: 'center',
+                            grid: { color: 'rgba(148, 163, 184, 0.35)' },
+                            border: { color: 'rgba(148, 163, 184, 0.7)' },
+                            ticks: { display: false, stepSize: 1 }
+                        },
+                        y: {
+                            type: 'linear',
+                            min: -0.35,
+                            max: 0.35,
+                            grid: { display: false },
+                            border: { display: false },
+                            ticks: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { enabled: false }
+                    }
+                }
+            });
+        };
+
+        buildMainChronologyChart();
+
         // Seamless Infinite Scroll Setup
         const techIcons = document.querySelector('#techIcons');
         const originalIcons = Array.from(techIcons.children).map(icon => icon.cloneNode(true));
