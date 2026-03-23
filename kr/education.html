@@ -633,7 +633,7 @@
             return { year, month };
         };
 
-        const wrapLabel = (text, maxLength = 16) => {
+        const wrapLabel = (text, maxLength = 28) => {
             if (!text) {
                 return '';
             }
@@ -717,7 +717,7 @@
 
             const chartWrap = document.getElementById('chronologyChartWrap');
             if (chartWrap) {
-                chartWrap.style.height = `${Math.max(320, items.length * 36)}px`;
+                chartWrap.style.height = `${Math.max(180, items.length * 24)}px`;
             }
 
             Chart.register(ChartDataLabels);
@@ -741,7 +741,7 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     layout: {
-                        padding: { left: 8, right: 40, top: 10, bottom: 10 }
+                        padding: { left: 8, right: 220, top: 8, bottom: 8 }
                     },
                     scales: {
                         x: {
@@ -766,17 +766,12 @@
                             grid: {
                                 display: false
                             },
+                            border: {
+                                display: false
+                            },
                             ticks: {
-                                stepSize: 1,
-                                color: '#0f172a',
-                                font: { size: 12, weight: '600' },
-                                callback: (value) => {
-                                    if (!Number.isInteger(value)) {
-                                        return '';
-                                    }
-                                    const item = items[value];
-                                    return wrapLabel(item?.title || '');
-                                }
+                                display: false,
+                                stepSize: 1
                             }
                         }
                     },
@@ -787,12 +782,14 @@
                             color: '#475569',
                             align: 'right',
                             anchor: 'end',
-                            offset: 6,
+                            offset: 8,
                             clamp: true,
+                            clip: false,
                             font: { size: 11, weight: '600' },
+                            textAlign: 'left',
                             formatter: (value, context) => {
                                 const point = context.dataset.data[context.dataIndex];
-                                return point.period;
+                                return [wrapLabel(point.title), point.period];
                             }
                         }
                     }
