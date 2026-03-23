@@ -214,6 +214,9 @@
                 <p class="section-kicker">Overview</p>
                 <h2 class="section-title">연혁</h2>
             </div>
+            <div class="chronology-chart" id="chronologyChartWrap">
+                <canvas id="chronologyChart" aria-label="연혁 차트" role="img"></canvas>
+            </div>
             <div class="chronology-scroll">
                 <div class="chronology-list education-chronology">
                     <article class="chronology-item edu">
@@ -610,9 +613,195 @@
         </section>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
     <!-- YouTube IFrame API -->
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
+        const toMonthIndex = (year, month) => (year * 12) + (month - 1);
+
+        const parseYearMonth = (raw, fallbackDate) => {
+            if (!raw) {
+                return fallbackDate;
+            }
+            const match = raw.match(/(\d{4})(?:\.(\d{2}))?/);
+            if (!match) {
+                return fallbackDate;
+            }
+            const year = Number(match[1]);
+            const month = match[2] ? Number(match[2]) : 1;
+            return { year, month };
+        };
+
+        const wrapLabel = (text, maxLength = 16) => {
+            if (!text) {
+                return '';
+            }
+            if (text.length <= maxLength) {
+                return text;
+            }
+            const words = text.split(' ');
+            if (words.length === 1) {
+                return text.match(new RegExp(`.{1,${maxLength}}`, 'g')) || text;
+            }
+            const lines = [];
+            let line = '';
+            words.forEach(word => {
+                const next = line ? `${line} ${word}` : word;
+                if (next.length > maxLength) {
+                    lines.push(line);
+                    line = word;
+                } else {
+                    line = next;
+                }
+            });
+            if (line) {
+                lines.push(line);
+            }
+            return lines;
+        };
+
+        const formatMonthIndex = (value) => {
+            const year = Math.floor(value / 12);
+            const month = (value % 12) + 1;
+            return `${year}.${String(month).padStart(2, '0')}`;
+        };
+
+        const buildChronologyChart = () => {
+            const chartCanvas = document.getElementById('chronologyChart');
+            if (!chartCanvas || !window.Chart) {
+                return;
+            }
+
+            const now = new Date();
+            const nowValue = { year: now.getFullYear(), month: now.getMonth() + 1 };
+            const items = Array.from(document.querySelectorAll('.education-chronology .chronology-item'))
+                .map(item => {
+                    const period = item.querySelector('.chronology-period')?.textContent.trim();
+                    const title = item.querySelector('.chronology-title')?.textContent.trim();
+                    const classList = item.classList;
+                    const accent = classList.contains('lotte')
+                        ? '#2563eb'
+                        : classList.contains('gmarket')
+                            ? '#0f766e'
+                            : classList.contains('wedata')
+                                ? '#0891b2'
+                                : '#64748b';
+                    return {
+                        period,
+                        title,
+                        accent
+                    };
+                })
+                .filter(item => item.period && item.title);
+
+            if (items.length === 0) {
+                return;
+            }
+
+            const data = items.map((item, index) => {
+                const normalized = item.period.replace('현재', `${nowValue.year}.${String(nowValue.month).padStart(2, '0')}`);
+                const firstToken = normalized.split('/')[0].split('-')[0].trim();
+                const { year, month } = parseYearMonth(firstToken, nowValue);
+                return {
+                    x: toMonthIndex(year, month),
+                    y: index,
+                    period: item.period,
+                    title: item.title,
+                    accent: item.accent
+                };
+            });
+
+            const minX = Math.min(...data.map(point => point.x)) - 6;
+            const maxX = Math.max(...data.map(point => point.x)) + 6;
+
+            const chartWrap = document.getElementById('chronologyChartWrap');
+            if (chartWrap) {
+                chartWrap.style.height = `${Math.max(320, items.length * 36)}px`;
+            }
+
+            Chart.register(ChartDataLabels);
+            document.body.classList.add('has-chronology-chart');
+
+            new Chart(chartCanvas, {
+                type: 'scatter',
+                data: {
+                    datasets: [
+                        {
+                            data,
+                            pointRadius: 4,
+                            pointHoverRadius: 4,
+                            pointBackgroundColor: data.map(point => point.accent),
+                            pointBorderColor: '#0f172a',
+                            pointBorderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: {
+                        padding: { left: 8, right: 40, top: 10, bottom: 10 }
+                    },
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            min: minX,
+                            max: maxX,
+                            grid: {
+                                color: 'rgba(148, 163, 184, 0.35)'
+                            },
+                            ticks: {
+                                stepSize: 12,
+                                color: '#475569',
+                                font: { size: 11, weight: '600' },
+                                callback: formatMonthIndex
+                            }
+                        },
+                        y: {
+                            type: 'linear',
+                            min: -0.5,
+                            max: items.length - 0.5,
+                            reverse: true,
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                stepSize: 1,
+                                color: '#0f172a',
+                                font: { size: 12, weight: '600' },
+                                callback: (value) => {
+                                    if (!Number.isInteger(value)) {
+                                        return '';
+                                    }
+                                    const item = items[value];
+                                    return wrapLabel(item?.title || '');
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { enabled: false },
+                        datalabels: {
+                            color: '#475569',
+                            align: 'right',
+                            anchor: 'end',
+                            offset: 6,
+                            clamp: true,
+                            font: { size: 11, weight: '600' },
+                            formatter: (value, context) => {
+                                const point = context.dataset.data[context.dataIndex];
+                                return point.period;
+                            }
+                        }
+                    }
+                }
+            });
+        };
+
+        buildChronologyChart();
+
         // Video configurations: id, videoId, overlayId
         const videoConfigs = [
             { playerId: 'player1', videoId: 'FxWNbtI7ZUo', overlayId: 'overlay1' },
