@@ -678,7 +678,7 @@
             const data = items.map((item, index) => {
                 return {
                     x: index,
-                    y: 0,
+                    y: index % 2 === 0 ? 0.02 : 0.22,
                     period: item.period,
                     title: item.title,
                     accent: item.accent
@@ -687,7 +687,7 @@
 
             const chartWrap = document.getElementById('chronologyChartWrap');
             if (chartWrap) {
-                chartWrap.style.height = '190px';
+                chartWrap.style.height = '230px';
             }
 
             Chart.register(ChartDataLabels);
@@ -711,7 +711,7 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     layout: {
-                        padding: { left: 8, right: 12, top: 58, bottom: 8 }
+                        padding: { left: 8, right: 12, top: 76, bottom: 8 }
                     },
                     scales: {
                         x: {
@@ -741,8 +741,8 @@
                         },
                         y: {
                             type: 'linear',
-                            min: -0.2,
-                            max: 0.45,
+                            min: -0.12,
+                            max: 0.52,
                             grid: {
                                 display: false
                             },
@@ -762,12 +762,12 @@
                             color: '#0f172a',
                             align: 'top',
                             anchor: 'end',
-                            offset: 10,
+                            offset: 12,
                             clamp: true,
                             clip: false,
                             font: { size: 11, weight: '600' },
                             textAlign: 'left',
-                            rotation: -32,
+                            rotation: -38,
                             formatter: (value, context) => {
                                 const point = context.dataset.data[context.dataIndex];
                                 return wrapLabel(point.title, 20);
