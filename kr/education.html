@@ -618,21 +618,6 @@
     <!-- YouTube IFrame API -->
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
-        const toMonthIndex = (year, month) => (year * 12) + (month - 1);
-
-        const parseYearMonth = (raw, fallbackDate) => {
-            if (!raw) {
-                return fallbackDate;
-            }
-            const match = raw.match(/(\d{4})(?:\.(\d{2}))?/);
-            if (!match) {
-                return fallbackDate;
-            }
-            const year = Number(match[1]);
-            const month = match[2] ? Number(match[2]) : 1;
-            return { year, month };
-        };
-
         const wrapLabel = (text, maxLength = 28) => {
             if (!text) {
                 return '';
@@ -661,20 +646,11 @@
             return lines;
         };
 
-        const formatMonthIndex = (value) => {
-            const year = Math.floor(value / 12);
-            const month = (value % 12) + 1;
-            return `${year}.${String(month).padStart(2, '0')}`;
-        };
-
         const buildChronologyChart = () => {
             const chartCanvas = document.getElementById('chronologyChart');
             if (!chartCanvas || !window.Chart) {
                 return;
             }
-
-            const now = new Date();
-            const nowValue = { year: now.getFullYear(), month: now.getMonth() + 1 };
             const items = Array.from(document.querySelectorAll('.education-chronology .chronology-item'))
                 .map(item => {
                     const period = item.querySelector('.chronology-period')?.textContent.trim();
@@ -700,24 +676,18 @@
             }
 
             const data = items.map((item, index) => {
-                const normalized = item.period.replace('현재', `${nowValue.year}.${String(nowValue.month).padStart(2, '0')}`);
-                const firstToken = normalized.split('/')[0].split('-')[0].trim();
-                const { year, month } = parseYearMonth(firstToken, nowValue);
                 return {
-                    x: toMonthIndex(year, month),
-                    y: index,
+                    x: index,
+                    y: 0,
                     period: item.period,
                     title: item.title,
                     accent: item.accent
                 };
             });
 
-            const minX = Math.min(...data.map(point => point.x)) - 6;
-            const maxX = Math.max(...data.map(point => point.x)) + 6;
-
             const chartWrap = document.getElementById('chronologyChartWrap');
             if (chartWrap) {
-                chartWrap.style.height = `${Math.max(180, items.length * 24)}px`;
+                chartWrap.style.height = '120px';
             }
 
             Chart.register(ChartDataLabels);
@@ -741,28 +711,38 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     layout: {
-                        padding: { left: 8, right: 220, top: 8, bottom: 8 }
+                        padding: { left: 8, right: 12, top: 18, bottom: 8 }
                     },
                     scales: {
                         x: {
                             type: 'linear',
-                            min: minX,
-                            max: maxX,
+                            min: -0.5,
+                            max: items.length - 0.5,
                             grid: {
                                 color: 'rgba(148, 163, 184, 0.35)'
                             },
+                            border: {
+                                color: 'rgba(148, 163, 184, 0.7)'
+                            },
                             ticks: {
-                                stepSize: 12,
+                                stepSize: 1,
                                 color: '#475569',
                                 font: { size: 11, weight: '600' },
-                                callback: formatMonthIndex
+                                autoSkip: false,
+                                maxRotation: 0,
+                                minRotation: 0,
+                                callback: (value) => {
+                                    if (!Number.isInteger(value) || !items[value]) {
+                                        return '';
+                                    }
+                                    return wrapLabel(items[value].period, 18);
+                                }
                             }
                         },
                         y: {
                             type: 'linear',
-                            min: -0.5,
-                            max: items.length - 0.5,
-                            reverse: true,
+                            min: -0.2,
+                            max: 0.45,
                             grid: {
                                 display: false
                             },
@@ -779,17 +759,18 @@
                         legend: { display: false },
                         tooltip: { enabled: false },
                         datalabels: {
-                            color: '#475569',
-                            align: 'right',
+                            color: '#0f172a',
+                            align: 'top',
                             anchor: 'end',
-                            offset: 8,
+                            offset: 10,
                             clamp: true,
                             clip: false,
                             font: { size: 11, weight: '600' },
                             textAlign: 'left',
+                            rotation: -32,
                             formatter: (value, context) => {
                                 const point = context.dataset.data[context.dataIndex];
-                                return [wrapLabel(point.title), point.period];
+                                return wrapLabel(point.title, 20);
                             }
                         }
                     }
