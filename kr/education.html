@@ -618,23 +618,25 @@
     <!-- YouTube IFrame API -->
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
-        const wrapLabel = (text, maxLength = 28) => {
+        const wrapLabel = (text, maxLength = 22) => {
             if (!text) {
                 return '';
             }
             if (text.length <= maxLength) {
-                return text;
+                return [text];
             }
             const words = text.split(' ');
             if (words.length === 1) {
-                return text.match(new RegExp(`.{1,${maxLength}}`, 'g')) || text;
+                return text.match(new RegExp(`.{1,${maxLength}}`, 'g')) || [text];
             }
             const lines = [];
             let line = '';
             words.forEach(word => {
                 const next = line ? `${line} ${word}` : word;
                 if (next.length > maxLength) {
-                    lines.push(line);
+                    if (line) {
+                        lines.push(line);
+                    }
                     line = word;
                 } else {
                     line = next;
@@ -644,6 +646,44 @@
                 lines.push(line);
             }
             return lines;
+        };
+
+        const chronologyLabelPlugin = {
+            id: 'chronologyLabelPlugin',
+            afterDatasetsDraw(chart) {
+                const { ctx, scales } = chart;
+                const meta = chart.getDatasetMeta(0);
+                const data = chart.data.datasets[0].data;
+                const axisY = scales.y.getPixelForValue(0);
+
+                ctx.save();
+                meta.data.forEach((point, index) => {
+                    const item = data[index];
+                    const x = point.x;
+                    const titleLines = wrapLabel(item.title, 18);
+
+                    ctx.save();
+                    ctx.translate(x - 8, axisY - 18);
+                    ctx.rotate(-Math.PI / 4);
+                    ctx.fillStyle = '#0f172a';
+                    ctx.font = '600 11px Pretendard, Apple SD Gothic Neo, sans-serif';
+                    ctx.textAlign = 'left';
+                    ctx.textBaseline = 'bottom';
+                    titleLines.forEach((line, lineIndex) => {
+                        ctx.fillText(line, 0, lineIndex * 13);
+                    });
+                    ctx.restore();
+
+                    ctx.save();
+                    ctx.fillStyle = '#475569';
+                    ctx.font = '600 10px Pretendard, Apple SD Gothic Neo, sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'top';
+                    ctx.fillText(item.period, x, axisY + 18);
+                    ctx.restore();
+                });
+                ctx.restore();
+            }
         };
 
         const buildChronologyChart = () => {
@@ -678,7 +718,7 @@
             const data = items.map((item, index) => {
                 return {
                     x: index,
-                    y: index % 2 === 0 ? 0.02 : 0.22,
+                    y: 0,
                     period: item.period,
                     title: item.title,
                     accent: item.accent
@@ -687,10 +727,10 @@
 
             const chartWrap = document.getElementById('chronologyChartWrap');
             if (chartWrap) {
-                chartWrap.style.height = '230px';
+                chartWrap.style.height = '260px';
             }
 
-            Chart.register(ChartDataLabels);
+            Chart.register(ChartDataLabels, chronologyLabelPlugin);
             document.body.classList.add('has-chronology-chart');
 
             new Chart(chartCanvas, {
@@ -703,7 +743,10 @@
                             pointHoverRadius: 4,
                             pointBackgroundColor: data.map(point => point.accent),
                             pointBorderColor: '#0f172a',
-                            pointBorderWidth: 1
+                            pointBorderWidth: 1,
+                            datalabels: {
+                                display: false
+                            }
                         }
                     ]
                 },
@@ -711,13 +754,14 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     layout: {
-                        padding: { left: 8, right: 12, top: 76, bottom: 8 }
+                        padding: { left: 8, right: 8, top: 92, bottom: 38 }
                     },
                     scales: {
                         x: {
                             type: 'linear',
                             min: -0.5,
                             max: items.length - 0.5,
+                            position: 'center',
                             grid: {
                                 color: 'rgba(148, 163, 184, 0.35)'
                             },
@@ -726,23 +770,13 @@
                             },
                             ticks: {
                                 stepSize: 1,
-                                color: '#475569',
-                                font: { size: 11, weight: '600' },
-                                autoSkip: false,
-                                maxRotation: 0,
-                                minRotation: 0,
-                                callback: (value) => {
-                                    if (!Number.isInteger(value) || !items[value]) {
-                                        return '';
-                                    }
-                                    return wrapLabel(items[value].period, 18);
-                                }
+                                display: false
                             }
                         },
                         y: {
                             type: 'linear',
-                            min: -0.12,
-                            max: 0.52,
+                            min: -0.35,
+                            max: 0.35,
                             grid: {
                                 display: false
                             },
@@ -759,19 +793,7 @@
                         legend: { display: false },
                         tooltip: { enabled: false },
                         datalabels: {
-                            color: '#0f172a',
-                            align: 'top',
-                            anchor: 'end',
-                            offset: 12,
-                            clamp: true,
-                            clip: false,
-                            font: { size: 11, weight: '600' },
-                            textAlign: 'left',
-                            rotation: -38,
-                            formatter: (value, context) => {
-                                const point = context.dataset.data[context.dataIndex];
-                                return wrapLabel(point.title, 20);
-                            }
+                            display: false
                         }
                     }
                 }
