@@ -262,7 +262,7 @@ a:hover {
     min-width: 0;
 }
 
-.education-page .chronology-chart {
+.resume-page .chronology-chart {
     display: none;
     width: 100%;
     padding: 12px 16px;
@@ -272,15 +272,15 @@ a:hover {
     overflow-x: auto;
 }
 
-.education-page.has-chronology-chart .chronology-chart {
+.resume-page.has-chronology-chart .chronology-chart {
     display: block;
 }
 
-.education-page.has-chronology-chart .chronology-scroll {
+.resume-page.has-chronology-chart .chronology-scroll {
     display: none;
 }
 
-.education-page .chronology-chart canvas {
+.resume-page .chronology-chart canvas {
     width: 100%;
     height: 100%;
 }
