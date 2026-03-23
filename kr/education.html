@@ -648,6 +648,33 @@
             return lines;
         };
 
+        const parsePeriodStart = (period) => {
+            if (!period) {
+                return 0;
+            }
+            const firstToken = period.split('/')[0].split('-')[0].trim();
+            const match = firstToken.match(/(\d{4})(?:\.(\d{2}))?/);
+            if (!match) {
+                return 0;
+            }
+            const year = Number(match[1]);
+            const month = match[2] ? Number(match[2]) : 1;
+            return (year * 100) + month;
+        };
+
+        const wrapPeriodLabel = (period) => {
+            if (!period) {
+                return [''];
+            }
+            if (period.includes('/')) {
+                return period.split('/').map(part => part.trim());
+            }
+            if (period.includes('-')) {
+                return period.split('-').map(part => part.trim());
+            }
+            return [period];
+        };
+
         const chronologyLabelPlugin = {
             id: 'chronologyLabelPlugin',
             afterDatasetsDraw(chart) {
@@ -661,6 +688,7 @@
                     const item = data[index];
                     const x = point.x;
                     const titleLines = wrapLabel(item.title, 18);
+                    const periodLines = wrapPeriodLabel(item.period);
 
                     ctx.save();
                     ctx.translate(x - 8, axisY - 18);
@@ -679,7 +707,9 @@
                     ctx.font = '600 10px Pretendard, Apple SD Gothic Neo, sans-serif';
                     ctx.textAlign = 'center';
                     ctx.textBaseline = 'top';
-                    ctx.fillText(item.period, x, axisY + 18);
+                    periodLines.forEach((line, lineIndex) => {
+                        ctx.fillText(line, x, axisY + 18 + (lineIndex * 12));
+                    });
                     ctx.restore();
                 });
                 ctx.restore();
@@ -706,10 +736,12 @@
                     return {
                         period,
                         title,
-                        accent
+                        accent,
+                        sortKey: parsePeriodStart(period)
                     };
                 })
-                .filter(item => item.period && item.title);
+                .filter(item => item.period && item.title)
+                .sort((a, b) => a.sortKey - b.sortKey);
 
             if (items.length === 0) {
                 return;
@@ -754,13 +786,13 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     layout: {
-                        padding: { left: 8, right: 8, top: 92, bottom: 38 }
+                        padding: { left: 16, right: 72, top: 92, bottom: 48 }
                     },
                     scales: {
                         x: {
                             type: 'linear',
                             min: -0.5,
-                            max: items.length - 0.5,
+                            max: items.length - 0.1,
                             position: 'center',
                             grid: {
                                 color: 'rgba(148, 163, 184, 0.35)'
