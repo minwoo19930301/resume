@@ -660,8 +660,11 @@
             if (chartWrap) {
                 chartWrap.style.height = '260px';
             }
-            chartCanvas.style.minWidth = `${Math.max(980, items.length * 112)}px`;
-            chartCanvas.style.width = `${Math.max(980, items.length * 112)}px`;
+            const chartWidth = Math.max(980, items.length * 112);
+            chartCanvas.width = chartWidth;
+            chartCanvas.height = 260;
+            chartCanvas.style.minWidth = `${chartWidth}px`;
+            chartCanvas.style.width = `${chartWidth}px`;
 
             Chart.register(mainChronologyLabelPlugin);
             document.body.classList.add('has-chronology-chart');
@@ -679,7 +682,7 @@
                     }]
                 },
                 options: {
-                    responsive: true,
+                    responsive: false,
                     maintainAspectRatio: false,
                     layout: {
                         padding: { left: 16, right: 72, top: 92, bottom: 48 }
