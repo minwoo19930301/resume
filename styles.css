@@ -281,7 +281,9 @@ a:hover {
 }
 
 .resume-page .chronology-chart canvas {
-    width: 100%;
+    display: block;
+    width: auto;
+    max-width: none;
     height: 100%;
 }
 
