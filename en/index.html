@@ -383,8 +383,8 @@
                         detection difficult. To solve this problem, MsSQL Trigger was introduced.</p>
                     <p>When a seller consents or status changes, seller status linkage to SSG and product linkage status
                         to the Item team are delivered in Batch (once a day).</p>
-                    <p>Performed independently although resignation of 2 project team members, accomplished the due
-                        development date and maintained 3 or fewer failures for 3 months.</p>
+                    <p>Performed independently after two project team members left, met the delivery schedule, and kept
+                        operational incidents at a low level after release.</p>
                 </div>
                 <div class="project">
                     <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
@@ -437,10 +437,11 @@
                 <div class="project">
                     <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
                     <h3>Built the pricing back-office system and standardized it as a reusable admin template</h3>
-                    <p>The pricing workflow had previously been managed through spreadsheets, which had limits in data consistency, access control, and history management. I redesigned it as an actual internal decision-support back-office system instead of a simple screen migration.</p>
-                    <p>On top of the existing .NET admin environment, I built a standardized <code>Spring Boot + Thymeleaf</code> admin template so that new admin systems could be created quickly by changing configuration and domain values, rather than rebuilding login, permissions, headers, and menu structure each time.</p>
-                    <p>For data access, I designed a query-oriented architecture with direct Databricks JDBC integration. Large CSV downloads were implemented with streaming instead of server-side file generation, minimizing memory usage and making chunked or batched handling possible when needed.</p>
-                    <p>The focus was not just feature delivery, but building a reusable operating structure that other services could adopt with minimal additional work.</p>
+                    <p>I redesigned a spreadsheet-driven pricing operation into a back-office system that connects products, managers, competitor channels, monthly performance, and follow-up action history.</p>
+                    <p>Using <code>Spring Boot</code>, <code>Thymeleaf</code>, <code>MongoDB</code>, and <code>Databricks JDBC</code>, I implemented item-level search, summary dashboards, team/manager permission filters, Reason/Action input flows, and CSV downloads.</p>
+                    <p>I connected Databricks-generated <code>price_db</code> and <code>admin_summary</code> snapshots to the admin UI so operators could review hourly pricing competitiveness metrics and MTD trends based on the <code>dt/hour</code> contract.</p>
+                    <p>On the frontend, I separated the responsibilities of the summary and item-detail views, and organized filters, tables, charts, and CSV status handling into reusable modules. I also stabilized state management so API-level result counts would not shift during sorting, grouped views, or pagination.</p>
+                    <p>For operation, I considered MongoDB indexes, large search filters, streaming CSV downloads, Databricks/Mongo count validation, and Reason-data compatibility so the tool could support repeated pricing decisions by business operators.</p>
                 </div>
             </div>
         </div>
@@ -490,9 +491,15 @@
                     <p>After introducing the roles of HTML, CSS, and JavaScript, I guided students to build their own webpages with AI assistance and share the results for peer feedback.</p>
                 </div>
                 <div class="project">
-                    <h3>Project mentoring (3 programs, incl. government-supported track) / 2025.06 ~ Apr 2026 (scheduled)</h3>
-                    <p>I completed two education-program project mentoring engagements, and I am scheduled to join a government-supported mentoring program starting in April 2026.</p>
+                    <h3>Project mentoring for a government-linked digital talent program / 2025.06 ~ 2025.08</h3>
+                    <p>I completed two project mentoring engagements in a digital talent training program, and one delivery-intermediary platform team won first place in the final presentation.</p>
                     <p>Feedback focused on service design, performance bottlenecks, data flow, and presentation/Q&amp;A structure.</p>
+                </div>
+                <div class="project">
+                    <h3>Mentoring linked with the Ministry of Science and ICT / 2026.03 ~ Present</h3>
+                    <p>I am mentoring a team building a hospital accompaniment matching service for older adults.</p>
+                    <p>I help the team structure the product flow and data model across patients, guardians, accompaniment managers, hospitals, matching records, and admin operations, while advising how to divide frontend, backend, database, and cloud server responsibilities.</p>
+                    <p>I also review infrastructure choices before MVP implementation, including the available AWS support scope, server-cost estimation, GitHub-based collaboration, and operational risks to address before deployment.</p>
                 </div>
                 <div class="project">
                     <h3>Hackathon: Interest-based recommendation system through pre-query search bar</h3>
