@@ -29,37 +29,28 @@
             border: 0;
         }
 
-        /* Hide YouTube logo (bottom-right) */
+        .video-container::before,
         .video-container::after {
             content: '';
             position: absolute;
-            bottom: 0;
             right: 0;
-            width: 120px;
-            height: 50px;
-            background: #000;
+            background: transparent;
             pointer-events: auto;
             z-index: 10;
-            border-radius: 0 0 8px 0;
         }
 
-        /* Hide share/watch later buttons (top-right) */
         .video-container::before {
-            content: '';
-            position: absolute;
             top: 0;
-            right: 0;
             width: 180px;
             height: 70px;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            pointer-events: auto;
-            z-index: 10;
-            border-radius: 0 8px 0 0;
         }
 
-        /* Block click on title (top-left) */
+        .video-container::after {
+            bottom: 0;
+            width: 120px;
+            height: 50px;
+        }
+
         .video-blocker {
             position: absolute;
             top: 0;
@@ -80,6 +71,43 @@
 
         .video-item {
             min-width: 0;
+        }
+
+        .lesson-video-pair {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .guidance-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+            align-items: start;
+        }
+
+        .guidance-grid .project {
+            height: 100%;
+        }
+
+        .guidance-grid .project p,
+        .guidance-grid .project li {
+            font-size: 14px;
+            line-height: 1.62;
+        }
+
+        .guidance-grid .video-container.compact-video {
+            width: 100%;
+            max-width: none;
+        }
+
+        .video-container.compact-video {
+            width: min(100%, 460px);
+            max-width: 460px;
+            aspect-ratio: 16 / 9;
+            height: auto;
+            padding-bottom: 0;
+            margin-top: 10px;
         }
 
         /* Preview overlay */
@@ -123,13 +151,32 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #000;
+            background:
+                radial-gradient(circle at 50% 45%, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.68)),
+                linear-gradient(135deg, rgba(25, 31, 40, 0.72), rgba(0, 0, 0, 0.34));
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 15;
             cursor: pointer;
             transition: opacity 0.3s;
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+        }
+
+        .video-start-overlay::after {
+            content: '10분 미리보기 재생';
+            position: absolute;
+            left: 50%;
+            bottom: 18px;
+            transform: translateX(-50%);
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #191f28;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
 
         .video-start-overlay.hidden {
@@ -177,6 +224,15 @@
                 width: 100%;
                 max-width: 100%;
                 min-width: 0;
+            }
+
+            .video-container.compact-video {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .guidance-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -389,6 +445,7 @@
                     <h3>반포잠원교육지원센터 디지털 특강 / 2025.08 ~ 현재</h3>
                     <p>반포잠원교육지원센터에서 초·중학생을 대상으로 디지털 특강을 진행하고 있습니다.</p>
                     <p>엔트리·Python·Java를 활용해 문법 설명에 그치지 않고 캐릭터를 움직이거나 그림을 그리고 악보를 만들어보는 실습 중심 수업을 기획·운영했습니다.</p>
+                    <p>Entry 블록 코딩 수업에서는 X피하기 게임을 예제로 삼아 조건, 좌표, 충돌 같은 개념을 작은 기능 단위로 나누어 설명했고, 학생들이 직접 실행하며 흐름을 이해할 수 있도록 구성했습니다.</p>
                     <p>HTML·CSS·JS 구조를 이해한 뒤 AI를 활용해 자신만의 웹페이지를 제작하도록 지도했고, 완성한 사이트는 패들릿에 공유해 서로 피드백을 주고받게 했습니다.</p>
                 </div>
             </div>
@@ -506,20 +563,39 @@
                                 특강</div>
                             <h3>초/중학생 대상 특강</h3>
                             <p><a href="https://padlet.com/minwookim920/padlet-j7t1rvqzmqcbeezr" target="_blank">강의 자료
-                                    (Padlet)</a></p>
-                            <div class="video-container">
-                                <div id="player4"></div>
-                                <div class="video-blocker"></div>
-                                <div class="video-start-overlay" id="start4" onclick="startVideo(4)">
-                                    <div class="play-button"></div>
+                                    (Padlet)</a> · <a href="https://playentry.org/ws/6a06c79f54c9a8d93df9e1e0?type=normal&amp;mode=block&amp;lang=ko" target="_blank">실제 게임 예시</a></p>
+                            <div class="video-group lesson-video-pair">
+                                <div class="video-item">
+                                    <div class="video-container">
+                                        <div id="player4"></div>
+                                        <div class="video-blocker"></div>
+                                        <div class="video-start-overlay" id="start4" onclick="startVideo(4)">
+                                            <div class="play-button"></div>
+                                        </div>
+                                        <div class="preview-overlay" id="overlay4">
+                                            <h4>미리보기 종료</h4>
+                                            <p>10분 미리보기가 끝났습니다</p>
+                                        </div>
+                                    </div>
+                                    <p class="video-caption">웹 제작과 AI 활용</p>
+                                    <p class="video-summary">개발자가 하는 일부터 HTML, CSS, JavaScript의 역할까지 학생 눈높이로 설명합니다. 엔트리·스크래치와 AI 활용 예시를 통해 직접 웹페이지와 간단한 상호작용을 만드는 흐름을 보여줍니다.</p>
                                 </div>
-                                <div class="preview-overlay" id="overlay4">
-                                    <h4>미리보기 종료</h4>
-                                    <p>10분 미리보기가 끝났습니다</p>
+                                <div class="video-item">
+                                    <div class="video-container">
+                                        <div id="player7"></div>
+                                        <div class="video-blocker"></div>
+                                        <div class="video-start-overlay" id="start7" onclick="startVideo(7)">
+                                            <div class="play-button"></div>
+                                        </div>
+                                        <div class="preview-overlay" id="overlay7">
+                                            <h4>미리보기 종료</h4>
+                                            <p>10분 미리보기가 끝났습니다</p>
+                                        </div>
+                                    </div>
+                                    <p class="video-caption">엔트리 강의 (X피하기 게임)</p>
+                                    <p class="video-summary">Entry 블록 코딩으로 X피하기 게임을 만드는 수업입니다. 조건, 좌표, 충돌 같은 개념을 학생 눈높이에 맞춰 작은 기능으로 나누고, 직접 실행 가능한 게임 예시로 연결했습니다.</p>
                                 </div>
                             </div>
-                            <p class="video-caption">웹 제작과 AI 활용</p>
-                            <p class="video-summary">개발자가 하는 일부터 HTML, CSS, JavaScript의 역할까지 학생 눈높이로 설명합니다. 엔트리·스크래치와 AI 활용 예시를 통해 직접 웹페이지와 간단한 상호작용을 만드는 흐름을 보여줍니다.</p>
                         </div>
                     </div>
                 </details>
@@ -536,10 +612,10 @@
                 <details open style="margin-bottom: 30px;">
                     <summary
                         style="cursor: pointer; font-size: 20px; font-weight: bold; padding: 10px 0; outline: none;">
-                        📚 과외형 스터디 · AX 컨설팅
+                        📚 과외형 스터디 · AX 컨설팅 · 프로젝트 멘토링
                         <span style="float: right; font-size: 14px; color: #666; font-weight: normal;">▼ 펼치기</span>
                     </summary>
-                    <div style="margin-top: 20px;">
+                    <div class="guidance-grid">
                         <div class="project">
                             <div
                                 style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
@@ -561,7 +637,7 @@
                                     <li>이후 학생 수준에 맞춰 맞춤형 진행</li>
                                 </ul>
                                 <p style="margin-top: 20px;"><strong>🖥️ 무료 시연 수업:</strong></p>
-                                <div class="video-container" style="margin-top: 10px;">
+                                <div class="video-container compact-video">
                                     <div id="player3"></div>
                                     <div class="video-blocker"></div>
                                     <div class="video-start-overlay" id="start3" onclick="startVideo(3)">
@@ -601,17 +677,6 @@
                                 <p>비개발자도 이해할 수 있도록 “AI 모델은 뇌, OpenClaw는 손발, 메신저는 입구, 메모리는 업무 노트”처럼 구조를 풀어 설명하고, 실제 업무 예시를 기준으로 도입 우선순위를 정리합니다.</p>
                             </div>
                         </div>
-                    </div>
-                </details>
-
-                <!-- Mentoring Section -->
-                <details open style="margin-bottom: 30px;">
-                    <summary
-                        style="cursor: pointer; font-size: 20px; font-weight: bold; padding: 10px 0; outline: none;">
-                        🏆 고용노동부 연계 디지털 인재 양성 과정 멘토링
-                        <span style="float: right; font-size: 14px; color: #666; font-weight: normal;">▼ 펼치기</span>
-                    </summary>
-                    <div style="margin-top: 20px;">
                         <div class="project">
                             <div
                                 style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
@@ -895,37 +960,77 @@
 
         buildChronologyChart();
 
-        // Video configurations: id, videoId, overlayId
+        // Video configurations: encoded YouTube IDs are decoded only when a preview is opened.
         const videoConfigs = [
-            { playerId: 'player1', videoId: 'FxWNbtI7ZUo', overlayId: 'overlay1' },
-            { playerId: 'player2', videoId: 'Vjb-if9VExQ', overlayId: 'overlay2' },
-            { playerId: 'player3', videoId: 'eww3FXMflp4', overlayId: 'overlay3' },
-            { playerId: 'player4', videoId: 'e4z_Evproq4', overlayId: 'overlay4' },
-            { playerId: 'player5', videoId: '9Z50ZpOrFbk', overlayId: 'overlay5' },
-            { playerId: 'player6', videoId: 'lrxf9sCNZ88', overlayId: 'overlay6' }
+            { playerId: 'player1', videoKey: 'RnhXTmJ0STdaVW8=', overlayId: 'overlay1' },
+            { playerId: 'player2', videoKey: 'VmpiLWlmOVZFeFE=', overlayId: 'overlay2' },
+            { playerId: 'player3', videoKey: 'ZXd3M0ZYTWZscDQ=', overlayId: 'overlay3' },
+            { playerId: 'player4', videoKey: 'ZTR6X0V2cHJvcTQ=', overlayId: 'overlay4' },
+            { playerId: 'player5', videoKey: 'OVo1MFpwT3JGYms=', overlayId: 'overlay5' },
+            { playerId: 'player6', videoKey: 'bHJ4ZjlzQ05aODg=', overlayId: 'overlay6' },
+            { playerId: 'player7', videoKey: 'd2hhcWRQS3pPbmc=', overlayId: 'overlay7' }
         ];
 
         const players = {};
+        const pendingPlay = new Set();
+        let youtubeApiReady = false;
         const MAX_TIME = 600; // 10 minutes in seconds
 
-        function onYouTubeIframeAPIReady() {
-            videoConfigs.forEach(config => {
-                players[config.playerId] = new YT.Player(config.playerId, {
-                    height: '100%',
-                    width: '100%',
-                    videoId: config.videoId,
-                    playerVars: {
-                        'modestbranding': 1,
-                        'rel': 0,
-                        'showinfo': 0,
-                        'fs': 0,  // Disable fullscreen
-                        'disablekb': 1  // Disable keyboard
+        function decodeVideoId(videoKey) {
+            return atob(videoKey);
+        }
+
+        function getPlayerVars() {
+            const playerVars = {
+                modestbranding: 1,
+                rel: 0,
+                controls: 1,
+                fs: 0,
+                disablekb: 1,
+                iv_load_policy: 3,
+                playsinline: 1
+            };
+
+            if (window.location.origin && window.location.origin !== 'null') {
+                playerVars.origin = window.location.origin;
+            }
+
+            return playerVars;
+        }
+
+        function createPlayer(config, shouldPlay = false) {
+            if (players[config.playerId]) {
+                return players[config.playerId];
+            }
+
+            players[config.playerId] = new YT.Player(config.playerId, {
+                height: '100%',
+                width: '100%',
+                host: 'https://www.youtube-nocookie.com',
+                videoId: decodeVideoId(config.videoKey),
+                playerVars: getPlayerVars(),
+                events: {
+                    onReady: (event) => {
+                        if (shouldPlay) {
+                            event.target.playVideo();
+                        }
                     },
-                    events: {
-                        'onStateChange': (event) => onPlayerStateChange(event, config)
-                    }
-                });
+                    onStateChange: (event) => onPlayerStateChange(event, config)
+                }
             });
+
+            return players[config.playerId];
+        }
+
+        function onYouTubeIframeAPIReady() {
+            youtubeApiReady = true;
+            pendingPlay.forEach(playerId => {
+                const config = videoConfigs.find(item => item.playerId === playerId);
+                if (config) {
+                    createPlayer(config, true);
+                }
+            });
+            pendingPlay.clear();
         }
 
         function onPlayerStateChange(event, config) {
@@ -948,15 +1053,32 @@
         // Function to start video when custom play button is clicked
         function startVideo(playerNum) {
             const startOverlay = document.getElementById('start' + playerNum);
-            const player = players['player' + playerNum];
+            const config = videoConfigs.find(item => item.playerId === 'player' + playerNum);
+
+            if (!config) {
+                return;
+            }
 
             // Hide the start overlay
             startOverlay.classList.add('hidden');
 
             // Play the video
+            const player = players[config.playerId];
             if (player && player.playVideo) {
                 player.playVideo();
+                return;
             }
+
+            if (youtubeApiReady && window.YT && window.YT.Player) {
+                createPlayer(config, true);
+                return;
+            }
+
+            pendingPlay.add(config.playerId);
+        }
+
+        if (window.YT && window.YT.Player) {
+            onYouTubeIframeAPIReady();
         }
 
         // Seamless Infinite Scroll Setup
