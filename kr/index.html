@@ -11,12 +11,12 @@
 <body class="resume-page">
     <header class="page-hero">
         <div class="hero-shell">
-            <div class="hero-copy">
-                <div class="language-tabs">
-                    <a href="../kr/index.html" class="language-tab kr-tab">한국어</a>
-                    <a href="../en/index.html" class="language-tab en-tab">English</a>
+            <div class="hero-copy" id="heroCopy">
+                <div class="portrait-card">
+                    <img class="profile-pic" src="../img/pic.jpeg" alt="Profile Picture">
                 </div>
                 <strong class="name">김민우</strong>
+                <p class="hero-tagline">대용량 데이터와 가격 시스템을 설계해 온 백엔드 엔지니어.<br>지금은 AI 에이전트로 팀의 일하는 방식을 재설계하는 AX 전환을 이끕니다.</p>
                 <div class="hero-contact-list">
                     <span class="contact">
                         Phone: <a href="tel:+821076463634">+82 10-7646-3634</a>
@@ -26,216 +26,305 @@
                     </span>
                 </div>
             </div>
-            <div class="hero-side">
-                <div class="portrait-card">
-                    <img class="profile-pic" src="../img/pic.jpeg" alt="Profile Picture">
-                </div>
+        </div>
+        <div class="scroll-cue"></div>
+    </header>
+
+    <section class="scroll-story" id="scrollStory" aria-label="업적 분류">
+        <div class="scroll-story-sticky">
+            <div class="story-scene">
+                <div class="story-photo" style="background-image:url('../img/story-1.jpg')"></div>
+                <p class="story-kicker">Core Themes</p>
+                <span class="story-line"></span>
+                <span class="story-title">성능 최적화와<br>대용량 데이터 처리</span>
+                <p class="story-desc">400GB급 가격 데이터 동기화를 Kafka Stream으로 전환하고, 가격 변동 배치를 1.5시간에서 10~20분으로 단축했습니다. 판매자 어드민 문의 조회는 최대 1분에서 0.3초로.</p>
+            </div>
+            <div class="story-scene">
+                <div class="story-photo" style="background-image:url('../img/story-2.jpg')"></div>
+                <p class="story-kicker">Core Themes</p>
+                <span class="story-line"></span>
+                <span class="story-title">자동화와 운영 효율</span>
+                <p class="story-desc">반복 수작업은 시스템이 대신하게 — Jenkins 오케스트레이션, DB 모니터링, webhook 알림, 테스트 자동화, Chrome Extension까지 같은 패턴이 반복됩니다.</p>
+            </div>
+            <div class="story-scene">
+                <div class="story-photo" style="background-image:url('../img/story-3.jpg')"></div>
+                <p class="story-kicker">Core Themes</p>
+                <span class="story-line"></span>
+                <span class="story-title">아키텍처와<br>플랫폼 기반 구축</span>
+                <p class="story-desc">팀에 없던 Spring Batch·Kafka·React 기반을 먼저 깔아 이후 작업의 기준점을 만들고, 기술 부채를 운영 가능한 구조로 바꿉니다.</p>
+            </div>
+            <div class="story-scene">
+                <div class="story-photo" style="background-image:url('../img/story-4.jpg')"></div>
+                <p class="story-kicker">Core Themes</p>
+                <span class="story-line"></span>
+                <span class="story-title">기획과 개발을<br>함께 끌고 가는 실행력</span>
+                <p class="story-desc">작업자 UX를 다시 설계해 처리 속도를 3배 높이는 식으로, 백오피스도 운영 흐름과 사용자 행동을 함께 보는 서비스 관점으로 접근합니다.</p>
+            </div>
+            <div class="story-scene">
+                <div class="story-photo" style="background-image:url('../img/story-5.jpg')"></div>
+                <p class="story-kicker">Core Themes</p>
+                <span class="story-line"></span>
+                <span class="story-title">AX 전환과<br>AI 에이전트 활용</span>
+                <p class="story-desc">사내 LLM 지식베이스를 구축하고 전사 학습 세션(SLS)에서 발표했으며, AI 에이전트를 실제 업무와 교육에 도입했습니다. 최신 에이전트 도구를 적용하면서 비용·보안·운영 구조까지 함께 설계합니다.</p>
+            </div>
+            <div class="story-progress">
+                <span class="on"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-    </header>
-    <script>
-        // 현재 페이지에 따라 탭 활성화
-        const path = window.location.pathname;
-        const krTab = document.querySelector('.language-tab.kr-tab');
-        const enTab = document.querySelector('.language-tab.en-tab');
-
-        if (path.includes('/kr/')) {
-            krTab.classList.add('active');
-        } else if (path.includes('/en/')) {
-            enTab.classList.add('active');
-        }
-    </script>
+    </section>
 
     <main class="page-shell">
-        <section class="content-section summary-section">
+        <section class="content-section summary-section reveal">
             <div class="section-intro">
                 <p class="section-kicker">Overview</p>
                 <h2 class="section-title">연혁</h2>
             </div>
-            <div class="chronology-chart" id="mainChronologyChartWrap">
-                <canvas id="mainChronologyChart" aria-label="메인 연혁 차트" role="img"></canvas>
-            </div>
-            <div class="chronology-scroll">
-                <div class="chronology-list">
-                    <article class="chronology-item edu">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2009.03 - 2012.02</span>
-                            <strong class="chronology-title">경기고등학교</strong>
+            <div class="journey">
+                <article class="journey-item gmarket now reveal">
+                    <span class="journey-period">2026.04 — 현재</span>
+                    <span class="journey-marker"></span>
+                    <div class="journey-body">
+                        <img class="journey-logo" src="../icon/Gmarket.png" alt="Gmarket">
+                        <div>
+                            <strong class="journey-title">G마켓 Pricing Engineering</strong>
                         </div>
-                    </article>
-                    <article class="chronology-item edu">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2014.03 - 2020.02</span>
-                            <strong class="chronology-title">성균관대학교</strong>
+                    </div>
+                </article>
+                <article class="journey-item gmarket reveal">
+                    <span class="journey-period">2025.11 — 2026.04</span>
+                    <span class="journey-marker"></span>
+                    <div class="journey-body">
+                        <img class="journey-logo" src="../icon/Gmarket.png" alt="Gmarket">
+                        <div>
+                            <strong class="journey-title">G마켓 MarTech Engineering</strong>
                         </div>
-                    </article>
-                    <article class="chronology-item wedata">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2019.06 - 2019.08</span>
-                            <strong class="chronology-title">위데이터랩 모바일팀 인턴</strong>
+                    </div>
+                </article>
+                <article class="journey-item gmarket reveal">
+                    <span class="journey-period">2024.10 — 2025.11</span>
+                    <span class="journey-marker"></span>
+                    <div class="journey-body">
+                        <img class="journey-logo" src="../icon/Gmarket.png" alt="Gmarket">
+                        <div>
+                            <strong class="journey-title">G마켓 Pricing Tech Engineering팀</strong>
                         </div>
-                    </article>
-                    <article class="chronology-item lotte">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2020.01 - 2020.02</span>
-                            <strong class="chronology-title">롯데e커머스 검색개발팀 인턴</strong>
+                    </div>
+                </article>
+                <article class="journey-item gmarket reveal">
+                    <span class="journey-period">2022.11 — 2024.10</span>
+                    <span class="journey-marker"></span>
+                    <div class="journey-body">
+                        <img class="journey-logo" src="../icon/Gmarket.png" alt="Gmarket">
+                        <div>
+                            <strong class="journey-title">G마켓 Seller &amp; SD Engineering팀</strong>
                         </div>
-                    </article>
-                    <article class="chronology-item lotte">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2020.08 - 2021.03</span>
-                            <strong class="chronology-title">롯데e커머스 검색개발팀</strong>
+                    </div>
+                </article>
+                <article class="journey-item lotte reveal">
+                    <span class="journey-period">2021.03 — 2022.11</span>
+                    <span class="journey-marker"></span>
+                    <div class="journey-body">
+                        <img class="journey-logo" src="../icon/LotteOn.png" alt="Lotte e-Commerce">
+                        <div>
+                            <strong class="journey-title">롯데e커머스 데이터플랫폼개발팀</strong>
                         </div>
-                    </article>
-                    <article class="chronology-item lotte">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2021.03 - 2022.11</span>
-                            <strong class="chronology-title">롯데e커머스 데이터플랫폼개발팀</strong>
+                    </div>
+                </article>
+                <article class="journey-item lotte reveal">
+                    <span class="journey-period">2020.08 — 2021.03</span>
+                    <span class="journey-marker"></span>
+                    <div class="journey-body">
+                        <img class="journey-logo" src="../icon/LotteOn.png" alt="Lotte e-Commerce">
+                        <div>
+                            <strong class="journey-title">롯데e커머스 검색개발팀</strong>
                         </div>
-                    </article>
-                    <article class="chronology-item gmarket">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2022.11 - 2024.10</span>
-                            <strong class="chronology-title">G마켓 Seller &amp; SD Engineering팀</strong>
+                    </div>
+                </article>
+                <article class="journey-item lotte reveal">
+                    <span class="journey-period">2020.01 — 2020.02</span>
+                    <span class="journey-marker"></span>
+                    <div class="journey-body">
+                        <img class="journey-logo" src="../icon/LotteOn.png" alt="Lotte e-Commerce">
+                        <div>
+                            <strong class="journey-title">롯데e커머스 검색개발팀 인턴</strong>
                         </div>
-                    </article>
-                    <article class="chronology-item gmarket">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2024.10 - 2025.11</span>
-                            <strong class="chronology-title">G마켓 Pricing Tech Engineering팀</strong>
+                    </div>
+                </article>
+                <article class="journey-item wedata reveal">
+                    <span class="journey-period">2019.06 — 2019.08</span>
+                    <span class="journey-marker"></span>
+                    <div class="journey-body">
+                        <img class="journey-logo" src="../icon/WeDataLab.png" alt="WeDataLab">
+                        <div>
+                            <strong class="journey-title">위데이터랩 모바일팀 인턴</strong>
                         </div>
-                    </article>
-                    <article class="chronology-item gmarket">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2025.11 - 현재</span>
-                            <strong class="chronology-title">G마켓 MarTech Engineering</strong>
+                    </div>
+                </article>
+                <article class="journey-item edu reveal">
+                    <span class="journey-period">2014.03 — 2020.02</span>
+                    <span class="journey-marker"></span>
+                    <div class="journey-body">
+                        <div>
+                            <strong class="journey-title">성균관대학교</strong>
                         </div>
-                    </article>
-                </div>
+                    </div>
+                </article>
+                <article class="journey-item edu reveal">
+                    <span class="journey-period">2009.03 — 2012.02</span>
+                    <span class="journey-marker"></span>
+                    <div class="journey-body">
+                        <div>
+                            <strong class="journey-title">경기고등학교</strong>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <section class="content-section">
-            <div class="section-intro">
-                <p class="section-kicker">Core Themes</p>
-                <h2 class="section-title">업적 분류</h2>
-            </div>
-            <div class="projects">
-                <div class="project">
-                    <h3>성능 최적화와 대용량 데이터 처리</h3>
-                    <p>400GB급 상품 가격 데이터 동기화 구조를 Stream/Kafka 중심으로 전환했고, 가격 변동 배치를 1.5시간에서 10~20분으로 줄였습니다.</p>
-                    <p>ESM 문의하기는 최대 1분 걸리던 조회를 0.3초까지 단축했고, 판매자 통계용 유입 집계에서는 불필요한 파싱 비용을 줄여 고속 처리 구조를 만들었습니다.</p>
-                </div>
-                <div class="project">
-                    <h3>자동화와 운영 효율</h3>
-                    <p>반복해서 사람이 해야 하는 일은 시스템이 대신하게 만드는 쪽을 선호합니다. Jenkins orchestration, DB 모니터링, webhook alert, .http 테스트, husky/githook 같은 개선이 이 축에 있습니다.</p>
-                    <p>개인 프로젝트에서도 크롤링, 알림, 스케줄링, Chrome Extension을 직접 만들어 수작업 감시 업무를 줄이는 패턴이 반복됩니다.</p>
-                </div>
-                <div class="project">
-                    <h3>아키텍처와 플랫폼 기반 구축</h3>
-                    <p>팀에 없던 Spring Batch, Spring Kafka, React/Next.js 기반을 먼저 깔아두고 이후 작업의 기준점을 만드는 역할을 자주 맡았습니다.</p>
-                    <p>기존 .NET 공용 어드민 위에 Java 확장 환경을 얹거나, 웹앱 내부 <code>@Scheduled</code> 대신 배치 실행 책임을 분리하는 식으로 기술 부채를 운영 가능한 구조로 바꾸는 편입니다.</p>
-                </div>
-                <div class="project">
-                    <h3>기획과 개발을 함께 끌고 가는 실행력</h3>
-                    <p>문의하기 개편에서는 멀티답변, 임시저장, 조회 구조까지 함께 손봤고, 가격 분석/매칭 시스템에서는 작업자 UX 자체를 바꿔 처리 속도를 높였습니다.</p>
-                    <p>단순 구현보다 운영 흐름과 사용자의 실제 행동을 같이 보는 편이라, 백오피스라도 서비스 관점으로 접근합니다.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section timeline-section">
+        <section class="content-section timeline-section reveal">
             <div class="section-intro">
                 <p class="section-kicker">Selected Work</p>
                 <h2 class="section-title">주요 프로젝트</h2>
             </div>
             <div class="timeline-container">
-        <!-- 2019년 -->
+
+        <!-- 2026년 -->
         <div class="year-section">
             <div class="year">
-                <span class="year-label">2019</span>
+                <span class="year-label">2026</span>
                 <div class="year-meta">
                     <span class="year-chip">
-                        <img src="../icon/WeDataLab.png" alt="WeDataLab" class="year-company-icon">
-                        WeDataLab
+                        <img src="../icon/Gmarket.png" alt="Gmarket" class="year-company-icon">
+                        Gmarket
                     </span>
                 </div>
             </div>
             <div class="projects">
-                <div class="project">
-                    <img src="../icon/WeDataLab.png" alt="WeDataLab Icon" class="project-icon">
-                    <h3>[인턴] React Native를 통한 간단한 웹뷰 앱 개발</h3>
-                    <p>기존 웹사이트를 앱에서도 실행 가능하도록 웹뷰를 활용한 간단한 앱 개발.</p>
-                    <p>쿠키 및 세션 관리를 위한 기능 추가와 네비게이터 구성.</p>
+                <div class="project reveal">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>가격관리 어드민 정식 런칭 및 운영</h3>
+                    <p>2025년 구축한 가격관리 백오피스를 정식 런칭. 영업본부 약 150명이 일상 업무 도구로 사용 중이며, 상품·채널별 가격 통계 조회와 경쟁사 대비 가격 우위 판정을 한 화면에서 제공.</p>
+                    <p>대용량 CSV 다운로드는 <code>StreamingResponseBody</code>와 MongoDB cursor 스트리밍을 조합해, 전체 데이터를 메모리에 올리지 않고 row 단위로 흘려보내는 구조로 구현. 수십만 행을 내려받아도 서버 메모리 사용량이 일정하게 유지됨. UTF-8 BOM 삽입으로 엑셀 한글 호환을 처리하고, 필요한 필드만 projection으로 추려 쿼리 부하를 절감.</p>
+                    <p>프론트엔드는 프레임워크 없이 ES Module 단위로 페이지(요약/상품)·공용 모듈을 분리하고, 스냅샷 기반 상태 모듈로 필터·선택·패널 상태를 관리. fetch <code>ReadableStream</code>으로 청크 단위 수신량을 읽어 다운로드 진행률 status bar를 표시하고, 현재 필터/전체 범위를 선택하는 scope 메뉴를 제공. 사용자별 컬럼 레이아웃과 페이지 크기는 localStorage에 영속화하고, 컬럼 추가 시에도 기존 사용자 배치가 깨지지 않도록 merge 로직을 설계.</p>
+                    <p>백엔드는 운영 조회·저장(MongoDB)과 파이프라인 산출물 조회(Databricks JDBC)를 분리한 이원 데이터 소스 구조. 자격증명은 Vault로 관리하고, MTD 추세는 일·시간 버킷 단위로 서버에서 합산하는 집계기를 구현. 도메인 정책·결정 기록을 문서로 남겨 AI 에이전트가 이어서 작업할 수 있는 코드베이스로 운영.</p>
+                </div>
+                <div class="project reveal">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>팀 지식 베이스(LLM Wiki) 구축 주도 — Second Brain</h3>
+                    <p>팀에 먼저 제안해, 사람과 AI가 같이 읽고 채우는 팀 도메인 지식 베이스 구축을 주도. 불변 원본(raw)과 정제 노드(wiki)의 2계층 구조로, 각 노드는 type·한줄요약·태그 frontmatter와 위키링크로 연결되는 atomic 단위(claim/concept/decision)로 관리. 현재 위키 노드 330여 개, 원본 문서 140여 개 규모.</p>
+                    <p>GitHub·Confluence·Jira·Databricks를 토큰으로 연동해 AI 에이전트가 코드·문서·티켓을 직접 읽고 노드로 정제하는 수집 파이프라인을 설계. 레포 6개와 Databricks 잡을 한 번에 529개 노드로 정제하고, 이후 459개 코드 레퍼런스를 주제 단위 137개 통합 노드로 재정제하는 식으로 품질을 관리.</p>
+                    <p>표준 라이브러리만으로 MCP 서버를 직접 구현해, 팀원이 레포 폴더만 열면 에이전트가 자동으로 연결되어 지식 베이스를 검색·인용하도록 구성(API key 불필요). 별도 대시보드 웹앱으로 지식그래프·ERD·워크플로우 간트 시각화와 RAG 챗봇(Claude CLI 연동, 미설치 시 키워드 검색 폴백)도 제공.</p>
+                    <p>규약을 외울 필요 없이 "아는 내용을 말로 쏟아내면" 에이전트가 스키마에 맞춰 정리하도록 운영 방식을 설계하고, 토큰 발급·수집 방법과 에이전트 활용법을 팀에 전파.</p>
                 </div>
             </div>
         </div>
 
-        <!-- 2020년 -->
+        <!-- 2025년 -->
         <div class="year-section">
             <div class="year">
-                <span class="year-label">2020</span>
+                <span class="year-label">2025</span>
                 <div class="year-meta">
                     <span class="year-chip">
-                        <img src="../icon/LotteOn.png" alt="Lotte e-Commerce" class="year-company-icon">
-                        Lotte e-Commerce
+                        <img src="../icon/Gmarket.png" alt="Gmarket" class="year-company-icon">
+                        Gmarket
                     </span>
                 </div>
             </div>
             <div class="projects">
-                <div class="project">
-                    <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
-                    <h3>[인턴] 통합 EC구축(롯데온), 롯데백화점 프리미엄 사이트 개발 참여</h3>
-                    <p>롯데백화점 프리미엄 사이트의 베스트 페이지와 햄버거 화면 개발</p>
-                    <p>서버 API와 웹퍼블리셔의 HTML을 조합하여 Freemarker 기반으로 화면 구성</p>
-                    <p>A-Z 브랜드 명을 나열하며, 알파벳 전환 시점(예: A에서 B로 넘어갈 때) B의 시작 인덱스를 표시하는 기능 구현. Freemarker에서 Map 구조 사용 시 메모리
-                        부족 이슈 발생</p>
-                    <p>문제 해결을 위해 메모리에 직전 알파벳의 첫 글자만 저장하고, for 루프 내에서 신규 알파벳 등장 시 인덱스를 표시하는 방식으로 최적화. 메모리 부하 감소 및 기능 성공적
-                        구현</p>
+                <div class="project reveal">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>타사 검색 페이지 상품 리스트 매핑 파이프라인 구축</h3>
+                    <p>AI 팀과 협업하여 Databricks를 활용한 상품 데이터 처리 파이프라인 개발. 우리 상품 데이터를 기반으로 AI 팀에서 키워드를 추출한 후, Spark를 통해 explode로 중복 제거된 TSV 리스트 생성.</p>
+                    <p>외주 업체에 데이터를 전달하고, 외주 업체가 검색 페이지에서 하루 동안 수집한 상품 리스트를 반환하면 AI 팀이 우리 상품명과 매칭. 최종 결과를 MongoDB에 적재하는 프로세스 구현.</p>
+                    <p>파일 전달 간 외주 업체와의 보안 강화를 위해 유효기간이 포함된 JWT 인증 도입.</p>
                 </div>
-                <div class="project">
-                    <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
-                    <h3>검색어 백로그 조회용 어드민 화면 개발</h3>
-                    <p>AuroraDB에 적재된 클라이언트의 검색어 백로그 데이터를 단순 조회할 수 있는 백오피스 개발.</p>
-                    <p>Spring Web과 기본 html, css, js를 사용하여 개발.</p>
+                <div class="project reveal">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>협력업체 전용 데이터 수집·상품 매칭 지원 플러그인(Chrome Extension) 및 배포 자동화</h3>
+                    <p>외부 협력업체가 같은 상품을 수동으로 매칭하고 URL·가격·검색어 등을 복사해 어드민에 입력하던 병목을 줄이기 위해, 기존 어드민 백엔드를 그대로 활용하면서 프론트엔드를 Chrome Extension 형태로 재구성.</p>
+                    <p>담당자는 후보 상품을 찾은 뒤 '매칭' 버튼만 누르면 링크, 검색어, 가격, 상품명, 이미지 링크 등 필요한 정보가 자동으로 수집되도록 구현. AI 팀 API를 활용해 추천 검색어와 상품명 유사도 기반 후보군도 함께 제공.</p>
+                    <p>특정 외부 사이트에서 직접 링크 진입이나 반복 조회 시 차단되는 문제는 일반 사용자처럼 첫 화면에서 검색어를 입력해 이동하는 브라우징 흐름으로 자동화해 차단 빈도를 낮춤.</p>
+                    <p>배포는 개발자 모드 수동 설치 대신 <code>update.xml</code> 기반 자동 업데이트 구조와 <code>.crx</code> 배포로 전환해 코드 노출을 줄이면서 핫픽스와 업데이트를 자동화. 같은 구조를 활용해 사내 프로모션 게시판 신규 글 알림 플러그인도 제작.</p>
+                </div>
+                <div class="project reveal">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>가격관리 백오피스 시스템 구축 및 공통 Admin 템플릿화</h3>
+                    <p>스프레드시트와 수작업 조회에 의존하던 가격 경쟁력 운영 업무를, 상품·담당자·경쟁 채널·월간 실적·후속 조치 이력을 함께 다루는 백오피스 시스템으로 재설계.</p>
+                    <p><code>Spring Boot</code>, <code>Thymeleaf</code>, <code>MongoDB</code>, <code>Databricks JDBC</code> 기반으로 상품 상세 조회, 요약 대시보드, 담당자/팀 권한 필터, Reason/Action 입력, CSV 다운로드 흐름을 구현.</p>
+                    <p>Databricks에서 생성되는 <code>price_db</code>, <code>admin_summary</code> 스냅샷을 관리자 화면과 연결하고, <code>dt/hour</code> 기준의 시간별 가격 경쟁력 지표와 MTD 추세를 운영자가 바로 확인할 수 있도록 구성.</p>
+                    <p>프론트엔드는 요약 화면과 상품 상세 화면의 책임을 분리하고, 필터·테이블·차트·CSV 상태 표시를 재사용 가능한 모듈로 정리. 정렬, 묶음 보기, 페이징 중에도 API 기준 조회 건수가 흔들리지 않도록 상태 관리와 렌더링 책임을 분리.</p>
+                    <p>운영 측면에서는 Mongo 인덱스, 대용량 검색 필터, 스트리밍 CSV 다운로드, Databricks/Mongo 모수 검증, Reason 데이터 호환성까지 함께 고려.</p>
                 </div>
             </div>
         </div>
 
-        <!-- 2021년 -->
+        <!-- 2024년 -->
         <div class="year-section">
             <div class="year">
-                <span class="year-label">2021</span>
+                <span class="year-label">2024</span>
                 <div class="year-meta">
                     <span class="year-chip">
-                        <img src="../icon/LotteOn.png" alt="Lotte e-Commerce" class="year-company-icon">
-                        Lotte e-Commerce
+                        <img src="../icon/Gmarket.png" alt="Gmarket" class="year-company-icon">
+                        Gmarket
                     </span>
                 </div>
             </div>
             <div class="projects">
-                <div class="project">
-                    <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
-                    <h3>기획/운영팀 전용 데이터 적재 프로그램 개발</h3>
-                    <p>타사의 셀러 어드민에서 전체 데이터를 수집하기 위해 Python과 BeautifulSoup을 활용해 약 13만 개의 엑셀 파일을 순차적으로 다운로드하는 코드 개발</p>
-                    <p>다운로드한 엑셀 파일을 DB에 <code>LOAD DATA</code> 명령어로 일괄 적재하는 파이프라인 구현. 대량 데이터 처리로 인한 속도 저하와 메모리 문제를 해결하기
-                        위해 파일 단위로 순차 처리 방식 채택</p>
-                    <p>운영팀이 직접 실행할 수 있도록 OS 차이(Windows 환경)를 고려해 Parallels로 테스트 후, PyInstaller를 사용해 실행 파일(.exe)로 변환하여 배포.
-                        비개발자도 쉽게 사용할 수 있는 환경 제공</p>
+                <div class="project reveal">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>통합 판매자 어드민 '문의하기' 개편</h3>
+                    <p>G마켓·옥션 판매자가 함께 쓰는 통합 판매자 어드민에서, 2008년에 만들어진 CS 처리용 긴급 메시지 및 문의하기 페이지를 리뉴얼.</p>
+                    <p>멀티답변 기능 추가로 답변율 5% 이상 유의미하게 상승. 브라우저 캐시 스토리지를 활용한 임시 저장 로직 도입으로 사용자 경험 및 데이터 안정성 향상.</p>
+                    <p>처리 방식 개선으로 조회 속도를 최대 1분에서 0.3초로 단축(약 200배 성능 개선). 기존 이중 FOR LOOP과 다중 SP 호출 대신 <code>OPENJSON</code>으로 여러 셀러 정보를 단일 테이블로 묶어 JOIN 처리, 쿼리 성능 최적화. <a href="https://www.youtube.com/watch?v=wMN2Niz0gp8" target="_blank">성능 비교 동영상</a></p>
+                    <p>백엔드에서 GROUP BY 대신 <code>ISNULL(SUM(CASE WHEN ...))</code> 방식으로 배송, 반품, 취소 등 유형별 집계 쿼리 최적화. <code>.http</code> 파일 기반 통합 테스트 도입으로 개발 및 유지보수 생산성 향상.</p>
                 </div>
-                <div class="project">
-                    <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
-                    <h3>DB 모니터링 기능 구축</h3>
-                    <p>DB 상태값을를 Slack 알람으로 알려주는 bash 프로그램 개발.</p>
-                    <p>Performance_schema와 Information_schema를 주기적으로 확인하며 통해 DB 데드락 감시.</p>
-                    <p>해당 잡은 cron을 통해 1분마다 확인하도록 설계하였으며 tmux를 통해 백그라운드화</p>
+                <div class="project reveal">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>상품페이지 실시간 유입 수 집계 프로세스 Databricks 마이그레이션</h3>
+                    <p>전사의 Request를 모델로 적재된 Databricks 데이터를 읽고 집계하는 워크플로우로 전환.</p>
+                    <p>기존 인프라(Kafka 컨슈머 앱 12대, Elasticsearch TPS 77·12GB, Spring Batch 앱 4대)를 중단하여 운영 비용을 연간 30만 원 수준으로 절감.</p>
                 </div>
-                <div class="project">
-                    <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
-                    <h3>PCS 도메인, 백오피스 어드민 React로 변경</h3>
-                    <p>기존 axboot.js로 구성된 백오피스 프론트엔드를 React로 리뉴얼.</p>
-                    <p>Apache httpd 루트에 Nginx 추가를 통한 로드밸런싱 작업도 진행</p>
-                    <p>컴포넌트를 최소 단위로 분리하여 재사용성을 극대화하여 추후 작업들의 기간 평균 2주 단축.</p>
+                <div class="project reveal">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>SSG.com 판매자 연동 및 고객문의 연동</h3>
+                    <p>SSG.com과 G마켓 간 판매자 및 고객 문의 데이터를 대규모 동기화하는 환경 구축. 셀러 등급, 유형, 상태 변경에 따라 상품 연동 여부를 관리하는 복잡한 로직 구현.</p>
+                    <p>셀러 상태(등급/유형/상태)가 여러 도메인에서 변경되며 동기화 감지가 어려운 문제를 해결하기 위해 MsSQL Trigger 도입.</p>
+                    <p>셀러의 동의 여부 혹은 상태 변동 시 Batch(1일 1회)로 SSG에 판매자 상태 연동 및 Item 팀에 상품 전체 연동 여부 전달. 프로젝트 팀원 2명 퇴사로 단독 수행, 모든 일정을 준수하고 운영 장애 최소화.</p>
+                </div>
+                <div class="project reveal">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>가격경쟁력 TF — 타사 상품 매칭 및 가격 분석 시스템 구축</h3>
+                    <p>외부 경쟁사 대비 가격경쟁력을 갖추기 위한 데이터 플로우 초기 기획 및 외주 선정에 참여.</p>
+                    <p>기존 수동 매칭 방식(작업자 간 수동 분배 후 상품번호로 검색 및 경쟁사 상품 일일이 매칭)을 개선하기 위해 새로운 UX 제안 및 개발. 시스템이 상품번호를 자동 선택하고 타사 경쟁사 상품을 매칭하도록 설계, 매칭 작업 속도 3배 향상.</p>
+                    <p>MongoDB에 datetime 컬럼을 추가하여 5분 경과 후 읽기 가능하도록 설정하고, findAndModify를 활용해 읽는 순간 락을 걸어 중복 작업 방지. 외주 매칭 업체를 위한 매칭툴은 .NET과 Vue로 어드민 개발.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2023년 -->
+        <div class="year-section">
+            <div class="year">
+                <span class="year-label">2023</span>
+                <div class="year-meta">
+                    <span class="year-chip">
+                        <img src="../icon/Gmarket.png" alt="Gmarket" class="year-company-icon">
+                        Gmarket
+                    </span>
+                </div>
+            </div>
+            <div class="projects">
+                <div class="project reveal">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>판매자 통계 시스템 신규 구축 및 데이터 파이프라인 설계</h3>
+                    <p>판매자 전용 사이트 개편 과정에서 통계 페이지가 처음 도입되며, 화면 개발뿐 아니라 어떤 데이터를 어떻게 적재·집계할지부터 다시 설계. 팀 최초로 Spring Batch와 Spring Kafka Consumer 기반을 도입.</p>
+                    <p>당시 대부분의 배치가 단일 Spring Web 애플리케이션에서 <code>@Scheduled</code>로 실행되어 겹침 시 OOM이 발생하는 구조였고, 이를 완화하기 위해 Spring Batch 기반 Job-Step 구조의 별도 애플리케이션으로 실행 주체를 분리.</p>
+                    <p>실시간 유입 통계를 위해 Kafka 기반 파이프라인을 구성. 1분당 수백만 건·건당 약 500KB 수준의 대형 JSON 문자열에서 필요한 값만 substring과 정규식으로 직접 추출해 처리 속도와 CPU 사용률을 함께 개선. 정제 데이터는 Elasticsearch로 전달해 집계에 활용. 불필요한 파싱 비용 제거로 처리 시간 20% 이상 단축.</p>
+                    <p>프론트엔드에서는 복잡한 캘린더 구조의 Props Drilling 문제를 해결하기 위해 Jotai와 Context API를 비교했고, Page가 상태를 소유하는 통계 구조상 Context API가 더 적합하다고 판단해 기능 단위 Context 분리로 리렌더링 범위를 제어.</p>
+                    <p>Kibana Dashboard와 Microsoft Teams/Slack webhook alert를 도입해 오류를 즉시 확인할 수 있는 모니터링 체계도 구축.</p>
                 </div>
             </div>
         </div>
@@ -256,165 +345,120 @@
                 </div>
             </div>
             <div class="projects">
-                <div class="project">
+                <div class="project reveal">
                     <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
                     <h3>젠킨스를 통한 테스트 실행 및 Job Orchestration</h3>
-                    <p>빌드, 테스트, 배포, 실행, 로그 확인, 서버 간 선행/후행 관계까지 Jenkins에서 통합 관리하는 시스템 구축. Spring Batch 기반 대용량 데이터 처리 작업을
-                        서버 접속 없이 자동화</p>
-                    <p>기존에는 개발자가 서버에 접속해 수동으로 Batch 코드를 실행하고 로그를 확인해야 했던 비효율적인 프로세스를 개선. Jenkins Pipeline을 활용해 CI/CD 통합
-                        및 Job 간 의존성 관리 구현</p>
-                    <p>특히, 다중 Job 실행 시 순서 보장과 실패 시 재실행 로직 추가가 어려웠던 점을 해결하기 위해 Parameterized Trigger와 Groovy 스크립트를 사용해 동적
-                        조정 가능하도록 설계</p>
+                    <p>빌드, 테스트, 배포, 실행, 로그 확인, 서버 간 선행/후행 관계까지 Jenkins에서 통합 관리하는 시스템 구축. Spring Batch 기반 대용량 데이터 처리 작업을 서버 접속 없이 자동화.</p>
+                    <p>기존에는 개발자가 서버에 접속해 수동으로 Batch 코드를 실행하고 로그를 확인해야 했던 비효율적인 프로세스를 개선. Jenkins Pipeline을 활용해 CI/CD 통합 및 Job 간 의존성 관리 구현.</p>
+                    <p>다중 Job 실행 시 순서 보장과 실패 시 재실행 로직 추가가 어려웠던 점을 해결하기 위해 Parameterized Trigger와 Groovy 스크립트를 사용해 동적 조정 가능하도록 설계.</p>
                 </div>
-                <div class="project">
+                <div class="project reveal">
                     <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
                     <h3>전체 판매 상품데이터 동기화 작업 Batch 대신 Stream으로 전환</h3>
-                    <p>다이나믹 프라이싱을 위한 상품 가격 정보 DB 동기화 프로세스 개선. 기존에는 DB 복제 후 Batch로 데이터를 읽어들이는 방식으로, 400GB 규모 데이터를 처리</p>
-                    <p>문제점: Batch가 처음 Truncate 후 가격 정보를 다시 채우는 방식이라 동기화 중 다이나믹 프라이싱 잡 실행 시 데이터 공백으로 오류 발생. 이를 해결하기 위해
-                        Truncate 대신 임시 테이블에 데이터를 쌓은 후 <code>RENAME</code>으로 테이블을 바꿔치기하는 전략 도입</p>
-                    <p>추가 이슈: 상품 수 증가로 동기화 잡 시간이 길어지며 잡 간 겹침 발생. 최종적으로 <code>mysqldump</code>로 초기 적재 후, Kafka 컨슈밍 앱을 개발해
-                        변동분만 실시간 반영하도록 전환</p>
-                    <p>성과: 할인 반영 상품 수를 5천만 개에서 2억 8천만 개로 확대, 가격 데이터 실시간화 달성. <code>Poison Pill</code> 처리 로직과 Row Lock 방지
-                        트랜잭션 설계로 안정성 강화</p>
+                    <p>다이나믹 프라이싱을 위한 상품 가격 정보 DB 동기화 프로세스 개선. 기존에는 DB 복제 후 Batch로 데이터를 읽어들이는 방식으로 400GB 규모 데이터를 처리.</p>
+                    <p>Batch가 Truncate 후 가격 정보를 다시 채우는 방식이라 동기화 중 다이나믹 프라이싱 잡 실행 시 데이터 공백으로 오류 발생. 이를 해결하기 위해 Truncate 대신 임시 테이블에 데이터를 쌓은 후 <code>RENAME</code>으로 테이블을 바꿔치기하는 전략 도입.</p>
+                    <p>상품 수 증가로 동기화 잡 시간이 길어지며 잡 간 겹침 발생. 최종적으로 <code>mysqldump</code>로 초기 적재 후, Kafka 컨슈밍 앱을 개발해 변동분만 실시간 반영하도록 전환.</p>
+                    <p>할인 반영 상품 수를 5천만 개에서 2억 8천만 개로 확대, 가격 데이터 실시간화 달성. <code>Poison Pill</code> 처리 로직과 Row Lock 방지 트랜잭션 설계로 안정성 강화.</p>
                 </div>
-                <div class="project">
+                <div class="project reveal">
                     <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
                     <h3>상품 가격 변동 시스템 메인 Batch 리뉴얼</h3>
                     <p>Kafka 기반 병렬 처리와 Producer-Consumer 패턴을 적용하여 가격 변동 처리 속도를 최적화.</p>
-                    <p>Enum과 Map을 통한 분기처리와 병렬처리를 활용해 프로세스 시간을 1.5시간에서 10~20분으로 단축</p>
-                    <p>경쟁사의 최저가 점유 속도를 따라잡아 네이버 내 최저가 점유율 1위(2021년 12월 기준)를 달성. 단순 매출 증대와 순이익 감소 문제를 해결하기 위해 할인 비중을 조정하며
-                        회사 전략에 맞춘 대응을 시행.</p>
+                    <p>Enum과 Map을 통한 분기처리와 병렬처리를 활용해 프로세스 시간을 1.5시간에서 10~20분으로 단축.</p>
+                    <p>경쟁사의 최저가 점유 속도를 따라잡아 네이버 내 최저가 점유율 1위(2021년 12월 기준) 달성. 매출만 늘고 순이익은 감소하는 문제를 해결하기 위해 할인 비중을 조정하며 회사 전략에 맞춘 대응을 시행.</p>
                 </div>
             </div>
         </div>
 
-        <!-- 2023년 -->
+        <!-- 2021년 -->
         <div class="year-section">
             <div class="year">
-                <span class="year-label">2023</span>
+                <span class="year-label">2021</span>
                 <div class="year-meta">
                     <span class="year-chip">
-                        <img src="../icon/Gmarket.png" alt="Gmarket" class="year-company-icon">
-                        Gmarket
+                        <img src="../icon/LotteOn.png" alt="Lotte e-Commerce" class="year-company-icon">
+                        Lotte e-Commerce
                     </span>
                 </div>
             </div>
             <div class="projects">
-                <div class="project">
-                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                    <h3>상품페이지 실시간 유입 수 집계 프로세스 구축</h3>
-                    <p>판매자 통계 오픈을 위해 상품페이지 실시간 유입 수 집계 파이프라인을 구축하고, 팀 최초로 Spring Batch와 Spring Kafka Consumer 기반을 도입.</p>
-                    <p>쿠키와 부가 정보까지 섞여 있는 대형 JSON string 로그를 전부 파싱하지 않고, substring으로 host/path를 먼저 추출한 뒤 Regex와 MutableMap으로 유의미한 상품페이지 데이터만 2차 선별.</p>
-                    <p>분당 대량 로그 처리에서 불필요한 parsing 비용을 줄여 처리 시간을 20% 이상 단축하고 CPU 사용률을 절감.</p>
-                    <p>Kibana Dashboard와 Microsoft Teams/Slack webhook alert를 도입해 오류를 즉시 확인할 수 있는 모니터링 체계를 구축.</p>
+                <div class="project reveal">
+                    <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
+                    <h3>기획/운영팀 전용 데이터 적재 프로그램 개발</h3>
+                    <p>타사의 셀러 어드민에서 전체 데이터를 수집하기 위해 Python과 BeautifulSoup을 활용해 약 13만 개의 엑셀 파일을 순차적으로 다운로드하는 코드 개발.</p>
+                    <p>다운로드한 엑셀 파일을 DB에 <code>LOAD DATA</code> 명령어로 일괄 적재하는 파이프라인 구현. 대량 데이터 처리로 인한 속도 저하와 메모리 문제를 해결하기 위해 파일 단위로 순차 처리 방식 채택.</p>
+                    <p>운영팀이 직접 실행할 수 있도록 OS 차이(Windows 환경)를 고려해 Parallels로 테스트 후, PyInstaller를 사용해 실행 파일(.exe)로 변환하여 배포. 비개발자도 쉽게 사용할 수 있는 환경 제공.</p>
                 </div>
-                <div class="project">
-                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                    <h3>판매자 통계 시스템 신규 구축 및 데이터 파이프라인 설계</h3>
-                    <p>판매자 전용 사이트 개편 과정에서 통계 페이지가 처음 도입되며, 화면 개발뿐 아니라 어떤 데이터를 어떻게 적재·집계할지부터 다시 설계했습니다.</p>
-                    <p>당시 대부분의 배치가 단일 Spring Web 애플리케이션에서 <code>@Scheduled</code>로 실행되어 겹침 시 OOM이 발생하는 구조였고, 이를 완화하기 위해 Spring Batch 기반 Job-Step 구조의 별도 애플리케이션으로 실행 주체를 분리했습니다.</p>
-                    <p>실시간 유입 통계를 위해 Kafka 기반 파이프라인을 새롭게 구성했고, 1분당 수백만 건·건당 약 500KB 수준의 대형 JSON 문자열에서 필요한 값만 substring과 정규식으로 직접 추출해 처리 속도와 CPU 사용률을 함께 개선했습니다. 정제 데이터는 Elasticsearch로 전달해 집계에 활용했습니다.</p>
-                    <p>프론트엔드에서는 복잡한 캘린더 구조의 Props Drilling 문제를 해결하기 위해 Jotai와 Context API를 비교했고, Page가 상태를 소유하는 통계 구조상 Context API가 더 적합하다고 판단해 기능 단위 Context 분리로 리렌더링 범위를 제어했습니다.</p>
+                <div class="project reveal">
+                    <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
+                    <h3>DB 모니터링 기능 구축</h3>
+                    <p>DB 상태값을 Slack 알람으로 알려주는 bash 프로그램 개발.</p>
+                    <p>Performance_schema와 Information_schema를 주기적으로 확인해 DB 데드락 감시.</p>
+                    <p>해당 잡은 cron을 통해 1분마다 확인하도록 설계하였으며 tmux를 통해 백그라운드화.</p>
+                </div>
+                <div class="project reveal">
+                    <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
+                    <h3>가격비교 서비스 백오피스 어드민 React 전환</h3>
+                    <p>기존 axboot.js로 구성된 백오피스 프론트엔드를 React로 리뉴얼.</p>
+                    <p>Apache httpd 루트에 Nginx 추가를 통한 로드밸런싱 작업도 진행.</p>
+                    <p>컴포넌트를 최소 단위로 분리하여 재사용성을 극대화하고 이후 작업들의 개발 속도를 향상.</p>
                 </div>
             </div>
         </div>
 
-        <!-- 2024년 -->
+        <!-- 2020년 -->
         <div class="year-section">
             <div class="year">
-                <span class="year-label">2024</span>
+                <span class="year-label">2020</span>
                 <div class="year-meta">
                     <span class="year-chip">
-                        <img src="../icon/Gmarket.png" alt="Gmarket" class="year-company-icon">
-                        Gmarket
+                        <img src="../icon/LotteOn.png" alt="Lotte e-Commerce" class="year-company-icon">
+                        Lotte e-Commerce
                     </span>
                 </div>
             </div>
             <div class="projects">
-                <div class="project">
-                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                    <h3>ESM 문의하기 페이지 개편</h3>
-                    <p>2008년에 만들어진 CS 처리용 긴급 메시지 및 문의하기 페이지를 리뉴얼</p>
-                    <p>멀티답변 기능 추가로 답변율 5% 이상 유의미하게 상승. 프론트엔드에서 메시지 전송 방식을 개선하고, 브라우저 캐시 스토리지를 활용한 임시 저장 로직 도입으로 사용자 경험 및
-                        데이터 안정성 향상</p>
-                    <p>처리 방식 개선으로 조회 속도를 최대 1분에서 0.3초로 단축(약 200배 성능 개선). 기존 이중 FOR LOOP과 다중 SP 호출 대신
-                        <code>OPENJSON</code>으로 여러 셀러 정보를 단일 테이블로 묶어 JOIN 처리, 쿼리 성능 최적화 <a
-                            href="https://www.youtube.com/watch?v=wMN2Niz0gp8" target="_blank">성능 비교 동영상</a>
-                    </p>
-                    <p>백엔드에서 GROUP BY 대신 <code>ISNULL(SUM(CASE WHEN ...))</code> 방식으로 쿼리 최적화하여 속도 증대. 예: 배송, 반품, 취소 등
-                        유형별 집계 쿼리 개선</p>
-                    <p>테스트 효율성을 위해 <code>.http</code> 파일 기반 통합 테스트 도입, 개발 및 유지보수 생산성 향상</p>
+                <div class="project reveal">
+                    <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
+                    <h3>[인턴] 통합 EC구축(롯데온), 롯데백화점 프리미엄 사이트 개발 참여</h3>
+                    <p>롯데백화점 프리미엄 사이트의 베스트 페이지와 햄버거 화면 개발.</p>
+                    <p>서버 API와 웹퍼블리셔의 HTML을 조합하여 Freemarker 기반으로 화면 구성.</p>
+                    <p>A-Z 브랜드 명을 나열하며, 알파벳 전환 시점에 시작 인덱스를 표시하는 기능 구현. Freemarker에서 Map 구조 사용 시 메모리 부족 이슈 발생. 직전 알파벳의 첫 글자만 메모리에 저장하고, for 루프 내에서 신규 알파벳 등장 시 인덱스를 표시하는 방식으로 최적화.</p>
                 </div>
-                <div class="project">
-                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                    <h3>상품페이지 실시간 유입 수 집계 프로세스 Databricks 마이그레이션</h3>
-                    <p>전사의 Request를 모델로 적재되어 있는 Databrick 데이터를 읽고 집계하는 워크플로우로 변경</p>
-                    <p>카프카 컨슈머 앱 12대, 엘라스틱서치 (TPS 77, 12GB), 스프링 배치 앱 4대를 중단하여 연간 Job비용을 30만 원 수준으로 절감.</p>
-                </div>
-                <div class="project">
-                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                    <h3>SSG.com 판매자 연동 및 고객문의 연동</h3>
-                    <p>SSG.com과 G마켓 간 판매자 및 고객 문의 데이터를 대규모 동기화하는 환경 구축. 셀러 등급, 유형, 상태 변경에 따라 상품 연동 여부를 관리하는 복잡한 로직 구현
-                    </p>
-                    <p>문제점: 셀러 상태(등급/유형/상태)가 여러 도메인에서 변경되며 동기화 감지가 어려움. 이를 해결하기 위해 MsSQL Trigger를 도입</p>
-                    <p>셀러의 동의 여부 혹은 상태 변동 시 Batch(1일 1회)로 SSG에 판매자 상태 연동 및 Item 팀에 상품 전체 연동 여부를 전달</p>
-                    <p>프로젝트 팀원 2명 퇴사로 단독 수행, 모든 일정을 준수했고 운영 장애도 낮은 수준으로 관리했습니다.</p>
-                </div>
-                <div class="project">
-                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                    <h3>PricingTF - 타사 상품 매칭 및 가격 분석 시스템 구축</h3>
-                    <p>외부 경쟁사 대비 가격경쟁력을 갖추기 위한 데이터 플로우 초기 기획 및 외주 선정에 참여</p>
-                    <p>기존 수동 매칭 방식(작업자 간 수동 분배 후 상품번호로 검색 및 경쟁사 상품 일일이 매칭)을 개선하기 위해 새로운 UX 제안 및 개발. 제안한 방식은 시스템이 상품번호를
-                        자동 선택하고 타사 경쟁사 상품을 매칭하도록 설계, 매칭 작업 속도를 3배 향상</p>
-                    <p>구체적으로 MongoDB에 datetime 컬럼을 추가하여 5분 경과 후 읽기 가능하도록 설정하고, findAndModify를 활용해 읽는 순간 락을 걸어 중복 작업 방지.
-                        외주 매칭 업체를 위한 매칭툴은 .NET과 Vue로 어드민 개발</p>
+                <div class="project reveal">
+                    <img src="../icon/LotteOn.png" alt="LotteOn Icon" class="project-icon">
+                    <h3>검색어 백로그 조회용 어드민 화면 개발</h3>
+                    <p>AuroraDB에 적재된 클라이언트의 검색어 백로그 데이터를 단순 조회할 수 있는 백오피스 개발.</p>
+                    <p>Spring Web과 기본 html, css, js를 사용하여 개발.</p>
                 </div>
             </div>
         </div>
-        <!-- 2025년 -->
+
+        <!-- 2019년 -->
         <div class="year-section">
             <div class="year">
-                <span class="year-label">2025</span>
+                <span class="year-label">2019</span>
                 <div class="year-meta">
                     <span class="year-chip">
-                        <img src="../icon/Gmarket.png" alt="Gmarket" class="year-company-icon">
-                        Gmarket
+                        <img src="../icon/WeDataLab.png" alt="WeDataLab" class="year-company-icon">
+                        WeDataLab
                     </span>
                 </div>
             </div>
             <div class="projects">
-                <div class="project">
-                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                    <h3>타사 검색 페이지 상품 리스트 매핑 파이프라인 구축</h3>
-                    <p>AI 팀과 협업하여 Databricks를 활용한 상품 데이터 처리 파이프라인 개발. 우리 상품 데이터를 기반으로 AI 팀에서 키워드를 추출한 후, Spark를 통해
-                        explode로 중복 제거된 TSV 리스트 생성</p>
-                    <p>외주 업체에 데이터를 전달하고, 외주 업체가 검색 페이지에서 하루 동안 수집한 상품 리스트를 반환하면, AI 팀이 이를 우리 상품명과 매칭. 최종 결과를 MongoDB에
-                        적재하는 프로세스 구현</p>
-                    <p>파일 전달 간 외주 업체와의 보안 강화를 위해 유효기간이 포함된 JWT 인증 도입.</p>
-                </div>
-                <div class="project">
-                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                    <h3>협력업체 전용 데이터 수집·상품 매칭 지원 플러그인(Chrome Extension) 및 배포 자동화</h3>
-                    <p>외부 협력업체가 같은 상품을 수동으로 매칭하고 URL·가격·검색어 등을 복사해 어드민에 입력하던 병목을 줄이기 위해, 기존 어드민 백엔드를 그대로 활용하면서 프론트엔드를 Chrome Extension 형태로 새로 구성했습니다.</p>
-                    <p>담당자는 후보 상품을 찾은 뒤 ‘매칭’ 버튼만 누르면 링크, 검색어, 가격, 상품명, 이미지 링크 등 필요한 정보가 자동으로 함께 수집되도록 만들었고, AI 팀 API를 활용해 추천 검색어와 상품명 유사도 기반 후보군도 함께 제공했습니다.</p>
-                    <p>특정 외부 사이트에서 직접 링크 진입이나 반복 조회 시 차단되는 문제는 일반 사용자처럼 첫 화면에서 검색어를 입력해 이동하는 브라우징 흐름으로 자동화해 차단 빈도를 낮췄습니다.</p>
-                    <p>배포는 개발자 모드 수동 설치 대신 <code>update.xml</code> 기반 자동 업데이트 구조와 <code>.crx</code> 배포로 전환해 코드 노출을 줄이면서 핫픽스와 업데이트를 자동화했습니다. 같은 구조를 활용해 사내 프로모션 게시판 신규 글 알림 플러그인도 제작했습니다.</p>
-                </div>
-                <div class="project">
-                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                    <h3>가격관리 백오피스 시스템 구축 및 공통 Admin 템플릿화</h3>
-                    <p>스프레드시트와 수작업 조회에 의존하던 가격 경쟁력 운영 업무를, 상품·담당자·경쟁 채널·월간 실적·후속 조치 이력을 함께 다루는 백오피스 시스템으로 재설계했습니다.</p>
-                    <p><code>Spring Boot</code>, <code>Thymeleaf</code>, <code>MongoDB</code>, <code>Databricks JDBC</code> 기반으로 상품 상세 조회, 요약 대시보드, 담당자/팀 권한 필터, Reason/Action 입력, CSV 다운로드 흐름을 구현했습니다.</p>
-                    <p>Databricks에서 생성되는 <code>price_db</code>, <code>admin_summary</code> 스냅샷을 관리자 화면과 연결하고, <code>dt/hour</code> 기준의 시간별 가격 경쟁력 지표와 MTD 추세를 운영자가 바로 확인할 수 있도록 구성했습니다.</p>
-                    <p>프론트엔드는 요약 화면과 상품 상세 화면의 책임을 분리하고, 필터·테이블·차트·CSV 상태 표시를 재사용 가능한 모듈로 정리했습니다. 정렬, 묶음 보기, 페이징 중에도 API 기준 조회 건수가 흔들리지 않도록 상태 관리와 렌더링 책임을 분리했습니다.</p>
-                    <p>운영 측면에서는 Mongo 인덱스, 대용량 검색 필터, 스트리밍 CSV 다운로드, Databricks/Mongo 모수 검증, Reason 데이터 호환성까지 함께 고려해 실제 영업 담당자가 반복적으로 사용할 수 있는 가격 의사결정 도구로 확장했습니다.</p>
+                <div class="project reveal">
+                    <img src="../icon/WeDataLab.png" alt="WeDataLab Icon" class="project-icon">
+                    <h3>[인턴] React Native를 통한 간단한 웹뷰 앱 개발</h3>
+                    <p>기존 웹사이트를 앱에서도 실행 가능하도록 웹뷰를 활용한 간단한 앱 개발.</p>
+                    <p>쿠키 및 세션 관리를 위한 기능 추가와 네비게이터 구성.</p>
                 </div>
             </div>
         </div>
+
             </div>
         </section>
 
-        <section class="content-section">
+        <section class="content-section reveal">
             <div class="section-intro">
                 <p class="section-kicker">Knowledge Sharing</p>
                 <h2 class="section-title">기술 전파 및 커뮤니티</h2>
@@ -422,13 +466,12 @@
             <div class="projects">
                 <div class="project">
                     <h3>롯데e커머스 사내 기술블로그 기고 및 온라인 발표</h3>
-                    <p>성과는 사내 기술블로그 첫 글로 선정되어 기록되었고, 2022년 6월에는 3인 발표자로 참여해 온라인 특강 형태로 공유했습니다: <a
-                            href="https://medium.com/lotteon-tech-blog/d-142cbbd5010" target="_blank">블로그 게시글</a></p>
+                    <p>성과는 사내 기술블로그 첫 글로 선정되어 기록되었고, 2022년 6월에는 3인 발표자로 참여해 온라인 특강 형태로 공유: <a href="https://medium.com/lotteon-tech-blog/d-142cbbd5010" target="_blank">블로그 게시글</a></p>
                 </div>
                 <div class="project">
                     <h3>G마켓 테크블로그 3기 에디터장 활동</h3>
                     <p>기고 프로세스 간편화를 위해 Git 기반 PR 워크플로우 도입, 맞춤법 및 첨삭 작업 효율화.</p>
-                    <p>외부 사이트 RSS 제공 및 UI 리뉴얼을 통해 방문 수를 일평균 10단위에서 500 이상으로 성장시킴. 총 방문 수 45만 달성</p>
+                    <p>외부 사이트 RSS 제공 및 UI 리뉴얼을 통해 방문 수를 일평균 10단위에서 500 이상으로 성장, 총 방문 수 45만 달성.</p>
                     <p>CORS 충돌 문제 해결, 스팸 댓글 관리 및 비밀글 옵션 제거로 사용자 경험 개선.</p>
                     <p><strong>직접 기고한 블로그 글 목록:</strong></p>
                     <ul>
@@ -440,42 +483,42 @@
                     </ul>
                 </div>
                 <div class="project">
-                    <h3>전사 사내 학습 세션(SLS) 발표</h3>
-                    <p>임직원이 Speaker로 참여하는 Staff Learning Session(SLS)에서 두 차례 발표를 진행했습니다. 첫 발표에서는 '누구나 돈 한 푼 안 들이고 AI의 도움으로 업무를 대신할 프로그램 개발하기'를 주제로, AI 무료 활용법, 서버 없이 프로그램 실행 방법, 무료 코드 에디터 사용법을 소개하고 Grok을 활용한 Chrome Extension 시연을 진행했습니다.</p>
-                    <p>두 번째 발표에서는 정적·동적 크롤링 기술과 AI의 6단계 발전(인지형, 생성형, RAG, MCP, Agent, 물리형)을 주제로, 최신 <strong>MCP(Model Context Protocol)</strong> 기술을 접목한 <strong>AI Browser Agent</strong>를 직접 시연하며 차세대 웹 자동화 및 업무 효율화 방안을 공유했습니다.</p>
+                    <h3>전사 사내 학습 세션(SLS) 발표 — 3회</h3>
+                    <p>임직원이 Speaker로 참여하는 Staff Learning Session(SLS)에서 세 차례 발표를 진행. 첫 발표에서는 '누구나 돈 한 푼 안 들이고 AI의 도움으로 업무를 대신할 프로그램 개발하기'를 주제로, AI 무료 활용법, 서버 없이 프로그램 실행 방법, 무료 코드 에디터 사용법을 소개하고 Grok을 활용한 Chrome Extension 시연을 진행.</p>
+                    <p>두 번째 발표에서는 정적·동적 크롤링 기술과 AI의 6단계 발전(인지형, 생성형, RAG, MCP, Agent, 물리형)을 주제로, 최신 <strong>MCP(Model Context Protocol)</strong> 기술을 접목한 <strong>AI Browser Agent</strong>를 직접 시연하며 차세대 웹 자동화 및 업무 효율화 방안을 공유.</p>
+                    <p>세 번째 발표(2026)에서는 <strong>'AI와 비즈니스의 상관관계'</strong>를 주제로, 클라이언트-서버-DB 웹 구조에서 출발해 AI 모델·웹 구독·API 과금이 어떻게 다른지, AI 에이전트가 등장한 배경과 안전한 운영 방식(클라우드 VM·컨테이너·전용 머신 분리), 모델 라우팅과 Heartbeat로 인한 비용 누수 같은 비용 최적화 노하우를 비개발자 눈높이로 설명. '고객이 에이전트가 되는 시대'에 API·CLI 통로가 없는 서비스가 겪을 불리함과 광고·가격비교·CX 등 이커머스 비즈니스 영향까지 고찰을 공유하고, AI 에이전트로 만든 조종 앱을 라이브 시연.</p>
                 </div>
                 <div class="project">
                     <h3>취업준비생 대상 현직자 특강 및 프로젝트 심사위원 / 한국경영혁신중소기업협회 추천 / 2025.05 ~ 현재</h3>
-                    <p>한국경영혁신중소기업협회 추천으로 더조은컴퓨터학원, MBC아카데미 등에서 취업준비생 대상 현직자 특강과 프로젝트 심사위원으로 7회 참여했습니다. 결과 나열보다 문제 정의, 선택 근거, 운영 기준을 설명하는 방식에 초점을 맞춰 코칭했습니다.</p>
-                    <p>발표 자료 구성과 Q&amp;A 대응까지 함께 다루며, 기술 선택을 말로 설명할 수 있는 수준까지 정리하도록 지원했습니다.</p>
+                    <p>한국경영혁신중소기업협회 추천으로 더조은컴퓨터학원, MBC아카데미 등에서 취업준비생 대상 현직자 특강과 프로젝트 심사위원으로 7회 참여. 결과 나열보다 문제 정의, 선택 근거, 운영 기준을 설명하는 방식에 초점을 맞춰 코칭.</p>
+                    <p>발표 자료 구성과 Q&amp;A 대응까지 함께 다루며, 기술 선택을 말로 설명할 수 있는 수준까지 정리하도록 지원.</p>
                 </div>
                 <div class="project">
                     <h3>반포잠원교육지원센터 디지털 특강 / 2025.08 ~ 현재</h3>
-                    <p>엔트리·Python·Java를 활용해 문법 설명에 그치지 않고 캐릭터를 움직이거나 그림을 그리고 악보를 만들어보는 실습 중심 수업을 기획·운영했습니다.</p>
-                    <p>HTML·CSS·JS 구조를 이해한 뒤 AI를 활용해 자신만의 웹페이지를 제작하도록 지도했고, 완성한 사이트는 패들릿에 공유해 서로 피드백을 주고받게 했습니다.</p>
+                    <p>엔트리·Python·Java를 활용해 문법 설명에 그치지 않고 캐릭터를 움직이거나 그림을 그리고 악보를 만들어보는 실습 중심 수업을 기획·운영.</p>
+                    <p>HTML·CSS·JS 구조를 이해한 뒤 AI를 활용해 자신만의 웹페이지를 제작하도록 지도했고, 완성한 사이트는 패들릿에 공유해 서로 피드백을 주고받게 함.</p>
                 </div>
                 <div class="project">
                     <h3>고용노동부 연계 디지털 인재 양성 과정 프로젝트 멘토링 (2회) / 2025.06 ~ 2025.08</h3>
-                    <p>고용노동부 연계 디지털 인재 양성 과정에서 프로젝트 멘토링 2건을 진행했고, 배달 중계 플랫폼 팀은 최종 발표 1등을 수상했습니다.</p>
-                    <p>서비스 설계, 성능 병목, 데이터 흐름, 발표 구조와 Q&amp;A 대응을 중심으로 피드백했습니다.</p>
+                    <p>고용노동부 연계 디지털 인재 양성 과정에서 프로젝트 멘토링 2건을 진행했고, 배달 중계 플랫폼 팀은 최종 발표 1등을 수상.</p>
+                    <p>서비스 설계, 성능 병목, 데이터 흐름, 발표 구조와 Q&amp;A 대응을 중심으로 피드백.</p>
                 </div>
                 <div class="project">
                     <h3>과학기술정보통신부 연계 멘토 활동 / 2026.03 ~ 현재</h3>
-                    <p>고령자 병원 동행 매칭 서비스를 주제로 멘토링을 진행 중입니다.</p>
-                    <p>환자, 보호자, 동행 매니저, 병원, 매칭, 어드민으로 이어지는 제품 흐름과 데이터 구조를 함께 정리하고, 프론트엔드·백엔드·DB·클라우드 서버 구성을 어떻게 나눌지 조언하고 있습니다.</p>
-                    <p>AWS 등 지원 가능한 인프라 범위, 서버 비용 산정, GitHub 기반 협업, 배포 전 준비해야 할 운영 리스크까지 MVP 구현 전에 확인해야 할 기술 선택을 함께 점검합니다.</p>
+                    <p>고령자 병원 동행 매칭 서비스를 주제로 멘토링 진행 중. 환자, 보호자, 동행 매니저, 병원, 매칭, 어드민으로 이어지는 제품 흐름과 데이터 구조를 함께 정리하고, 프론트엔드·백엔드·DB·클라우드 서버 구성을 어떻게 나눌지 조언.</p>
+                    <p>AWS 등 지원 가능한 인프라 범위, 서버 비용 산정, GitHub 기반 협업, 배포 전 준비해야 할 운영 리스크까지 MVP 구현 전에 확인해야 할 기술 선택을 함께 점검.</p>
                 </div>
                 <div class="project">
                     <h3>해커톤: 선질의(Pre-Query)형 검색창을 통한 관심사 기반 추천시스템</h3>
                     <p>1인팀으로 참가. 기획, 발표, 개발 모두 진행.</p>
-                    <p>검색창 입력 전 짧은 선질문을 제시하고, 응답을 바탕으로 비회원 사용자의 관심사와 구매 맥락을 초기 추정해 추천 결과에 반영하는 프로토타입을 구현했습니다.</p>
-                    <p>최종 순위권에는 들지 못했으나 특허 심사 후보에는 발탁되어 진행.</p>
+                    <p>검색창 입력 전 짧은 선질문을 제시하고, 응답을 바탕으로 비회원 사용자의 관심사와 구매 맥락을 초기 추정해 추천 결과에 반영하는 프로토타입 구현.</p>
+                    <p>특허 심사 후보로 발탁되어 진행.</p>
                     <p><a href="https://minwoo19930301.github.io/hackaton2023/" target="_blank">시연용 프로토타입 사이트</a></p>
                 </div>
             </div>
         </section>
 
-        <section class="content-section">
+        <section class="content-section reveal">
             <div class="section-intro">
                 <h2 class="section-title">특허</h2>
             </div>
@@ -483,12 +526,12 @@
                 <div class="project">
                     <h3>교차로 꼬리물기 방지를 위한 신호 제어 시스템 / 특허 출원</h3>
                     <p><strong>출원번호:</strong> 10-2019-0094108</p>
-                    <p>교차로 CCTV 영상을 OpenCV·YOLO 기반으로 분석해 특정 구역 내 차량 정체를 감지하고, 일정 기준 이상 정체가 지속될 경우 적색 신호 전환을 제안한 시스템입니다.</p>
+                    <p>교차로 CCTV 영상을 OpenCV·YOLO 기반으로 분석해 특정 구역 내 차량 정체를 감지하고, 일정 기준 이상 정체가 지속될 경우 적색 신호 전환을 제안한 시스템.</p>
                 </div>
             </div>
         </section>
 
-        <section class="content-section tech-section">
+        <section class="content-section tech-section reveal">
             <div class="section-intro">
                 <p class="section-kicker">Core Stack</p>
                 <h2 class="section-title">핵심 기술</h2>
@@ -496,285 +539,138 @@
             <div class="tech-icons-container">
                 <div class="tech-icons" id="techIcons">
                     <img src="../icon/java.svg" alt="Java">
+                    <img src="../icon/spring.svg" alt="Spring">
+                    <img src="../icon/kotlin.png" alt="Kotlin">
                     <img src="../icon/javascript.png" alt="JavaScript">
                     <img src="../icon/python.svg" alt="Python">
                     <img src="../icon/react.svg" alt="React">
+                    <img src="../icon/elastic.png" alt="Elasticsearch">
                     <img src="../icon/mongodb.svg" alt="MongoDB">
+                    <img src="../icon/databricks.png" alt="Databricks">
                     <img src="../icon/aws.svg" alt="AWS">
                     <img src="../icon/nodejs.svg" alt="Node.js">
-                    <img src="../icon/databricks.png" alt="Databricks">
                     <img src="../icon/vue.png" alt="Vue.js">
                     <img src="../icon/dotnet.svg" alt=".NET">
-                    <img src="../icon/spring.svg" alt="Spring">
                     <img src="../icon/linux.png" alt="Linux">
                     <img src="../icon/mssql.png" alt="MSSQL">
-                    <img src="../icon/kotlin.png" alt="Kotlin">
+                    <img src="../icon/mysql.svg" alt="MySQL">
                 </div>
             </div>
         </section>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <script>
-        const wrapMainChronologyLabel = (text, maxLength = 18) => {
-            if (!text) {
-                return [''];
-            }
-            if (text.length <= maxLength) {
-                return [text];
-            }
-            const words = text.split(' ');
-            if (words.length === 1) {
-                return text.match(new RegExp(`.{1,${maxLength}}`, 'g')) || [text];
-            }
-            const lines = [];
-            let line = '';
-            words.forEach(word => {
-                const next = line ? `${line} ${word}` : word;
-                if (next.length > maxLength) {
+        // Hero parallax: content drifts up, scales down, and fades as you scroll
+        const heroCopy = document.getElementById('heroCopy');
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (heroCopy && !prefersReducedMotion) {
+            let heroTicking = false;
+            const updateHero = () => {
+                const y = Math.min(window.scrollY, 640);
+                const p = y / 640;
+                heroCopy.style.transform = `translateY(${y * 0.32}px) scale(${1 - p * 0.07})`;
+                heroCopy.style.opacity = String(1 - p * 0.9);
+                heroTicking = false;
+            };
+            window.addEventListener('scroll', () => {
+                if (!heroTicking) {
+                    requestAnimationFrame(updateHero);
+                    heroTicking = true;
+                }
+            }, { passive: true });
+        }
+
+        // Scroll Story: scenes interpolate continuously with scroll (kinetic parallax)
+        const story = document.getElementById('scrollStory');
+        if (story) {
+            const scenes = Array.from(story.querySelectorAll('.story-scene'));
+            const dots = Array.from(story.querySelectorAll('.story-progress span'));
+            const clamp01 = v => Math.min(Math.max(v, 0), 1);
+            let storyTicking = false;
+            const updateStory = () => {
+                const total = story.offsetHeight - window.innerHeight;
+                const raw = clamp01(-story.getBoundingClientRect().top / total);
+                // p runs 0.5 .. n-0.5 so the first/last scenes hold at the edges
+                const p = 0.5 + raw * (scenes.length - 1);
+                scenes.forEach((scene, i) => {
+                    const d = p - (i + 0.5);
+                    const vis = clamp01(1 - Math.abs(d) * 2.4);
+                    const eased = vis * vis * (3 - 2 * vis); // smoothstep
+                    if (prefersReducedMotion) {
+                        scene.style.opacity = Math.abs(d) < 0.5 ? '1' : '0';
+                        return;
+                    }
+                    scene.style.opacity = String(eased);
+                    scene.style.transform = `translateY(${d * -90}px) scale(${0.94 + eased * 0.06})`;
+                    const photo = scene.querySelector('.story-photo');
+                    if (photo) {
+                        photo.style.transform = `translateY(${d * -28}px) scale(1.12)`;
+                    }
+                    const line = scene.querySelector('.story-line');
                     if (line) {
-                        lines.push(line);
+                        line.style.transform = `scaleX(${eased})`;
                     }
-                    line = word;
-                } else {
-                    line = next;
-                }
-            });
-            if (line) {
-                lines.push(line);
-            }
-            return lines;
-        };
-
-        const wrapMainPeriodLabel = (period) => {
-            if (!period) {
-                return [''];
-            }
-            if (period.includes('/')) {
-                return period.split('/').map(part => part.trim());
-            }
-            if (period.includes('-')) {
-                return period.split('-').map(part => part.trim());
-            }
-            return [period];
-        };
-
-        const parseMainPeriodStart = (period) => {
-            if (!period) {
-                return 0;
-            }
-            const firstToken = period.split('/')[0].split('-')[0].trim();
-            const match = firstToken.match(/(\d{4})(?:\.(\d{2}))?/);
-            if (!match) {
-                return 0;
-            }
-            const year = Number(match[1]);
-            const month = match[2] ? Number(match[2]) : 1;
-            return (year * 100) + month;
-        };
-
-        const mainChronologyLabelPlugin = {
-            id: 'mainChronologyLabelPlugin',
-            afterDatasetsDraw(chart) {
-                const { ctx, scales } = chart;
-                const meta = chart.getDatasetMeta(0);
-                const data = chart.data.datasets[0].data;
-                const axisY = scales.y.getPixelForValue(0);
-
-                ctx.save();
-                meta.data.forEach((point, index) => {
-                    const item = data[index];
-                    const x = point.x;
-                    const titleLines = wrapMainChronologyLabel(item.title, 18);
-                    const periodLines = wrapMainPeriodLabel(item.period);
-
-                    ctx.save();
-                    ctx.translate(x - 8, axisY - 18);
-                    ctx.rotate(-Math.PI / 4);
-                    ctx.fillStyle = '#0f172a';
-                    ctx.font = '600 11px Pretendard, Apple SD Gothic Neo, sans-serif';
-                    ctx.textAlign = 'left';
-                    ctx.textBaseline = 'bottom';
-                    titleLines.forEach((line, lineIndex) => {
-                        ctx.fillText(line, 0, lineIndex * 13);
-                    });
-                    ctx.restore();
-
-                    ctx.save();
-                    ctx.fillStyle = '#475569';
-                    ctx.font = '600 10px Pretendard, Apple SD Gothic Neo, sans-serif';
-                    ctx.textAlign = 'center';
-                    ctx.textBaseline = 'top';
-                    periodLines.forEach((line, lineIndex) => {
-                        ctx.fillText(line, x, axisY + 18 + (lineIndex * 12));
-                    });
-                    ctx.restore();
                 });
-                ctx.restore();
-            }
-        };
-
-        const buildMainChronologyChart = () => {
-            const chartCanvas = document.getElementById('mainChronologyChart');
-            if (!chartCanvas || !window.Chart) {
-                return;
-            }
-
-            const items = Array.from(document.querySelectorAll('.summary-section .chronology-list .chronology-item'))
-                .map(item => {
-                    const period = item.querySelector('.chronology-period')?.textContent.trim();
-                    const title = item.querySelector('.chronology-title')?.textContent.trim();
-                    const classList = item.classList;
-                    const accent = classList.contains('lotte')
-                        ? '#2563eb'
-                        : classList.contains('gmarket')
-                            ? '#0f766e'
-                            : classList.contains('wedata')
-                                ? '#0891b2'
-                                : '#64748b';
-                    return { period, title, accent, sortKey: parseMainPeriodStart(period) };
-                })
-                .filter(item => item.period && item.title)
-                .sort((a, b) => a.sortKey - b.sortKey);
-
-            if (items.length === 0) {
-                return;
-            }
-
-            const data = items.map((item, index) => ({
-                x: index,
-                y: 0,
-                period: item.period,
-                title: item.title,
-                accent: item.accent
-            }));
-
-            const chartWrap = document.getElementById('mainChronologyChartWrap');
-            if (chartWrap) {
-                chartWrap.style.height = '260px';
-            }
-            const chartWidth = Math.max(980, items.length * 112);
-            chartCanvas.width = chartWidth;
-            chartCanvas.height = 260;
-            chartCanvas.style.minWidth = `${chartWidth}px`;
-            chartCanvas.style.width = `${chartWidth}px`;
-
-            Chart.register(mainChronologyLabelPlugin);
-            document.body.classList.add('has-chronology-chart');
-
-            new Chart(chartCanvas, {
-                type: 'scatter',
-                data: {
-                    datasets: [{
-                        data,
-                        pointRadius: 4,
-                        pointHoverRadius: 4,
-                        pointBackgroundColor: data.map(point => point.accent),
-                        pointBorderColor: '#0f172a',
-                        pointBorderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: false,
-                    maintainAspectRatio: false,
-                    layout: {
-                        padding: { left: 16, right: 72, top: 92, bottom: 48 }
-                    },
-                    scales: {
-                        x: {
-                            type: 'linear',
-                            min: -0.5,
-                            max: items.length - 0.1,
-                            position: 'center',
-                            grid: { color: 'rgba(148, 163, 184, 0.35)' },
-                            border: { color: 'rgba(148, 163, 184, 0.7)' },
-                            ticks: { display: false, stepSize: 1 }
-                        },
-                        y: {
-                            type: 'linear',
-                            min: -0.35,
-                            max: 0.35,
-                            grid: { display: false },
-                            border: { display: false },
-                            ticks: { display: false }
-                        }
-                    },
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: { enabled: false }
-                    }
+                const idx = Math.min(Math.round(p - 0.5), scenes.length - 1);
+                dots.forEach((dot, i) => dot.classList.toggle('on', i <= idx));
+                storyTicking = false;
+            };
+            window.addEventListener('scroll', () => {
+                if (!storyTicking) {
+                    requestAnimationFrame(updateStory);
+                    storyTicking = true;
                 }
-            });
-        };
-
-        buildMainChronologyChart();
+            }, { passive: true });
+            window.addEventListener('resize', updateStory);
+            updateStory();
+        }
 
         // Seamless Infinite Scroll Setup
         const techIcons = document.querySelector('#techIcons');
         const originalIcons = Array.from(techIcons.children).map(icon => icon.cloneNode(true));
-
         const createIconGroup = () => {
             const group = document.createElement('div');
             group.className = 'tech-icons-group';
-            originalIcons.forEach(icon => {
-                group.appendChild(icon.cloneNode(true));
-            });
+            originalIcons.forEach(icon => group.appendChild(icon.cloneNode(true)));
             return group;
         };
-
         techIcons.replaceChildren(createIconGroup(), createIconGroup());
-
         const updateTechIconsDistance = () => {
             const firstGroup = techIcons.querySelector('.tech-icons-group');
-            if (!firstGroup) {
-                return;
-            }
-
+            if (!firstGroup) return;
             techIcons.style.setProperty('--marquee-distance', `${firstGroup.getBoundingClientRect().width}px`);
         };
-
         const techImages = techIcons.querySelectorAll('img');
         let pendingImages = 0;
-
         techImages.forEach(image => {
-            if (image.complete) {
-                return;
-            }
-
+            if (image.complete) return;
             pendingImages += 1;
-            const onImageReady = () => {
-                pendingImages -= 1;
-                if (pendingImages === 0) {
-                    updateTechIconsDistance();
-                }
-            };
-
+            const onImageReady = () => { pendingImages -= 1; if (pendingImages === 0) updateTechIconsDistance(); };
             image.addEventListener('load', onImageReady, { once: true });
             image.addEventListener('error', onImageReady, { once: true });
         });
-
-        if (pendingImages === 0) {
-            updateTechIconsDistance();
-        }
-
+        if (pendingImages === 0) updateTechIconsDistance();
         window.addEventListener('resize', updateTechIconsDistance);
+
+        // Scroll Reveal
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     </script>
     <footer class="main-footer">
         <div class="social-links">
             <a href="https://blog.naver.com/rlaalsdn456456" target="_blank">
-                <img src="https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2020%2F04%2F5e8fd82761663.png&w=96&h=96&q=100"
-                    alt="Blog Icon">
+                <img src="../icon/naverblog.svg" alt="Naver Blog Icon">
                 블로그
             </a>
-            <a href="https://www.facebook.com/people/%EA%B9%80%EB%AF%BC%EC%9A%B0/pfbid0D1txo4RpxXeX2oRCAaqQuY4iZ1CTQfogBgHyorQ2mFyw9dr8iYSqLTgvKijpGqaMl/"
-                target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
-                    alt="Facebook Icon">
-                페이스북
-            </a>
             <a href="https://www.linkedin.com/in/%EB%AF%BC%EC%9A%B0-%EA%B9%80-307124246/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-                    alt="LinkedIn Icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn Icon">
                 링크드인
             </a>
             <a href="https://github.com/minwoo19930301" target="_blank">

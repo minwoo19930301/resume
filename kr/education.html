@@ -179,6 +179,10 @@
             letter-spacing: -0.02em;
         }
 
+        .video-start-overlay.guest::after {
+            content: '영상 재생';
+        }
+
         .video-start-overlay.hidden {
             opacity: 0;
             pointer-events: none;
@@ -206,10 +210,6 @@
             border-width: 15px 0 15px 25px;
             border-color: transparent transparent transparent white;
             margin-left: 5px;
-        }
-
-        .education-chronology {
-            grid-template-columns: repeat(5, minmax(0, 1fr));
         }
 
         @media (max-width: 768px) {
@@ -241,13 +241,12 @@
 <body class="resume-page education-page">
     <header class="page-hero">
         <div class="hero-shell">
-            <div class="hero-copy">
-                <div class="language-tabs">
-                    <a href="../kr/index.html" class="language-tab kr-tab">한국어</a>
-                    <a href="../en/index.html" class="language-tab en-tab">English</a>
-                    <a href="#" class="language-tab active">교육</a>
+            <div class="hero-copy" id="heroCopy">
+                <div class="portrait-card">
+                    <img class="profile-pic" src="../img/pic.jpeg" alt="Profile Picture">
                 </div>
                 <strong class="name">김민우</strong>
+                <p class="hero-tagline">강의·멘토링·컨설팅 이력</p>
                 <div class="hero-contact-list">
                     <span class="contact">
                         Phone: <a href="tel:+821076463634">+82 10-7646-3634</a>
@@ -257,131 +256,90 @@
                     </span>
                 </div>
             </div>
-            <div class="hero-side">
-                <div class="portrait-card">
-                    <img class="profile-pic" src="../img/pic.jpeg" alt="Profile Picture">
-                </div>
-            </div>
         </div>
+        <div class="scroll-cue"></div>
     </header>
     <main class="page-shell">
-        <section class="content-section summary-section">
+        <section class="content-section summary-section reveal">
             <div class="section-intro">
                 <p class="section-kicker">Overview</p>
                 <h2 class="section-title">연혁</h2>
             </div>
-            <div class="chronology-chart" id="chronologyChartWrap">
-                <canvas id="chronologyChart" aria-label="연혁 차트" role="img"></canvas>
-            </div>
-            <div class="chronology-scroll">
-                <div class="chronology-list education-chronology">
-                    <article class="chronology-item edu">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2009.03 - 2012.02</span>
-                            <strong class="chronology-title">경기고등학교</strong>
-                        </div>
-                    </article>
-                    <article class="chronology-item edu">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2014.03 - 2020.02</span>
-                            <strong class="chronology-title">성균관대학교</strong>
-                        </div>
-                    </article>
-                    <article class="chronology-item wedata">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2019.06 - 2019.08</span>
-                            <strong class="chronology-title">위데이터랩 모바일팀 인턴</strong>
-                        </div>
-                    </article>
-                    <article class="chronology-item lotte">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2020.01 - 2020.02</span>
-                            <strong class="chronology-title">롯데e커머스 검색개발팀 인턴</strong>
-                        </div>
-                    </article>
-                    <article class="chronology-item lotte">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2020.08 - 2021.03</span>
-                            <strong class="chronology-title">롯데e커머스 검색개발팀</strong>
-                        </div>
-                    </article>
-                    <article class="chronology-item lotte">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2021.03 - 2022.11</span>
-                            <strong class="chronology-title">롯데e커머스 데이터플랫폼개발팀</strong>
-                        </div>
-                    </article>
-                    <article class="chronology-item gmarket">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2022.11 - 2024.10</span>
-                            <strong class="chronology-title">G마켓 Seller &amp; SD Engineering팀</strong>
-                        </div>
-                    </article>
-                    <article class="chronology-item gmarket">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2024.10 - 2025.11</span>
-                            <strong class="chronology-title">G마켓 Pricing Tech Engineering팀</strong>
-                        </div>
-                    </article>
-                    <article class="chronology-item gmarket">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2025.11 - 현재</span>
-                            <strong class="chronology-title">G마켓 MarTech Engineering</strong>
-                        </div>
-                    </article>
-                    <article class="chronology-item edu">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2021 - 현재</span>
-                            <strong class="chronology-title">비전공자·입문자 과외형 스터디</strong>
-                        </div>
-                    </article>
-                    <article class="chronology-item edu">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2019.03</span>
-                            <strong class="chronology-title">교생 실습 및 대표 교생 발표</strong>
-                        </div>
-                    </article>
-                    <article class="chronology-item gmarket">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2022.06 / 2024</span>
-                            <strong class="chronology-title">사내 기술 발표</strong>
-                        </div>
-                    </article>
-                    <article class="chronology-item edu">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2025.05 - 현재</span>
-                            <strong class="chronology-title">한국경영혁신중소기업협회 추천 특강 및 프로젝트 심사위원</strong>
-                        </div>
-                    </article>
-                    <article class="chronology-item edu">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2025.06 - 2025.08</span>
-                            <strong class="chronology-title">고용노동부 연계 디지털 인재 양성 과정 멘토링 (2회)</strong>
-                        </div>
-                    </article>
-                    <article class="chronology-item edu">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2026.03 - 현재</span>
-                            <strong class="chronology-title">과학기술정보통신부 연계 멘토 활동</strong>
-                        </div>
-                    </article>
-                    <article class="chronology-item edu">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2026.04 - 현재</span>
-                            <strong class="chronology-title">직무별 AX 교육 및 AI 업무 자동화 컨설팅</strong>
-                        </div>
-                    </article>
-                    <article class="chronology-item edu">
-                        <div class="chronology-card">
-                            <span class="chronology-period">2025.08 - 현재</span>
-                            <strong class="chronology-title">반포잠원교육지원센터 디지털 특강</strong>
-                        </div>
-                    </article>
-                </div>
+            <div class="journey">
+                <article class="journey-item edu now reveal">
+                    <span class="journey-period">2026.04 — 현재</span>
+                    <span class="journey-marker"></span>
+                    <div class="journey-body">
+                        <div><strong class="journey-title">직무별 AX 교육 및 AI 업무 자동화 컨설팅</strong></div>
+                    </div>
+                </article>
+                <article class="journey-item edu reveal">
+                    <span class="journey-period">2026.03 — 현재</span>
+                    <span class="journey-marker"></span>
+                    <div class="journey-body">
+                        <div><strong class="journey-title">과학기술정보통신부 연계 멘토 활동</strong></div>
+                    </div>
+                </article>
+                <article class="journey-item edu reveal">
+                    <span class="journey-period">2025.08 — 현재</span>
+                    <span class="journey-marker"></span>
+                    <div class="journey-body">
+                        <div><strong class="journey-title">반포잠원교육지원센터 디지털 특강</strong></div>
+                    </div>
+                </article>
+                <article class="journey-item edu reveal">
+                    <span class="journey-period">2025.06 — 2025.08</span>
+                    <span class="journey-marker"></span>
+                    <div class="journey-body">
+                        <div><strong class="journey-title">고용노동부 연계 디지털 인재 양성 과정 멘토링 (2회)</strong></div>
+                    </div>
+                </article>
+                <article class="journey-item edu reveal">
+                    <span class="journey-period">2025.05 — 현재</span>
+                    <span class="journey-marker"></span>
+                    <div class="journey-body">
+                        <div><strong class="journey-title">한국경영혁신중소기업협회 추천 특강 및 프로젝트 심사위원</strong></div>
+                    </div>
+                </article>
+                <article class="journey-item gmarket reveal">
+                    <span class="journey-period">2022 / 2024 / 2026</span>
+                    <span class="journey-marker"></span>
+                    <div class="journey-body">
+                        <div><strong class="journey-title">사내 기술 발표 (4회)</strong></div>
+                    </div>
+                </article>
+                <article class="journey-item edu reveal">
+                    <span class="journey-period">2021 — 현재</span>
+                    <span class="journey-marker"></span>
+                    <div class="journey-body">
+                        <div><strong class="journey-title">비전공자·입문자 과외형 스터디</strong></div>
+                    </div>
+                </article>
+                <article class="journey-item edu reveal">
+                    <span class="journey-period">2019.03</span>
+                    <span class="journey-marker"></span>
+                    <div class="journey-body">
+                        <div><strong class="journey-title">교생 실습 및 대표 교생 발표</strong></div>
+                    </div>
+                </article>
+                <article class="journey-item edu reveal">
+                    <span class="journey-period">2014.03 — 2020.02</span>
+                    <span class="journey-marker"></span>
+                    <div class="journey-body">
+                        <div><strong class="journey-title">성균관대학교</strong></div>
+                    </div>
+                </article>
+                <article class="journey-item edu reveal">
+                    <span class="journey-period">2009.03 — 2012.02</span>
+                    <span class="journey-marker"></span>
+                    <div class="journey-body">
+                        <div><strong class="journey-title">경기고등학교</strong></div>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <section class="content-section">
+        <section class="content-section reveal">
             <div class="section-intro">
                 <p class="section-kicker">Selected Work</p>
                 <h2 class="section-title">대표 활동</h2>
@@ -451,7 +409,7 @@
             </div>
         </section>
 
-        <section class="content-section timeline-section">
+        <section class="content-section timeline-section reveal">
             <div class="section-intro">
                 <p class="section-kicker">Teaching Cases</p>
                 <h2 class="section-title">주요 활동</h2>
@@ -471,9 +429,9 @@
                         <div
                             style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
                             강의</div>
-                        <h3>전직원 대상 사내 강의 / 2022, 2024</h3>
+                        <h3>전직원 대상 사내 강의</h3>
                         <p>기술 블로그 기고 내용을 바탕으로 전 임직원 대상 기술 세미나와 업무 효율화 강의를 진행했습니다.</p>
-                        <p>기술 블로그 기고 기반 발표를 2022년과 2024년에 각각 진행했습니다.</p>
+                        <p>2022년과 2024년에는 기술 블로그 기고 기반 발표를, 2026년에는 'AI와 비즈니스의 상관관계'를 주제로 AI 모델·구독·API 과금 구조, AI 에이전트의 안전한 운영과 비용 최적화, 고객이 에이전트가 되는 시대의 비즈니스 영향을 다룬 세 번째 발표를 진행했습니다.</p>
                         <div class="video-group">
                             <div class="video-item">
                                 <div class="video-container">
@@ -556,46 +514,90 @@
                             <p class="video-caption">프론트엔드 특강</p>
                             <p class="video-summary">40명 내외 수강생을 대상으로 진행한 장시간 프론트엔드 특강입니다. HTML, CSS, JavaScript의 역할과 화면이 만들어지는 흐름을 설명하고, 웹페이지 구조화, 스타일링, 상호작용 구현, 포트폴리오형 결과물 제작 관점까지 연결해 안내했습니다.</p>
                         </div>
-                        <!-- Elementary/Middle School Special -->
+                        <!-- Elementary/Middle School Special - left -->
                         <div class="project">
                             <div
                                 style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
                                 특강</div>
                             <h3>초/중학생 대상 특강</h3>
-                            <p><a href="https://padlet.com/minwookim920/padlet-j7t1rvqzmqcbeezr" target="_blank">강의 자료
-                                    (Padlet)</a> · <a href="https://playentry.org/ws/6a06c79f54c9a8d93df9e1e0?type=normal&amp;mode=block&amp;lang=ko" target="_blank">실제 게임 예시</a></p>
-                            <div class="video-group lesson-video-pair">
-                                <div class="video-item">
-                                    <div class="video-container">
-                                        <div id="player4"></div>
-                                        <div class="video-blocker"></div>
-                                        <div class="video-start-overlay" id="start4" onclick="startVideo(4)">
-                                            <div class="play-button"></div>
-                                        </div>
-                                        <div class="preview-overlay" id="overlay4">
-                                            <h4>미리보기 종료</h4>
-                                            <p>10분 미리보기가 끝났습니다</p>
-                                        </div>
-                                    </div>
-                                    <p class="video-caption">웹 제작과 AI 활용</p>
-                                    <p class="video-summary">개발자가 하는 일부터 HTML, CSS, JavaScript의 역할까지 학생 눈높이로 설명합니다. 엔트리·스크래치와 AI 활용 예시를 통해 직접 웹페이지와 간단한 상호작용을 만드는 흐름을 보여줍니다.</p>
+                            <p><a href="https://padlet.com/minwookim920/padlet-j7t1rvqzmqcbeezr" target="_blank">강의 자료 (Padlet)</a></p>
+                            <div class="video-container">
+                                <div id="player4"></div>
+                                <div class="video-blocker"></div>
+                                <div class="video-start-overlay" id="start4" onclick="startVideo(4)">
+                                    <div class="play-button"></div>
                                 </div>
-                                <div class="video-item">
-                                    <div class="video-container">
-                                        <div id="player7"></div>
-                                        <div class="video-blocker"></div>
-                                        <div class="video-start-overlay" id="start7" onclick="startVideo(7)">
-                                            <div class="play-button"></div>
-                                        </div>
-                                        <div class="preview-overlay" id="overlay7">
-                                            <h4>미리보기 종료</h4>
-                                            <p>10분 미리보기가 끝났습니다</p>
-                                        </div>
-                                    </div>
-                                    <p class="video-caption">엔트리 강의 (X피하기 게임)</p>
-                                    <p class="video-summary">Entry 블록 코딩으로 X피하기 게임을 만드는 수업입니다. 조건, 좌표, 충돌 같은 개념을 학생 눈높이에 맞춰 작은 기능으로 나누고, 직접 실행 가능한 게임 예시로 연결했습니다.</p>
+                                <div class="preview-overlay" id="overlay4">
+                                    <h4>미리보기 종료</h4>
+                                    <p>10분 미리보기가 끝났습니다</p>
                                 </div>
                             </div>
+                            <p class="video-caption">웹 제작과 AI 활용</p>
+                            <p class="video-summary">개발자가 하는 일부터 HTML, CSS, JavaScript의 역할까지 학생 눈높이로 설명합니다. 엔트리·스크래치와 AI 활용 예시를 통해 직접 웹페이지와 간단한 상호작용을 만드는 흐름을 보여줍니다.</p>
+                        </div>
+                        <!-- Elementary/Middle School Special - right -->
+                        <div class="project">
+                            <div
+                                style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
+                                특강</div>
+                            <h3>초/중학생 대상 특강</h3>
+                            <p><a href="https://playentry.org/ws/6a06c79f54c9a8d93df9e1e0?type=normal&amp;mode=block&amp;lang=ko" target="_blank">실제 게임 예시</a></p>
+                            <div class="video-container">
+                                <div id="player7"></div>
+                                <div class="video-blocker"></div>
+                                <div class="video-start-overlay" id="start7" onclick="startVideo(7)">
+                                    <div class="play-button"></div>
+                                </div>
+                                <div class="preview-overlay" id="overlay7">
+                                    <h4>미리보기 종료</h4>
+                                    <p>10분 미리보기가 끝났습니다</p>
+                                </div>
+                            </div>
+                            <p class="video-caption">엔트리 강의 (X피하기 게임)</p>
+                            <p class="video-summary">Entry 블록 코딩으로 X피하기 게임을 만드는 수업입니다. 조건, 좌표, 충돌 같은 개념을 학생 눈높이에 맞춰 작은 기능으로 나누고, 직접 실행 가능한 게임 예시로 연결했습니다.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Guest Appearances Group -->
+                <details open style="margin-bottom: 30px;">
+                    <summary
+                        style="cursor: pointer; font-size: 20px; font-weight: bold; padding: 10px 0; outline: none;">
+                        📺 외부 유튜브 채널 게스트 출연
+                        <span style="float: right; font-size: 14px; color: #666;">▼ 펼치기</span>
+                    </summary>
+                    <div class="video-group video-project-grid" style="margin-top: 20px;">
+                        <div class="project">
+                            <div
+                                style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
+                                게스트</div>
+                            <h3>비전공 개발자 취업 전략 (게스트 출연)</h3>
+                            <div class="video-container">
+                                <div id="player8"></div>
+                                <div class="video-blocker"></div>
+                                <div class="video-start-overlay guest" id="start8" onclick="startVideo(8)">
+                                    <div class="play-button"></div>
+                                </div>
+                            </div>
+                            <p class="video-caption">비전공자가 전공자를 이겨내는 법</p>
+                            <p class="video-summary">다른 유튜브 채널에 게스트로 출연해, 비전공·부트캠프 출신 개발자가 무엇을 준비해야 하는지와 전공자와의 격차를 어떻게 메우는지를 현직자 관점에서 이야기했습니다. (지마켓 기술 블로그 리드 개발자 편)</p>
+                            <p><a href="https://www.youtube.com/watch?v=EIDhYVPXdL0" target="_blank">원본 영상 보기</a></p>
+                        </div>
+                        <div class="project">
+                            <div
+                                style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
+                                게스트</div>
+                            <h3>맥미니 + 오픈클로로 24시간 비서 만들기 (게스트 강의)</h3>
+                            <div class="video-container">
+                                <div id="player9"></div>
+                                <div class="video-blocker"></div>
+                                <div class="video-start-overlay guest" id="start9" onclick="startVideo(9)">
+                                    <div class="play-button"></div>
+                                </div>
+                            </div>
+                            <p class="video-caption">맥미니 + OpenClaw 24시간 비서</p>
+                            <p class="video-summary">다른 채널의 무료 강의에 현직자로 출연해, 맥미니와 OpenClaw를 활용해 24시간 동작하는 개인 AI 비서를 만드는 흐름을 설명했습니다. AI 에이전트 운영과 업무 자동화의 실제 적용 방법을 다룹니다.</p>
+                            <p><a href="https://www.youtube.com/watch?v=SEiK-a6uov0" target="_blank">원본 영상 보기</a></p>
                         </div>
                     </div>
                 </details>
@@ -708,7 +710,7 @@
             </div>
         </section>
 
-        <section class="content-section tech-section">
+        <section class="content-section tech-section reveal">
             <div class="section-intro">
                 <p class="section-kicker">Core Stack</p>
                 <h2 class="section-title">강의에 활용한 기술</h2>
@@ -734,231 +736,28 @@
         </section>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
     <!-- YouTube IFrame API -->
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
-        const wrapLabel = (text, maxLength = 22) => {
-            if (!text) {
-                return '';
-            }
-            if (text.length <= maxLength) {
-                return [text];
-            }
-            const words = text.split(' ');
-            if (words.length === 1) {
-                return text.match(new RegExp(`.{1,${maxLength}}`, 'g')) || [text];
-            }
-            const lines = [];
-            let line = '';
-            words.forEach(word => {
-                const next = line ? `${line} ${word}` : word;
-                if (next.length > maxLength) {
-                    if (line) {
-                        lines.push(line);
-                    }
-                    line = word;
-                } else {
-                    line = next;
+        // Hero parallax: content drifts up, scales down, and fades as you scroll
+        const heroCopy = document.getElementById('heroCopy');
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (heroCopy && !prefersReducedMotion) {
+            let heroTicking = false;
+            const updateHero = () => {
+                const y = Math.min(window.scrollY, 640);
+                const p = y / 640;
+                heroCopy.style.transform = `translateY(${y * 0.32}px) scale(${1 - p * 0.07})`;
+                heroCopy.style.opacity = String(1 - p * 0.9);
+                heroTicking = false;
+            };
+            window.addEventListener('scroll', () => {
+                if (!heroTicking) {
+                    requestAnimationFrame(updateHero);
+                    heroTicking = true;
                 }
-            });
-            if (line) {
-                lines.push(line);
-            }
-            return lines;
-        };
-
-        const parsePeriodStart = (period) => {
-            if (!period) {
-                return 0;
-            }
-            const firstToken = period.split('/')[0].split('-')[0].trim();
-            const match = firstToken.match(/(\d{4})(?:\.(\d{2}))?/);
-            if (!match) {
-                return 0;
-            }
-            const year = Number(match[1]);
-            const month = match[2] ? Number(match[2]) : 1;
-            return (year * 100) + month;
-        };
-
-        const wrapPeriodLabel = (period) => {
-            if (!period) {
-                return [''];
-            }
-            if (period.includes('/')) {
-                return period.split('/').map(part => part.trim());
-            }
-            if (period.includes('-')) {
-                return period.split('-').map(part => part.trim());
-            }
-            return [period];
-        };
-
-        const chronologyLabelPlugin = {
-            id: 'chronologyLabelPlugin',
-            afterDatasetsDraw(chart) {
-                const { ctx, scales } = chart;
-                const meta = chart.getDatasetMeta(0);
-                const data = chart.data.datasets[0].data;
-                const axisY = scales.y.getPixelForValue(0);
-
-                ctx.save();
-                meta.data.forEach((point, index) => {
-                    const item = data[index];
-                    const x = point.x;
-                    const titleLines = wrapLabel(item.title, 18);
-                    const periodLines = wrapPeriodLabel(item.period);
-
-                    ctx.save();
-                    ctx.translate(x - 8, axisY - 18);
-                    ctx.rotate(-Math.PI / 4);
-                    ctx.fillStyle = '#0f172a';
-                    ctx.font = '600 11px Pretendard, Apple SD Gothic Neo, sans-serif';
-                    ctx.textAlign = 'left';
-                    ctx.textBaseline = 'bottom';
-                    titleLines.forEach((line, lineIndex) => {
-                        ctx.fillText(line, 0, lineIndex * 13);
-                    });
-                    ctx.restore();
-
-                    ctx.save();
-                    ctx.fillStyle = '#475569';
-                    ctx.font = '600 10px Pretendard, Apple SD Gothic Neo, sans-serif';
-                    ctx.textAlign = 'center';
-                    ctx.textBaseline = 'top';
-                    periodLines.forEach((line, lineIndex) => {
-                        ctx.fillText(line, x, axisY + 18 + (lineIndex * 12));
-                    });
-                    ctx.restore();
-                });
-                ctx.restore();
-            }
-        };
-
-        const buildChronologyChart = () => {
-            const chartCanvas = document.getElementById('chronologyChart');
-            if (!chartCanvas || !window.Chart) {
-                return;
-            }
-            const items = Array.from(document.querySelectorAll('.education-chronology .chronology-item'))
-                .map(item => {
-                    const period = item.querySelector('.chronology-period')?.textContent.trim();
-                    const title = item.querySelector('.chronology-title')?.textContent.trim();
-                    const classList = item.classList;
-                    const accent = classList.contains('lotte')
-                        ? '#2563eb'
-                        : classList.contains('gmarket')
-                            ? '#0f766e'
-                            : classList.contains('wedata')
-                                ? '#0891b2'
-                                : '#64748b';
-                    return {
-                        period,
-                        title,
-                        accent,
-                        sortKey: parsePeriodStart(period)
-                    };
-                })
-                .filter(item => item.period && item.title)
-                .sort((a, b) => a.sortKey - b.sortKey);
-
-            if (items.length === 0) {
-                return;
-            }
-
-            const data = items.map((item, index) => {
-                return {
-                    x: index,
-                    y: 0,
-                    period: item.period,
-                    title: item.title,
-                    accent: item.accent
-                };
-            });
-
-            const chartWrap = document.getElementById('chronologyChartWrap');
-            if (chartWrap) {
-                chartWrap.style.height = '260px';
-            }
-            const chartWidth = Math.max(980, items.length * 112);
-            chartCanvas.width = chartWidth;
-            chartCanvas.height = 260;
-            chartCanvas.style.minWidth = `${chartWidth}px`;
-            chartCanvas.style.width = `${chartWidth}px`;
-
-            Chart.register(ChartDataLabels, chronologyLabelPlugin);
-            document.body.classList.add('has-chronology-chart');
-
-            new Chart(chartCanvas, {
-                type: 'scatter',
-                data: {
-                    datasets: [
-                        {
-                            data,
-                            pointRadius: 4,
-                            pointHoverRadius: 4,
-                            pointBackgroundColor: data.map(point => point.accent),
-                            pointBorderColor: '#0f172a',
-                            pointBorderWidth: 1,
-                            datalabels: {
-                                display: false
-                            }
-                        }
-                    ]
-                },
-                options: {
-                    responsive: false,
-                    maintainAspectRatio: false,
-                    layout: {
-                        padding: { left: 16, right: 72, top: 92, bottom: 48 }
-                    },
-                    scales: {
-                        x: {
-                            type: 'linear',
-                            min: -0.5,
-                            max: items.length - 0.1,
-                            position: 'center',
-                            grid: {
-                                color: 'rgba(148, 163, 184, 0.35)'
-                            },
-                            border: {
-                                color: 'rgba(148, 163, 184, 0.7)'
-                            },
-                            ticks: {
-                                stepSize: 1,
-                                display: false
-                            }
-                        },
-                        y: {
-                            type: 'linear',
-                            min: -0.35,
-                            max: 0.35,
-                            grid: {
-                                display: false
-                            },
-                            border: {
-                                display: false
-                            },
-                            ticks: {
-                                display: false,
-                                stepSize: 1
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: { enabled: false },
-                        datalabels: {
-                            display: false
-                        }
-                    }
-                }
-            });
-        };
-
-        buildChronologyChart();
+            }, { passive: true });
+        }
 
         // Video configurations: encoded YouTube IDs are decoded only when a preview is opened.
         const videoConfigs = [
@@ -968,7 +767,10 @@
             { playerId: 'player4', videoKey: 'ZTR6X0V2cHJvcTQ=', overlayId: 'overlay4' },
             { playerId: 'player5', videoKey: 'OVo1MFpwT3JGYms=', overlayId: 'overlay5' },
             { playerId: 'player6', videoKey: 'bHJ4ZjlzQ05aODg=', overlayId: 'overlay6' },
-            { playerId: 'player7', videoKey: 'd2hhcWRQS3pPbmc=', overlayId: 'overlay7' }
+            { playerId: 'player7', videoKey: 'd2hhcWRQS3pPbmc=', overlayId: 'overlay7' },
+            // Guest appearances on other channels: already public in full, so no preview cap.
+            { playerId: 'player8', videoKey: 'RUlEaFlWUFhkTDA=', overlayId: 'overlay8', fullPlay: true },
+            { playerId: 'player9', videoKey: 'U0VpSy1hNnVvdjA=', overlayId: 'overlay9', fullPlay: true }
         ];
 
         const players = {};
@@ -1034,6 +836,9 @@
         }
 
         function onPlayerStateChange(event, config) {
+            if (config.fullPlay) {
+                return;
+            }
             if (event.data === YT.PlayerState.PLAYING) {
                 // Start checking time
                 const checkInterval = setInterval(() => {
@@ -1130,19 +935,23 @@
         }
 
         window.addEventListener('resize', updateTechIconsDistance);
+
+        // Scroll Reveal
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     </script>
     <footer class="main-footer">
         <div class="social-links">
             <a href="https://blog.naver.com/rlaalsdn456456" target="_blank">
-                <img src="https://www.apkmirror.com/wp-content/themes/APKMirror/ap_resize/ap_resize.php?src=https%3A%2F%2Fdownloadr2.apkmirror.com%2Fwp-content%2Fuploads%2F2020%2F04%2F5e8fd82761663.png&w=96&h=96&q=100"
-                    alt="Blog Icon">
+                <img src="../icon/naverblog.svg" alt="Naver Blog Icon">
                 블로그
-            </a>
-            <a href="https://www.facebook.com/people/%EA%B9%80%EB%AF%BC%EC%9A%B0/pfbid0D1txo4RpxXeX2oRCAaqQuY4iZ1CTQfogBgHyorQ2mFyw9dr8iYSqLTgvKijpGqaMl/"
-                target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
-                    alt="Facebook Icon">
-                페이스북
             </a>
             <a href="https://www.linkedin.com/in/%EB%AF%BC%EC%9A%B0-%EA%B9%80-307124246/" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
