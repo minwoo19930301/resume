@@ -472,8 +472,7 @@
                         🏫 외부 교육 기관 특강 시연
                         <span style="float: right; font-size: 14px; color: #666;">▼ 펼치기</span>
                     </summary>
-                    <div class="video-group video-project-grid" style="margin-top: 20px;">
-                        <!-- Special -->
+                    <div class="projects" style="margin-top: 20px; display: flex; flex-direction: column; gap: 40px; padding-left: 56px;">
                         <div class="project">
                             <div
                                 style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
@@ -518,41 +517,39 @@
                                 style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
                                 특강</div>
                             <h3>초/중학생 대상 특강</h3>
-                            <p><a href="https://padlet.com/minwookim920/padlet-j7t1rvqzmqcbeezr" target="_blank">강의 자료 (Padlet)</a></p>
-                            <div class="video-container">
-                                <div id="player4"></div>
-                                <div class="video-blocker"></div>
-                                <div class="video-start-overlay" id="start4" onclick="startVideo(4)">
-                                    <div class="play-button"></div>
+                            <p><a href="https://padlet.com/minwookim920/padlet-j7t1rvqzmqcbeezr" target="_blank">강의 자료 (Padlet)</a> · <a href="https://playentry.org/ws/6a06c79f54c9a8d93df9e1e0?type=normal&amp;mode=block&amp;lang=ko" target="_blank">실제 게임 예시</a></p>
+                            <div class="video-group lesson-video-pair" style="margin-top: 15px;">
+                                <div class="video-item">
+                                    <div class="video-container">
+                                        <div id="player4"></div>
+                                        <div class="video-blocker"></div>
+                                        <div class="video-start-overlay" id="start4" onclick="startVideo(4)">
+                                            <div class="play-button"></div>
+                                        </div>
+                                        <div class="preview-overlay" id="overlay4">
+                                            <h4>미리보기 종료</h4>
+                                            <p>10분 미리보기가 끝났습니다</p>
+                                        </div>
+                                    </div>
+                                    <p class="video-caption">웹 제작과 AI 활용</p>
+                                    <p class="video-summary">개발자가 하는 일부터 HTML, CSS, JavaScript의 역할까지 학생 눈높이로 설명합니다. 엔트리·스크래치와 AI 활용 예시를 통해 직접 웹페이지와 간단한 상호작용을 만드는 흐름을 보여줍니다.</p>
                                 </div>
-                                <div class="preview-overlay" id="overlay4">
-                                    <h4>미리보기 종료</h4>
-                                    <p>10분 미리보기가 끝났습니다</p>
+                                <div class="video-item">
+                                    <div class="video-container">
+                                        <div id="player7"></div>
+                                        <div class="video-blocker"></div>
+                                        <div class="video-start-overlay" id="start7" onclick="startVideo(7)">
+                                            <div class="play-button"></div>
+                                        </div>
+                                        <div class="preview-overlay" id="overlay7">
+                                            <h4>미리보기 종료</h4>
+                                            <p>10분 미리보기가 끝났습니다</p>
+                                        </div>
+                                    </div>
+                                    <p class="video-caption">엔트리 강의 (X피하기 게임)</p>
+                                    <p class="video-summary">Entry 블록 코딩으로 X피하기 게임을 만드는 수업입니다. 조건, 좌표, 충돌 같은 개념을 학생 눈높이에 맞춰 작은 기능으로 나누고, 직접 실행 가능한 게임 예시로 연결했습니다.</p>
                                 </div>
                             </div>
-                            <p class="video-caption">웹 제작과 AI 활용</p>
-                            <p class="video-summary">개발자가 하는 일부터 HTML, CSS, JavaScript의 역할까지 학생 눈높이로 설명합니다. 엔트리·스크래치와 AI 활용 예시를 통해 직접 웹페이지와 간단한 상호작용을 만드는 흐름을 보여줍니다.</p>
-                        </div>
-                        <!-- Elementary/Middle School Special - right -->
-                        <div class="project">
-                            <div
-                                style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
-                                특강</div>
-                            <h3>초/중학생 대상 특강</h3>
-                            <p><a href="https://playentry.org/ws/6a06c79f54c9a8d93df9e1e0?type=normal&amp;mode=block&amp;lang=ko" target="_blank">실제 게임 예시</a></p>
-                            <div class="video-container">
-                                <div id="player7"></div>
-                                <div class="video-blocker"></div>
-                                <div class="video-start-overlay" id="start7" onclick="startVideo(7)">
-                                    <div class="play-button"></div>
-                                </div>
-                                <div class="preview-overlay" id="overlay7">
-                                    <h4>미리보기 종료</h4>
-                                    <p>10분 미리보기가 끝났습니다</p>
-                                </div>
-                            </div>
-                            <p class="video-caption">엔트리 강의 (X피하기 게임)</p>
-                            <p class="video-summary">Entry 블록 코딩으로 X피하기 게임을 만드는 수업입니다. 조건, 좌표, 충돌 같은 개념을 학생 눈높이에 맞춰 작은 기능으로 나누고, 직접 실행 가능한 게임 예시로 연결했습니다.</p>
                         </div>
                     </div>
                 </details>
@@ -564,7 +561,7 @@
                         📺 외부 유튜브 채널 게스트 출연
                         <span style="float: right; font-size: 14px; color: #666;">▼ 펼치기</span>
                     </summary>
-                    <div class="video-group video-project-grid" style="margin-top: 20px;">
+                    <div class="projects" style="display: flex; flex-direction: column; gap: 40px; padding-left: 56px; margin-top: 20px;">
                         <div class="project">
                             <div
                                 style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
@@ -612,10 +609,10 @@
                 <details open style="margin-bottom: 30px;">
                     <summary
                         style="cursor: pointer; font-size: 20px; font-weight: bold; padding: 10px 0; outline: none;">
-                        📚 과외형 스터디 · AX 컨설팅 · 프로젝트 멘토링
+                        📚 과외형 스터디 · AX 컨설팅
                         <span style="float: right; font-size: 14px; color: #666; font-weight: normal;">▼ 펼치기</span>
                     </summary>
-                    <div class="guidance-grid">
+                    <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 40px;">
                         <div class="project">
                             <div
                                 style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
@@ -683,6 +680,16 @@
                                 </ul>
                             </div>
                         </div>
+                    </div>
+                </details>
+
+                <details open style="margin-bottom: 30px;">
+                    <summary
+                        style="cursor: pointer; font-size: 20px; font-weight: bold; padding: 10px 0; outline: none;">
+                        🏆 고용노동부 연계 디지털 인재 양성 과정 멘토링
+                        <span style="float: right; font-size: 14px; color: #666; font-weight: normal;">▼ 펼치기</span>
+                    </summary>
+                    <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 40px;">
                         <div class="project">
                             <div
                                 style="position: absolute; top: 24px; left: -66px; width: 48px; height: 48px; background: white; border-radius: 50%; border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #555;">
