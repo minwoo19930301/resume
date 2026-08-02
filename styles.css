@@ -40,7 +40,8 @@ body {
 }
 
 html {
-    scroll-behavior: smooth;
+    /* smooth breaks scroll-scrub video; keep auto */
+    scroll-behavior: auto;
 }
 
 body {
@@ -72,6 +73,7 @@ strong {
 /* ===== HERO ===== */
 .page-hero {
     position: relative;
+    z-index: 20;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,6 +82,7 @@ strong {
     padding: 48px 24px 80px;
     background: var(--bg-color);
     text-align: center;
+    isolation: isolate;
 }
 
 .hero-shell {
@@ -91,6 +94,8 @@ strong {
 }
 
 .hero-copy {
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -242,134 +247,190 @@ strong {
     50% { translate: 0 8px; opacity: 0.15; }
 }
 
-/* ===== SCROLL STORY (flat carbon, kinetic type) ===== */
-.scroll-story {
+/* ===== THEME REEL: wheel drives film; copy swaps by progress ===== */
+.theme-reel {
     position: relative;
-    height: 500vh;
-    background: var(--dark);
-}
-
-.scroll-story-sticky {
-    position: sticky;
-    top: 0;
     height: 100vh;
-    height: 100svh;
+    height: 100dvh;
+    background: #000;
+    z-index: 1;
+}
+
+.theme-reel-view {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: #000;
+    z-index: 5;
 }
 
-.story-scene {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    padding: 0 24px;
-    text-align: center;
-    opacity: 0;
-    will-change: transform, opacity;
-    pointer-events: none;
-}
-
-/* full-bleed photo behind each scene, tinted to one navy tone, kept subtle */
-.story-photo {
-    position: absolute;
-    inset: 0;
+.theme-reel-view.is-done {
+    position: relative;
+    height: 100vh;
+    height: 100dvh;
     z-index: 0;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.34;
-    filter: grayscale(0.35) brightness(0.8) saturate(0.85);
-    will-change: transform;
+}
+
+.theme-reel-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #000;
     pointer-events: none;
 }
 
-.story-scene::after {
-    content: '';
+.theme-reel-scrim {
     position: absolute;
     inset: 0;
     z-index: 1;
+    pointer-events: none;
     background:
-        radial-gradient(ellipse at center, rgba(23, 26, 32, 0.20) 0%, rgba(23, 26, 32, 0.74) 78%),
-        linear-gradient(180deg, rgba(23, 26, 32, 0.55) 0%, rgba(23, 26, 32, 0.25) 40%, rgba(23, 26, 32, 0.7) 100%);
+        linear-gradient(100deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.42) 40%, rgba(0, 0, 0, 0.08) 70%),
+        linear-gradient(to top, rgba(0, 0, 0, 0.45) 0%, transparent 42%);
+}
+
+.theme-reel-ui {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: min(100%, var(--content-width, 1040px));
+    margin: 0 auto;
+    padding: clamp(72px, 12vh, 120px) 24px;
     pointer-events: none;
 }
 
-.story-scene > p,
-.story-scene > span {
-    position: relative;
-    z-index: 2;
+.theme-panel {
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    width: min(34rem, calc(100% - 48px));
+    transform: translateY(calc(-50% + 14px));
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: opacity 0.4s ease, transform 0.45s ease, visibility 0.4s;
 }
 
-.story-kicker {
+.theme-panel.is-on {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%);
+}
+
+.theme-kicker {
     margin: 0;
-    font-size: 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 12px;
     font-weight: 500;
-    letter-spacing: normal;
-    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.48);
 }
 
-.story-line {
-    width: 40px;
-    height: 2px;
-    background: var(--blue);
-    transform-origin: center;
-    will-change: transform;
+.theme-kicker b {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: #6ea8ff;
+    line-height: 1;
 }
 
-.story-title {
-    max-width: 760px;
-    font-size: clamp(26px, 4vw, 40px);
+.theme-title {
+    margin: 0;
+    font-size: clamp(1.45rem, 3.4vw, 2.35rem);
     font-weight: 500;
-    letter-spacing: normal;
-    line-height: 1.2;
+    line-height: 1.28;
     color: #fff;
 }
 
-.story-number {
-    font-size: clamp(32px, 6vw, 40px);
-    font-weight: 500;
-    line-height: 1.2;
-    color: #fff;
-}
-
-.story-desc {
+.theme-desc {
     margin: 0;
-    max-width: 560px;
+    max-width: 34rem;
     font-size: 14px;
     font-weight: 400;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.65);
-    letter-spacing: normal;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.66);
 }
 
-.story-progress {
+.theme-reel-steps {
     position: absolute;
-    bottom: 36px;
+    z-index: 3;
+    right: clamp(14px, 3vw, 32px);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.theme-reel-steps span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.theme-reel-steps span.on {
+    background: #fff;
+    transform: scale(1.35);
+}
+
+.theme-reel-hint {
+    position: absolute;
+    z-index: 4;
     left: 50%;
+    bottom: clamp(28px, 5vh, 48px);
     transform: translateX(-50%);
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
+    color: rgba(255, 255, 255, 0.72);
+    pointer-events: none;
+    transition: opacity 0.4s ease, visibility 0.4s;
 }
 
-.story-progress span {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.25);
-    transition: background-color var(--t);
+.theme-reel-hint.is-hide {
+    opacity: 0;
+    visibility: hidden;
 }
 
-.story-progress span.on {
-    background: #fff;
+.theme-reel-hint-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+}
+
+.theme-reel-hint-chevron {
+    width: 10px;
+    height: 10px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg);
+    animation: theme-hint-bounce 1.4s ease-in-out infinite;
+}
+
+@keyframes theme-hint-bounce {
+    0%, 100% { transform: rotate(45deg) translate(0, 0); opacity: 0.85; }
+    50% { transform: rotate(45deg) translate(4px, 4px); opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .theme-reel-hint-chevron { animation: none; }
 }
 
 /* ===== PAGE SHELL ===== */
 .page-shell {
+    position: relative;
+    z-index: 15;
     width: min(100%, var(--content-width));
     margin: 0 auto 40px;
     padding: 0 24px;
@@ -939,8 +1000,17 @@ details summary span {
         overflow-wrap: anywhere;
     }
 
-    .scroll-story {
-        height: 440vh;
+    .theme-reel-ui {
+        padding: clamp(64px, 10vh, 96px) 16px;
+    }
+
+    .theme-panel {
+        left: 16px;
+        width: min(34rem, calc(100% - 36px));
+    }
+
+    .theme-reel-steps {
+        right: 12px;
     }
 
     .page-shell {
@@ -1124,12 +1194,9 @@ details summary span {
     .play-button,
     .video-start-overlay,
     .preview-overlay,
-    .story-bg,
-    .story-grid,
-    .story-photo,
-    .story-line,
-    .story-progress,
-    .story-kicker {
+    .theme-reel,
+    .theme-reel-view,
+    .theme-reel-video {
         display: none !important;
     }
 
@@ -1185,46 +1252,7 @@ details summary span {
         padding: 24px 0 !important;
     }
 
-    /* scroll story prints as a flat themed list */
-    .scroll-story {
-        height: auto !important;
-        background: none !important;
-    }
 
-    .scroll-story-sticky {
-        position: static !important;
-        height: auto !important;
-        display: block !important;
-        overflow: visible !important;
-    }
-
-    .story-scene {
-        position: static !important;
-        opacity: 1 !important;
-        transform: none !important;
-        display: block !important;
-        text-align: left !important;
-        padding: 10px 0 !important;
-        break-inside: avoid;
-    }
-
-    .story-scene::after {
-        display: none !important;
-    }
-
-    .story-title,
-    .story-number {
-        font-size: 18px !important;
-        color: #000 !important;
-        max-width: none !important;
-    }
-
-    .story-desc {
-        font-size: 13px !important;
-        color: #5c5e62 !important;
-        max-width: none !important;
-        margin-top: 2px !important;
-    }
 
     .project {
         break-inside: avoid;

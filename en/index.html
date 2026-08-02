@@ -5,10 +5,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minwoo Kim - Resume</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css?v=reel13">
 </head>
 
 <body class="resume-page">
+
+    <section class="theme-reel" id="themeReel" aria-label="Core Themes">
+        <div class="theme-reel-view" id="themeReelView">
+            <video class="theme-reel-video" id="themeReelVideo"
+                src="../img/theme-reel.mp4?v=fix1"
+                muted playsinline preload="auto" webkit-playsinline
+                disablepictureinpicture></video>
+            <div class="theme-reel-scrim" aria-hidden="true"></div>
+            <div class="theme-reel-ui">
+                <article class="theme-panel is-on" data-panel="0">
+                    <p class="theme-kicker"><b>01</b> Core Themes</p>
+                    <h2 class="theme-title">Performance tuning &amp;<br>large-scale data</h2>
+                    <p class="theme-desc">Migrated 400 GB of pricing data sync to Kafka Stream and cut the price-change batch from 1.5 hours to 10–20 minutes. Seller-admin inquiry queries went from 1 minute to 0.3 seconds.</p>
+                </article>
+                <article class="theme-panel" data-panel="1">
+                    <p class="theme-kicker"><b>02</b> Core Themes</p>
+                    <h2 class="theme-title">Automation &amp;<br>operational efficiency</h2>
+                    <p class="theme-desc">Repetitive manual work goes to systems — Jenkins orchestration, DB monitoring, webhook alerts, test automation, and Chrome Extensions follow the same pattern.</p>
+                </article>
+                <article class="theme-panel" data-panel="2">
+                    <p class="theme-kicker"><b>03</b> Core Themes</p>
+                    <h2 class="theme-title">Architecture &amp;<br>platform foundations</h2>
+                    <p class="theme-desc">Introduced Spring Batch, Kafka, and React where teams had none, setting the baseline for future work and turning tech debt into operable structure.</p>
+                </article>
+                <article class="theme-panel" data-panel="3">
+                    <p class="theme-kicker"><b>04</b> Core Themes</p>
+                    <h2 class="theme-title">Execution across<br>planning, UX &amp; code</h2>
+                    <p class="theme-desc">Redesigned operator UX to triple matching throughput — treating even back-office tools as products, watching real user behavior and operational flow.</p>
+                </article>
+                <article class="theme-panel" data-panel="4">
+                    <p class="theme-kicker"><b>05</b> Core Themes</p>
+                    <h2 class="theme-title">AX adoption &amp;<br>AI agents in practice</h2>
+                    <p class="theme-desc">Built a team knowledge base (Second Brain) and CLI wrappers for internal tools, and shared how to run Claude Code at high volume with cache-aware session design so token spend stays productive—not just large.</p>
+                </article>
+            </div>
+            <div class="theme-reel-steps" aria-hidden="true">
+                <span class="on"></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="theme-reel-hint" id="themeReelHint" aria-hidden="true">
+                <span class="theme-reel-hint-label">Scroll</span>
+                <span class="theme-reel-hint-chevron" aria-hidden="true"></span>
+            </div>
+        </div>
+    </section>
+
     <header class="page-hero">
         <div class="hero-shell">
             <div class="hero-copy" id="heroCopy">
@@ -16,7 +61,7 @@
                     <img class="profile-pic" src="../img/pic.jpeg" alt="Profile Picture">
                 </div>
                 <strong class="name">Minwoo Kim</strong>
-                <p class="hero-tagline">Backend engineer who has designed large-scale data and pricing systems.<br>Now leading AX — redesigning how teams work with AI agents.</p>
+                <p class="hero-tagline">Senior Software Engineer at Gmarket & In-House AI Agent Evangelist.<br>Pioneering enterprise AI agent harnesses, custom MCP servers, and large-scale data pipelines.</p>
                 <div class="hero-contact-list">
                     <span class="contact">
                         Phone: <a href="tel:+821076463634">+82 10-7646-3634</a>
@@ -29,54 +74,6 @@
         </div>
         <div class="scroll-cue"></div>
     </header>
-
-    <section class="scroll-story" id="scrollStory" aria-label="Core themes">
-        <div class="scroll-story-sticky">
-            <div class="story-scene">
-                <div class="story-photo" style="background-image:url('../img/story-1.jpg')"></div>
-                <p class="story-kicker">Core Themes</p>
-                <span class="story-line"></span>
-                <span class="story-title">Performance tuning &amp;<br>large-scale data</span>
-                <p class="story-desc">Migrated 400 GB of pricing data sync to Kafka Stream and cut the price-change batch from 1.5 hours to 10–20 minutes. Seller-admin inquiry queries went from 1 minute to 0.3 seconds.</p>
-            </div>
-            <div class="story-scene">
-                <div class="story-photo" style="background-image:url('../img/story-2.jpg')"></div>
-                <p class="story-kicker">Core Themes</p>
-                <span class="story-line"></span>
-                <span class="story-title">Automation &amp;<br>operational efficiency</span>
-                <p class="story-desc">Repetitive manual work goes to systems — Jenkins orchestration, DB monitoring, webhook alerts, test automation, and Chrome Extensions follow the same pattern.</p>
-            </div>
-            <div class="story-scene">
-                <div class="story-photo" style="background-image:url('../img/story-3.jpg')"></div>
-                <p class="story-kicker">Core Themes</p>
-                <span class="story-line"></span>
-                <span class="story-title">Architecture &amp;<br>platform foundations</span>
-                <p class="story-desc">Introduced Spring Batch, Kafka, and React where teams had none, setting the baseline for future work and turning tech debt into operable structure.</p>
-            </div>
-            <div class="story-scene">
-                <div class="story-photo" style="background-image:url('../img/story-4.jpg')"></div>
-                <p class="story-kicker">Core Themes</p>
-                <span class="story-line"></span>
-                <span class="story-title">Execution across<br>planning, UX &amp; code</span>
-                <p class="story-desc">Redesigned operator UX to triple matching throughput — treating even back-office tools as products, watching real user behavior and operational flow.</p>
-            </div>
-            <div class="story-scene">
-                <div class="story-photo" style="background-image:url('../img/story-5.jpg')"></div>
-                <p class="story-kicker">Core Themes</p>
-                <span class="story-line"></span>
-                <span class="story-title">AX adoption &amp;<br>AI agents in practice</span>
-                <p class="story-desc">Built an internal LLM knowledge base, presented at company-wide learning sessions (SLS), and put AI agents into real work and teaching — applying the latest agent tools with cost, security, and operations designed in.</p>
-            </div>
-            <div class="story-progress">
-                <span class="on"></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </section>
-
     <main class="page-shell">
         <section class="content-section summary-section reveal">
             <div class="section-intro">
@@ -206,19 +203,33 @@
             <div class="projects">
                 <div class="project reveal">
                     <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>Internal systems as CLI — gmws-cli (company-wide)</h3>
+                    <p>Mapped legacy web/admin workflows through <strong>reverse engineering and code analysis</strong>, then rebuilt them as terminal CLIs. Reuses an existing browser login session so internal back-office and ops screens are callable via scriptable commands.</p>
+                    <p>Shipped as a <strong>company-wide distributable</strong> tool, not a personal script — with an <strong>agent-friendly</strong> interface so coding agents in the workspace can invoke the same ops paths for onboarding, repeat lookups, and day-to-day operations.</p>
+                    <p>Even when agents roll out company-wide, most internal back-offices are still web-only. Without API/CLI surfaces, agents fall back to computer-use / browser automation — burning tokens on screen context and DOM traversal. gmws-cli cuts those paths into short commands so agents and humans share the same ops surface at much lower cost.</p>
+                </div>
+                <div class="project reveal">
+                    <img src="../icon/claude.svg" alt="Claude Icon" class="project-icon">
+                    <h3>Token-efficient Claude Code at high volume — shared with the team</h3>
+                    <p>Used Claude Code as a primary coding tool while optimizing for <strong>cache hits, session design, and context control</strong> rather than raw spend. In a recent ~3-month window of heavy use: ~900 Claude Code sessions, tens of thousands of LOC changed, and near-100% tool acceptance — with model mix favoring high-cache usage patterns.</p>
+                    <p>Self-audits via <code>/insights</code> keep “using a lot” from meaning “wasting a lot.” Beyond that, work is routed by task type: human-facing reports/summaries/write-ups on <strong>cheaper models (e.g. Haiku)</strong>, and higher-tier models only where design, refactor, or heavy tool use is needed.</p>
+                    <p>Within existing infra, <strong>API keys are reserved for partial paths</strong> (batch jobs, scripts, auto-PR) while day-to-day interactive coding stays on CLI/subscription. Recurring flows — pre-merge checks, review drafts, doc stubs — are packaged as auto-PR, hooks, and agent skills so sessions don’t burn on ritual work. Shared the playbook across teammates and internal channels.</p>
+                </div>
+                <div class="project reveal">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>Team knowledge base (LLM wiki) — Pricing Second Brain</h3>
+                    <p>Proposed and led a team domain knowledge base that humans and AI read and fill together. Two layers — immutable raw sources and distilled wiki nodes — where each node is an atomic unit (claim/concept/decision) with type/tldr/tags frontmatter, connected by wiki links. Currently ~330 wiki nodes and ~140 raw documents.</p>
+                    <p>Designed an ingestion pipeline where AI agents read code, docs, and tickets directly via GitHub, Confluence, Jira, and Databricks token integrations and distill them into nodes — e.g., 6 repos plus Databricks jobs distilled into 529 nodes in one pass, later re-distilling 459 code references into 137 topic-level consolidated nodes.</p>
+                    <p>Built an MCP server with the standard library only: teammates just open the repo folder and their agent auto-connects, searching and citing the knowledge base — no API key required. A separate dashboard app provides a knowledge graph, ERD, workflow Gantt, and a RAG chatbot (Claude CLI integration with keyword-search fallback).</p>
+                    <p>Designed the workflow so teammates don't memorize conventions — they "dump what they know in plain words" and the agent organizes it per schema. Evangelized token setup, collection methods, and agent workflows across the team. Framed the graph as the execution base for Jira-driven agent work and handoff when owners are away.</p>
+                </div>
+                <div class="project reveal">
+                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
                     <h3>Pricing management admin — official launch and operation</h3>
                     <p>Officially launched the pricing back-office built in 2025. Roughly 150 sales HQ staff now use it daily, viewing price statistics by product and channel and ranking price competitiveness against competitors in a single screen.</p>
                     <p>Large CSV downloads combine <code>StreamingResponseBody</code> with MongoDB cursor streaming, writing row by row without loading the full dataset into memory — server memory stays flat even for hundreds of thousands of rows. UTF-8 BOM injection handles Korean Excel compatibility, and field projection trims query load.</p>
                     <p>The front-end is framework-free ES Modules, split into page modules (summary/items) and shared modules, with a snapshot-based state module managing filters, selections, and panels. Fetch <code>ReadableStream</code> reads received chunk sizes to drive a download progress status bar with a current-filter vs. full-export scope menu. Per-user column layouts and page sizes persist in localStorage, with merge logic so new columns don't break existing arrangements.</p>
                     <p>The backend separates operational reads/writes (MongoDB) from pipeline output queries (Databricks JDBC) as dual data sources, manages credentials via Vault, and aggregates MTD trends server-side in day/hour buckets. Domain policies and decision records are documented so AI agents can pick up work on the codebase.</p>
-                </div>
-                <div class="project reveal">
-                    <img src="../icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                    <h3>Team knowledge base (LLM wiki) — proposed and led</h3>
-                    <p>Proposed and led a team domain knowledge base that humans and AI read and fill together. Two layers — immutable raw sources and distilled wiki nodes — where each node is an atomic unit (claim/concept/decision) with type/tldr/tags frontmatter, connected by wiki links. Currently ~330 wiki nodes and ~140 raw documents.</p>
-                    <p>Designed an ingestion pipeline where AI agents read code, docs, and tickets directly via GitHub, Confluence, Jira, and Databricks token integrations and distill them into nodes — e.g., 6 repos plus Databricks jobs distilled into 529 nodes in one pass, later re-distilling 459 code references into 137 topic-level consolidated nodes.</p>
-                    <p>Built an MCP server with the standard library only: teammates just open the repo folder and their agent auto-connects, searching and citing the knowledge base — no API key required. A separate dashboard app provides a knowledge graph, ERD, workflow Gantt, and a RAG chatbot (Claude CLI integration with keyword-search fallback).</p>
-                    <p>Designed the workflow so teammates don't memorize conventions — they "dump what they know in plain words" and the agent organizes it per schema. Evangelized token setup, collection methods, and agent workflows across the team.</p>
                 </div>
             </div>
         </div>
@@ -538,15 +549,18 @@
     </main>
 
     <script>
-        // Hero parallax: content drifts up, scales down, and fades as you scroll
+        // Hero parallax: based on hero section position (not page scrollY — film sits above)
         const heroCopy = document.getElementById('heroCopy');
+        const pageHero = document.querySelector('.page-hero');
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (heroCopy && !prefersReducedMotion) {
+        if (heroCopy && pageHero && !prefersReducedMotion) {
             let heroTicking = false;
+            const clamp01 = v => Math.min(Math.max(v, 0), 1);
             const updateHero = () => {
-                const y = Math.min(window.scrollY, 640);
-                const p = y / 640;
-                heroCopy.style.transform = `translateY(${y * 0.32}px) scale(${1 - p * 0.07})`;
+                const top = pageHero.getBoundingClientRect().top;
+                // 0 while hero is still below/at top; rises as hero scrolls up out of view
+                const p = clamp01(-top / 640);
+                heroCopy.style.transform = `translateY(${p * 200}px) scale(${1 - p * 0.07})`;
                 heroCopy.style.opacity = String(1 - p * 0.9);
                 heroTicking = false;
             };
@@ -556,51 +570,118 @@
                     heroTicking = true;
                 }
             }, { passive: true });
+            window.addEventListener('resize', updateHero, { passive: true });
+            updateHero();
         }
 
-        // Scroll Story: scenes interpolate continuously with scroll (kinetic parallax)
-        const story = document.getElementById('scrollStory');
-        if (story) {
-            const scenes = Array.from(story.querySelectorAll('.story-scene'));
-            const dots = Array.from(story.querySelectorAll('.story-progress span'));
+        // Theme reel at top: wheel = film progress (scroll-test proven) + 5 panels
+        const themeReel = document.getElementById('themeReel');
+        const themeView = document.getElementById('themeReelView');
+        const themeVideo = document.getElementById('themeReelVideo');
+        const themeHint = document.getElementById('themeReelHint');
+        if (themeReel && themeView && themeVideo) {
+            const panels = Array.from(themeReel.querySelectorAll('.theme-panel'));
+            const steps = Array.from(themeReel.querySelectorAll('.theme-reel-steps span'));
+            const n = Math.max(panels.length, 1);
             const clamp01 = v => Math.min(Math.max(v, 0), 1);
-            let storyTicking = false;
-            const updateStory = () => {
-                const total = story.offsetHeight - window.innerHeight;
-                const raw = clamp01(-story.getBoundingClientRect().top / total);
-                // p runs 0.5 .. n-0.5 so the first/last scenes hold at the edges
-                const p = 0.5 + raw * (scenes.length - 1);
-                scenes.forEach((scene, i) => {
-                    const d = p - (i + 0.5);
-                    const vis = clamp01(1 - Math.abs(d) * 2.4);
-                    const eased = vis * vis * (3 - 2 * vis); // smoothstep
-                    if (prefersReducedMotion) {
-                        scene.style.opacity = Math.abs(d) < 0.5 ? '1' : '0';
-                        return;
-                    }
-                    scene.style.opacity = String(eased);
-                    scene.style.transform = `translateY(${d * -90}px) scale(${0.94 + eased * 0.06})`;
-                    const photo = scene.querySelector('.story-photo');
-                    if (photo) {
-                        photo.style.transform = `translateY(${d * -28}px) scale(1.12)`;
-                    }
-                    const line = scene.querySelector('.story-line');
-                    if (line) {
-                        line.style.transform = `scaleX(${eased})`;
-                    }
+            const SENS = 0.0005;
+
+            let p = 0;
+            let unlocked = false;
+            let released = false;
+            let lastIdx = -1;
+
+            themeVideo.muted = true;
+            themeVideo.defaultMuted = true;
+            themeVideo.playsInline = true;
+            themeVideo.setAttribute('playsinline', '');
+            themeVideo.setAttribute('webkit-playsinline', '');
+            themeVideo.loop = false;
+            themeVideo.preload = 'auto';
+            themeVideo.removeAttribute('autoplay');
+            themeVideo.pause();
+
+            const unlock = () => {
+                if (unlocked) return Promise.resolve();
+                unlocked = true;
+                return themeVideo.play().then(() => {
+                    themeVideo.pause();
+                }).catch(() => {
+                    unlocked = false;
                 });
-                const idx = Math.min(Math.round(p - 0.5), scenes.length - 1);
-                dots.forEach((dot, i) => dot.classList.toggle('on', i <= idx));
-                storyTicking = false;
             };
-            window.addEventListener('scroll', () => {
-                if (!storyTicking) {
-                    requestAnimationFrame(updateStory);
-                    storyTicking = true;
+
+            const setPanel = (idx) => {
+                if (idx === lastIdx) return;
+                lastIdx = idx;
+                panels.forEach((el, i) => el.classList.toggle('is-on', i === idx));
+                steps.forEach((el, i) => el.classList.toggle('on', i <= idx));
+            };
+
+            const applyTime = () => {
+                if (!Number.isFinite(themeVideo.duration) || themeVideo.duration <= 0) return;
+                if (!themeVideo.paused) themeVideo.pause();
+                const t = p * Math.max(themeVideo.duration - 0.05, 0);
+                if (Math.abs((themeVideo.currentTime || 0) - t) < 0.01) return;
+                try { themeVideo.currentTime = t; } catch (_) {}
+            };
+
+            const syncUi = () => {
+                setPanel(Math.min(n - 1, Math.floor(p * n + 1e-6)));
+                applyTime();
+                if (themeHint) themeHint.classList.toggle('is-hide', p > 0.03 || released);
+            };
+
+            const onFilmProgress = (delta) => {
+                if (p <= 0 && delta < 0) return false;
+                if (p >= 1 && delta > 0) {
+                    released = true;
+                    themeView.classList.add('is-done');
+                    if (themeHint) themeHint.classList.add('is-hide');
+                    return false;
                 }
+                if (released && delta < 0 && window.scrollY <= 2) {
+                    released = false;
+                    themeView.classList.remove('is-done');
+                }
+                if (released) return false;
+
+                p = clamp01(p + delta * SENS);
+                if (p >= 0.999) p = 1;
+                syncUi();
+                return true;
+            };
+
+            const onWheel = (e) => {
+                if (released && window.scrollY > 4) return;
+                unlock();
+                if (onFilmProgress(e.deltaY)) e.preventDefault();
+            };
+
+            let touchY = null;
+            window.addEventListener('wheel', onWheel, { passive: false });
+            window.addEventListener('touchstart', (e) => {
+                touchY = e.touches[0].clientY;
             }, { passive: true });
-            window.addEventListener('resize', updateStory);
-            updateStory();
+            window.addEventListener('touchmove', (e) => {
+                if (touchY == null) return;
+                const y = e.touches[0].clientY;
+                const dy = touchY - y;
+                touchY = y;
+                if (released && window.scrollY > 4) return;
+                unlock();
+                if (onFilmProgress(dy * 1.6)) e.preventDefault();
+            }, { passive: false });
+
+            themeVideo.addEventListener('loadedmetadata', () => {
+                unlock().then(syncUi);
+            });
+            themeVideo.addEventListener('error', () => {
+                console.error('theme video error', themeVideo.error);
+            });
+            if (themeVideo.readyState >= 1) unlock().then(syncUi);
+            else themeVideo.load();
+            syncUi();
         }
 
         // Seamless Infinite Scroll Setup
