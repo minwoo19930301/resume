@@ -52,23 +52,8 @@
 .resume-page .project-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 18px;
-}
-.resume-page .project-links a[href] {
-  display: inline-flex;
-  align-items: center;
-  min-height: 40px;
-  padding: 8px 13px;
-  border: 1px solid #aec6eb;
-  border-radius: 7px;
-  background-color: #edf4ff;
-  font-weight: 600;
-}
-.resume-page .project-links a[href]:hover,
-.resume-page .project-links a[href]:focus-visible {
-  background-color: #dfeaff;
-  border-color: #1755b8;
+  gap: 6px 16px;
+  margin-top: 12px;
 }
 .resume-page [id] { scroll-margin-top: 76px; }
 .resume-page .personal-section { border-top: 1px solid var(--divider); }
