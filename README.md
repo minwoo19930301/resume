@@ -10,7 +10,7 @@ The page uses an explicit `?lang=ko` or `?lang=en` choice first, then a saved pr
 
 The language selector stays on the same page. Choosing Auto clears the saved override. Korean HTML remains readable without JavaScript and supports the reader’s built-in browser translation.
 
-Old `/kr/` and `/en/` links redirect to the unified page while preserving query parameters and fragments. `/kr/education.html` remains an independent document.
+Old `/kr/` and `/en/` links redirect to the unified page while preserving query parameters and fragments. `/kr/education.html` redirects to the independent education portfolio at https://flam-ing.github.io/resume/, preserving fragments.
 
 ## Update content
 
@@ -21,6 +21,6 @@ Old `/kr/` and `/en/` links redirect to the unified page while preserving query 
 
 The source catalog is authoritative; generated HTML and JS should not be edited by hand. `assets/locale.js` contains language selection, `assets/resume.js` updates the document, and `assets/effects.js` preserves the existing visual effects.
 
-`kr/education.html` is maintained independently for user-requested external education, mentoring and AX experience. Preserve its existing layout and video examples; keep company knowledge-sharing separate from personal education work and distinguish delivered, assigned and scheduled activities. Use the order timeline → representative activities → activity details. Corporate education belongs in representative activities, with client cases and course records below; retain dated course descriptions from the instructor profile and distinguish course hours from cumulative consulting effort. Its additional styles live in `kr/education-additions.css` and are scoped to the education page.
+The education portfolio is maintained in `flam-ing/resume` at https://flam-ing.github.io/resume/. The legacy `kr/education.html` is only a redirect; edit education content in that repository.
 
 GitHub Pages serves the repository root from `main`. Building locally does not publish changes.
