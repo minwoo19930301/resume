@@ -28,6 +28,48 @@
   padding: 4px 7px;
 }
 .resume-page :focus-visible { outline: 2px solid #3e6ae1; outline-offset: 4px; }
+.resume-page a[href] {
+  color: #1755b8;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: .2em;
+}
+.resume-page a[href]:visited { color: #6341a5; }
+.resume-page a[href]:hover,
+.resume-page a[href]:focus-visible {
+  color: #103d86;
+  background-color: #e8f0ff;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+.resume-page a[href][target="_blank"]::after {
+  content: "↗" / "";
+  display: inline-block;
+  margin-left: .28em;
+  font-size: .9em;
+  text-decoration: none;
+}
+.resume-page .project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+.resume-page .project-links a[href] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px 13px;
+  border: 1px solid #aec6eb;
+  border-radius: 7px;
+  background-color: #edf4ff;
+  font-weight: 600;
+}
+.resume-page .project-links a[href]:hover,
+.resume-page .project-links a[href]:focus-visible {
+  background-color: #dfeaff;
+  border-color: #1755b8;
+}
 .resume-page [id] { scroll-margin-top: 76px; }
 .resume-page .personal-section { border-top: 1px solid var(--divider); }
 .resume-page .personal-section .project { padding-top: 0; }
