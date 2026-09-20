@@ -14,7 +14,7 @@ Old `/kr/` and `/en/` links redirect to the unified page while preserving query 
 
 ## Update content
 
-1. Edit the paired entries in `src/resume.content.json`. Keep company work and internal AI Champion activities clearly attributed. Exclude personal AI/AX business and consulting promotions from the public pages and metadata. Preserve existing wording unless the user requests a rewrite; add only user-confirmed experience.
+1. Edit the paired entries in `src/resume.content.json`. Keep company work and internal AI Champion activities clearly attributed. Keep user-requested personal software projects in their own section below company work; distinguish in-development projects and upstream foundations. Exclude Ai-ing, personal AI/AX business and consulting promotions from the public pages and metadata. Preserve existing wording unless the user requests a rewrite; add only user-confirmed experience.
 2. Edit `src/resume.template.html` only when changing the document structure.
 3. Run `node scripts/build.mjs` to regenerate `index.html`, `assets/content.js` and the legacy aliases.
 4. Run `node --test tests/*.cjs` and review the page in both languages, including a narrow screen.

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="title-0">김민우 | Resume</title>
     <link rel="stylesheet" href="./styles.css?v=reel13">
-<meta name="description" content="김민우의 백엔드 엔지니어링, 사내 AI Champion 활동, 팀 지식베이스 구축과 업무 자동화 경험을 담은 이력서입니다." data-i18n-content="description"><link rel="canonical" href="https://minwoo19930301.github.io/resume/"><link rel="stylesheet" href="./assets/resume.css?v=b91296aed87f"><script src="./assets/content.js?v=fc9407ed8a63" defer></script><script src="./assets/locale.js?v=1f9f86da97c4" defer></script><script src="./assets/resume.js?v=3cd9347972f4" defer></script><script src="./assets/effects.js?v=6054bc993b30" defer></script></head>
+<meta name="description" content="김민우의 백엔드 엔지니어링, 사내 AI Champion 활동, 팀 지식베이스 구축과 업무 자동화 경험을 담은 이력서입니다." data-i18n-content="description"><link rel="canonical" href="https://minwoo19930301.github.io/resume/"><link rel="stylesheet" href="./assets/resume.css?v=b91296aed87f"><script src="./assets/content.js?v=8fabe9c91067" defer></script><script src="./assets/locale.js?v=1f9f86da97c4" defer></script><script src="./assets/resume.js?v=3cd9347972f4" defer></script><script src="./assets/effects.js?v=6054bc993b30" defer></script></head>
 
 <body class="resume-page">
 
@@ -429,6 +429,31 @@
             </div>
         </div>
 
+            </div>
+        </section>
+
+        <section class="content-section reveal" id="personal-projects">
+            <div class="section-intro">
+                <p class="section-kicker">Personal Projects</p>
+                <h2 class="section-title" data-i18n="personal-projects-heading">개인 프로젝트</h2>
+            </div>
+            <div class="projects">
+                <article class="project" id="tour-city-planner" data-i18n="personal-tour-city-planner"><h3>Tour City Planner — 여행 일정·동선 편집</h3>
+<p>도시별 일정 템플릿을 바탕으로 여러 도시의 여행 일정을 편집하고, 날씨·환율·지도 미리보기를 한 화면에서 확인하는 여행 플래너를 만들었습니다.</p>
+<p>HTML·JavaScript 기반 정적 앱으로 구성하고, 편집한 일정을 URL에 담아 공유하도록 구현했습니다. 동행자와 같은 계획을 보며 일정과 동선을 조정할 수 있습니다.</p>
+<p><a href="https://minwoo19930301.github.io/tour-city-planner/" target="_blank" rel="noopener noreferrer">서비스 보기</a> · <a href="https://github.com/minwoo19930301/tour-city-planner" target="_blank" rel="noopener noreferrer">GitHub</a></p></article>
+                <article class="project" id="spring-ip-chat" data-i18n="personal-spring-ip-chat"><h3>Spring IP Chat — 로그인 없는 실시간 채팅</h3>
+<p>접속자의 공인 IP를 식별자로 사용해, 회원가입 없이 바로 대화에 참여하는 채팅 서비스를 만들었습니다. Spring Boot·STOMP WebSocket으로 메시지를 실시간 전달합니다.</p>
+<p>Redis에 메시지를 먼저 버퍼링하고 DB에 배치 적재하는 구조로 실시간 전송과 영구 저장을 분리했습니다. 재접속 시 이전 대화 조회, 본인 메시지 삭제와 보관기간에 따른 정리 기능도 구현했습니다.</p>
+<p><a href="http://168.107.14.108:8080/" target="_blank" rel="noopener noreferrer">서비스 보기</a> · <a href="https://github.com/minwoo19930301/spring-ip-chat" target="_blank" rel="noopener noreferrer">GitHub</a></p></article>
+                <article class="project" id="collaborative-agent-app" data-i18n="personal-collaborative-agent-app"><h3>Open-Grokbot 기반 협업 웹앱 — 개발 중</h3>
+<p>여러 사람과 AI 봇이 같은 방에서 대화하고 작업하는 웹앱을 오픈소스 Open-Grokbot 기반으로 개발 중입니다. Node.js·SQLite로 초대 가입, 방별 접근 권한, 메시지·첨부 저장과 봇 호출 한도를 구현했습니다.</p>
+<p>OCI의 Linux 데스크톱을 웹에서 함께 보고 조작하도록 연결하고, 봇의 브라우저 도구 호출 경로를 구성했습니다. 현재 실제 AI 모델 연결을 준비하고 있습니다.</p>
+<p><a href="https://168.107.91.96/" target="_blank" rel="noopener noreferrer">웹앱 보기 · 초대 필요</a> · <a href="https://github.com/LING71671/open-grokbot" target="_blank" rel="noopener noreferrer">기반 오픈소스</a></p></article>
+                <article class="project" id="web-change-alert" data-i18n="personal-web-change-alert"><h3>웹 변경 알림 — Chrome Extension</h3>
+<p>반복해서 확인하던 웹페이지의 변화를 대신 점검하는 Chrome 확장 프로그램을 만들었습니다. 로그인된 브라우저에서 CSS 셀렉터로 관심 영역을 지정하고, 텍스트·이미지·속성의 변화를 조건에 따라 감지합니다.</p>
+<p>주기·일간·주간·월간 점검 일정과 알림을 설정하고 여러 페이지를 함께 관리하도록 구현했습니다. 사용자가 매번 페이지를 열어 변경 여부를 확인하는 작업을 줄였습니다.</p>
+<p><a href="https://chromewebstore.google.com/detail/web-change-alert/jcfhchhliffpofclnhhjjdjakinpmfmc" target="_blank" rel="noopener noreferrer">Chrome 웹 스토어</a> · <a href="https://github.com/minwoo19930301/web-change-alert" target="_blank" rel="noopener noreferrer">GitHub</a></p></article>
             </div>
         </section>
 
