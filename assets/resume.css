@@ -1,0 +1,50 @@
+/* Enhancements scoped to the unified resume; education keeps its existing UI. */
+.resume-controls {
+  position: fixed;
+  inset: 16px 20px auto;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  pointer-events: none;
+}
+.resume-controls > * {
+  pointer-events: auto;
+  background: rgba(255,255,255,.96);
+  color: #171a20;
+  border-radius: 6px;
+}
+.resume-skip { padding: 9px 13px; font-size: 12px; }
+.locale-control { display: flex; align-items: center; gap: 8px; padding: 6px 10px; }
+.locale-control label { font-size: 12px; }
+.locale-control select {
+  font: inherit;
+  font-size: 13px;
+  color: inherit;
+  background: transparent;
+  border: 1px solid #d0d1d2;
+  border-radius: 4px;
+  padding: 4px 7px;
+}
+.resume-page :focus-visible { outline: 2px solid #3e6ae1; outline-offset: 4px; }
+.resume-page [id] { scroll-margin-top: 76px; }
+.resume-page .personal-section { border-top: 1px solid var(--divider); }
+.resume-page .personal-section .project { padding-top: 0; }
+.resume-page .personal-section .highlights-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 48px; }
+.resume-page .project { overflow-wrap: break-word; }
+@media (max-width: 700px) {
+  .resume-controls { inset: 12px 12px auto; }
+  .locale-control label { display: none; }
+  .resume-page .personal-section .highlights-grid { grid-template-columns: 1fr; gap: 30px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .resume-page .theme-reel { display: none; }
+  .resume-page .hero-copy, .resume-page .reveal { transform: none !important; opacity: 1 !important; }
+}
+@media print {
+  .resume-controls, .resume-page .theme-reel, .resume-page .scroll-cue { display: none !important; }
+  .resume-page .page-hero { min-height: 0; padding: 20px 0; }
+  .resume-page .hero-copy, .resume-page .reveal { transform: none !important; opacity: 1 !important; }
+  .resume-page .project { break-inside: avoid; }
+}
