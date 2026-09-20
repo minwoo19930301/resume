@@ -292,8 +292,8 @@
     "en": "Auto"
   },
   "internal-assistant-scheduling": {
-    "ko": "<h3>AI 스케줄러로 반복 업무와 워크로그 작성 자동화</h3>\n<p>에이전트 작업을 예약하고 반복 실행하는 기능을 구현했습니다. AI 스케줄러를 활용해 워크로그 작성 등 반복되는 업무도 자동화했습니다.</p>",
-    "en": "<h3>Automating recurring work and worklogs with an AI scheduler</h3>\n<p>Built scheduling and recurring execution for agent tasks, and used an AI scheduler to automate worklog writing and other recurring work.</p>"
+    "ko": "<h3>Jira 티켓부터 PR·지식베이스 갱신까지 자동화</h3>\n<p>Jira 티켓이 들어오면 내용을 바탕으로 코드를 작성하고, 구현 PR과 배포용 PR을 생성한 뒤 관련 지식베이스를 갱신하는 에이전트 루틴을 구성했습니다.</p>\n<p>에이전트 작업을 예약하고 반복 실행하는 기능을 구현했습니다. AI 스케줄러를 활용해 워크로그 작성 등 반복되는 업무도 자동화했습니다.</p>",
+    "en": "<h3>Automating Jira tickets, pull requests and knowledge updates</h3>\n<p>Built an agent workflow that takes incoming Jira tickets, writes code, opens implementation and deployment pull requests, and updates the relevant knowledge base.</p>\n<p>Built scheduling and recurring execution for agent tasks, and used an AI scheduler to automate worklog writing and other recurring work.</p>"
   },
   "agent-workflow-orchestration": {
     "ko": "<h3>에이전트 작업 분기와 컨텍스트 관리</h3>\n<p>herdr·paseo·orca 등의 오케스트레이터를 활용해 여러 에이전트의 작업을 나누고 조율하는 실행 환경을 구성했습니다.</p>\n<p>fork·btw로 기존 맥락을 유지한 채 작업을 분기하고, compact로 필요한 맥락을 정리해 이어가는 방식을 적용했습니다. 같은 배경을 다시 설명하지 않고 다음 작업을 시작하도록 워크플로우를 다듬었습니다.</p>",
