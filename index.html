@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="title-0">김민우 | Resume</title>
     <link rel="stylesheet" href="./styles.css?v=reel13">
-<meta name="description" content="김민우의 백엔드 엔지니어링, AI Champion 활동, 에이전트 연동과 개인 AX 프로젝트를 기록한 이력서입니다." data-i18n-content="description"><link rel="canonical" href="https://minwoo19930301.github.io/resume/"><link rel="stylesheet" href="./assets/resume.css?v=b91296aed87f"><script src="./assets/content.js?v=e94fc0fcba50" defer></script><script src="./assets/locale.js?v=1f9f86da97c4" defer></script><script src="./assets/resume.js?v=3cd9347972f4" defer></script><script src="./assets/effects.js?v=074842b31c9e" defer></script></head>
+<meta name="description" content="김민우의 백엔드 엔지니어링, AI Champion 활동, 에이전트 연동과 개인 AX 프로젝트를 기록한 이력서입니다." data-i18n-content="description"><link rel="canonical" href="https://minwoo19930301.github.io/resume/"><link rel="stylesheet" href="./assets/resume.css?v=b91296aed87f"><script src="./assets/content.js?v=9e735388e839" defer></script><script src="./assets/locale.js?v=1f9f86da97c4" defer></script><script src="./assets/resume.js?v=3cd9347972f4" defer></script><script src="./assets/effects.js?v=074842b31c9e" defer></script></head>
 
 <body class="resume-page">
 
@@ -210,10 +210,13 @@
 <p>AI Champion으로 사내 AI TF 활동에 참여하며, 동료들이 AI를 실제 업무에 연결하는 방법을 실험하고 공유합니다.</p>
 <p>반복되는 맥락을 정리해 캐시를 활용하는 방법, 작업 난이도에 따른 모델 선택, 대화형 코딩과 반복 자동화의 비용을 구분하는 운영 팁을 공유했습니다.</p>
 <p>CLI로 사내 도구를 연결하고 MCP로 출처가 있는 지식을 제공하는 사례를 전파합니다. 사용법을 스킬과 작업 규약으로 남겨 다른 동료도 같은 흐름을 활용할 수 있도록 합니다.</p></div>
-                <div class="project reveal" id="pricing-second-brain" data-i18n="pricing-second-brain"><h3>팀 지식을 에이전트가 이어받는 구조로</h3>
-<p>가격 도메인의 코드·문서·결정 기록을 원본과 정제된 지식 노드로 분리해, 정보가 섞이지 않으면서도 다시 연결될 수 있는 Second Brain 구조를 만들었습니다.</p>
-<p>표준 라이브러리 기반 MCP 서버를 통해 에이전트가 지식을 검색하고 출처를 따라가도록 했으며, 원본이 바뀌면 관련 노드를 다시 갱신할 수 있는 운영 흐름을 설계했습니다.</p>
-<p>수집한 지식을 주제별로 다시 정제하고 코드·위키 출처를 연결했습니다. 현재 운영 경로와 폐기된 경로, 시스템별 책임 경계와 데이터 입력 조건을 코드와 대조해 기록하며 오래된 지식이 다음 작업에 그대로 쓰이지 않도록 관리합니다.</p></div>
+                <div class="project reveal" id="pricing-second-brain" data-i18n="pricing-second-brain"><img src="./icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+                    <h3>팀 지식 베이스(LLM Wiki) 구축 주도 — Pricing Second Brain</h3>
+                    <p>팀에 먼저 제안해, 사람과 AI가 같이 읽고 채우는 팀 도메인 지식 베이스 구축을 주도. 불변 원본(raw)과 정제 노드(wiki)의 2계층 구조로, 각 노드는 type·한줄요약·태그 frontmatter와 위키링크로 연결되는 atomic 단위(claim/concept/decision)로 관리. 현재 위키 노드 330여 개, 원본 문서 140여 개 규모.</p>
+                    <p>GitHub·Confluence·Jira·Databricks를 토큰으로 연동해 AI 에이전트가 코드·문서·티켓을 직접 읽고 노드로 정제하는 수집 파이프라인을 설계. 레포 6개와 Databricks 잡을 한 번에 529개 노드로 정제하고, 이후 459개 코드 레퍼런스를 주제 단위 137개 통합 노드로 재정제하는 식으로 품질을 관리.</p>
+                    <p>표준 라이브러리만으로 MCP 서버를 직접 구현해, 팀원이 레포 폴더만 열면 에이전트가 자동으로 연결되어 지식 베이스를 검색·인용하도록 구성(API key 불필요). 별도 대시보드 웹앱으로 지식그래프·ERD·워크플로우 간트 시각화와 RAG 챗봇(Claude CLI 연동, 미설치 시 키워드 검색 폴백)도 제공.</p>
+                    <p>규약을 외울 필요 없이 "아는 내용을 말로 쏟아내면" 에이전트가 스키마에 맞춰 정리하도록 운영 방식을 설계하고, 토큰 발급·수집 방법과 에이전트 활용법을 팀에 전파. Jira 티켓·부재 시 인수인계 등 실업무에서 지식 그래프를 에이전트 실행 기반으로 쓰도록 설계.</p>
+<p>현재 운영 경로와 폐기된 경로, 시스템별 책임 경계와 데이터 입력 조건을 코드·위키와 대조해 보강하며, 오래된 지식이 다음 작업에 그대로 쓰이지 않도록 관리.</p></div>
                 <div class="project reveal" id="internal-assistant-scheduling" data-i18n="internal-assistant-scheduling"><h3>사내 AI 어시스턴트의 반복 작업 자동화</h3>
 <p>사내 데스크톱 AI 어시스턴트 파일럿에 참여해, 앱 설정 화면에서 에이전트 작업을 예약하고 반복 실행하는 기능을 구현했습니다.</p>
 <p>macOS launchd의 주기적 실행과 에이전트 실행 명령을 연결했습니다. 예약 확인부터 실제 작업 실행까지의 경로를 점검하는 검증 스크립트도 함께 작성했습니다.</p></div>
