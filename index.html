@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="title-0">김민우 | Resume</title>
     <link rel="stylesheet" href="./styles.css?v=reel13">
-<meta name="description" content="김민우의 백엔드 엔지니어링, 사내 AI Champion 활동, 팀 지식베이스 구축과 업무 자동화 경험을 담은 이력서입니다." data-i18n-content="description"><link rel="canonical" href="https://minwoo19930301.github.io/resume/"><link rel="stylesheet" href="./assets/resume.css?v=b91296aed87f"><script src="./assets/content.js?v=800246441f44" defer></script><script src="./assets/locale.js?v=1f9f86da97c4" defer></script><script src="./assets/resume.js?v=3cd9347972f4" defer></script><script src="./assets/effects.js?v=6054bc993b30" defer></script></head>
+<meta name="description" content="김민우의 백엔드 엔지니어링, 사내 AI Champion 활동, 팀 지식베이스 구축과 업무 자동화 경험을 담은 이력서입니다." data-i18n-content="description"><link rel="canonical" href="https://minwoo19930301.github.io/resume/"><link rel="stylesheet" href="./assets/resume.css?v=b91296aed87f"><script src="./assets/content.js?v=fc9407ed8a63" defer></script><script src="./assets/locale.js?v=1f9f86da97c4" defer></script><script src="./assets/resume.js?v=3cd9347972f4" defer></script><script src="./assets/effects.js?v=6054bc993b30" defer></script></head>
 
 <body class="resume-page">
 
@@ -226,11 +226,13 @@
 <p>영업본부 약 150명이 사용하는 가격관리 백오피스를 정식 출시·운영. 상품·채널별 가격 통계와 경쟁사 대비 가격 우위를 한 화면에서 확인하도록 구성.</p>
 <p>운영 데이터(MongoDB)와 분석 결과(Databricks)의 조회 경로를 분리하고, MongoDB cursor와 응답 스트리밍으로 대용량 CSV를 전체 메모리 적재 없이 제공.</p></div>
                 <div class="project reveal" id="kafka-operations-dashboard" data-i18n="kafka-operations-dashboard"><img src="./icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-<h3>Kafka 수집 현황 대시보드</h3>
-<p>채널별 Kafka 토픽과 컨슈머의 처리 현황을 한 화면에 보여주는 운영 대시보드 구축. 메시지 적체량(lag)과 파티션별 상태를 확인해, 수집 흐름에서 처리가 지연되는 구간을 파악하도록 구성.</p></div>
+<h3>Kafka 수집 모니터링과 AI 기반 속도 제어</h3>
+<p>채널별 Kafka 컨슈머의 적체량(lag)과 파티션별 처리 상태를 조회하고, 분당 처리 상한과 동시 처리 건수를 제어하는 운영 대시보드를 구축했습니다. 속도 설정을 MongoDB에 저장하고 수집기가 주기적으로 읽어, 재배포 없이 채널별 처리 속도를 바꾸도록 구현했습니다.</p>
+<p>AI가 적체·처리 현황을 확인해 채널별 수집 속도를 조절하는 루틴을 연결했습니다. 지연 구간 확인부터 속도 조정까지 이어지도록 구성해, 운영자가 채널별 상태를 계속 확인하고 설정을 바꾸는 반복 작업을 자동화했습니다.</p></div>
                 <div class="project reveal" id="ai-page-selector-classification" data-i18n="ai-page-selector-classification"><img src="./icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-<h3>AI 기반 페이지 유형·셀렉터 자동 분류</h3>
-<p>수집 대상 페이지를 AI로 유형별 분류하고, 페이지에서 필요한 정보를 찾는 셀렉터도 자동으로 분류하는 기능을 구현. 페이지 구조를 분석하고 수집 규칙을 정리하는 반복 작업에 AI를 적용.</p></div>
+<h3>AI 기반 페이지·셀렉터 점검과 자동 재구성</h3>
+<p>사이트·추출 필드별 CSS 셀렉터를 코드와 분리된 설정으로 관리하고, API로 조회·갱신하는 구조를 구현했습니다. AI로 페이지를 유형별로 분류하고, 매일 아침 페이지·셀렉터를 점검해 셀렉터를 재구성하는 루틴을 연결했습니다.</p>
+<p>외부 페이지의 DOM 변경에 맞춰 수집 규칙을 갱신하도록 해, 운영자가 페이지를 하나씩 확인하고 셀렉터를 수정하는 반복 작업을 자동화했습니다.</p></div>
             </div>
         </div>
 
