@@ -30,7 +30,7 @@
         const themeHint = document.getElementById('themeReelHint');
         if (themeReel && themeView && themeVideo && !prefersReducedMotion) {
             const panels = Array.from(themeReel.querySelectorAll('.theme-panel'));
-            const steps = Array.from(themeReel.querySelectorAll('.theme-reel-steps span'));
+            const steps = Array.from(themeReel.querySelectorAll('.theme-reel-step[data-scene]'));
             const n = Math.max(panels.length, 1);
             const clamp01 = v => Math.min(Math.max(v, 0), 1);
             // slower full-film travel
@@ -73,7 +73,11 @@
                 if (idx === lastIdx) return;
                 lastIdx = idx;
                 panels.forEach((el, i) => el.classList.toggle('is-on', i === idx));
-                steps.forEach((el, i) => el.classList.toggle('on', i <= idx));
+                steps.forEach((el, i) => {
+                    el.classList.toggle('is-on', i === idx);
+                    if (i === idx) el.setAttribute('aria-current', 'true');
+                    else el.removeAttribute('aria-current');
+                });
             };
 
             const applyTime = () => {
@@ -89,6 +93,18 @@
                 applyTime();
                 if (themeHint) themeHint.classList.toggle('is-hide', p > 0.03 || released);
             };
+
+            steps.forEach((step, idx) => {
+                step.addEventListener('click', () => {
+                    if (window.scrollY > 4) return;
+                    unlock();
+                    released = false;
+                    themeView.classList.remove('is-done');
+                    // Land after the short transition, on the selected portrait.
+                    p = clamp01((idx + 0.10) / n);
+                    syncUi();
+                });
+            });
 
             const onFilmProgress = (delta) => {
                 if (p <= 0 && delta < 0) return false;

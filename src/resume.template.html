@@ -12,7 +12,7 @@
 
     <div class="resume-controls"><a class="resume-skip" href="#experience" data-i18n="skip">{{skip}}</a><div class="locale-control"><label for="resume-language" data-i18n="language-label">{{language-label}}</label><select id="resume-language"><option value="auto" data-i18n="language-auto">{{language-auto}}</option><option value="ko" lang="ko">한국어</option><option value="en" lang="en">English</option></select></div></div><noscript><style>.resume-page .reveal {opacity:1;transform:none}.resume-page .theme-reel{display:none}</style></noscript><section class="theme-reel" id="themeReel" aria-label="Core Themes">
         <div class="theme-reel-view" id="themeReelView">
-            <video class="theme-reel-video" id="themeReelVideo" src="./img/theme-reel.mp4?v=fix1" muted playsinline preload="auto" webkit-playsinline disablepictureinpicture></video>
+            <video class="theme-reel-video" id="themeReelVideo" src="./img/theme-portrait-reel.mp4" poster="./img/theme-face-01.png" muted playsinline preload="auto" webkit-playsinline disablepictureinpicture></video>
             <div class="theme-reel-scrim" aria-hidden="true"></div>
             <div class="theme-reel-ui">
                 <article class="theme-panel is-on" data-panel="0">
@@ -41,8 +41,12 @@
                     <p class="theme-desc" data-i18n="theme-description-4">{{theme-description-4}}</p>
                 </article>
             </div>
-            <div class="theme-reel-steps" aria-hidden="true">
-                <span class="on"></span><span></span><span></span><span></span><span></span>
+            <div class="theme-reel-steps" role="group" aria-label="Theme scenes">
+                <button type="button" class="theme-reel-step is-on" data-scene="0" aria-label="Scene 01: Performance tuning" aria-current="true">01</button>
+                <button type="button" class="theme-reel-step" data-scene="1" aria-label="Scene 02: Automation">02</button>
+                <button type="button" class="theme-reel-step" data-scene="2" aria-label="Scene 03: Platform architecture">03</button>
+                <button type="button" class="theme-reel-step" data-scene="3" aria-label="Scene 04: Product execution">04</button>
+                <button type="button" class="theme-reel-step" data-scene="4" aria-label="Scene 05: AI agents">05</button>
             </div>
             <div class="theme-reel-hint" id="themeReelHint" aria-hidden="true">
                 <span class="theme-reel-hint-label">Scroll</span>

@@ -33,10 +33,71 @@
 .resume-page .personal-section .project { padding-top: 0; }
 .resume-page .personal-section .highlights-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 48px; }
 .resume-page .project { overflow-wrap: break-word; }
+
+/* Portrait theme reel: keep the subject on the right while the copy owns the left. */
+.resume-page .theme-reel-video {
+  object-position: 73% center;
+}
+.resume-page .theme-reel-scrim {
+  background:
+    linear-gradient(to top, rgba(0,0,0,.78) 0%, rgba(0,0,0,.34) 42%, rgba(0,0,0,0) 76%),
+    linear-gradient(100deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.42) 40%, rgba(0,0,0,.08) 70%);
+}
+.resume-page .theme-panel {
+  width: min(34rem, 33%);
+}
+.resume-page .theme-reel-step {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 999px;
+  background: rgba(0,0,0,.22);
+  color: rgba(255,255,255,.58);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .08em;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+}
+.resume-page .theme-reel-step:hover,
+.resume-page .theme-reel-step:focus-visible,
+.resume-page .theme-reel-step.is-on {
+  border-color: rgba(255,255,255,.82);
+  background: rgba(255,255,255,.92);
+  color: #171a20;
+}
+.resume-page .theme-reel-step:focus-visible { transform: scale(1.08); }
 @media (max-width: 700px) {
   .resume-controls { inset: 12px 12px auto; }
   .locale-control label { display: none; }
   .resume-page .personal-section .highlights-grid { grid-template-columns: 1fr; gap: 30px; }
+  .resume-page .theme-reel-video { object-position: 73% center; }
+  .resume-page .theme-reel-scrim {
+    background: linear-gradient(to top, rgba(3,9,18,.96) 0%, rgba(3,9,18,.76) 27%, rgba(3,9,18,.08) 64%, rgba(3,9,18,.06) 100%);
+  }
+  .resume-page .theme-panel {
+    top: auto;
+    bottom: clamp(72px, 11vh, 112px);
+    left: 16px;
+    width: calc(100% - 32px);
+    transform: none;
+    gap: 10px;
+  }
+  .resume-page .theme-panel.is-on { transform: none; }
+  .resume-page .theme-reel-step { width: 30px; height: 30px; }
+  .resume-page .theme-reel-steps {
+    top: auto;
+    bottom: 24px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    flex-direction: row;
+    gap: 12px;
+  }
+  .resume-page .theme-reel-hint { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .resume-page .theme-reel { display: none; }
