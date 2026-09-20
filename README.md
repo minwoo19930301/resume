@@ -21,6 +21,6 @@ Old `/kr/` and `/en/` links redirect to the unified page while preserving query 
 
 The source catalog is authoritative; generated HTML and JS should not be edited by hand. `assets/locale.js` contains language selection, `assets/resume.js` updates the document, and `assets/effects.js` preserves the existing visual effects.
 
-`kr/education.html` is maintained independently for user-requested external education, mentoring and AX experience. Preserve its existing layout and video examples; keep company knowledge-sharing separate from personal education work and distinguish delivered, assigned and scheduled activities. Its additional styles live in `kr/education-additions.css` and are scoped to the education page.
+`kr/education.html` is maintained independently for user-requested external education, mentoring and AX experience. Preserve its existing layout and video examples; keep company knowledge-sharing separate from personal education work and distinguish delivered, assigned and scheduled activities. Use the order timeline → representative activities → activity details. Corporate education belongs in representative activities, with client cases and course records below; retain dated course descriptions from the instructor profile and distinguish course hours from cumulative consulting effort. Its additional styles live in `kr/education-additions.css` and are scoped to the education page.
 
 GitHub Pages serves the repository root from `main`. Building locally does not publish changes.

@@ -168,3 +168,112 @@
         padding: 12px 6px;
     }
 }
+
+/* Representative activities summarize the work; detailed cases follow below. */
+.education-page .activity-detail {
+    margin-top: 48px;
+    scroll-margin-top: 28px;
+}
+.education-page .activity-detail + .activity-detail {
+    padding-top: 40px;
+    border-top: 1px solid var(--border-color);
+}
+.education-page .activity-title,
+.education-page .education-addition > .activity-title {
+    margin: 0 0 24px;
+    color: var(--text-primary);
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+.education-page #details > .section-intro { margin-bottom: 32px; }
+.education-page #details > .activity-detail:first-of-type { margin-top: 0; }
+
+.education-page .education-record-group {
+    margin-top: 32px;
+    scroll-margin-top: 28px;
+}
+.education-page .education-record-group > h4 {
+    margin: 0 0 16px;
+    color: var(--text-primary);
+    font-size: 17px;
+    font-weight: 500;
+}
+.education-page .education-record {
+    margin: 0 0 12px;
+    padding: 0 24px;
+    scroll-margin-top: 28px;
+}
+.education-page .education-record > summary {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 8px 18px;
+    padding: 22px 26px 22px 0;
+}
+.education-page .education-record > summary::after {
+    content: '+';
+    position: absolute;
+    top: 22px;
+    right: 0;
+    color: var(--primary);
+    font-size: 20px;
+    line-height: 1;
+}
+.education-page .education-record[open] > summary::after { content: '−'; }
+.education-page .education-record > summary:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+.education-page .education-record > summary span {
+    min-width: 0;
+    margin: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.6;
+}
+.education-page .education-record .record-date {
+    grid-column: 1;
+    color: var(--text-tertiary);
+    font-size: 13px;
+}
+.education-page .education-record .record-title {
+    grid-column: 1 / -1;
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 500;
+}
+.education-page .education-record .record-organization {
+    grid-column: 1 / -1;
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+.education-page .education-record .record-hours {
+    grid-column: 2;
+    grid-row: 1;
+    color: var(--primary);
+    font-size: 13px;
+    text-align: right;
+}
+.education-page .education-record > p {
+    margin: 0;
+    padding: 0 0 24px;
+}
+@media (max-width: 768px) {
+    .education-page .education-record { padding: 0 18px; }
+    .education-page .education-record > summary {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 6px;
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+    .education-page .education-record > summary::after { top: 18px; }
+    .education-page .education-record .record-hours {
+        grid-column: 1;
+        grid-row: auto;
+        text-align: left;
+    }
+    .education-page .education-record .record-title { font-size: 15px; }
+}
