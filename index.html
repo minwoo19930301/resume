@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="title-0">김민우 | Resume</title>
     <link rel="stylesheet" href="./styles.css?v=reel13">
-<meta name="description" content="김민우의 백엔드 엔지니어링, 사내 AI Champion 활동, 팀 지식베이스 구축과 업무 자동화 경험을 담은 이력서입니다." data-i18n-content="description"><link rel="canonical" href="https://minwoo19930301.github.io/resume/"><link rel="stylesheet" href="./assets/resume.css?v=b91296aed87f"><script src="./assets/content.js?v=b0f91cadc2a1" defer></script><script src="./assets/locale.js?v=1f9f86da97c4" defer></script><script src="./assets/resume.js?v=3cd9347972f4" defer></script><script src="./assets/effects.js?v=6054bc993b30" defer></script></head>
+<meta name="description" content="김민우의 백엔드 엔지니어링, 사내 AI Champion 활동, 팀 지식베이스 구축과 업무 자동화 경험을 담은 이력서입니다." data-i18n-content="description"><link rel="canonical" href="https://minwoo19930301.github.io/resume/"><link rel="stylesheet" href="./assets/resume.css?v=b91296aed87f"><script src="./assets/content.js?v=d05095677088" defer></script><script src="./assets/locale.js?v=1f9f86da97c4" defer></script><script src="./assets/resume.js?v=3cd9347972f4" defer></script><script src="./assets/effects.js?v=6054bc993b30" defer></script></head>
 
 <body class="resume-page">
 
@@ -220,12 +220,16 @@
                 <div class="project reveal" id="agent-workflow-orchestration" data-i18n="agent-workflow-orchestration"><h3>에이전트 작업 분기와 컨텍스트 관리</h3>
 <p>herdr·paseo·orca 등의 오케스트레이터를 활용해 여러 에이전트의 작업을 나누고 조율하는 실행 환경을 구성했습니다.</p>
 <p>fork·btw로 기존 맥락을 유지한 채 작업을 분기하고, compact로 필요한 맥락을 정리해 이어가는 방식을 적용했습니다. 같은 배경을 다시 설명하지 않고 다음 작업을 시작하도록 워크플로우를 다듬었습니다.</p></div>
-                <div class="project reveal" data-i18n="project-03"><img src="./icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
-                    <h3>가격관리 어드민 정식 런칭 및 운영</h3>
-                    <p>2025년 구축한 가격관리 백오피스를 정식 런칭. 영업본부 약 150명이 일상 업무 도구로 사용 중이며, 상품·채널별 가격 통계 조회와 경쟁사 대비 가격 우위 판정을 한 화면에서 제공.</p>
-                    <p>대용량 CSV 다운로드는 <code>StreamingResponseBody</code>와 MongoDB cursor 스트리밍을 조합해, 전체 데이터를 메모리에 올리지 않고 row 단위로 흘려보내는 구조로 구현. 수십만 행을 내려받아도 서버 메모리 사용량이 일정하게 유지됨. UTF-8 BOM 삽입으로 엑셀 한글 호환을 처리하고, 필요한 필드만 projection으로 추려 쿼리 부하를 절감.</p>
-                    <p>프론트엔드는 프레임워크 없이 ES Module 단위로 페이지(요약/상품)·공용 모듈을 분리하고, 스냅샷 기반 상태 모듈로 필터·선택·패널 상태를 관리. fetch <code>ReadableStream</code>으로 청크 단위 수신량을 읽어 다운로드 진행률 status bar를 표시하고, 현재 필터/전체 범위를 선택하는 scope 메뉴를 제공. 사용자별 컬럼 레이아웃과 페이지 크기는 localStorage에 영속화하고, 컬럼 추가 시에도 기존 사용자 배치가 깨지지 않도록 merge 로직을 설계.</p>
-                    <p>백엔드는 운영 조회·저장(MongoDB)과 파이프라인 산출물 조회(Databricks JDBC)를 분리한 이원 데이터 소스 구조. 자격증명은 Vault로 관리하고, MTD 추세는 일·시간 버킷 단위로 서버에서 합산하는 집계기를 구현. 도메인 정책·결정 기록을 문서로 남겨 AI 에이전트가 이어서 작업할 수 있는 코드베이스로 운영.</p></div>
+                <div class="project reveal" id="pricing-admin" data-i18n="project-03"><img src="./icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+<h3>가격관리 어드민 정식 런칭 및 운영</h3>
+<p>영업본부 약 150명이 사용하는 가격관리 백오피스를 정식 출시·운영. 상품·채널별 가격 통계와 경쟁사 대비 가격 우위를 한 화면에서 확인하도록 구성.</p>
+<p>운영 데이터(MongoDB)와 분석 결과(Databricks)의 조회 경로를 분리하고, MongoDB cursor와 응답 스트리밍으로 대용량 CSV를 전체 메모리 적재 없이 제공.</p></div>
+                <div class="project reveal" id="kafka-operations-dashboard" data-i18n="kafka-operations-dashboard"><img src="./icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+<h3>Kafka 수집 현황 대시보드</h3>
+<p>채널별 Kafka 토픽과 컨슈머의 처리 현황을 한 화면에 보여주는 운영 대시보드 구축. 메시지 적체량(lag)과 파티션별 상태를 확인해, 수집 흐름에서 처리가 지연되는 구간을 파악하도록 구성.</p></div>
+                <div class="project reveal" id="ai-page-selector-classification" data-i18n="ai-page-selector-classification"><img src="./icon/Gmarket.png" alt="Gmarket Icon" class="project-icon gmarket">
+<h3>AI 기반 페이지 유형·셀렉터 자동 분류</h3>
+<p>수집 대상 페이지를 AI로 유형별 분류하고, 페이지에서 필요한 정보를 찾는 셀렉터도 자동으로 분류하는 기능을 구현. 페이지 구조를 분석하고 수집 규칙을 정리하는 반복 작업에 AI를 적용.</p></div>
             </div>
         </div>
 
