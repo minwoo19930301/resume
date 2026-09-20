@@ -20,7 +20,7 @@ for (const filename of ['content.js', 'locale.js', 'resume.js', 'effects.js', 'r
   versions[filename] = createHash('sha256').update(bytes).digest('hex').slice(0, 12);
   output = output.replaceAll(`"./assets/${filename}"`, `"./assets/${filename}?v=${versions[filename]}"`);
 }
-for (const filename of ['theme-portrait-reel.mp4', 'theme-face-01.png']) {
+for (const filename of ['theme-reel.mp4']) {
   const bytes = await readFile(path.join(root, 'img', filename));
   const version = createHash('sha256').update(bytes).digest('hex').slice(0, 12);
   const source = `./img/${filename}`;

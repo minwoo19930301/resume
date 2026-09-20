@@ -1,5 +1,7 @@
 # Portrait theme reel
 
+Archived experiment. The user rejected this animated-still treatment as a replacement for real video. The live resume has been restored to `img/theme-reel.mp4`; keep that original film in place until an actual moving-person video is ready and accepted. Rendering this experiment does not select it for the live page.
+
 The five scenes use the existing, owner-supplied resume portrait at `img/pic.jpeg`. They are AI-created illustrative scenes, animated with camera motion and short transitions, not recordings of actual workplace events or generated facial/body motion.
 
 Generation used the built-in imagegen tool, not the API/CLI fallback. Scene 1 establishes visual continuity; scenes 2–5 use the original portrait and scene 1 as references. No TeraBox download was needed. Other personal photos were not copied into the repository.
@@ -53,4 +55,3 @@ undefined
 ```text
 undefined
 ```
-

@@ -100,7 +100,7 @@
                     unlock();
                     released = false;
                     themeView.classList.remove('is-done');
-                    // Land after the short transition, on the selected portrait.
+                    // Land after the short transition, within the selected scene.
                     p = clamp01((idx + 0.10) / n);
                     syncUi();
                 });
