@@ -1,4 +1,4 @@
-# Resume
+# 김민우 · Minwoo Kim
 
 <!-- PROJECT-PRESENTATION:START -->
 <a href="https://minwoo19930301.github.io/resume/"><img src=".github/project-cover.svg" alt="Resume" width="960"></a>
@@ -6,27 +6,19 @@
 [![OPEN APP](https://img.shields.io/badge/OPEN%20APP-2C6049?style=for-the-badge)](https://minwoo19930301.github.io/resume/) [![SOURCE](https://img.shields.io/badge/SOURCE-444444?style=for-the-badge)](https://github.com/minwoo19930301/resume)
 <!-- PROJECT-PRESENTATION:END -->
 
-[김민우 · Minwoo Kim](https://minwoo19930301.github.io/resume/)
+백엔드 개발 경력과 AI 활용 경험, 개인 프로젝트를 소개하는 이력서입니다.
 
-One resume URL and one content catalog. Korean and English are display languages of the same document, not separate resumes.
+**[이력서 보기](https://minwoo19930301.github.io/resume/)**
 
-## Language selection
+한국어와 영어를 지원하며, 브라우저 언어에 따라 표시됩니다. 페이지에서 직접 언어를 선택할 수도 있습니다.
 
-The page uses an explicit `?lang=ko` or `?lang=en` choice first, then a saved preference, then the browser’s preferred languages. If no supported browser language is available it displays English. The Seoul time zone is used only when the browser exposes no language information. No IP geolocation or translation API is called.
+## 수정 및 빌드
 
-The language selector stays on the same page. Choosing Auto clears the saved override. Korean HTML remains readable without JavaScript and supports the reader’s built-in browser translation.
+본문은 `src/resume.content.json`, 페이지 구조는 `src/resume.template.html`에서 수정합니다.
 
-Old `/kr/` and `/en/` links redirect to the unified page while preserving query parameters and fragments. `/kr/education.html` redirects to the independent education portfolio at https://flam-ing.github.io/resume/, preserving fragments.
+```sh
+node scripts/build.mjs
+node --test tests/*.cjs
+```
 
-## Update content
-
-1. Edit the paired entries in `src/resume.content.json`. Keep company work and internal AI Champion activities clearly attributed. Keep user-requested personal software projects in their own section below company work; distinguish in-development projects and upstream foundations. Exclude Ai-ing, personal AI/AX business and consulting promotions from the main developer resume and its metadata. Preserve existing wording unless the user requests a rewrite; add only user-confirmed experience.
-2. Edit `src/resume.template.html` only when changing the document structure.
-3. Run `node scripts/build.mjs` to regenerate `index.html`, `assets/content.js` and the legacy aliases.
-4. Run `node --test tests/*.cjs` and review the page in both languages, including a narrow screen.
-
-The source catalog is authoritative; generated HTML and JS should not be edited by hand. `assets/locale.js` contains language selection, `assets/resume.js` updates the document, and `assets/effects.js` preserves the existing visual effects.
-
-The education portfolio is maintained in `flam-ing/resume` at https://flam-ing.github.io/resume/. The legacy `kr/education.html` is only a redirect; edit education content in that repository.
-
-GitHub Pages serves the repository root from `main`. Building locally does not publish changes.
+GitHub Pages로 배포합니다.
