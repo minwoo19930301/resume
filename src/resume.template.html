@@ -10,7 +10,24 @@
 
 <body class="resume-page">
 
-    <div class="resume-controls"><a class="resume-skip" href="#experience" data-i18n="skip">{{skip}}</a><div class="locale-control"><label for="resume-language" data-i18n="language-label">{{language-label}}</label><select id="resume-language"><option value="auto" data-i18n="language-auto">{{language-auto}}</option><option value="ko" lang="ko">한국어</option><option value="en" lang="en">English</option></select></div></div><noscript><style>.resume-page .reveal {opacity:1;transform:none}.resume-page .theme-reel{display:none}</style></noscript><section class="theme-reel" id="themeReel" aria-label="Core Themes">
+    <div class="resume-controls">
+        <a class="resume-skip" href="#experience" data-i18n="skip">{{skip}}</a>
+        <div class="resume-actions">
+            <div class="locale-control">
+                <label for="resume-language" data-i18n="language-label">{{language-label}}</label>
+                <select id="resume-language">
+                    <option value="auto" data-i18n="language-auto">{{language-auto}}</option>
+                    <option value="ko" lang="ko">한국어</option>
+                    <option value="en" lang="en">English</option>
+                    <option value="ja" lang="ja">日本語</option>
+                    <option value="zh" lang="zh-Hans">中文（简体）</option>
+                    <option value="es" lang="es">Español</option>
+                </select>
+            </div>
+            <button type="button" id="resume-print" class="resume-print" data-i18n="print-button" data-i18n-title="print-hint" title="{{print-hint}}">{{print-button}}</button>
+        </div>
+    </div>
+    <noscript><style>.resume-page .reveal {opacity:1;transform:none}.resume-page .theme-reel{display:none}</style></noscript><section class="theme-reel" id="themeReel" aria-label="Core Themes">
         <div class="theme-reel-view" id="themeReelView">
             <video class="theme-reel-video" id="themeReelVideo" src="./img/theme-reel.mp4" muted playsinline preload="auto" webkit-playsinline disablepictureinpicture></video>
             <div class="theme-reel-scrim" aria-hidden="true"></div>
@@ -76,9 +93,13 @@
         <div class="scroll-cue"></div>
     </header>
     <main class="page-shell">
+        <header class="print-heading print-only">
+            <h1 data-i18n="name-0">{{name-0}}</h1>
+            <p><a href="mailto:rlaalsdn456456@naver.com">rlaalsdn456456@naver.com</a> · +82 10-7646-3634 · <a href="https://minwoo19930301.github.io/resume/">minwoo19930301.github.io/resume</a></p>
+        </header>
         <section class="content-section summary-section reveal" id="experience">
             <div class="section-intro">
-                <p class="section-kicker">Overview</p>
+                <p class="section-kicker" data-i18n="kicker-overview">{{kicker-overview}}</p>
                 <h2 class="section-title" data-i18n="section-title-0">{{section-title-0}}</h2>
             </div>
             <div class="journey">
@@ -185,7 +206,7 @@
 
         <section class="content-section timeline-section reveal" id="work">
             <div class="section-intro">
-                <p class="section-kicker">Selected Work</p>
+                <p class="section-kicker" data-i18n="kicker-work">{{kicker-work}}</p>
                 <h2 class="section-title" data-i18n="section-title-1">{{section-title-1}}</h2>
             </div>
             <div class="timeline-container">
@@ -344,7 +365,7 @@
 
         <section class="content-section reveal" id="personal-projects">
             <div class="section-intro">
-                <p class="section-kicker">Personal Projects</p>
+                <p class="section-kicker" data-i18n="kicker-personal">{{kicker-personal}}</p>
                 <h2 class="section-title" data-i18n="personal-projects-heading">{{personal-projects-heading}}</h2>
             </div>
             <div class="projects">
@@ -367,7 +388,7 @@
 
         <section class="content-section reveal" id="community">
             <div class="section-intro">
-                <p class="section-kicker">Knowledge Sharing</p>
+                <p class="section-kicker" data-i18n="kicker-community">{{kicker-community}}</p>
                 <h2 class="section-title" data-i18n="section-title-2">{{section-title-2}}</h2>
             </div>
             <div class="projects">
@@ -391,9 +412,10 @@
 
         <section class="content-section tech-section reveal">
             <div class="section-intro">
-                <p class="section-kicker">Core Stack</p>
+                <p class="section-kicker" data-i18n="kicker-stack">{{kicker-stack}}</p>
                 <h2 class="section-title" data-i18n="section-title-4">{{section-title-4}}</h2>
             </div>
+            <p class="print-only print-stack">Java · Spring · Kotlin · JavaScript · Python · React · Elasticsearch · MongoDB · Databricks · AWS · Node.js · Vue · .NET · Linux · MSSQL · MySQL · Oracle · Claude · ChatGPT · Codex · Gemini · Cursor · Antigravity · OpenClaw · Hermes</p>
             <div class="tech-icons-container">
                 <div class="tech-icons" id="techIcons">
                     <img src="./icon/java.svg" alt="Java">

@@ -130,9 +130,57 @@
   .resume-page .theme-reel { display: none; }
   .resume-page .hero-copy, .resume-page .reveal { transform: none !important; opacity: 1 !important; }
 }
+
+.resume-actions { display: flex; align-items: center; gap: 8px; background: transparent; }
+.resume-actions .locale-control, .resume-print { background: rgba(255,255,255,.96); border-radius: 6px; }
+.resume-print { font: inherit; font-size: 13px; padding: 10px 13px; border: 1px solid #bfc7d4; color: #1755b8; cursor: pointer; white-space: nowrap; }
+.resume-print:hover { background: #e8f0ff; }
+.print-only { display: none; }
+@media (max-width: 700px) {
+  .resume-controls { gap: 6px; }
+  .resume-skip { padding: 8px 6px; font-size: 11px; }
+  .resume-actions { gap: 5px; }
+  .locale-control { padding: 5px; }
+  .locale-control select { max-width: 105px; font-size: 12px; }
+  .resume-print { font-size: 12px; padding: 9px 8px; }
+}
+@page { size: A4; margin: 14mm; }
 @media print {
-  .resume-controls, .resume-page .theme-reel, .resume-page .scroll-cue { display: none !important; }
-  .resume-page .page-hero { min-height: 0; padding: 20px 0; }
-  .resume-page .hero-copy, .resume-page .reveal { transform: none !important; opacity: 1 !important; }
-  .resume-page .project { break-inside: avoid; }
+  .resume-controls, .resume-page .theme-reel, .resume-page .page-hero,
+  .resume-page .scroll-cue, .resume-page .main-footer { display: none !important; }
+  .resume-page, .resume-page * { animation: none !important; transition: none !important; text-shadow: none !important; box-shadow: none !important; }
+  .resume-page { font-size: 10pt; line-height: 1.5; background: white !important; color: #111 !important; }
+  .resume-page .reveal { transform: none !important; opacity: 1 !important; }
+  .resume-page .print-only { display: block; }
+  .resume-page .print-heading { padding-bottom: 8pt; border-bottom: 1px solid #999; }
+  .resume-page .print-heading h1 { font-size: 19pt; margin: 0 0 4pt; }
+  .resume-page .print-heading p { font-size: 8pt; margin: 0; }
+  .resume-page .page-shell { width: auto !important; margin: 0 !important; padding: 0 !important; }
+  .resume-page .content-section { padding: 12pt 0 !important; }
+  .resume-page .section-intro { margin-bottom: 8pt; break-after: avoid; }
+  .resume-page .section-kicker { display: none; }
+  .resume-page .section-title { font-size: 15pt; }
+  .resume-page .timeline-container, .resume-page .projects,
+  .resume-page .personal-section .highlights-grid { display: block; padding: 0; }
+  .resume-page .timeline-container::before, .resume-page .year::before { display: none; }
+  .resume-page .year-section { break-inside: auto; }
+  .resume-page .year { position: static; margin: 8pt 0; padding: 0; break-after: avoid; }
+  .resume-page .year-label { font-size: 11pt; }
+  .resume-page .year-chip { min-height: 0; padding: 2pt 5pt; font-size: 8pt; }
+  .resume-page .project { padding: 0 0 10pt; margin: 0 0 8pt; border-radius: 0; background: white; break-inside: auto; }
+  .resume-page .project h3 { font-size: 11pt; line-height: 1.4; margin: 0 0 5pt; break-after: avoid; }
+  .resume-page .project p, .resume-page .project li { font-size: 9.5pt; line-height: 1.55; color: #222; orphans: 3; widows: 3; }
+  .resume-page .project p { margin: 4pt 0; }
+  .resume-page .project ul { margin: 5pt 0; }
+  .resume-page .project-links { gap: 4pt 12pt; }
+  .resume-page .journey { gap: 0; }
+  .resume-page .journey::before, .resume-page .journey-marker { display: none; }
+  .resume-page .journey-item { display: grid; grid-template-columns: 105pt 1fr; gap: 12pt; padding: 3pt 0; break-inside: avoid; }
+  .resume-page .journey-body { grid-column: 2; grid-row: 1; padding: 0; gap: 6pt; }
+  .resume-page .journey-title { font-size: 10pt; }
+  .resume-page .journey-period { grid-column: 1; grid-row: 1; text-align: left; padding: 0; margin: 0; font-size: 9pt; }
+  .resume-page .journey-logo { width: 22px; height: 22px; }
+  .resume-page a[href] { color: #111 !important; text-decoration: underline !important; }
+  .resume-page a[href][target="_blank"]::after { display: none; }
+  .resume-page .print-stack { font-size: 9.5pt; }
 }

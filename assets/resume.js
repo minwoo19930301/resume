@@ -16,17 +16,24 @@
     try { return Intl.DateTimeFormat().resolvedOptions().timeZone; } catch (_) { return undefined; }
   }
   function render(language) {
-    document.documentElement.lang = language;
+    document.documentElement.lang = language === 'zh' ? 'zh-Hans' : language;
     document.querySelectorAll('[data-i18n]').forEach(element => {
       const entry = content[element.dataset.i18n];
       // HTML is authored locally, never taken from a query parameter or remote API.
-      if (entry) element.innerHTML = entry[language];
+      if (entry) element.innerHTML = (entry[language] || entry.en || entry.ko);
+    });
+    document.querySelectorAll('[data-i18n-title]').forEach(element => {
+      const entry = content[element.dataset.i18nTitle];
+      if (entry) element.setAttribute('title', entry[language] || entry.en || entry.ko);
     });
     document.querySelectorAll('[data-i18n-content]').forEach(element => {
       const entry = content[element.dataset.i18nContent];
-      if (entry) element.setAttribute('content', entry[language]);
+      if (entry) element.setAttribute('content', (entry[language] || entry.en || entry.ko));
     });
   }
+  const printButton = document.getElementById('resume-print');
+  if (printButton) printButton.addEventListener('click', () => window.print());
+
   function refresh() {
     const query = new URLSearchParams(location.search);
     const stored = readStored();

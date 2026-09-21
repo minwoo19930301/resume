@@ -65,20 +65,22 @@ test('legacyURL supports a root deployment and leaves other links alone', () => 
 function loadPage(storage) {
   const handlers = {};
   const select = { value: 'auto', addEventListener: (name, callback) => { handlers[name] = callback; } };
+  let printCalls = 0;
+  const printButton = { addEventListener: (name, callback) => { handlers['print-' + name] = callback; } };
   const node = { dataset: { i18n: 'greeting' }, innerHTML: '' };
   const document = {
     documentElement: { lang: 'ko' },
-    getElementById: () => select,
+    getElementById: id => id === 'resume-print' ? printButton : select,
     querySelectorAll: selector => selector === '[data-i18n]' ? [node] : [],
   };
   const location = new URL('https://example.com/resume/?source=application#work');
-  const window = { ResumeLocale: sandboxModule.exports, ResumeContent: { greeting: { ko: '안녕하세요', en: 'Hello' } }, addEventListener() {} };
+  const window = { ResumeLocale: sandboxModule.exports, ResumeContent: { greeting: { ko: '안녕하세요', en: 'Hello', ja: 'こんにちは', zh: '你好', es: 'Hola' } }, print() { printCalls += 1; }, addEventListener() {} };
   vm.runInNewContext(fs.readFileSync(require.resolve('../assets/resume.js'), 'utf8'), {
     document, window, localStorage: storage, location, URL, URLSearchParams, Intl,
     navigator: { languages: ['en-US'], language: 'en-US' },
     history: { replaceState: (_state, _title, url) => { location.href = new URL(url, location).href; } },
   });
-  return { document, node, select, location, change(value) { select.value = value; handlers.change(); } };
+  return { document, node, select, location, print() { handlers['print-click'](); return printCalls; }, change(value) { select.value = value; handlers.change(); } };
 }
 
 test('manual and automatic language selection work when storage is blocked', () => {
@@ -103,4 +105,40 @@ test('automatic selection ignores an old preference when storage is read-only', 
   page.change('auto');
   assert.equal(page.node.innerHTML, 'Hello');
   assert.equal(page.select.value, 'auto');
+});
+
+
+test('supports regional Japanese, Chinese and Spanish language settings', () => {
+  for (const [tag, expected] of [['ja-JP','ja'],['zh-CN','zh'],['zh-Hant-TW','zh'],['es-MX','es']]) {
+    assert.equal(normalizeLocale(tag), expected);
+    assert.equal(chooseLocale({ languages: [tag, 'en-US'] }), expected);
+  }
+  assert.equal(legacyURL('/resume/en/?lang=ja#work', 'en'), '/resume/?lang=ja#work');
+});
+
+test('new languages render and print without changing the selected language', () => {
+  const page = loadPage({getItem: () => null, setItem() {}, removeItem() {}});
+  for (const [locale,text,htmlLang] of [['ja','こんにちは','ja'],['zh','你好','zh-Hans'],['es','Hola','es']]) {
+    page.change(locale);
+    assert.equal(page.node.innerHTML, text);
+    assert.equal(page.document.documentElement.lang, htmlLang);
+    assert.equal(page.select.value, locale);
+  }
+  assert.equal(page.print(), 1);
+  assert.equal(page.node.innerHTML, 'Hola');
+  assert.equal(page.location.search, '?source=application&lang=es');
+});
+
+test('all resume translations preserve links, code and paragraph counts', () => {
+  const content = JSON.parse(fs.readFileSync(require.resolve('../src/resume.content.json'), 'utf8'));
+  const matches = (s, pattern) => [...s.matchAll(pattern)].map(m => m[1]).sort();
+  for (const [key, entry] of Object.entries(content)) {
+    for (const locale of ['ko', 'en', 'ja', 'zh', 'es']) assert.ok(entry[locale]?.trim(), key + ':' + locale);
+    for (const locale of ['ja', 'zh', 'es']) {
+      assert.deepEqual(matches(entry[locale], /href="([^"]*)"/g), matches(entry.en, /href="([^"]*)"/g), key + ':' + locale + ' links');
+      assert.deepEqual(matches(entry[locale], /<code>(.*?)<\/code>/g), matches(entry.en, /<code>(.*?)<\/code>/g), key + ':' + locale + ' code');
+      assert.equal((entry[locale].match(/<p>/g) || []).length, (entry.en.match(/<p>/g) || []).length, key + ':' + locale + ' paragraphs');
+      assert.doesNotMatch(entry[locale], /⟦\d+⟧|\{\{.*?\}\}/, key + ':' + locale + ' placeholders');
+    }
+  }
 });

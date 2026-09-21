@@ -7,7 +7,9 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const template = await readFile(path.join(root, 'src/resume.template.html'), 'utf8');
 const content = JSON.parse(await readFile(path.join(root, 'src/resume.content.json'), 'utf8'));
 for (const [key, entry] of Object.entries(content)) {
-  if (!entry.ko?.trim() || !entry.en?.trim()) throw new Error(`Missing translation: ${key}`);
+  for (const locale of ['ko', 'en', 'ja', 'zh', 'es']) {
+    if (!entry[locale]?.trim()) throw new Error(`Missing translation: ${key}/${locale}`);
+  }
 }
 let output = template.replace(/\{\{([\w-]+)\}\}/g, (_, key) => {
   if (!content[key]) throw new Error(`Unknown content key: ${key}`);
@@ -46,4 +48,4 @@ for (const [folder, locale] of [['kr', 'ko'], ['en', 'en']]) {
 </html>
 `);
 }
-console.log(`Built one resume with ${Object.keys(content).length} bilingual entries and two legacy aliases.`);
+console.log(`Built one resume with ${Object.keys(content).length} entries in five languages and two legacy aliases.`);

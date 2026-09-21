@@ -8,7 +8,7 @@
   function normalizeLocale(value) {
     if (typeof value !== 'string') return null;
     var part = value.trim().toLowerCase().replace(/_/g, '-').split('-')[0];
-    return part === 'ko' || part === 'en' ? part : null;
+    return ['ko', 'en', 'ja', 'zh', 'es'].includes(part) ? part : null;
   }
 
   function valueFromQuery(query) {
@@ -48,7 +48,7 @@
 
   function legacyURL(href, locale) {
     var targetLocale = normalizeLocale(locale);
-    if (!targetLocale) throw new TypeError('locale must be ko or en');
+    if (!targetLocale) throw new TypeError('unsupported resume locale');
 
     var base = 'https://resume.invalid/';
     var url = new URL(href, base);
