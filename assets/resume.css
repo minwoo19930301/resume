@@ -124,7 +124,7 @@
     flex-direction: row;
     gap: 12px;
   }
-  .resume-page .theme-reel-hint { display: none; }
+  .resume-page .theme-reel-hint { display: flex; bottom: 24px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .resume-page .theme-reel { display: none; }
@@ -184,3 +184,5 @@
   .resume-page a[href][target="_blank"]::after { display: none; }
   .resume-page .print-stack { font-size: 9.5pt; }
 }
+
+.resume-page .theme-reel-hint-label { letter-spacing: .06em; text-transform: none; white-space: nowrap; color: #fff; text-shadow: 0 1px 6px #000; }
