@@ -147,11 +147,11 @@
     "es": "<img src=\"./icon/WeDataLab.png\" alt=\"WeDataLab Icon\" class=\"project-icon\">\n                    <h3>[Pasante] Desarrollo de una aplicación de vista web simple utilizando React Native</h3>\n                    <p>Creó una aplicación simple usando WebView para ejecutar un sitio web existente dentro de una aplicación móvil.</p>\n                    <p>Se agregó administración de sesiones y cookies, y se configuró la pila de navegación.</p>"
   },
   "community-devday-judge": {
-    "ko": "<h3><a href=\"https://luma.com/f7h7onav\" target=\"_blank\" rel=\"noopener noreferrer\">DevDay Exchange Community Hackathon: Seoul</a> 심사위원 (OpenAI 후원) / 2026.10</h3>\n<p>Track 2 · AI for Human Life 참가작의 문제 정의, AI 활용, 구현 완성도 및 사용자 가치를 평가.</p>",
-    "en": "<h3>Judge, <a href=\"https://luma.com/f7h7onav\" target=\"_blank\" rel=\"noopener noreferrer\">DevDay Exchange Community Hackathon: Seoul</a> (sponsored by OpenAI) / 2026.10</h3>\n<p>Evaluated Track 2 · AI for Human Life projects on problem definition, AI use, implementation quality, and user value.</p>",
-    "ja": "<h3><a href=\"https://luma.com/f7h7onav\" target=\"_blank\" rel=\"noopener noreferrer\">DevDay Exchange Community Hackathon: Seoul</a> 審査員（OpenAI協賛） / 2026.10</h3>\n<p>Track 2 · AI for Human Lifeの応募作品について、課題設定、AI活用、実装の完成度、ユーザー価値を評価。</p>",
-    "zh": "<h3><a href=\"https://luma.com/f7h7onav\" target=\"_blank\" rel=\"noopener noreferrer\">DevDay Exchange Community Hackathon: Seoul</a> 评委（OpenAI赞助） / 2026.10</h3>\n<p>评审 Track 2 · AI for Human Life 参赛项目的问题定义、AI应用、实现完整度及用户价值。</p>",
-    "es": "<h3>Jurado de <a href=\"https://luma.com/f7h7onav\" target=\"_blank\" rel=\"noopener noreferrer\">DevDay Exchange Community Hackathon: Seoul</a> (patrocinado por OpenAI) / 2026.10</h3>\n<p>Evalué los proyectos de Track 2 · AI for Human Life según la definición del problema, el uso de IA, la calidad de implementación y el valor para el usuario.</p>"
+    "ko": "<h3>DevDay Exchange Community Hackathon: Seoul 심사위원 (OpenAI 후원) / 2026.10</h3>\n<p>Track 2 · AI for Human Life 참가작의 문제 정의, AI 활용, 구현 완성도 및 사용자 가치를 평가.</p>",
+    "en": "<h3>Judge, DevDay Exchange Community Hackathon: Seoul (sponsored by OpenAI) / 2026.10</h3>\n<p>Evaluated Track 2 · AI for Human Life projects on problem definition, AI use, implementation quality, and user value.</p>",
+    "ja": "<h3>DevDay Exchange Community Hackathon: Seoul 審査員（OpenAI協賛） / 2026.10</h3>\n<p>Track 2 · AI for Human Lifeの応募作品について、課題設定、AI活用、実装の完成度、ユーザー価値を評価。</p>",
+    "zh": "<h3>DevDay Exchange Community Hackathon: Seoul 评委（OpenAI赞助） / 2026.10</h3>\n<p>评审 Track 2 · AI for Human Life 参赛项目的问题定义、AI应用、实现完整度及用户价值。</p>",
+    "es": "<h3>Jurado de DevDay Exchange Community Hackathon: Seoul (patrocinado por OpenAI) / 2026.10</h3>\n<p>Evalué los proyectos de Track 2 · AI for Human Life según la definición del problema, el uso de IA, la calidad de implementación y el valor para el usuario.</p>"
   },
   "project-21": {
     "ko": "<h3>롯데e커머스 사내 기술블로그 기고 및 온라인 발표</h3>\n                    <p>성과는 사내 기술블로그 첫 글로 선정되어 기록되었고, 2022년 6월에는 3인 발표자로 참여해 온라인 특강 형태로 공유: <a href=\"https://medium.com/lotteon-tech-blog/d-142cbbd5010\" target=\"_blank\" rel=\"noopener noreferrer\">블로그 게시글</a></p>",
