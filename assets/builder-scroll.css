@@ -1,0 +1,92 @@
+/* Local preview. The original resume follows the full-bleed opening. */
+.resume-page .builder-reel { position:relative; display:block; height:550svh; margin:0; background:#08090b; color:#fff; --mobile-focus:35%; }
+.builder-stage { position:sticky; top:0; width:100%; height:100vh; height:100svh; overflow:hidden; isolation:isolate; background:#08090b; }
+.builder-opening { position:absolute; inset:0; z-index:3; background:#000; pointer-events:none; opacity:var(--opening-opacity,1); }
+.builder-reel.is-static .builder-opening { display:none; }
+.builder-media,.builder-video,.builder-poster,.builder-scrim { position:absolute; inset:0; width:100%; height:100%; }
+.builder-video,.builder-poster { display:block; object-fit:cover; object-position:50% 50%; }
+.builder-video { opacity:0; }
+.builder-reel.is-ready .builder-video { opacity:1; }
+.builder-reel.is-ready .builder-poster { visibility:hidden; }
+.builder-scrim { pointer-events:none; background:linear-gradient(180deg,rgba(0,0,0,.04) 32%,rgba(0,0,0,.08) 50%,rgba(0,0,0,.65) 100%); }
+.builder-copy { position:absolute; z-index:2; left:7vw; right:7vw; bottom:10vh; bottom:10svh; pointer-events:none; }
+.builder-panel { display:none; }
+.builder-panel.is-active { display:block; }
+.builder-title { margin:0; max-width:12em; font-size:clamp(40px,5vw,78px); line-height:1.12; letter-spacing:-.055em; font-weight:650; color:#fff; word-break:keep-all; text-wrap:balance; text-shadow:0 2px 24px rgba(0,0,0,.2); }
+.builder-notice { position:absolute; z-index:3; left:7vw; bottom:3svh; font-size:13px; color:#e2e6e7; }
+.builder-notice p { margin:0 0 8px; }
+.builder-notice[hidden],.builder-retry[hidden] { display:none; }
+.builder-retry { border:1px solid #8b9195; border-radius:4px; color:inherit; background:transparent; padding:8px 12px; font:inherit; cursor:pointer; }
+.builder-static-list { display:none; }
+.resume-page.is-in-story .resume-controls { opacity:0; visibility:hidden; pointer-events:none; }
+.resume-page.is-in-story .resume-controls:focus-within { opacity:1; visibility:visible; pointer-events:auto; }
+.builder-original-themes { width:min(1040px,calc(100% - 48px)); margin:0 auto; padding:64px 0; border-bottom:1px solid #eee; }
+.builder-original-themes>h2 { color:#171a20; margin:0 0 30px; font-size:24px; font-weight:500; letter-spacing:-.04em; }
+.builder-original-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px 64px; }
+.builder-original-grid h3 { margin:0 0 12px; color:#171a20; font-size:19px; font-weight:500; line-height:1.4; }
+.builder-original-grid p { margin:0; color:#5c5e62; font-size:14px; line-height:1.8; word-break:keep-all; }
+.resume-page .reveal { opacity:1; transform:none; }
+.resume-page .builder-reel.is-static { display:block!important; height:auto!important; }
+.builder-reel.is-static .builder-stage { position:relative; height:auto; padding:82px 24px 40px; overflow:visible; }
+.builder-reel.is-static .builder-media { position:relative; inset:auto; width:min(100%,1100px); height:auto; aspect-ratio:16/9; margin:0 auto; }
+.builder-reel.is-static .builder-poster { object-fit:contain; object-position:center; visibility:visible; }
+.builder-reel.is-static .builder-video,.builder-reel.is-static .builder-scrim,.builder-reel.is-static .builder-copy { display:none; }
+.builder-reel.is-static .builder-notice { position:relative; inset:auto; width:min(100%,1100px); margin:24px auto; }
+.builder-reel.is-static .builder-static-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:36px 48px; width:min(100%,1100px); margin:36px auto 0; }
+.builder-static-list h3 { margin:0 0 12px; color:#fff; font-size:24px; line-height:1.35; font-weight:600; letter-spacing:-.04em; }
+.builder-static-list p { margin:0; color:#b9c3cb; font-size:14px; line-height:1.8; }
+@media(max-width:760px) {
+ .builder-video,.builder-poster { object-fit:cover; object-position:var(--mobile-focus) 50%; }
+ .builder-copy { left:7vw; right:7vw; bottom:11svh; }
+ .builder-title { font-size:clamp(30px,7vw,54px); line-height:1.12; max-width:11em; letter-spacing:-.055em; }
+ .builder-scrim { background:linear-gradient(180deg,rgba(0,0,0,.02) 30%,rgba(0,0,0,.08) 49%,rgba(0,0,0,.74) 100%); }
+ .builder-reel.is-static .builder-static-list,.builder-original-grid { grid-template-columns:1fr; gap:30px; }
+ .builder-original-themes { padding:42px 0; }
+}
+@media(max-height:500px) {
+ .builder-copy { bottom:8svh; }
+ .builder-title { font-size:clamp(28px,5vw,48px); max-width:19em; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .resume-page .builder-reel { display:block!important; }
+ .builder-reel * { animation:none!important; transition:none!important; }
+}
+@media print { .resume-page .builder-reel,.builder-original-themes { display:none!important; } }
+
+/* The original evidence stays within the same scene as its heading. */
+.builder-description { margin:24px 0 0; max-width:48em; font-size:clamp(15px,1.25vw,19px); font-weight:400; line-height:1.75; letter-spacing:-.015em; color:rgba(255,255,255,.91); word-break:keep-all; text-shadow:0 1px 14px rgba(0,0,0,.3); }
+@media(max-width:760px) { .builder-copy { bottom:7svh; } .builder-description { margin-top:18px; max-width:35em; font-size:clamp(13px,2.9vw,16px); line-height:1.7; } }
+@media(max-height:500px) { .builder-description { margin-top:12px; font-size:13px; line-height:1.5; max-width:58em; } }
+@media(max-aspect-ratio:1/1) { .builder-video,.builder-poster { object-position:var(--mobile-focus) 50%; } .builder-reel.is-static .builder-poster { object-position:center; } }
+
+/* Place the evidence in each shot's negative space. */
+.builder-copy { left:7vw; right:auto; top:24svh; bottom:auto; width:min(43vw,650px); }
+.builder-title { font-size:clamp(34px,4.4vw,68px); }
+.builder-description { max-width:36em; margin-top:22px; font-size:clamp(15px,1.2vw,18px); }
+.builder-reel[data-chapter="backend"] .builder-copy { left:auto; right:6vw; top:22svh; width:40vw; }
+.builder-reel[data-chapter="planning"] .builder-copy { left:auto; right:5vw; top:19svh; bottom:auto; width:38vw; }
+.builder-reel[data-chapter="builder"] .builder-copy { top:20svh; width:40vw; }
+.builder-reel[data-chapter="session"] .builder-copy { top:16svh; width:43vw; }
+.builder-scrim { background:linear-gradient(90deg,rgba(0,0,0,.65),rgba(0,0,0,.16) 54%,rgba(0,0,0,.03)),linear-gradient(0deg,rgba(0,0,0,.36),transparent 30%); }
+.builder-reel[data-chapter="backend"] .builder-scrim { background:linear-gradient(270deg,rgba(0,0,0,.7),rgba(0,0,0,.23) 47%,transparent 75%),linear-gradient(0deg,rgba(0,0,0,.3),transparent 30%); }
+.builder-reel[data-chapter="planning"] .builder-scrim { background:linear-gradient(270deg,rgba(0,0,0,.72),rgba(0,0,0,.24) 44%,transparent 76%),linear-gradient(0deg,rgba(0,0,0,.2),transparent 30%); }
+.builder-scroll-hint { position:absolute; z-index:4; bottom:3.5svh; left:50%; transform:translateX(-50%); display:flex; align-items:center; flex-direction:column; gap:14px; padding:0; border:0; background:none; box-shadow:none; color:rgba(255,255,255,.7); white-space:nowrap; font-family:inherit; font-weight:400; font-size:13px; line-height:1.5; letter-spacing:.06em; pointer-events:none; opacity:.65; animation:builder-hint-breathe 2.8s ease-in-out infinite; }
+.builder-scroll-hint svg { width:14px; height:22px; animation:builder-hint 2.8s ease-in-out infinite; }
+.builder-reel.is-opening .builder-scroll-hint { left:50%; right:auto; bottom:50%; transform:translate(-50%,50%); }
+.builder-reel.is-coasting .builder-scroll-hint { visibility:hidden; }
+.builder-reel.is-static .builder-scroll-hint { display:none; }
+@keyframes builder-hint { 0%,100% {transform:translateY(-2px)} 50% {transform:translateY(4px)} }
+@keyframes builder-hint-breathe { 0%,100% {opacity:.4} 50% {opacity:.8} }
+@media (max-width:760px), (max-aspect-ratio:1/1) {
+ .builder-reel .builder-copy, .builder-reel[data-chapter] .builder-copy { left:7vw; right:7vw; width:auto; top:auto; bottom:15svh; }
+ .builder-title { font-size:clamp(29px,6.7vw,54px); line-height:1.14; }
+ .builder-description { margin-top:17px; font-size:clamp(13px,2.9vw,17px); line-height:1.7; max-width:37em; }
+ .builder-reel[data-chapter] .builder-scrim { background:linear-gradient(0deg,rgba(0,0,0,.86),rgba(0,0,0,.33) 49%,rgba(0,0,0,.02) 80%); }
+ .builder-scroll-hint { bottom:2.5svh; }
+}
+@media(max-height:500px) and (min-aspect-ratio:1/1) {
+ .builder-reel[data-chapter] .builder-copy { top:12svh; bottom:auto; width:52vw; }
+ .builder-title { font-size:clamp(26px,3.5vw,42px); }
+ .builder-description { margin-top:12px; font-size:12px; line-height:1.5; }
+ .builder-scroll-hint { left:auto; right:4vw; transform:none; bottom:4svh; }
+}

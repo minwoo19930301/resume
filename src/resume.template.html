@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="title-0">{{title-0}}</title>
-    <link rel="stylesheet" href="./styles.css?v=reel13">
-<meta name="description" content="{{description}}" data-i18n-content="description"><link rel="canonical" href="https://minwoo19930301.github.io/resume/"><link rel="stylesheet" href="./assets/resume.css"><script src="./assets/content.js" defer></script><script src="./assets/locale.js" defer></script><script src="./assets/resume.js" defer></script><script src="./assets/effects.js" defer></script></head>
+    <link rel="stylesheet" href="./styles.css">
+<meta name="description" content="{{description}}" data-i18n-content="description"><link rel="canonical" href="https://minwoo19930301.github.io/resume/"><link rel="stylesheet" href="./assets/resume.css"><script src="./assets/content.js" defer></script><script src="./assets/locale.js" defer></script><script src="./assets/resume.js" defer></script><script src="./assets/effects.js" defer></script><link rel="stylesheet" href="./assets/builder-scroll.css"><script src="./assets/builder-config.js" defer></script><script src="./assets/builder-scroll.js" defer></script><link rel="stylesheet" href="./assets/resume-type.css"></head>
 
 <body class="resume-page">
 
@@ -24,43 +24,34 @@
                     <option value="es" lang="es">Español</option>
                 </select>
             </div>
-            <button type="button" id="resume-print" class="resume-print" data-i18n="print-button" data-i18n-title="print-hint" title="{{print-hint}}">{{print-button}}</button>
+            <button type="button" id="resume-print" class="resume-print" data-i18n="print-button" data-i18n-title="{{print-hint}}" title="상단 영상과 소개를 제외한 본문을 인쇄합니다. 인쇄 창에서 PDF로 저장을 선택하세요.">{{print-button}}</button>
         </div>
     </div>
-    <noscript><style>.resume-page .reveal {opacity:1;transform:none}.resume-page .theme-reel{display:none}</style></noscript><section class="theme-reel" id="themeReel" aria-label="Core Themes">
-        <div class="theme-reel-view" id="themeReelView">
-            <video class="theme-reel-video" id="themeReelVideo" src="./img/theme-reel.mp4" muted playsinline preload="auto" webkit-playsinline disablepictureinpicture></video>
-            <div class="theme-reel-scrim" aria-hidden="true"></div>
-            <div class="theme-reel-ui">
-                <article class="theme-panel is-on" data-panel="0">
-                    <h2 class="theme-title" data-i18n="theme-title-0">{{theme-title-0}}</h2>
-                    <p class="theme-desc" data-i18n="theme-description-0">{{theme-description-0}}</p>
-                </article>
-                <article class="theme-panel" data-panel="1">
-                    <h2 class="theme-title" data-i18n="theme-title-1">{{theme-title-1}}</h2>
-                    <p class="theme-desc" data-i18n="theme-description-1">{{theme-description-1}}</p>
-                </article>
-                <article class="theme-panel" data-panel="2">
-                    <h2 class="theme-title" data-i18n="theme-title-2">{{theme-title-2}}</h2>
-                    <p class="theme-desc" data-i18n="theme-description-2">{{theme-description-2}}</p>
-                </article>
-                <article class="theme-panel" data-panel="3">
-                    <h2 class="theme-title" data-i18n="theme-title-3">{{theme-title-3}}</h2>
-                    <p class="theme-desc" data-i18n="theme-description-3">{{theme-description-3}}</p>
-                </article>
-                <article class="theme-panel" data-panel="4">
-                    <h2 class="theme-title" data-i18n="theme-title-4">{{theme-title-4}}</h2>
-                    <p class="theme-desc" data-i18n="theme-description-4">{{theme-description-4}}</p>
-                </article>
-            </div>
-            <div class="theme-reel-hint" id="themeReelHint">
-                <span class="theme-reel-hint-label" data-i18n="scroll-hint">{{scroll-hint}}</span>
-                <span class="theme-reel-hint-chevron" aria-hidden="true"></span>
-            </div>
-        </div>
-    </section>
+    <noscript><style>.resume-page .reveal {opacity:1;transform:none}</style></noscript>
+    <section class="builder-reel is-static" id="builder-story" aria-label="만들고 연결하고 나누는 일">
+  <div class="builder-stage">
+    <div class="builder-media">
+      <img class="builder-poster" id="builder-poster" src="./img/builder-blueprint-poster.jpg" alt="설계도를 펼치고 제품을 기획하는 모습" fetchpriority="high">
+      <video class="builder-video" id="builder-video" preload="auto" muted playsinline aria-label="설계에서 시스템 구축과 세션 시연까지 이어지는 영상"></video>
+      <div class="builder-scrim" aria-hidden="true"></div>
+    </div>
+    <div class="builder-copy"><article class="builder-panel is-active" data-builder-panel="planning" aria-hidden="false"><h2 class="builder-title" data-i18n="theme-title-3">{{theme-title-3}}</h2><p class="builder-description" data-i18n="theme-description-3">{{theme-description-3}}</p></article>
+<article class="builder-panel" data-builder-panel="backend" aria-hidden="true"><h2 class="builder-title" data-i18n="theme-title-2">{{theme-title-2}}</h2><p class="builder-description" data-i18n="theme-description-2">{{theme-description-2}}</p></article>
+<article class="builder-panel" data-builder-panel="data" aria-hidden="true"><h2 class="builder-title" data-i18n="theme-title-0">{{theme-title-0}}</h2><p class="builder-description" data-i18n="theme-description-0">{{theme-description-0}}</p></article>
+<article class="builder-panel" data-builder-panel="builder" aria-hidden="true"><h2 class="builder-title" data-i18n="theme-title-1">{{theme-title-1}}</h2><p class="builder-description" data-i18n="theme-description-1">{{theme-description-1}}</p></article>
+<article class="builder-panel" data-builder-panel="session" aria-hidden="true"><h2 class="builder-title" data-i18n="theme-title-4">{{theme-title-4}}</h2><p class="builder-description" data-i18n="theme-description-4">{{theme-description-4}}</p></article></div>
+    <div class="builder-opening" id="builder-opening" aria-hidden="true"></div>
+    <div class="builder-scroll-hint" id="builder-scroll-hint"><span class="hint-label">스크롤하세요</span><svg width="18" height="23" viewBox="0 0 18 23" aria-hidden="true"><path d="M9 2v17M3 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="builder-notice" id="builder-notice" hidden><p id="builder-notice-text"></p><button class="builder-retry" id="builder-retry" type="button" hidden>다시 불러오기</button></div>
+    <div class="builder-static-list" aria-label="핵심 경험"><article><h3 data-i18n="theme-title-3">{{theme-title-3}}</h3><p data-i18n="theme-description-3">{{theme-description-3}}</p></article>
+<article><h3 data-i18n="theme-title-2">{{theme-title-2}}</h3><p data-i18n="theme-description-2">{{theme-description-2}}</p></article>
+<article><h3 data-i18n="theme-title-0">{{theme-title-0}}</h3><p data-i18n="theme-description-0">{{theme-description-0}}</p></article>
+<article><h3 data-i18n="theme-title-1">{{theme-title-1}}</h3><p data-i18n="theme-description-1">{{theme-description-1}}</p></article>
+<article><h3 data-i18n="theme-title-4">{{theme-title-4}}</h3><p data-i18n="theme-description-4">{{theme-description-4}}</p></article></div>
+  </div>
+</section>
 
-    <header class="page-hero">
+<header class="page-hero">
         <div class="hero-shell">
             <div class="hero-copy" id="heroCopy">
                 <div class="portrait-card">
@@ -87,7 +78,6 @@
         </header>
         <section class="content-section summary-section reveal" id="experience">
             <div class="section-intro">
-                <p class="section-kicker" data-i18n="kicker-overview">{{kicker-overview}}</p>
                 <h2 class="section-title" data-i18n="section-title-0">{{section-title-0}}</h2>
             </div>
             <div class="journey">
@@ -194,7 +184,6 @@
 
         <section class="content-section timeline-section reveal" id="work">
             <div class="section-intro">
-                <p class="section-kicker" data-i18n="kicker-work">{{kicker-work}}</p>
                 <h2 class="section-title" data-i18n="section-title-1">{{section-title-1}}</h2>
             </div>
             <div class="timeline-container">
@@ -354,7 +343,6 @@
 
         <section class="content-section reveal" id="personal-projects">
             <div class="section-intro">
-                <p class="section-kicker" data-i18n="kicker-personal">{{kicker-personal}}</p>
                 <h2 class="section-title" data-i18n="personal-projects-heading">{{personal-projects-heading}}</h2>
             </div>
             <div class="projects">
@@ -372,15 +360,24 @@
                 <article class="project" id="collaborative-agent-app" data-i18n="personal-collaborative-agent-app">{{personal-collaborative-agent-app}}</article>
                 <article class="project" id="web-change-alert" data-i18n="personal-web-change-alert">{{personal-web-change-alert}}</article>
                 <article class="project" id="cardnews-studio" data-i18n="personal-cardnews-studio">{{personal-cardnews-studio}}</article>
+                <article class="project" id="gangnam-terminal-world" data-i18n="personal-gangnam-terminal-world">{{personal-gangnam-terminal-world}}</article>
+                <article class="project" id="game-room" data-i18n="personal-game-room">{{personal-game-room}}</article>
+                <article class="project" id="phone-controller-games" data-i18n="personal-phone-controller-games">{{personal-phone-controller-games}}</article>
+                <article class="project" id="mac-hand-control" data-i18n="personal-mac-hand-control">{{personal-mac-hand-control}}</article>
+                <article class="project" id="make-my-own-exam" data-i18n="personal-make-my-own-exam">{{personal-make-my-own-exam}}</article>
+                <article class="project" id="navy-blender-vtuber" data-i18n="personal-navy-blender-vtuber">{{personal-navy-blender-vtuber}}</article>
+                <article class="project" id="realtime-summarizer" data-i18n="personal-realtime-summarizer">{{personal-realtime-summarizer}}</article>
+                <article class="project" id="volley-fire-ai-keys" data-i18n="personal-volley-fire-ai-keys">{{personal-volley-fire-ai-keys}}</article>
+                <article class="project" id="real-smart-phone" data-i18n="personal-real-smart-phone">{{personal-real-smart-phone}}</article>
             </div>
         </section>
 
         <section class="content-section reveal" id="community">
             <div class="section-intro">
-                <p class="section-kicker" data-i18n="kicker-community">{{kicker-community}}</p>
                 <h2 class="section-title" data-i18n="section-title-2">{{section-title-2}}</h2>
             </div>
             <div class="projects">
+                <div class="project" id="heating-hackathon-judge" data-i18n="community-heating-judge">{{community-heating-judge}}</div>
                 <div class="project" id="devday-judge" data-i18n="community-devday-judge">{{community-devday-judge}}</div>
                 <div class="project" data-i18n="project-21">{{project-21}}</div>
                 <div class="project" data-i18n="project-22">{{project-22}}</div>
@@ -402,7 +399,6 @@
 
         <section class="content-section tech-section reveal">
             <div class="section-intro">
-                <p class="section-kicker" data-i18n="kicker-stack">{{kicker-stack}}</p>
                 <h2 class="section-title" data-i18n="section-title-4">{{section-title-4}}</h2>
             </div>
             <p class="print-only print-stack">Java · Spring · Kotlin · JavaScript · Python · React · Elasticsearch · MongoDB · Databricks · AWS · Node.js · Vue · .NET · Linux · MSSQL · MySQL · Oracle · Claude · ChatGPT · Codex · Gemini · Cursor · Antigravity · OpenClaw · Hermes</p>

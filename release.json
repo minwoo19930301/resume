@@ -1,0 +1,69 @@
+{
+  "release": "e8dc874360898d16",
+  "files": {
+    "index.html": {
+      "sha256": "b483de1b8f0886600d916ab8d5b83a1c96fe111f7bdaae8ff36254521bf1c8ae",
+      "bytes": 72159
+    },
+    "styles.css": {
+      "sha256": "3dec47f624e5c2ff0e0ec02d3ffb35d2ea76ccdfeb6e8a876c81c5024aee8236",
+      "bytes": 35542
+    },
+    "assets/content.js": {
+      "sha256": "b542e74cecbd93f85a1fc7ff5b0833b0a84e2b6c0a125d73c6247cdabbef95c7",
+      "bytes": 231730
+    },
+    "assets/locale.js": {
+      "sha256": "187d85c30fff9588e9b60e91de51da47d1a798f62a49b888c637942946700972",
+      "bytes": 2595
+    },
+    "assets/resume.js": {
+      "sha256": "bca5d8e451b898d4542f337df7de877794133bf69295ed06b30280b7119d5103",
+      "bytes": 2870
+    },
+    "assets/effects.js": {
+      "sha256": "92e291866d0c4c33e6196291dbfc2100fc9130546af75747e9171531cadc084d",
+      "bytes": 1885
+    },
+    "assets/resume.css": {
+      "sha256": "1f4bfaf0b73e1fd10d77878fb810409c092c6f6102efccb8f594002fbc4f9012",
+      "bytes": 7949
+    },
+    "assets/builder-config.js": {
+      "sha256": "237d73b4602b33af508cd9f2c0c6527d965d56d7f4c48f0910a0cf6cf19e9594",
+      "bytes": 2561
+    },
+    "assets/builder-scroll.js": {
+      "sha256": "382f65565b5fd1e5aa0cb5fde7aa96b53a2459aa7c815432649357a70dc29357",
+      "bytes": 11780
+    },
+    "assets/builder-scroll.css": {
+      "sha256": "a5393439fb8e643a9a3157e5c1a56a1ef2f41d0746a298b1a74671899c25e850",
+      "bytes": 8618
+    },
+    "assets/resume-type.css": {
+      "sha256": "a532e62ea29ce5e4035d465954c9aa51c155f90deccac896d25bfac61df5c963",
+      "bytes": 570
+    },
+    "assets/fonts/SUIT-Variable.woff2": {
+      "sha256": "aa894a204d5a6fbae259dac6868d350cbd373a390caee0313f92946af741df23",
+      "bytes": 624536
+    },
+    "assets/fonts/PretendardVariable.woff2": {
+      "sha256": "9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4",
+      "bytes": 2057688
+    },
+    "img/builder-continuous-v4.mp4": {
+      "sha256": "c0417e3717e6b09d35ebde000e588d7380fc7162e20c9893ef64b524d1d31efd",
+      "bytes": 6395022
+    },
+    "img/builder-continuous-mobile-v4.mp4": {
+      "sha256": "49a081663e31a393853791fda20b8e7831215d8715c04a665d80469631ebc004",
+      "bytes": 3870788
+    },
+    "img/builder-blueprint-poster.jpg": {
+      "sha256": "ac9befb4fcb4377f59269ce849ac4b093cce9db3af1e4e976529d25bf55e24f8",
+      "bytes": 36978
+    }
+  }
+}

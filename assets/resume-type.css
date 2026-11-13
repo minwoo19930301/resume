@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'SUIT Variable';
+  src: url('./fonts/SUIT-Variable.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard Variable';
+  src: url('./fonts/PretendardVariable.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 45 920;
+  font-display: swap;
+}
+.resume-page {
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.resume-page :is(h1,h2,h3) {
+  font-family: 'SUIT Variable', 'Pretendard Variable', sans-serif;
+}
