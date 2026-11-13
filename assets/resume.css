@@ -5,7 +5,7 @@
   z-index: 100;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 12px;
   pointer-events: none;
 }
@@ -15,7 +15,6 @@
   color: #171a20;
   border-radius: 6px;
 }
-.resume-skip { padding: 9px 13px; font-size: 12px; }
 .locale-control { display: flex; align-items: center; gap: 8px; padding: 6px 10px; }
 .locale-control label { font-size: 12px; }
 .locale-control select {
@@ -138,7 +137,6 @@
 .print-only { display: none; }
 @media (max-width: 700px) {
   .resume-controls { gap: 6px; }
-  .resume-skip { padding: 8px 6px; font-size: 11px; }
   .resume-actions { gap: 5px; }
   .locale-control { padding: 5px; }
   .locale-control select { max-width: 105px; font-size: 12px; }

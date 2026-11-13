@@ -1,17 +1,17 @@
 {
-  "release": "ed2f685ff83503d0",
+  "release": "b4c82ee5e87f5340",
   "files": {
     "index.html": {
-      "sha256": "950c4d3de02f27c5210a43a7d976ebbe2c4bd2b213a37b2f613c9888b61a4d3a",
-      "bytes": 72146
+      "sha256": "a77a1a3fc1c2296659fd80bb93e52a0ed3886c8e24ca5bea4c083b0176264914",
+      "bytes": 72143
     },
     "styles.css": {
-      "sha256": "3dec47f624e5c2ff0e0ec02d3ffb35d2ea76ccdfeb6e8a876c81c5024aee8236",
-      "bytes": 35542
+      "sha256": "155c728f1df78d26e0207f2dd809c10936a9ce0b02d96ce5b1071131447baf2f",
+      "bytes": 35562
     },
     "assets/content.js": {
-      "sha256": "dbe1c62783b5fa893ffb00729570a0260ffa9777471fa80ecdae9a5b26ecceec",
-      "bytes": 231672
+      "sha256": "1280e469257827606765be4385f1ce032c746cf9e7491a839cafcd29c32dff5c",
+      "bytes": 232048
     },
     "assets/locale.js": {
       "sha256": "187d85c30fff9588e9b60e91de51da47d1a798f62a49b888c637942946700972",
@@ -26,8 +26,8 @@
       "bytes": 1885
     },
     "assets/resume.css": {
-      "sha256": "1f4bfaf0b73e1fd10d77878fb810409c092c6f6102efccb8f594002fbc4f9012",
-      "bytes": 7949
+      "sha256": "2ea5fc4f8f39ca636b95adea8c07f67afc68cf684127d70ca3c8f14370b23e56",
+      "bytes": 7837
     },
     "assets/builder-config.js": {
       "sha256": "237d73b4602b33af508cd9f2c0c6527d965d56d7f4c48f0910a0cf6cf19e9594",
@@ -64,6 +64,18 @@
     "img/builder-blueprint-poster.jpg": {
       "sha256": "ac9befb4fcb4377f59269ce849ac4b093cce9db3af1e4e976529d25bf55e24f8",
       "bytes": 36978
+    },
+    "icon/github-invertocat.svg": {
+      "sha256": "693d7abe6f899646cc2e96856723b45e95f71885a54910b2749f6decdf7e1ee1",
+      "bytes": 1559
+    },
+    "icon/linkedin-in.png": {
+      "sha256": "3c0149f26168b5fe0f43e68664abe40341a6443b3cd435d18a73e12f64f8b600",
+      "bytes": 8375
+    },
+    "icon/naver-blog.png": {
+      "sha256": "2e8804787a5df30d722fb8cea64557ab6a03de6f24e80e735dd8062237f8bbc7",
+      "bytes": 2138
     }
   }
 }

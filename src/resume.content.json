@@ -476,25 +476,25 @@
     "es": "2009.03 — 2012.02"
   },
   "social-link-0": {
-    "ko": "<img src=\"./icon/naverblog.svg\" alt=\"Naver Blog Icon\">\n                블로그",
-    "en": "<img src=\"./icon/naverblog.svg\" alt=\"Naver Blog Icon\">\n                Blog",
-    "ja": "<img src=\"./icon/naverblog.svg\" alt=\"Naver Blog Icon\">\n                ブログ",
-    "zh": "<img src=\"./icon/naverblog.svg\" alt=\"Naver Blog Icon\">\n                博客",
-    "es": "<img src=\"./icon/naverblog.svg\" alt=\"Naver Blog Icon\">\n                Blog"
+    "ko": "<img class=\"naver-blog-logo\" src=\"./icon/naver-blog.png\" alt=\"\" aria-hidden=\"true\">\n                블로그",
+    "en": "<img class=\"naver-blog-logo\" src=\"./icon/naver-blog.png\" alt=\"\" aria-hidden=\"true\">\n                Blog",
+    "ja": "<img class=\"naver-blog-logo\" src=\"./icon/naver-blog.png\" alt=\"\" aria-hidden=\"true\">\n                ブログ",
+    "zh": "<img class=\"naver-blog-logo\" src=\"./icon/naver-blog.png\" alt=\"\" aria-hidden=\"true\">\n                博客",
+    "es": "<img class=\"naver-blog-logo\" src=\"./icon/naver-blog.png\" alt=\"\" aria-hidden=\"true\">\n                Blog"
   },
   "social-link-1": {
-    "ko": "<img src=\"./icon/linkedin-mark.svg\" alt=\"LinkedIn Icon\">\n                링크드인",
-    "en": "<img src=\"./icon/linkedin-mark.svg\" alt=\"LinkedIn Icon\">\n                LinkedIn",
-    "ja": "<img src=\"./icon/linkedin-mark.svg\" alt=\"LinkedIn Icon\">\n                LinkedIn",
-    "zh": "<img src=\"./icon/linkedin-mark.svg\" alt=\"LinkedIn Icon\">\n                领英",
-    "es": "<img src=\"./icon/linkedin-mark.svg\" alt=\"LinkedIn Icon\">\n                LinkedIn"
+    "ko": "<img class=\"linkedin-logo\" src=\"./icon/linkedin-in.png\" alt=\"\" aria-hidden=\"true\">\n                링크드인",
+    "en": "<img class=\"linkedin-logo\" src=\"./icon/linkedin-in.png\" alt=\"\" aria-hidden=\"true\">\n                LinkedIn",
+    "ja": "<img class=\"linkedin-logo\" src=\"./icon/linkedin-in.png\" alt=\"\" aria-hidden=\"true\">\n                LinkedIn",
+    "zh": "<img class=\"linkedin-logo\" src=\"./icon/linkedin-in.png\" alt=\"\" aria-hidden=\"true\">\n                领英",
+    "es": "<img class=\"linkedin-logo\" src=\"./icon/linkedin-in.png\" alt=\"\" aria-hidden=\"true\">\n                LinkedIn"
   },
   "social-link-2": {
-    "ko": "<img src=\"./icon/github-mark.svg\" alt=\"GitHub Icon\">\n                깃허브",
-    "en": "<img src=\"./icon/github-mark.svg\" alt=\"GitHub Icon\">\n                GitHub",
-    "ja": "<img src=\"./icon/github-mark.svg\" alt=\"GitHub Icon\">\n                GitHub",
-    "zh": "<img src=\"./icon/github-mark.svg\" alt=\"GitHub Icon\">\n                GitHub",
-    "es": "<img src=\"./icon/github-mark.svg\" alt=\"GitHub Icon\">\n                GitHub"
+    "ko": "<img class=\"github-logo\" src=\"./icon/github-invertocat.svg\" alt=\"\" aria-hidden=\"true\">\n                깃허브",
+    "en": "<img class=\"github-logo\" src=\"./icon/github-invertocat.svg\" alt=\"\" aria-hidden=\"true\">\n                GitHub",
+    "ja": "<img class=\"github-logo\" src=\"./icon/github-invertocat.svg\" alt=\"\" aria-hidden=\"true\">\n                GitHub",
+    "zh": "<img class=\"github-logo\" src=\"./icon/github-invertocat.svg\" alt=\"\" aria-hidden=\"true\">\n                GitHub",
+    "es": "<img class=\"github-logo\" src=\"./icon/github-invertocat.svg\" alt=\"\" aria-hidden=\"true\">\n                GitHub"
   },
   "description": {
     "ko": "김민우의 백엔드 엔지니어링, 사내 AI Champion 활동, 팀 지식베이스 구축과 업무 자동화 경험을 담은 이력서입니다.",
@@ -502,13 +502,6 @@
     "ja": "Minwoo Kim のバックエンド エンジニアリング、社内 AI チャンピオン活動、チームのナレッジ ベース、ワークフローの自動化における経験。",
     "zh": "Minwoo Kim 在后端工程、内部 AI Champion 活动、团队知识库和工作流程自动化方面的经验。",
     "es": "La experiencia de Minwoo Kim en ingeniería backend, actividades internas de AI Champion, bases de conocimiento del equipo y automatización del flujo de trabajo."
-  },
-  "skip": {
-    "ko": "경력 바로 보기",
-    "en": "Skip to experience",
-    "ja": "職務経歴へ",
-    "zh": "查看经历",
-    "es": "Ver experiencia"
   },
   "language-label": {
     "ko": "언어",

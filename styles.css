@@ -923,9 +923,10 @@ details summary span {
 }
 
 .social-links img {
-    width: 18px;
-    height: 18px;
+    width: auto;
+    height: 28px;
     object-fit: contain;
+    flex-shrink: 0;
 }
 
 /* ===== SCROLL REVEAL ===== */

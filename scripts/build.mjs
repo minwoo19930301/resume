@@ -54,6 +54,7 @@ const releaseFiles = [
   'assets/fonts/SUIT-Variable.woff2', 'assets/fonts/PretendardVariable.woff2',
   'img/builder-continuous-v4.mp4', 'img/builder-continuous-mobile-v4.mp4',
   'img/builder-blueprint-poster.jpg',
+  'icon/github-invertocat.svg', 'icon/linkedin-in.png', 'icon/naver-blog.png',
 ];
 const files = {};
 for (const filename of releaseFiles) {
