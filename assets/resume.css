@@ -60,6 +60,42 @@
 .resume-page .personal-section .highlights-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 48px; }
 .resume-page .project { overflow-wrap: break-word; }
 
+/* Section labels sit beside their entries when the reading column is wide enough. */
+.group-title {
+  margin: 0 0 16px;
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 650;
+  line-height: 1.35;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.resume-group + .resume-group { margin-top: 44px; }
+
+@media screen {
+  #work .timeline-container { padding-left: 0; gap: 44px; }
+  #work .timeline-container::before, #work .year::before { content: none; }
+}
+@media screen and (min-width: 860px) {
+  .resume-group, #work .year-section {
+    display: grid;
+    grid-template-columns: minmax(9rem, 19%) minmax(0, 1fr);
+    column-gap: 36px;
+  }
+  .group-title, #work .year {
+    position: sticky;
+    top: 24px;
+    align-self: start;
+    margin: 0;
+    padding: 0;
+  }
+  #work .year-label { color: var(--text-primary); font-size: 20px; font-weight: 650; }
+}
+@media print {
+  .resume-group + .resume-group { margin-top: 10pt; }
+  .group-title { margin: 0 0 5pt; font-size: 12pt; break-after: avoid; }
+}
+
 /* Portrait theme reel: keep the subject on the right while the copy owns the left. */
 .resume-page .theme-reel-video {
   object-position: 73% center;
@@ -166,7 +202,7 @@
   .resume-page .year-label { font-size: 11pt; }
   .resume-page .year-chip { min-height: 0; padding: 2pt 5pt; font-size: 8pt; }
   .resume-page .project { padding: 0 0 10pt; margin: 0 0 8pt; border-radius: 0; background: white; break-inside: auto; }
-  .resume-page .project h3 { font-size: 11pt; line-height: 1.4; margin: 0 0 5pt; break-after: avoid; }
+  .resume-page .project :is(h3, h4) { font-size: 11pt; line-height: 1.4; margin: 0 0 5pt; break-after: avoid; }
   .resume-page .project p, .resume-page .project li { font-size: 9.5pt; line-height: 1.55; color: #222; orphans: 3; widows: 3; }
   .resume-page .project p { margin: 4pt 0; }
   .resume-page .project ul { margin: 5pt 0; }

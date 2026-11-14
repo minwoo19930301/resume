@@ -1,17 +1,17 @@
 {
-  "release": "5ec506f9011a34e7",
+  "release": "fea9d33cfb92112d",
   "files": {
     "index.html": {
-      "sha256": "50abaa03bcfd12c96e71611657ffdb20c74319b70d4eca092331f206e52437ca",
-      "bytes": 72074
+      "sha256": "d3003a37b88abcbc597eecc103ce64d705acd5b969f19e234c9c2639bf057b47",
+      "bytes": 74328
     },
     "styles.css": {
-      "sha256": "155c728f1df78d26e0207f2dd809c10936a9ce0b02d96ce5b1071131447baf2f",
-      "bytes": 35562
+      "sha256": "21462f76640ccdea74a7108c3351d3cda0a03cbc4c3dbd6240c4f75aaf66c13b",
+      "bytes": 35620
     },
     "assets/content.js": {
-      "sha256": "3182ae6b8ff2871559dd167fa323c1edab4ce0207507548f6d87cb0e52f099ce",
-      "bytes": 231710
+      "sha256": "c0a9d10c7841accfe397a906ed933332be02eccfa57f70a5dfd7f05a94617bba",
+      "bytes": 233035
     },
     "assets/locale.js": {
       "sha256": "187d85c30fff9588e9b60e91de51da47d1a798f62a49b888c637942946700972",
@@ -26,8 +26,8 @@
       "bytes": 1885
     },
     "assets/resume.css": {
-      "sha256": "2ea5fc4f8f39ca636b95adea8c07f67afc68cf684127d70ca3c8f14370b23e56",
-      "bytes": 7837
+      "sha256": "b56a625a1be473be7a1099b69c55623c5fe2c4b9c7e64f3417d7e12741b13c7e",
+      "bytes": 8860
     },
     "assets/builder-config.js": {
       "sha256": "237d73b4602b33af508cd9f2c0c6527d965d56d7f4c48f0910a0cf6cf19e9594",
@@ -42,8 +42,8 @@
       "bytes": 8618
     },
     "assets/resume-type.css": {
-      "sha256": "a532e62ea29ce5e4035d465954c9aa51c155f90deccac896d25bfac61df5c963",
-      "bytes": 570
+      "sha256": "77c83a48ec8f97f84c8dc73db59270cda91c5a02ea28239783689734a568ec8a",
+      "bytes": 573
     },
     "assets/fonts/SUIT-Variable.woff2": {
       "sha256": "aa894a204d5a6fbae259dac6868d350cbd373a390caee0313f92946af741df23",

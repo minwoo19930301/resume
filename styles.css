@@ -686,7 +686,8 @@ strong {
     height: 40px;
 }
 
-.project h3 {
+.project h3,
+.resume-group .project h4 {
     margin: 0 0 10px;
     color: var(--text-primary);
     font-size: 17px;
@@ -1105,7 +1106,8 @@ details summary span {
         margin-bottom: 10px;
     }
 
-    .project h3 {
+    .project h3,
+    .resume-group .project h4 {
         margin-bottom: 8px;
         font-size: 15px;
     }
