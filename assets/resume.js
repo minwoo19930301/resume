@@ -31,34 +31,6 @@
       if (entry) element.setAttribute('content', (entry[language] || entry.en || entry.ko));
     });
   }
-  const projectLists = Array.from(document.querySelectorAll('details.more-projects'));
-  if (projectLists.length) {
-    function revealLinkedProject() {
-      const target = document.getElementById(location.hash.slice(1));
-      const list = target?.closest('.more-projects');
-      if (list && !list.open) {
-        list.open = true;
-        target.scrollIntoView();
-      }
-    }
-    window.addEventListener('hashchange', revealLinkedProject);
-    revealLinkedProject();
-
-    let closedBeforePrint = [];
-    window.addEventListener('beforeprint', () => {
-      for (const list of projectLists) {
-        if (!list.open) {
-          closedBeforePrint.push(list);
-          list.open = true;
-        }
-      }
-    });
-    window.addEventListener('afterprint', () => {
-      for (const list of closedBeforePrint) list.open = false;
-      closedBeforePrint = [];
-    });
-  }
-
   const printButton = document.getElementById('resume-print');
   if (printButton) printButton.addEventListener('click', () => window.print());
 

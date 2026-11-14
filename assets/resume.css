@@ -71,19 +71,6 @@
   overflow-wrap: anywhere;
 }
 .resume-group + .resume-group { margin-top: 44px; }
-.more-projects > summary {
-  width: fit-content;
-  padding: 7px 4px;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text-primary);
-  cursor: pointer;
-}
-.more-projects > summary:hover { text-decoration: underline; }
-.more-projects .project-count { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
-.more-projects .less-label, .more-projects[open] .more-label { display: none; }
-.more-projects[open] .less-label { display: inline; }
-.more-projects > .projects { margin-top: 12px; }
 
 @media screen {
   #work .timeline-container { padding-left: 0; gap: 44px; }
@@ -92,8 +79,8 @@
 @media screen and (min-width: 860px) {
   .resume-group, #work .year-section {
     display: grid;
-    grid-template-columns: minmax(9rem, 19%) minmax(0, 1fr);
-    column-gap: 36px;
+    grid-template-columns: 7rem minmax(0, 1fr);
+    column-gap: 16px;
   }
   .group-title, #work .year {
     position: sticky;
@@ -102,12 +89,12 @@
     margin: 0;
     padding: 0;
   }
-  #work .year-label { color: var(--text-primary); font-size: 20px; font-weight: 650; }
+  .group-title { font-size: 16px; }
+  #work .year-label { color: var(--text-primary); font-size: 17px; font-weight: 650; }
+  #work .year-chip { max-width: 100%; gap: 4px; padding-inline: 6px; }
+  #work .year-company-icon { flex: none; }
 }
 @media print {
-  .more-projects > summary { display: none; }
-  .more-projects::details-content { content-visibility: visible; }
-  .more-projects > .projects { margin: 0; }
   .resume-group + .resume-group { margin-top: 10pt; }
   .group-title { margin: 0 0 5pt; font-size: 12pt; break-after: avoid; }
 }

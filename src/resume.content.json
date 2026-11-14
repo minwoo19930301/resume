@@ -831,19 +831,5 @@
     "ja": "<h4>Meta Global AI Developer Hackathon / 2026.10–11</h4>\n<p>上位5,000位以内に入り、本選に進出しました。</p>\n<p class=\"project-links\"><a href=\"https://dev.meta.ai/events/global-hackathon\" target=\"_blank\" rel=\"noopener noreferrer\">大会概要</a></p>",
     "zh": "<h4>Meta 全球 AI 开发者黑客松 / 2026.10–11</h4>\n<p>我进入前 5,000 名，晋级正赛。</p>\n<p class=\"project-links\"><a href=\"https://dev.meta.ai/events/global-hackathon\" target=\"_blank\" rel=\"noopener noreferrer\">赛事介绍</a></p>",
     "es": "<h4>Hackatón global de Meta para desarrolladores de IA / 2026.10–11</h4>\n<p>Quedé entre los primeros 5.000 y pasé a la fase principal.</p>\n<p class=\"project-links\"><a href=\"https://dev.meta.ai/events/global-hackathon\" target=\"_blank\" rel=\"noopener noreferrer\">Información del evento</a></p>"
-  },
-  "projects-more": {
-    "ko": "다른 프로젝트 보기",
-    "en": "Show more projects",
-    "ja": "ほかのプロジェクトを表示",
-    "zh": "查看其他项目",
-    "es": "Ver más proyectos"
-  },
-  "projects-less": {
-    "ko": "접기",
-    "en": "Show fewer projects",
-    "ja": "折りたたむ",
-    "zh": "收起",
-    "es": "Ver menos proyectos"
   }
 }
