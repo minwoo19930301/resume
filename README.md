@@ -1,5 +1,11 @@
 # 김민우 · Minwoo Kim
 
+<!-- LIVE-LINK:START -->
+<p align="center">
+  <a href="https://minwoo19930301.github.io/resume/"><img alt="바로 가기: minwoo19930301.github.io/resume" src="https://img.shields.io/badge/%E2%96%B6%20%EB%B0%94%EB%A1%9C%20%EA%B0%80%EA%B8%B0-minwoo19930301.github.io%2Fresume-ff5a5f?style=for-the-badge"></a>
+</p>
+<!-- LIVE-LINK:END -->
+
 백엔드 개발 경력과 AI 활용 경험, 개인 프로젝트를 소개하는 이력서입니다.
 
 **[이력서 보기](https://minwoo19930301.github.io/resume/)**
